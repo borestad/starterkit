@@ -1,0 +1,62 @@
+{
+  "name": "@netent/boilerplate-3d",
+  "version": "0.0.1",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "NetEnt AB (publ)",
+    "email": "info@netent.com",
+    "url": "https://www.netent.com/"
+  },
+  "contributors": [
+    "Johan Borestad <johan.borestad@netent.com>"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
+    "typecheck:watch": "yarn typecheck -- --watch",
+    "build": "yarn build:types && yarn build:js",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "upgrade:deps": "yarn upgrade-interactive --latest"
+  },
+  "engines": {
+    "node": ">= 8.x",
+    "yarn": ">= 1.5.1",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn format:js",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn format:ts",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none",
+    "useTabs": false,
+    "parser": "typescript"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "lint-staged": "8.0.5",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.16.0",
+    "tslint-config-standard": "8.0.1",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "^3.1.5"
+  }
+}
