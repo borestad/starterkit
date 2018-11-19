@@ -17,12 +17,19 @@
     "build": "yarn build:types && yarn build:js",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "postinstall": "node node_modules/husky/husky.js install",
     "upgrade:deps": "yarn upgrade-interactive --latest"
   },
   "engines": {
     "node": ">= 8.x",
     "yarn": ">= 1.5.1",
     "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -52,6 +59,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-typescript": "^7.1.0",
+    "husky": "1.1.4",
     "lint-staged": "8.0.5",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.16.0",
