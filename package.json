@@ -1,6 +1,7 @@
 {
   "name": "@netent/boilerplate-3d",
   "version": "0.0.1",
+  "private": true,
   "license": "UNLICENSED",
   "author": {
     "name": "NetEnt AB (publ)",
@@ -14,9 +15,10 @@
     "typecheck": "tsc --noEmit",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "typecheck:watch": "yarn typecheck -- --watch",
+    "format": "prettier --write 'packages/**/*.ts' && yarn lint --fix",
     "build": "yarn build:types && yarn build:js",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "postinstall": "node node_modules/husky/husky.js install",
     "upgrade:deps": "yarn upgrade-interactive --latest"
   },
@@ -32,12 +34,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": [
-      "yarn format:js",
-      "git add"
-    ],
     "*.{ts,tsx}": [
-      "yarn format:ts",
+      "yarn format",
       "git add"
     ]
   },
@@ -59,6 +57,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-typescript": "^7.1.0",
+    "babel-plugin-loop-optimizer": "1.4.1",
     "husky": "1.1.4",
     "lint-staged": "8.0.5",
     "tslint": "5.11.0",
