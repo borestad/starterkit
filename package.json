@@ -12,14 +12,18 @@
     "Johan Borestad <johan.borestad@netent.com>"
   ],
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
-    "typecheck:watch": "yarn typecheck -- --watch",
-    "format": "prettier --write 'packages/**/*.ts' && yarn lint --fix",
+    "ci": "yarn lint && yarn test --coverage --ci",
     "build": "yarn build:types && yarn build:js",
-    "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
+    "build:types": "tsc --emitDeclarationOnly",
+    "format": "prettier --write 'src/**/*.ts' && yarn lint --fix",
+    "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "postinstall": "node node_modules/husky/husky.js install",
+    "start": "yarn test:watch",
+    "test": "jest --notify",
+    "test:watch": "jest --watch --notify",
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "yarn typecheck -- --watch",    
     "upgrade:deps": "yarn upgrade-interactive --latest"
   },
   "engines": {
@@ -50,6 +54,30 @@
     "useTabs": false,
     "parser": "typescript"
   },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "bail": true,
+    "silent": false,
+    "verbose": false,
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "coverageDirectory": "coverage",
+    "coverageReporters": ["lcov", "text", "text-summary"],
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/*.d.ts"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
@@ -57,13 +85,20 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-typescript": "^7.1.0",
+    "@types/jest": "23.3.9",
     "babel-plugin-loop-optimizer": "1.4.1",
     "husky": "1.1.4",
     "lint-staged": "8.0.5",
+    "prettier": "1.15.2",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.16.0",
     "tslint-config-standard": "8.0.1",
     "tslint-eslint-rules": "5.4.0",
     "typescript": "^3.1.5"
+  },
+  "dependencies": {
+    "jest": "23.6.0",
+    "jest-cli": "23.6.0",
+    "ts-jest": "23.10.4"
   }
 }

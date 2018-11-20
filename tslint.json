@@ -6,6 +6,7 @@
   ],
   "rules": {
     "interface-name": true,
+    "no-unexpected-multiline": false,
     "no-consecutive-blank-lines": true,
     "no-duplicate-variable": true,
     "no-debugger": true,
@@ -14,8 +15,7 @@
     "no-trailing-whitespace": true,
     "ordered-imports": [
       true, {
-        "import-sources-order": "lowercase-last",
-        "named-imports-order": "lowercase-first"
+        "import-sources-order": "lowercase-last"
       }
     ],
     "promise-function-async": true,
@@ -31,16 +31,13 @@
       "check-typecast"
     ],
     "ban": [
-      true, {
-        "name": ["test", "only"],
-        "message": "Don't focus tests"
-      }, {
-        "name": ["it", "only"],
-        "message": "Don't focus tests"
-      }, {
-        "name": ["describe", "only"],
-        "message": "Don't focus tests"
-      }
+      true,
+      { "name": ["test", "only"], "message": "Don't focus tests" },
+      { "name": ["it", "only"], "message": "Don't focus tests" },
+      { "name": ["describe", "only"], "message": "Don't focus tests" },
+      { "name": ["describe", "skip"], "message": "Don't commit skipped tests" },
+      { "name": ["test", "skip"], "message": "Don't commit skipped tests" },
+      { "name": ["it", "skip"], "message": "Don't commit skipped tests" }
     ]
   }
 }

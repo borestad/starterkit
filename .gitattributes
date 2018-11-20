@@ -10,7 +10,6 @@
 *.css   text eol=lf
 *.ejs   text eol=lf
 *.frag  text eol=lf
-*.g3dj  text eol=lf
 *.html  text eol=lf
 *.js    text eol=lf
 *.json  text eol=lf
@@ -18,15 +17,10 @@
 *.less  text eol=lf
 *.lock  text eol=lf
 *.md    text eol=lf
-*.md    text eol=lf
 *.mjs   text eol=lf
 *.obj   text eol=lf
 *.properties  text eol=lf
-*.sass  text eol=lf
-*.scss  text eol=lf
 *.sh    text eol=lf
-*.sss   text eol=lf
-*.styl  text eol=lf
 *.svg   text eol=lf
 *.ts    text eol=lf
 *.tsx   text eol=lf
