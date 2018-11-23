@@ -10,12 +10,6 @@ export enum Delays {
 /**
  * Returns a Promise<string> that resolves after given time.
  */
-async function delayedPromise(name: string, delay: number) {
-  return new Promise<string>(resolve =>
-    setTimeout(() => resolve(`Hello, ${name}`), delay)
-  )
-}
-
-export async function greeter(name: string) {
-  return delayedPromise(name, Delays.Long)
+export async function delayedPromise(str: string, delay: number) {
+  return new Promise<string>(resolve => setTimeout(() => resolve(str), delay))
 }

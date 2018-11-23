@@ -23,7 +23,7 @@
     "test": "jest --notify",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
-    "typecheck:watch": "yarn typecheck -- --watch",    
+    "typecheck:watch": "yarn typecheck -- --watch",
     "upgrade:deps": "yarn upgrade-interactive --latest"
   },
   "engines": {
@@ -59,6 +59,14 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
     "bail": true,
     "silent": false,
     "verbose": false,
@@ -72,7 +80,11 @@
     ],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
     "coverageDirectory": "coverage",
-    "coverageReporters": ["lcov", "text", "text-summary"],
+    "coverageReporters": [
+      "lcov",
+      "text",
+      "text-summary"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx}",
       "!src/**/*.d.ts"
@@ -99,6 +111,7 @@
   "dependencies": {
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
-    "ts-jest": "23.10.4"
+    "ts-jest": "23.10.4",
+    "typescript-tslint-plugin": "0.1.0"
   }
 }

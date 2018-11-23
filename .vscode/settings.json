@@ -1,0 +1,82 @@
+{
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.wordWrap": "on"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', Inconsolata, 'Droid Sans Fallback', monospace",
+  "editor.fontLigatures": true,
+  "editor.autoIndent": true,
+  "editor.codeLens": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
+  "editor.snippetSuggestions": "top",
+  "eslint.alwaysShowStatus": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.packageManager": "yarn",
+  "extensions.ignoreRecommendations": false,
+  "files.exclude": {
+    "**/node_modules": true,
+    "*.log": true,
+    ".cache": true,
+    ".code": true,
+    ".gitignore": false,
+    ".nyc_output": true,
+    ".tmp": true,
+    ".vscode": false,
+    "build": true,
+    "node_modules": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.useExperimentalFileWatcher": true,
+  "files.watcherExclude": {
+    "**/dist/**": true,
+    "**/coverage/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.tmp/**": true,
+    "**/node_modules/**": true,
+    "/node_modules": true,
+    "/node_modules/": true
+  },
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "problems.decorations.enabled": true,
+  "search.exclude": {
+    "**/.tmp": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/node_modules": true,
+    "**/reports": true,
+    "**/coverage/**": true,
+  },
+  "search.smartCase": true,
+  "tslint.ignoreDefinitionFiles": false,
+  "tslint.jsEnable": true,
+  "typelens.decorateunused": false,
+  "typescript.implementationsCodeLens.enabled": false,
+  "typescript.referencesCodeLens.enabled": false
+}

@@ -1,22 +1,20 @@
-import { Delays, greeter } from './delay'
+import { delayedPromise, Delays } from './delay'
 
 describe('greeter function', () => {
   // Read more about fake timers: http://facebook.github.io/jest/docs/en/timer-mocks.html#content
   jest.useFakeTimers()
 
-  const name: string = 'John'
-
-  let hello: string
+  const message = 'Hello world'
+  let str: string
 
   // Act before assertions
   beforeAll(async () => {
-    const p: Promise<string> = greeter(name)
+    const p: Promise<string> = delayedPromise(message, Delays.Long)
     jest.runOnlyPendingTimers()
-    hello = await p
+    str = await p
   })
 
-  // Assert if setTimeout was called properly
-  it('delays the greeting by 2 seconds', () => {
+  it('delays the greeting by 5 seconds', () => {
     expect.assertions(2)
 
     expect(setTimeout).toHaveBeenCalledTimes(1)
@@ -24,7 +22,7 @@ describe('greeter function', () => {
   })
 
   // Assert greeter result
-  it('greets a user with `Hello, {name}` message', () => {
-    expect(hello).toBe(`Hello, ${name}`)
+  it('Sends back a custom message', () => {
+    expect(str).toBe('Hello world')
   })
 })
