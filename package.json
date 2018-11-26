@@ -88,6 +88,9 @@
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx,js,jsx}",
       "!src/**/*.d.ts"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/dist"
     ]
   },
   "devDependencies": {
