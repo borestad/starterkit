@@ -6,7 +6,7 @@ module.exports = function() {
       { pattern: 'src/**/*.json', load: false },
       { pattern: 'src/**/*.test.ts', ignore: true },
       { pattern: 'src/**/*.story.ts', ignore: true },
-      { pattern: 'src/client/index.ts', ignore: true }
+      { pattern: 'src/index.ts', ignore: true }
     ],
     tests: [{ pattern: 'src/**/*.test.ts' }],
     env: { type: 'node' },
