@@ -1,0 +1,15 @@
+{
+  "name": "example-babylon1",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "build": "yarn build:types && yarn build:js",
+    "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
+    "build:types": "tsc --emitDeclarationOnly",
+    "start": "exit 1"
+  },
+  "dependencies": {
+    "@babel/cli": "7.1.5",
+    "babylonjs": "4.0.0-alpha.10"
+  }
+}
