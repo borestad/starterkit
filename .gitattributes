@@ -1,0 +1,70 @@
+# Automatically normalize line endings for all text-based files
+# http://git-scm.com/docs/gitattributes#_end_of_line_conversion
+* text=auto
+
+# For the following file types, normalize line endings to LF on
+# checkin and prevent conversion to CRLF when they are checked out
+# (this is required in order to prevent newline related issues like,
+# for example, after the build script is run)
+.*      text eol=lf
+*.css   text eol=lf
+*.ejs   text eol=lf
+*.frag  text eol=lf
+*.html  text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.jsx   text eol=lf
+*.less  text eol=lf
+*.lock  text eol=lf
+*.md    text eol=lf
+*.mjs   text eol=lf
+*.obj   text eol=lf
+*.properties  text eol=lf
+*.sh    text eol=lf
+*.svg   text eol=lf
+*.ts    text eol=lf
+*.tsx   text eol=lf
+*.txt   text eol=lf
+*.vert  text eol=lf
+*.xhtml text eol=lf
+*.xml   text eol=lf
+
+#
+## These files are binary and should be left untouched
+#
+# (binary is a macro for -text -diff)
+*.7z binary
+*.eot binary
+*.fla binary
+*.flv binary
+*.gif binary
+*.gz binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.mov binary
+*.mp3 binary
+*.mp4 binary
+*.pdf binary
+*.png binary
+*.otf binary
+*.pyc binary
+*.swf binary
+*.ttf binary
+*.wav binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+
+
+# Documents
+*.doc  diff=astextplain
+*.DOC  diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF  diff=astextplain
+*.rtf  diff=astextplain
+*.RTF  diff=astextplain

@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "command": "yarn",
+  "tasks": [
+      {
+          // Build task, Cmd+Shift+B
+          // "npm run build"
+          "label": "run build",
+          "group": "build",
+          "type": "shell",
+          "args": []
+      },
+      {
+          // Test task, Cmd+Shift+T
+          // "npm test"
+          "label": "run test",
+          "type": "shell",
+          "args": []
+      }
+  ]
+}
