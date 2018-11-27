@@ -18,13 +18,15 @@
     "build:types": "tsc --emitDeclarationOnly",
     "format": "prettier --write 'src/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
+    "preinstall": "mkdir -p target/games/boilerplate3d_html",
     "postinstall": "node node_modules/husky/husky.js install",
     "start": "yarn test:watch",
     "test": "jest --notify",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "yarn typecheck -- --watch",
-    "upgrade:deps": "yarn upgrade-interactive --latest"
+    "upgrade:deps": "yarn upgrade-interactive --latest",
+    "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock"
   },
   "engines": {
     "node": ">= 8.x",
@@ -115,6 +117,7 @@
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "ts-jest": "23.10.4",
-    "typescript-tslint-plugin": "0.1.0"
+    "typescript-tslint-plugin": "0.1.0",
+    "yarn": "1.12.3"
   }
 }
