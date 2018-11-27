@@ -12,13 +12,13 @@
     "Johan Borestad <johan.borestad@netent.com>"
   ],
   "scripts": {
-    "ci": "yarn lint && yarn test --coverage --ci",
+    "ci": "yarn lint && yarn test --coverage --ci && yarn build",
     "build": "yarn build:types && yarn build:js",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
     "format": "prettier --write 'src/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
-    "preinstall": "mkdir -p target/games/boilerplate3d_html",
+    "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "node node_modules/husky/husky.js install",
     "start": "yarn test:watch",
     "test": "jest --notify",
