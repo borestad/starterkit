@@ -133,7 +133,7 @@ $RECYCLE.BIN/
 dist
 
 # Don't allow both yarn.lock & package-lock.json
-package-lock.jso
+package-lock.json
 
 # Don't allow a mix of ts and js files
 src/**/*.js
