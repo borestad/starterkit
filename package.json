@@ -19,7 +19,7 @@
     "format": "prettier --write 'src/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
-    "postinstall": "node node_modules/husky/husky.js install",
+    "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
     "start": "yarn test:watch",
     "test": "jest --notify",
     "test:watch": "jest --watch --notify",
@@ -114,6 +114,7 @@
     "typescript": "^3.1.5"
   },
   "dependencies": {
+    "if-env": "1.0.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "ts-jest": "23.10.4",
