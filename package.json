@@ -80,7 +80,7 @@
       "json",
       "node"
     ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts|js)x?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts)x?$",
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "lcov",
@@ -88,7 +88,7 @@
       "text-summary"
     ],
     "collectCoverageFrom": [
-      "src/**/*.{ts,tsx,js,jsx}",
+      "src/**/*.{ts,tsx}",
       "!src/**/*.d.ts"
     ],
     "modulePathIgnorePatterns": [
@@ -96,6 +96,11 @@
     ]
   },
   "devDependencies": {
+    "husky": "1.1.4",
+    "lint-staged": "8.0.5",
+    "prettier": "1.15.2"
+  },
+  "dependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
@@ -104,20 +109,15 @@
     "@babel/preset-typescript": "^7.1.0",
     "@types/jest": "23.3.9",
     "babel-plugin-loop-optimizer": "1.4.1",
-    "husky": "1.1.4",
-    "lint-staged": "8.0.5",
-    "prettier": "1.15.2",
-    "tslint": "5.11.0",
-    "tslint-config-prettier": "1.16.0",
-    "tslint-config-standard": "8.0.1",
-    "tslint-eslint-rules": "5.4.0",
-    "typescript": "^3.1.5"
-  },
-  "dependencies": {
     "if-env": "1.0.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
     "ts-jest": "23.10.4",
+    "tslint": "5.11.0",
+    "tslint-config-prettier": "1.16.0",
+    "tslint-config-standard": "8.0.1",
+    "tslint-eslint-rules": "5.4.0",
+    "typescript": "^3.1.5",
     "typescript-tslint-plugin": "0.1.0",
     "yarn": "1.12.3"
   }
