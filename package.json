@@ -11,7 +11,9 @@
   "contributors": [
     "Johan Borestad <johan.borestad@netent.com>"
   ],
-  "workspaces": "examples/**",
+  "workspaces": [
+    "examples/*"
+  ],
   "scripts": {
     "ci": "yarn lint && yarn test --coverage --ci && yarn build",
     "build": "yarn build:types && yarn build:js",
