@@ -15,8 +15,8 @@ describe('Typescript / Jest features', () => {
 })
 
 test('clone()', () => {
-  let o1 = { a: 1 }
-  let o2 = clone(o1)
+  const o1 = { a: 1 }
+  const o2 = clone(o1)
 
   expect(o1).not.toBe(o2)
 })

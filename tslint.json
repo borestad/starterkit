@@ -13,6 +13,8 @@
     "no-implicit-dependencies": false,
     "no-irregular-whitespace": true,
     "no-trailing-whitespace": true,
+    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    "prefer-const": true,
     "ordered-imports": [
       true, {
         "import-sources-order": "lowercase-last"
