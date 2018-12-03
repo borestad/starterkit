@@ -1,5 +1,8 @@
 {
   "name": "example-unittests",
   "version": "1.0.0",
-  "main": "index.ts"
+  "main": "index.ts",
+  "dependencies": {
+    "typescript": "3.2.1"
+  }
 }

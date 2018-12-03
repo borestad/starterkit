@@ -1,4 +1,4 @@
-import { add, clone, GenericsExample1, GetterSetter } from './'
+import { add, clone, GenericsExample1, GetterSetter } from './index'
 
 describe('Typescript / Jest features', () => {
   // Read more about fake timers: http://facebook.github.io/jest/docs/en/timer-mocks.html#content
