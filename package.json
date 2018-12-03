@@ -15,10 +15,7 @@
     "examples/*"
   ],
   "scripts": {
-    "ci": "yarn lint && yarn test --coverage --ci && yarn build",
-    "build": "yarn build:types && yarn build:js",
-    "build:js": "babel examples --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
-    "build:types": "tsc --emitDeclarationOnly",
+    "ci": "yarn lint && yarn test --coverage --ci && lerna run build --stream",
     "format": "prettier --write 'examples/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
@@ -77,6 +74,7 @@
     "if-env": "1.0.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
+    "lerna": "^3.5.1",
     "ts-jest": "23.10.4",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.16.0",

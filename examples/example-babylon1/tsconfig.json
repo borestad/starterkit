@@ -1,8 +1,9 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-        "noUnusedLocals": false,
-        "outDir": "dist",
-        "module": "esnext"
-    }
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "outDir": "dist",
+    "rootDir": "./",
+    "baseUrl": "./"
+  }
 }
