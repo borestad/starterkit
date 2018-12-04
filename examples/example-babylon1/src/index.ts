@@ -47,7 +47,9 @@ function createScene() {
 const scene = createScene() // Call the createScene function
 
 // Register a render loop to repeatedly render the scene
-engine.runRenderLoop(scene.render.bind(scene))
+engine.runRenderLoop(() => {
+  scene.render()
+})
 
 // Watch for browser/canvas resize events
 window.addEventListener('resize', () => {

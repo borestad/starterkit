@@ -16,11 +16,10 @@
   ],
   "scripts": {
     "ci": "yarn lint && yarn test --coverage --ci && lerna run build --stream",
-    "format": "prettier --write 'examples/**/*.ts' && yarn lint --fix",
+    "fix": "prettier --write 'examples/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
-    "start": "yarn test:watch",
     "test": "jest --notify",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
@@ -41,7 +40,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn format",
+      "yarn fix",
       "git add"
     ]
   },

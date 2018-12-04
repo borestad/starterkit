@@ -1,5 +1,6 @@
 {
   "name": "example-babylon1",
+  "private": true,
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
@@ -7,7 +8,8 @@
     "build": "yarn clean && parcel build index.html",
     "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "test": "exit 1"
   },
   "dependencies": {
     "@babel/cli": "7.1.5",
