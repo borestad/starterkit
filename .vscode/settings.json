@@ -33,7 +33,7 @@
     "other": true,
     "strings": true
   },
-  "editor.snippetSuggestions": "top",
+  "editor.snippetSuggestions": "bottom",
   "eslint.alwaysShowStatus": false,
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",

@@ -11,16 +11,15 @@
   "contributors": [
     "Johan Borestad <johan.borestad@netent.com>"
   ],
+  "workspaces": [
+    "examples/*"
+  ],
   "scripts": {
-    "ci": "yarn lint && yarn test --coverage --ci && yarn build",
-    "build": "yarn build:types && yarn build:js",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
-    "build:types": "tsc --emitDeclarationOnly",
-    "format": "prettier --write 'src/**/*.ts' && yarn lint --fix",
+    "ci": "yarn lint && yarn test --coverage --ci && lerna run build --stream",
+    "fix": "prettier --write 'examples/**/*.ts' && yarn lint --fix",
     "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
-    "start": "yarn test:watch",
     "test": "jest --notify",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
@@ -41,7 +40,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "yarn format",
+      "yarn fix",
       "git add"
     ]
   },
@@ -56,46 +55,8 @@
     "useTabs": false,
     "parser": "typescript"
   },
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "coverageThreshold": {
-      "global": {
-        "branches": 80,
-        "functions": 80,
-        "lines": 80,
-        "statements": -10
-      }
-    },
-    "bail": true,
-    "silent": false,
-    "verbose": false,
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts)x?$",
-    "coverageDirectory": "coverage",
-    "coverageReporters": [
-      "lcov",
-      "text",
-      "text-summary"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/**/*.d.ts"
-    ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/dist"
-    ]
-  },
   "devDependencies": {
+    "del-cli": "1.1.0",
     "husky": "1.1.4",
     "lint-staged": "8.0.5",
     "prettier": "1.15.2"
@@ -112,6 +73,7 @@
     "if-env": "1.0.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
+    "lerna": "^3.5.1",
     "ts-jest": "23.10.4",
     "tslint": "5.11.0",
     "tslint-config-prettier": "1.16.0",

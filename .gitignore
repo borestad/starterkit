@@ -131,6 +131,7 @@ $RECYCLE.BIN/
 
 ### Custom
 dist
+.cache
 
 # Don't allow both yarn.lock & package-lock.json
 package-lock.json

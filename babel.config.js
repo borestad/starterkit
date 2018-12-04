@@ -4,6 +4,8 @@
  *
  */
 
+console.log('❤️ babel.config.js')
+
 module.exports = api => {
   const isProd = expr => api.env('production') && expr
   api.cache.using(() => process.env.NODE_ENV)
