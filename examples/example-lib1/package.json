@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
   },
   "dependencies": {
-    "typescript": "3.2.1"
+    "typescript": "3.2.2"
   }
 }

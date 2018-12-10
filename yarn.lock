@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@babel/cli@7.1.5", "@babel/cli@^7.1.2":
-  version "7.1.5"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/cli/-/cli-7.1.5.tgz#4ccf0a8cdabeefdd8ce955384530f050935bc4d7"
-  integrity sha1-TM8KjNq+792M6VU4RTDwUJNbxNc=
+"@babel/cli@7.2.0", "@babel/cli@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/cli/-/cli-7.2.0.tgz#505ed8d351daee6a88918da02c046c18c8c5a24f"
+  integrity sha1-UF7Y01Ha7mqIkY2gLARsGMjFok8=
   dependencies:
     commander "^2.8.1"
     convert-source-map "^1.1.0"
@@ -26,7 +26,7 @@
   dependencies:
     "@babel/highlight" "^7.0.0"
 
-"@babel/core@^7.0.0", "@babel/core@^7.1.2":
+"@babel/core@^7.0.0":
   version "7.1.6"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/core/-/core-7.1.6.tgz#3733cbee4317429bc87c62b29cf8587dba7baeb3"
   integrity sha1-NzPL7kMXQpvIfGKynPhYfbp7rrM=
@@ -46,12 +46,43 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+"@babel/core@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/core/-/core-7.2.0.tgz#a4dd3814901998e93340f0086e9867fefa163ada"
+  integrity sha1-pN04FJAZmOkzQPAIbphn/voWOto=
+  dependencies:
+    "@babel/code-frame" "^7.0.0"
+    "@babel/generator" "^7.2.0"
+    "@babel/helpers" "^7.2.0"
+    "@babel/parser" "^7.2.0"
+    "@babel/template" "^7.1.2"
+    "@babel/traverse" "^7.1.6"
+    "@babel/types" "^7.2.0"
+    convert-source-map "^1.1.0"
+    debug "^4.1.0"
+    json5 "^2.1.0"
+    lodash "^4.17.10"
+    resolve "^1.3.2"
+    semver "^5.4.1"
+    source-map "^0.5.0"
+
 "@babel/generator@^7.0.0", "@babel/generator@^7.1.6":
   version "7.1.6"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/generator/-/generator-7.1.6.tgz#001303cf87a5b9d093494a4bf251d7b5d03d3999"
   integrity sha1-ABMDz4eludCTSUpL8lHXtdA9OZk=
   dependencies:
     "@babel/types" "^7.1.6"
+    jsesc "^2.5.1"
+    lodash "^4.17.10"
+    source-map "^0.5.0"
+    trim-right "^1.0.1"
+
+"@babel/generator@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/generator/-/generator-7.2.0.tgz#eaf3821fa0301d9d4aef88e63d4bcc19b73ba16c"
+  integrity sha1-6vOCH6AwHZ1K74jmPUvMGbc7oWw=
+  dependencies:
+    "@babel/types" "^7.2.0"
     jsesc "^2.5.1"
     lodash "^4.17.10"
     source-map "^0.5.0"
@@ -88,6 +119,17 @@
     "@babel/helper-hoist-variables" "^7.0.0"
     "@babel/traverse" "^7.1.0"
     "@babel/types" "^7.0.0"
+
+"@babel/helper-create-class-features-plugin@^7.2.1":
+  version "7.2.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helper-create-class-features-plugin/-/helper-create-class-features-plugin-7.2.1.tgz#f6e8027291669ef64433220dc8327531233f1161"
+  integrity sha1-9ugCcpFmnvZEMyINyDJ1MSM/EWE=
+  dependencies:
+    "@babel/helper-function-name" "^7.1.0"
+    "@babel/helper-member-expression-to-functions" "^7.0.0"
+    "@babel/helper-optimise-call-expression" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-replace-supers" "^7.1.0"
 
 "@babel/helper-define-map@^7.1.0":
   version "7.1.0"
@@ -229,6 +271,15 @@
     "@babel/traverse" "^7.1.5"
     "@babel/types" "^7.1.5"
 
+"@babel/helpers@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helpers/-/helpers-7.2.0.tgz#8335f3140f3144270dc63c4732a4f8b0a50b7a21"
+  integrity sha1-gzXzFA8xRCcNxjxHMqT4sKULeiE=
+  dependencies:
+    "@babel/template" "^7.1.2"
+    "@babel/traverse" "^7.1.5"
+    "@babel/types" "^7.2.0"
+
 "@babel/highlight@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/highlight/-/highlight-7.0.0.tgz#f710c38c8d458e6dd9a201afb637fcb781ce99e4"
@@ -243,6 +294,11 @@
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/parser/-/parser-7.1.6.tgz#16e97aca1ec1062324a01c5a6a7d0df8dd189854"
   integrity sha1-Ful6yh7BBiMkoBxaan0N+N0YmFQ=
 
+"@babel/parser@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/parser/-/parser-7.2.0.tgz#02d01dbc330b6cbf36b76ac93c50752c69027065"
+  integrity sha1-AtAdvDMLbL82t2rJPFB1LGkCcGU=
+
 "@babel/plugin-proposal-async-generator-functions@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.1.0.tgz#41c1a702e10081456e23a7b74d891922dd1bb6ce"
@@ -252,17 +308,22 @@
     "@babel/helper-remap-async-to-generator" "^7.1.0"
     "@babel/plugin-syntax-async-generators" "^7.0.0"
 
-"@babel/plugin-proposal-class-properties@^7.1.0":
-  version "7.1.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.1.0.tgz#9af01856b1241db60ec8838d84691aa0bd1e8df4"
-  integrity sha1-mvAYVrEkHbYOyIONhGkaoL0ejfQ=
+"@babel/plugin-proposal-async-generator-functions@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.2.0.tgz#b289b306669dce4ad20b0252889a15768c9d417e"
+  integrity sha1-somzBmadzkrSCwJSiJoVdoydQX4=
   dependencies:
-    "@babel/helper-function-name" "^7.1.0"
-    "@babel/helper-member-expression-to-functions" "^7.0.0"
-    "@babel/helper-optimise-call-expression" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/helper-replace-supers" "^7.1.0"
-    "@babel/plugin-syntax-class-properties" "^7.0.0"
+    "@babel/helper-remap-async-to-generator" "^7.1.0"
+    "@babel/plugin-syntax-async-generators" "^7.2.0"
+
+"@babel/plugin-proposal-class-properties@^7.2.1":
+  version "7.2.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-class-properties/-/plugin-proposal-class-properties-7.2.1.tgz#c734a53e0a1ec40fe5c22ee5069d26da3b187d05"
+  integrity sha1-xzSlPgoexA/lwi7lBp0m2jsYfQU=
+  dependencies:
+    "@babel/helper-create-class-features-plugin" "^7.2.1"
+    "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-proposal-json-strings@^7.0.0":
   version "7.0.0"
@@ -272,6 +333,14 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-json-strings" "^7.0.0"
 
+"@babel/plugin-proposal-json-strings@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-json-strings/-/plugin-proposal-json-strings-7.2.0.tgz#568ecc446c6148ae6b267f02551130891e29f317"
+  integrity sha1-Vo7MRGxhSK5rJn8CVREwiR4p8xc=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-json-strings" "^7.2.0"
+
 "@babel/plugin-proposal-object-rest-spread@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0.tgz#9a17b547f64d0676b6c9cecd4edf74a82ab85e7e"
@@ -279,6 +348,14 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-object-rest-spread" "^7.0.0"
+
+"@babel/plugin-proposal-object-rest-spread@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.2.0.tgz#88f5fec3e7ad019014c97f7ee3c992f0adbf7fb8"
+  integrity sha1-iPX+w+etAZAUyX9+48mS8K2/f7g=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
 
 "@babel/plugin-proposal-optional-catch-binding@^7.0.0":
   version "7.0.0"
@@ -288,10 +365,27 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-catch-binding" "^7.0.0"
 
+"@babel/plugin-proposal-optional-catch-binding@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.2.0.tgz#135d81edb68a081e55e56ec48541ece8065c38f5"
+  integrity sha1-E12B7baKCB5V5W7EhUHs6AZcOPU=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-syntax-optional-catch-binding" "^7.2.0"
+
 "@babel/plugin-proposal-unicode-property-regex@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0.tgz#498b39cd72536cd7c4b26177d030226eba08cd33"
   integrity sha1-SYs5zXJTbNfEsmF30DAibroIzTM=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-regex" "^7.0.0"
+    regexpu-core "^4.2.0"
+
+"@babel/plugin-proposal-unicode-property-regex@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.2.0.tgz#abe7281fe46c95ddc143a65e5358647792039520"
+  integrity sha1-q+coH+Rsld3BQ6ZeU1hkd5IDlSA=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-regex" "^7.0.0"
@@ -304,10 +398,10 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-syntax-class-properties@^7.0.0":
-  version "7.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-class-properties/-/plugin-syntax-class-properties-7.0.0.tgz#e051af5d300cbfbcec4a7476e37a803489881634"
-  integrity sha1-4FGvXTAMv7zsSnR243qANImIFjQ=
+"@babel/plugin-syntax-async-generators@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.2.0.tgz#69e1f0db34c6f5a0cf7e2b3323bf159a76c8cb7f"
+  integrity sha1-aeHw2zTG9aDPfiszI78VmnbIy38=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -325,6 +419,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-syntax-json-strings@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-json-strings/-/plugin-syntax-json-strings-7.2.0.tgz#72bd13f6ffe1d25938129d2a186b11fd62951470"
+  integrity sha1-cr0T9v/h0lk4Ep0qGGsR/WKVFHA=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-syntax-jsx@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0.tgz#034d5e2b4e14ccaea2e4c137af7e4afb39375ffd"
@@ -339,10 +440,24 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-syntax-object-rest-spread@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.2.0.tgz#3b7a3e733510c57e820b9142a6579ac8b0dfad2e"
+  integrity sha1-O3o+czUQxX6CC5FCpleayLDfrS4=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-syntax-optional-catch-binding@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0.tgz#886f72008b3a8b185977f7cb70713b45e51ee475"
   integrity sha1-iG9yAIs6ixhZd/fLcHE7ReUe5HU=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-syntax-optional-catch-binding@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.2.0.tgz#a94013d6eda8908dfe6a477e7f9eda85656ecf5c"
+  integrity sha1-qUAT1u2okI3+akd+f57ahWVuz1w=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -360,10 +475,26 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-arrow-functions@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.2.0.tgz#9aeafbe4d6ffc6563bf8f8372091628f00779550"
+  integrity sha1-mur75Nb/xlY7+Pg3IJFijwB3lVA=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-async-to-generator@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.1.0.tgz#109e036496c51dd65857e16acab3bafdf3c57811"
   integrity sha1-EJ4DZJbFHdZYV+FqyrO6/fPFeBE=
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-remap-async-to-generator" "^7.1.0"
+
+"@babel/plugin-transform-async-to-generator@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.2.0.tgz#68b8a438663e88519e65b776f8938f3445b1a2ff"
+  integrity sha1-aLikOGY+iFGeZbd2+JOPNEWxov8=
   dependencies:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -376,10 +507,25 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-block-scoped-functions@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-block-scoped-functions/-/plugin-transform-block-scoped-functions-7.2.0.tgz#5d3cc11e8d5ddd752aa64c9148d0db6cb79fd190"
+  integrity sha1-XTzBHo1d3XUqpkyRSNDbbLef0ZA=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-block-scoping@^7.1.5":
   version "7.1.5"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.1.5.tgz#3e8e0bc9a5104519923302a24f748f72f2f61f37"
   integrity sha1-Po4LyaUQRRmSMwKiT3SPcvL2Hzc=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    lodash "^4.17.10"
+
+"@babel/plugin-transform-block-scoping@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.2.0.tgz#f17c49d91eedbcdf5dd50597d16f5f2f770132d4"
+  integrity sha1-8XxJ2R7tvN9d1QWX0W9fL3cBMtQ=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     lodash "^4.17.10"
@@ -398,6 +544,20 @@
     "@babel/helper-split-export-declaration" "^7.0.0"
     globals "^11.1.0"
 
+"@babel/plugin-transform-classes@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-classes/-/plugin-transform-classes-7.2.0.tgz#374f8876075d7d21fea55aeb5c53561259163f96"
+  integrity sha1-N0+IdgddfSH+pVrrXFNWElkWP5Y=
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.0.0"
+    "@babel/helper-define-map" "^7.1.0"
+    "@babel/helper-function-name" "^7.1.0"
+    "@babel/helper-optimise-call-expression" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-replace-supers" "^7.1.0"
+    "@babel/helper-split-export-declaration" "^7.0.0"
+    globals "^11.1.0"
+
 "@babel/plugin-transform-computed-properties@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0.tgz#2fbb8900cd3e8258f2a2ede909b90e7556185e31"
@@ -405,10 +565,24 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-computed-properties@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.2.0.tgz#83a7df6a658865b1c8f641d510c6f3af220216da"
+  integrity sha1-g6ffamWIZbHI9kHVEMbzryICFto=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-destructuring@^7.0.0":
   version "7.1.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.1.3.tgz#e69ff50ca01fac6cb72863c544e516c2b193012f"
   integrity sha1-5p/1DKAfrGy3KGPFROUWwrGTAS8=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-destructuring@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.2.0.tgz#e75269b4b7889ec3a332cd0d0c8cff8fed0dc6f3"
+  integrity sha1-51JptLeInsOjMs0NDIz/j+0NxvM=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -421,6 +595,15 @@
     "@babel/helper-regex" "^7.0.0"
     regexpu-core "^4.1.3"
 
+"@babel/plugin-transform-dotall-regex@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.2.0.tgz#f0aabb93d120a8ac61e925ea0ba440812dbe0e49"
+  integrity sha1-8Kq7k9EgqKxh6SXqC6RAgS2+Dkk=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-regex" "^7.0.0"
+    regexpu-core "^4.1.3"
+
 "@babel/plugin-transform-duplicate-keys@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.0.0.tgz#a0601e580991e7cace080e4cf919cfd58da74e86"
@@ -428,10 +611,25 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-duplicate-keys@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.2.0.tgz#d952c4930f312a4dbfff18f0b2914e60c35530b3"
+  integrity sha1-2VLEkw8xKk2//xjwspFOYMNVMLM=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-exponentiation-operator@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.1.0.tgz#9c34c2ee7fd77e02779cfa37e403a2e1003ccc73"
   integrity sha1-nDTC7n/XfgJ3nPo35AOi4QA8zHM=
+  dependencies:
+    "@babel/helper-builder-binary-assignment-operator-visitor" "^7.1.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-exponentiation-operator@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.2.0.tgz#a63868289e5b4007f7054d46491af51435766008"
+  integrity sha1-pjhoKJ5bQAf3BU1GSRr1FDV2YAg=
   dependencies:
     "@babel/helper-builder-binary-assignment-operator-visitor" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -451,10 +649,25 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-for-of@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.2.0.tgz#ab7468befa80f764bb03d3cb5eef8cc998e1cad9"
+  integrity sha1-q3RovvqA92S7A9PLXu+MyZjhytk=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-function-name@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-function-name/-/plugin-transform-function-name-7.1.0.tgz#29c5550d5c46208e7f730516d41eeddd4affadbb"
   integrity sha1-KcVVDVxGII5/cwUW1B7t3Ur/rbs=
+  dependencies:
+    "@babel/helper-function-name" "^7.1.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-function-name@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-function-name/-/plugin-transform-function-name-7.2.0.tgz#f7930362829ff99a3174c39f0afcc024ef59731a"
+  integrity sha1-95MDYoKf+ZoxdMOfCvzAJO9Zcxo=
   dependencies:
     "@babel/helper-function-name" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -466,10 +679,25 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-literals@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-literals/-/plugin-transform-literals-7.2.0.tgz#690353e81f9267dad4fd8cfd77eafa86aba53ea1"
+  integrity sha1-aQNT6B+SZ9rU/Yz9d+r6hqulPqE=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-modules-amd@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-amd/-/plugin-transform-modules-amd-7.1.0.tgz#f9e0a7072c12e296079b5a59f408ff5b97bf86a8"
   integrity sha1-+eCnBywS4pYHm1pZ9Aj/W5e/hqg=
+  dependencies:
+    "@babel/helper-module-transforms" "^7.1.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-modules-amd@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-amd/-/plugin-transform-modules-amd-7.2.0.tgz#82a9bce45b95441f617a24011dc89d12da7f4ee6"
+  integrity sha1-gqm85FuVRB9heiQBHcidEtp/TuY=
   dependencies:
     "@babel/helper-module-transforms" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -483,6 +711,15 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-simple-access" "^7.1.0"
 
+"@babel/plugin-transform-modules-commonjs@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.2.0.tgz#c4f1933f5991d5145e9cfad1dfd848ea1727f404"
+  integrity sha1-xPGTP1mR1RRenPrR39hI6hcn9AQ=
+  dependencies:
+    "@babel/helper-module-transforms" "^7.1.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-simple-access" "^7.1.0"
+
 "@babel/plugin-transform-modules-systemjs@^7.0.0":
   version "7.1.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.1.3.tgz#2119a3e3db612fd74a19d88652efbfe9613a5db0"
@@ -491,10 +728,26 @@
     "@babel/helper-hoist-variables" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-modules-systemjs@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.2.0.tgz#912bfe9e5ff982924c81d0937c92d24994bb9068"
+  integrity sha1-kSv+nl/5gpJMgdCTfJLSSZS7kGg=
+  dependencies:
+    "@babel/helper-hoist-variables" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-modules-umd@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.1.0.tgz#a29a7d85d6f28c3561c33964442257cc6a21f2a8"
   integrity sha1-opp9hdbyjDVhwzlkRCJXzGoh8qg=
+  dependencies:
+    "@babel/helper-module-transforms" "^7.1.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-modules-umd@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.2.0.tgz#7678ce75169f0877b8eb2235538c074268dd01ae"
+  integrity sha1-dnjOdRafCHe46yI1U4wHQmjdAa4=
   dependencies:
     "@babel/helper-module-transforms" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -514,10 +767,27 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-replace-supers" "^7.1.0"
 
+"@babel/plugin-transform-object-super@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.2.0.tgz#b35d4c10f56bab5d650047dad0f1d8e8814b6598"
+  integrity sha1-s11MEPVrq11lAEfa0PHY6IFLZZg=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-replace-supers" "^7.1.0"
+
 "@babel/plugin-transform-parameters@^7.1.0":
   version "7.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.1.0.tgz#44f492f9d618c9124026e62301c296bf606a7aed"
   integrity sha1-RPSS+dYYyRJAJuYjAcKWv2Bqeu0=
+  dependencies:
+    "@babel/helper-call-delegate" "^7.1.0"
+    "@babel/helper-get-function-arity" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-parameters@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.2.0.tgz#0d5ad15dc805e2ea866df4dd6682bfe76d1408c2"
+  integrity sha1-DVrRXcgF4uqGbfTdZoK/520UCMI=
   dependencies:
     "@babel/helper-call-delegate" "^7.1.0"
     "@babel/helper-get-function-arity" "^7.0.0"
@@ -546,6 +816,13 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-shorthand-properties@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.2.0.tgz#6333aee2f8d6ee7e28615457298934a3b46198f0"
+  integrity sha1-YzOu4vjW7n4oYVRXKYk0o7RhmPA=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-spread@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-spread/-/plugin-transform-spread-7.0.0.tgz#93583ce48dd8c85e53f3a46056c856e4af30b49b"
@@ -553,10 +830,25 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-spread@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-spread/-/plugin-transform-spread-7.2.0.tgz#0c76c12a3b5826130078ee8ec84a7a8e4afd79c4"
+  integrity sha1-DHbBKjtYJhMAeO6OyEp6jkr9ecQ=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-sticky-regex@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0.tgz#30a9d64ac2ab46eec087b8530535becd90e73366"
   integrity sha1-MKnWSsKrRu7Ah7hTBTW+zZDnM2Y=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-regex" "^7.0.0"
+
+"@babel/plugin-transform-sticky-regex@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.2.0.tgz#a1e454b5995560a9c1e0d537dfc15061fd2687e1"
+  integrity sha1-oeRUtZlVYKnB4NU338FQYf0mh+E=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-regex" "^7.0.0"
@@ -569,10 +861,25 @@
     "@babel/helper-annotate-as-pure" "^7.0.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
+"@babel/plugin-transform-template-literals@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-template-literals/-/plugin-transform-template-literals-7.2.0.tgz#d87ed01b8eaac7a92473f608c97c089de2ba1e5b"
+  integrity sha1-2H7QG46qx6kkc/YIyXwIneK6Hls=
+  dependencies:
+    "@babel/helper-annotate-as-pure" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+
 "@babel/plugin-transform-typeof-symbol@^7.0.0":
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0.tgz#4dcf1e52e943e5267b7313bff347fdbe0f81cec9"
   integrity sha1-Tc8eUulD5SZ7cxO/80f9vg+Bzsk=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+
+"@babel/plugin-transform-typeof-symbol@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.2.0.tgz#117d2bcec2fbf64b4b59d1f9819894682d29f2b2"
+  integrity sha1-EX0rzsL79ktLWdH5gZiUaC0p8rI=
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
@@ -593,7 +900,16 @@
     "@babel/helper-regex" "^7.0.0"
     regexpu-core "^4.1.3"
 
-"@babel/preset-env@^7.0.0", "@babel/preset-env@^7.1.0":
+"@babel/plugin-transform-unicode-regex@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.2.0.tgz#4eb8db16f972f8abb5062c161b8b115546ade08b"
+  integrity sha1-TrjbFvly+Ku1BiwWG4sRVUat4Is=
+  dependencies:
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/helper-regex" "^7.0.0"
+    regexpu-core "^4.1.3"
+
+"@babel/preset-env@^7.0.0":
   version "7.1.6"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/preset-env/-/preset-env-7.1.6.tgz#a0bf4b96b6bfcf6e000afc5b72b4abe7cc13ae97"
   integrity sha1-oL9Llra/z24ACvxbcrSr58wTrpc=
@@ -636,6 +952,53 @@
     "@babel/plugin-transform-typeof-symbol" "^7.0.0"
     "@babel/plugin-transform-unicode-regex" "^7.0.0"
     browserslist "^4.1.0"
+    invariant "^2.2.2"
+    js-levenshtein "^1.1.3"
+    semver "^5.3.0"
+
+"@babel/preset-env@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/preset-env/-/preset-env-7.2.0.tgz#a5030e7e4306af5a295dd5d7c78dc5464af3fee2"
+  integrity sha1-pQMOfkMGr1opXdXXx43FRkrz/uI=
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0"
+    "@babel/helper-plugin-utils" "^7.0.0"
+    "@babel/plugin-proposal-async-generator-functions" "^7.2.0"
+    "@babel/plugin-proposal-json-strings" "^7.2.0"
+    "@babel/plugin-proposal-object-rest-spread" "^7.2.0"
+    "@babel/plugin-proposal-optional-catch-binding" "^7.2.0"
+    "@babel/plugin-proposal-unicode-property-regex" "^7.2.0"
+    "@babel/plugin-syntax-async-generators" "^7.2.0"
+    "@babel/plugin-syntax-object-rest-spread" "^7.2.0"
+    "@babel/plugin-syntax-optional-catch-binding" "^7.2.0"
+    "@babel/plugin-transform-arrow-functions" "^7.2.0"
+    "@babel/plugin-transform-async-to-generator" "^7.2.0"
+    "@babel/plugin-transform-block-scoped-functions" "^7.2.0"
+    "@babel/plugin-transform-block-scoping" "^7.2.0"
+    "@babel/plugin-transform-classes" "^7.2.0"
+    "@babel/plugin-transform-computed-properties" "^7.2.0"
+    "@babel/plugin-transform-destructuring" "^7.2.0"
+    "@babel/plugin-transform-dotall-regex" "^7.2.0"
+    "@babel/plugin-transform-duplicate-keys" "^7.2.0"
+    "@babel/plugin-transform-exponentiation-operator" "^7.2.0"
+    "@babel/plugin-transform-for-of" "^7.2.0"
+    "@babel/plugin-transform-function-name" "^7.2.0"
+    "@babel/plugin-transform-literals" "^7.2.0"
+    "@babel/plugin-transform-modules-amd" "^7.2.0"
+    "@babel/plugin-transform-modules-commonjs" "^7.2.0"
+    "@babel/plugin-transform-modules-systemjs" "^7.2.0"
+    "@babel/plugin-transform-modules-umd" "^7.2.0"
+    "@babel/plugin-transform-new-target" "^7.0.0"
+    "@babel/plugin-transform-object-super" "^7.2.0"
+    "@babel/plugin-transform-parameters" "^7.2.0"
+    "@babel/plugin-transform-regenerator" "^7.0.0"
+    "@babel/plugin-transform-shorthand-properties" "^7.2.0"
+    "@babel/plugin-transform-spread" "^7.2.0"
+    "@babel/plugin-transform-sticky-regex" "^7.2.0"
+    "@babel/plugin-transform-template-literals" "^7.2.0"
+    "@babel/plugin-transform-typeof-symbol" "^7.2.0"
+    "@babel/plugin-transform-unicode-regex" "^7.2.0"
+    browserslist "^4.3.4"
     invariant "^2.2.2"
     js-levenshtein "^1.1.3"
     semver "^5.3.0"
@@ -688,6 +1051,15 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@babel/types@^7.2.0":
+  version "7.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/types/-/types-7.2.0.tgz#7941c5b2d8060e06f9601d6be7c223eef906d5d8"
+  integrity sha1-eUHFstgGDgb5YB1r58Ij7vkG1dg=
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.10"
+    to-fast-properties "^2.0.0"
+
 "@iamstarkov/listr-update-renderer@0.4.1":
   version "0.4.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@iamstarkov/listr-update-renderer/-/listr-update-renderer-0.4.1.tgz#d7c48092a2dcf90fd672b6c8b458649cb350c77e"
@@ -702,53 +1074,52 @@
     log-update "^2.3.0"
     strip-ansi "^3.0.1"
 
-"@lerna/add@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/add/-/add-3.5.0.tgz#3518b3d4afc3743b7227b1ee3534114eb9575888"
-  integrity sha1-NRiz1K/DdDtyJ7HuNTQRTrlXWIg=
+"@lerna/add@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/add/-/add-3.6.0.tgz#eea53efff0b3237774ddac6eaa84957140e89238"
+  integrity sha1-7qU+//CzI3d03axuqoSVcUDokjg=
   dependencies:
-    "@lerna/bootstrap" "^3.5.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
+    "@lerna/bootstrap" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
     "@lerna/npm-conf" "^3.4.1"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
     dedent "^0.7.0"
-    npm-package-arg "^6.0.0"
+    libnpm "^2.0.1"
     p-map "^1.2.0"
-    pacote "^9.1.0"
     semver "^5.5.0"
 
-"@lerna/batch-packages@^3.1.2":
-  version "3.1.2"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/batch-packages/-/batch-packages-3.1.2.tgz#74b5312a01a8916204cbc71237ffbe93144b99df"
-  integrity sha1-dLUxKgGokWIEy8cSN/++kxRLmd8=
+"@lerna/batch-packages@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/batch-packages/-/batch-packages-3.6.0.tgz#66cf3ce914bbd0532071c58d5f0c913315054158"
+  integrity sha1-Zs886RS70FMgccWNXwyRMxUFQVg=
   dependencies:
-    "@lerna/package-graph" "^3.1.2"
-    "@lerna/validation-error" "^3.0.0"
-    npmlog "^4.1.2"
+    "@lerna/package-graph" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
+    libnpm "^2.0.1"
 
-"@lerna/bootstrap@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/bootstrap/-/bootstrap-3.5.0.tgz#4d21ef0d1e648c8121432443a7d80c9442756347"
-  integrity sha1-TSHvDR5kjIEhQyRDp9gMlEJ1Y0c=
+"@lerna/bootstrap@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/bootstrap/-/bootstrap-3.6.0.tgz#a47cd484ad60638d518a606d627b9997d5f7c960"
+  integrity sha1-pHzUhK1gY41RimBtYnuZl9X3yWA=
   dependencies:
-    "@lerna/batch-packages" "^3.1.2"
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
+    "@lerna/batch-packages" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
     "@lerna/has-npm-version" "^3.3.0"
     "@lerna/npm-conf" "^3.4.1"
-    "@lerna/npm-install" "^3.3.0"
-    "@lerna/rimraf-dir" "^3.3.0"
-    "@lerna/run-lifecycle" "^3.4.1"
+    "@lerna/npm-install" "^3.6.0"
+    "@lerna/package-graph" "^3.6.0"
+    "@lerna/rimraf-dir" "^3.6.0"
+    "@lerna/run-lifecycle" "^3.6.0"
     "@lerna/run-parallel-batches" "^3.0.0"
-    "@lerna/symlink-binary" "^3.3.0"
-    "@lerna/symlink-dependencies" "^3.3.0"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/symlink-binary" "^3.6.0"
+    "@lerna/symlink-dependencies" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
     dedent "^0.7.0"
     get-port "^3.2.0"
+    libnpm "^2.0.1"
     multimatch "^2.1.0"
-    npm-package-arg "^6.0.0"
-    npmlog "^4.1.2"
     p-finally "^1.0.0"
     p-map "^1.2.0"
     p-map-series "^1.0.0"
@@ -756,24 +1127,24 @@
     read-package-tree "^5.1.6"
     semver "^5.5.0"
 
-"@lerna/changed@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/changed/-/changed-3.5.0.tgz#c96c4bde6d78f4b2a7b3b3e2511bf78cb6aabe17"
-  integrity sha1-yWxL3m149LKns7PiURv3jLaqvhc=
+"@lerna/changed@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/changed/-/changed-3.6.0.tgz#a6c97b9c4829d294a1d8e8a7140667bc89c996e2"
+  integrity sha1-psl7nEgp0pSh2OinFAZnvInJluI=
   dependencies:
-    "@lerna/collect-updates" "^3.5.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/listable" "^3.0.0"
-    "@lerna/output" "^3.0.0"
-    "@lerna/version" "^3.5.0"
+    "@lerna/collect-updates" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/listable" "^3.6.0"
+    "@lerna/output" "^3.6.0"
+    "@lerna/version" "^3.6.0"
 
-"@lerna/check-working-tree@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/check-working-tree/-/check-working-tree-3.5.0.tgz#015f90247fa0b44a940eab0dd6a9da2ae5b8f455"
-  integrity sha1-AV+QJH+gtEqUDqsN1qnaKuW49FU=
+"@lerna/check-working-tree@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/check-working-tree/-/check-working-tree-3.6.0.tgz#638ee7f5976fe607d544629b1ef4ae67887984b5"
+  integrity sha1-Y47n9Zdv5gfVRGKbHvSuZ4h5hLU=
   dependencies:
-    "@lerna/describe-ref" "^3.5.0"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/describe-ref" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
 
 "@lerna/child-process@^3.3.0":
   version "3.3.0"
@@ -784,95 +1155,95 @@
     execa "^1.0.0"
     strong-log-transformer "^2.0.0"
 
-"@lerna/clean@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/clean/-/clean-3.5.0.tgz#38e0e58443fa43c19b3eeffcafa46cf254a328ee"
-  integrity sha1-OODlhEP6Q8GbPu/8r6Rs8lSjKO4=
+"@lerna/clean@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/clean/-/clean-3.6.0.tgz#9a9d73324389cba694b19a913229c19d58e62485"
+  integrity sha1-mp1zMkOJy6aUsZqRMinBnVjmJIU=
   dependencies:
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
-    "@lerna/prompt" "^3.3.1"
-    "@lerna/rimraf-dir" "^3.3.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
+    "@lerna/prompt" "^3.6.0"
+    "@lerna/rimraf-dir" "^3.6.0"
     p-map "^1.2.0"
     p-map-series "^1.0.0"
     p-waterfall "^1.0.0"
 
-"@lerna/cli@^3.2.0":
-  version "3.2.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/cli/-/cli-3.2.0.tgz#3ed25bcbc0b8f0878bc6a102ee0296f01476cfdf"
-  integrity sha1-PtJby8C48IeLxqEC7gKW8BR2z98=
+"@lerna/cli@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/cli/-/cli-3.6.0.tgz#f86c16a095bd5506e927b9385ddefb13c605b1df"
+  integrity sha1-+GwWoJW9VQbpJ7k4Xd77E8YFsd8=
   dependencies:
     "@lerna/global-options" "^3.1.3"
     dedent "^0.7.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     yargs "^12.0.1"
 
-"@lerna/collect-updates@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/collect-updates/-/collect-updates-3.5.0.tgz#e81c17f89367e71ff59e0f244a523a1dc13891c5"
-  integrity sha1-6BwX+JNn5x/1ng8kSlI6HcE4kcU=
+"@lerna/collect-updates@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/collect-updates/-/collect-updates-3.6.0.tgz#8520d64852c5059b453db53afee22539853f2bde"
+  integrity sha1-hSDWSFLFBZtFPbU6/uIlOYU/K94=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/describe-ref" "^3.5.0"
+    "@lerna/describe-ref" "^3.6.0"
+    libnpm "^2.0.1"
     minimatch "^3.0.4"
-    npmlog "^4.1.2"
     slash "^1.0.0"
 
-"@lerna/command@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/command/-/command-3.5.0.tgz#6b5cc530653aaa631061c1c234f3bc4408cb9613"
-  integrity sha1-a1zFMGU6qmMQYcHCNPO8RAjLlhM=
+"@lerna/command@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/command/-/command-3.6.0.tgz#b3289d1f72d2bebb7375d424b1778121a3d4e82c"
+  integrity sha1-syidH3LSvrtzddQksXeBIaPU6Cw=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/package-graph" "^3.1.2"
-    "@lerna/project" "^3.5.0"
-    "@lerna/validation-error" "^3.0.0"
-    "@lerna/write-log-file" "^3.0.0"
+    "@lerna/package-graph" "^3.6.0"
+    "@lerna/project" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
+    "@lerna/write-log-file" "^3.6.0"
     dedent "^0.7.0"
     execa "^1.0.0"
     is-ci "^1.0.10"
+    libnpm "^2.0.1"
     lodash "^4.17.5"
-    npmlog "^4.1.2"
 
-"@lerna/conventional-commits@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/conventional-commits/-/conventional-commits-3.5.0.tgz#1c08013c48acdbdbf6400ccfbe1200a18e1f11ce"
-  integrity sha1-HAgBPEis29v2QAzPvhIAoY4fEc4=
+"@lerna/conventional-commits@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/conventional-commits/-/conventional-commits-3.6.0.tgz#b44edb60e23453d8b15dcd1accf28c421581a8c5"
+  integrity sha1-tE7bYOI0U9ixXc0azPKMQhWBqMU=
   dependencies:
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
     conventional-changelog-angular "^5.0.2"
     conventional-changelog-core "^3.1.5"
     conventional-recommended-bump "^4.0.4"
     fs-extra "^7.0.0"
     get-stream "^4.0.0"
-    npm-package-arg "^6.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     semver "^5.5.0"
 
-"@lerna/create-symlink@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/create-symlink/-/create-symlink-3.3.0.tgz#91de00fd576018ba4251f0c6a5b4b7f768f22a82"
-  integrity sha1-kd4A/VdgGLpCUfDGpbS392jyKoI=
+"@lerna/create-symlink@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/create-symlink/-/create-symlink-3.6.0.tgz#f1815cde2fc9d8d2315dfea44ee880f2f1bc65f1"
+  integrity sha1-8YFc3i/J2NIxXf6kTuiA8vG8ZfE=
   dependencies:
     cmd-shim "^2.0.2"
     fs-extra "^7.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
-"@lerna/create@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/create/-/create-3.5.0.tgz#22f64a7af7a08cfbed4af2a01ff82307ee9e0b2b"
-  integrity sha1-IvZKevegjPvtSvKgH/gjB+6eCys=
+"@lerna/create@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/create/-/create-3.6.0.tgz#4540c9ee69f63d11b3138eb5eac1942348643af1"
+  integrity sha1-RUDJ7mn2PRGzE4616sGUI0hkOvE=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/command" "^3.5.0"
+    "@lerna/command" "^3.6.0"
     "@lerna/npm-conf" "^3.4.1"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
     camelcase "^4.1.0"
     dedent "^0.7.0"
     fs-extra "^7.0.0"
     globby "^8.0.1"
     init-package-json "^1.10.3"
-    npm-package-arg "^6.0.0"
+    libnpm "^2.0.1"
+    p-reduce "^1.0.0"
     pify "^3.0.0"
     semver "^5.5.0"
     slash "^1.0.0"
@@ -880,60 +1251,60 @@
     validate-npm-package-name "^3.0.0"
     whatwg-url "^7.0.0"
 
-"@lerna/describe-ref@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/describe-ref/-/describe-ref-3.5.0.tgz#d59090d201a0e587798496417373c7fbc1151fc4"
-  integrity sha1-1ZCQ0gGg5Yd5hJZBc3PH+8EVH8Q=
+"@lerna/describe-ref@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/describe-ref/-/describe-ref-3.6.0.tgz#29eda334c81cd4c0a2942f309936bcb69a4543a0"
+  integrity sha1-Ke2jNMgc1MCilC8wmTa8tppFQ6A=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
-"@lerna/diff@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/diff/-/diff-3.5.0.tgz#4d131a1045321bcea20d743f5cc7f0d0095cf027"
-  integrity sha1-TRMaEEUyG86iDXQ/XMfw0Alc8Cc=
+"@lerna/diff@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/diff/-/diff-3.6.0.tgz#ea8a77e712daf951c05316c81fe4065bf6b5e22c"
+  integrity sha1-6op35xLa+VHAUxbIH+QGW/a14iw=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/validation-error" "^3.0.0"
-    npmlog "^4.1.2"
+    "@lerna/command" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
+    libnpm "^2.0.1"
 
-"@lerna/exec@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/exec/-/exec-3.5.0.tgz#98f4e8719681c07a739241fadb4cbdbd9d518982"
-  integrity sha1-mPTocZaBwHpzkkH620y9vZ1RiYI=
+"@lerna/exec@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/exec/-/exec-3.6.0.tgz#757e96e890e436a31efc59dc72c5a7c2944d1a44"
+  integrity sha1-dX6W6JDkNqMe/FnccsWnwpRNGkQ=
   dependencies:
-    "@lerna/batch-packages" "^3.1.2"
+    "@lerna/batch-packages" "^3.6.0"
     "@lerna/child-process" "^3.3.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
     "@lerna/run-parallel-batches" "^3.0.0"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
 
-"@lerna/filter-options@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/filter-options/-/filter-options-3.5.0.tgz#34d1719908edbb52d4963c796df565a716282165"
-  integrity sha1-NNFxmQjtu1LUljx5bfVlpxYoIWU=
+"@lerna/filter-options@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/filter-options/-/filter-options-3.6.0.tgz#8100a3f2e18a9772a61138711e1fe1f14969f814"
+  integrity sha1-gQCj8uGKl3KmEThxHh/h8Ulp+BQ=
   dependencies:
-    "@lerna/collect-updates" "^3.5.0"
-    "@lerna/filter-packages" "^3.0.0"
+    "@lerna/collect-updates" "^3.6.0"
+    "@lerna/filter-packages" "^3.6.0"
     dedent "^0.7.0"
 
-"@lerna/filter-packages@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/filter-packages/-/filter-packages-3.0.0.tgz#5eb25ad1610f3e2ab845133d1f8d7d40314e838f"
-  integrity sha1-XrJa0WEPPiq4RRM9H419QDFOg48=
+"@lerna/filter-packages@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/filter-packages/-/filter-packages-3.6.0.tgz#4cad0bd5b32974b546b845283ac870d62ea4646a"
+  integrity sha1-TK0L1bMpdLVGuEUoOshw1i6kZGo=
   dependencies:
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
+    libnpm "^2.0.1"
     multimatch "^2.1.0"
-    npmlog "^4.1.2"
 
-"@lerna/get-npm-exec-opts@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/get-npm-exec-opts/-/get-npm-exec-opts-3.0.0.tgz#8fc7866e8d8e9a2f2dc385287ba32eb44de8bdeb"
-  integrity sha1-j8eGbo2Omi8tw4Uoe6MutE3oves=
+"@lerna/get-npm-exec-opts@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/get-npm-exec-opts/-/get-npm-exec-opts-3.6.0.tgz#ea595eb28d1f34ba61a92ee8391f374282b4b76e"
+  integrity sha1-6lleso0fNLphqS7oOR83QoK0t24=
   dependencies:
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
 "@lerna/global-options@^3.1.3":
   version "3.1.3"
@@ -948,68 +1319,69 @@
     "@lerna/child-process" "^3.3.0"
     semver "^5.5.0"
 
-"@lerna/import@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/import/-/import-3.5.0.tgz#b42d368378d53c664a3324c1e2fc656a23819f12"
-  integrity sha1-tC02g3jVPGZKMyTB4vxlaiOBnxI=
+"@lerna/import@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/import/-/import-3.6.0.tgz#84ef5eea61ab9a284054be32367906d092aadab5"
+  integrity sha1-hO9e6mGrmihAVL4yNnkG0JKq2rU=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/prompt" "^3.3.1"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/prompt" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
     dedent "^0.7.0"
     fs-extra "^7.0.0"
     p-map-series "^1.0.0"
 
-"@lerna/init@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/init/-/init-3.5.0.tgz#40796d70dc261907e4149df62db8acbda8dc56fc"
-  integrity sha1-QHltcNwmGQfkFJ32LbisvajcVvw=
+"@lerna/init@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/init/-/init-3.6.0.tgz#6e23c3db632b713e23250d33519ed844a79a145e"
+  integrity sha1-biPD22MrcT4jJQ0zUZ7YRKeaFF4=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/command" "^3.5.0"
+    "@lerna/command" "^3.6.0"
     fs-extra "^7.0.0"
     p-map "^1.2.0"
     write-json-file "^2.3.0"
 
-"@lerna/link@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/link/-/link-3.5.0.tgz#ae7fe19df1bb0555dfa5aafcaf45c7fad537d81a"
-  integrity sha1-rn/hnfG7BVXfpar8r0XH+tU32Bo=
+"@lerna/link@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/link/-/link-3.6.0.tgz#490f14216b489fd66d9d3d3d0765f75dbbf52178"
+  integrity sha1-SQ8UIWtIn9ZtnT09B2X3Xbv1IXg=
   dependencies:
-    "@lerna/command" "^3.5.0"
-    "@lerna/package-graph" "^3.1.2"
-    "@lerna/symlink-dependencies" "^3.3.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/package-graph" "^3.6.0"
+    "@lerna/symlink-dependencies" "^3.6.0"
     p-map "^1.2.0"
     slash "^1.0.0"
 
-"@lerna/list@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/list/-/list-3.5.0.tgz#ae38724f1cdc588fde8495385e3b1a9aeac0c80f"
-  integrity sha1-rjhyTxzcWI/ehJU4XjsamurAyA8=
+"@lerna/list@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/list/-/list-3.6.0.tgz#18ae4b1e375ef1329261c9d21be27098ca0edf63"
+  integrity sha1-GK5LHjde8TKSYcnSG+JwmMoO32M=
   dependencies:
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
-    "@lerna/listable" "^3.0.0"
-    "@lerna/output" "^3.0.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
+    "@lerna/listable" "^3.6.0"
+    "@lerna/output" "^3.6.0"
 
-"@lerna/listable@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/listable/-/listable-3.0.0.tgz#27209b1382c87abdbc964220e75c247d803d4199"
-  integrity sha1-JyCbE4LIer28lkIg51wkfYA9QZk=
+"@lerna/listable@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/listable/-/listable-3.6.0.tgz#25c9cc062ae0d3e78c53da30cdf9f011696ae48f"
+  integrity sha1-JcnMBirg0+eMU9owzfnwEWlq5I8=
   dependencies:
+    "@lerna/batch-packages" "^3.6.0"
     chalk "^2.3.1"
     columnify "^1.5.4"
 
-"@lerna/log-packed@^3.0.4":
-  version "3.0.4"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/log-packed/-/log-packed-3.0.4.tgz#6d1f6ce5ca68b9971f2a27f0ecf3c50684be174a"
-  integrity sha1-bR9s5cpouZcfKifw7PPFBoS+F0o=
+"@lerna/log-packed@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/log-packed/-/log-packed-3.6.0.tgz#bed96c2bdd47f076d9957d0c6069b2edc1518145"
+  integrity sha1-vtlsK91H8HbZlX0MYGmy7cFRgUU=
   dependencies:
     byte-size "^4.0.3"
     columnify "^1.5.4"
     has-unicode "^2.0.1"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
 "@lerna/npm-conf@^3.4.1":
   version "3.4.1"
@@ -1019,159 +1391,154 @@
     config-chain "^1.1.11"
     pify "^3.0.0"
 
-"@lerna/npm-dist-tag@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-dist-tag/-/npm-dist-tag-3.3.0.tgz#e1c5ab67674216d901266a16846b21cc81ff6afd"
-  integrity sha1-4cWrZ2dCFtkBJmoWhGshzIH/av0=
+"@lerna/npm-dist-tag@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-dist-tag/-/npm-dist-tag-3.6.0.tgz#8f8c8567810bd9ee1c1277a71b57cec1acc101f4"
+  integrity sha1-j4yFZ4EL2e4cEnenG1fOwazBAfQ=
   dependencies:
-    "@lerna/child-process" "^3.3.0"
-    "@lerna/get-npm-exec-opts" "^3.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
+    npm-registry-fetch "^3.8.0"
 
-"@lerna/npm-install@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-install/-/npm-install-3.3.0.tgz#16d00ffd668d11b2386b3ac68bdac2cf8320e533"
-  integrity sha1-FtAP/WaNEbI4azrGi9rCz4Mg5TM=
+"@lerna/npm-install@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-install/-/npm-install-3.6.0.tgz#314fc0d0c35429e2b5db1e7de87b3ddb1ab77606"
+  integrity sha1-MU/A0MNUKeK12x596Hs92xq3dgY=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/get-npm-exec-opts" "^3.0.0"
+    "@lerna/get-npm-exec-opts" "^3.6.0"
     fs-extra "^7.0.0"
-    npm-package-arg "^6.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     signal-exit "^3.0.2"
     write-pkg "^3.1.0"
 
-"@lerna/npm-publish@^3.3.1":
-  version "3.3.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-publish/-/npm-publish-3.3.1.tgz#30384665d7ee387343332ece62ca231207bbabea"
-  integrity sha1-MDhGZdfuOHNDMy7OYsojEge7q+o=
+"@lerna/npm-publish@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-publish/-/npm-publish-3.6.0.tgz#8981a9744779c55955a8c4249fe6b44a0485f9d3"
+  integrity sha1-iYGpdEd5xVlVqMQkn+a0SgSF+dM=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/get-npm-exec-opts" "^3.0.0"
+    "@lerna/get-npm-exec-opts" "^3.6.0"
     "@lerna/has-npm-version" "^3.3.0"
-    "@lerna/log-packed" "^3.0.4"
+    "@lerna/log-packed" "^3.6.0"
     fs-extra "^7.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     p-map "^1.2.0"
 
-"@lerna/npm-run-script@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-run-script/-/npm-run-script-3.3.0.tgz#3c79601c27c67121155b20e039be53130217db72"
-  integrity sha1-PHlgHCfGcSEVWyDgOb5TEwIX23I=
+"@lerna/npm-run-script@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/npm-run-script/-/npm-run-script-3.6.0.tgz#4b97e6f571ae9fdabed21d5d4fc35a2b7e9d5267"
+  integrity sha1-S5fm9XGun9q+0h1dT8NaK36dUmc=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    "@lerna/get-npm-exec-opts" "^3.0.0"
-    npmlog "^4.1.2"
+    "@lerna/get-npm-exec-opts" "^3.6.0"
+    libnpm "^2.0.1"
 
-"@lerna/output@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/output/-/output-3.0.0.tgz#4ed4a30ed2f311046b714b3840a090990ba3ce35"
-  integrity sha1-TtSjDtLzEQRrcUs4QKCQmQujzjU=
+"@lerna/output@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/output/-/output-3.6.0.tgz#a69384bc685cf3b21aa1bfc697eb2b9db3333d0b"
+  integrity sha1-ppOEvGhc87Iaob/Gl+srnbMzPQs=
   dependencies:
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
-"@lerna/package-graph@^3.1.2":
-  version "3.1.2"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/package-graph/-/package-graph-3.1.2.tgz#b70298a3a8c82e12090da33233bf242223a38f20"
-  integrity sha1-twKYo6jILhIJDaMyM78kIiOjjyA=
+"@lerna/package-graph@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/package-graph/-/package-graph-3.6.0.tgz#d13e6e80d30e2e29226d335412997b9ddf646305"
+  integrity sha1-0T5ugNMOLikibTNUEpl7nd9kYwU=
   dependencies:
-    "@lerna/validation-error" "^3.0.0"
-    npm-package-arg "^6.0.0"
+    "@lerna/validation-error" "^3.6.0"
+    libnpm "^2.0.1"
     semver "^5.5.0"
 
-"@lerna/package@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/package/-/package-3.0.0.tgz#14afc9a6cb1f7f7b23c1d7c7aa81bdac7d44c0e5"
-  integrity sha1-FK/Jpssff3sjwdfHqoG9rH1EwOU=
+"@lerna/package@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/package/-/package-3.6.0.tgz#1095b91d277820b7ae8a2cfeeb73d57c6cd9b17e"
+  integrity sha1-EJW5HSd4ILeuiiz+63PVfGzZsX4=
   dependencies:
-    npm-package-arg "^6.0.0"
+    libnpm "^2.0.1"
     write-pkg "^3.1.0"
 
-"@lerna/project@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/project/-/project-3.5.0.tgz#ac5c7b3c49318552b29ccb7a471a657fd57d3091"
-  integrity sha1-rFx7PEkxhVKynMt6Rxplf9V9MJE=
+"@lerna/project@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/project/-/project-3.6.0.tgz#b5dd2b94fae6f58478be1c53962c2570498867ab"
+  integrity sha1-td0rlPrm9YR4vhxTliwlcEmIZ6s=
   dependencies:
-    "@lerna/package" "^3.0.0"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/package" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
     cosmiconfig "^5.0.2"
     dedent "^0.7.0"
     dot-prop "^4.2.0"
     glob-parent "^3.1.0"
     globby "^8.0.1"
+    libnpm "^2.0.1"
     load-json-file "^4.0.0"
-    npmlog "^4.1.2"
     p-map "^1.2.0"
     resolve-from "^4.0.0"
     write-json-file "^2.3.0"
 
-"@lerna/prompt@^3.3.1":
-  version "3.3.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/prompt/-/prompt-3.3.1.tgz#ec53f9034a7a02a671627241682947f65078ab88"
-  integrity sha1-7FP5A0p6AqZxYnJBaClH9lB4q4g=
+"@lerna/prompt@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/prompt/-/prompt-3.6.0.tgz#b17cc464dec9d830619723e879dc747367378217"
+  integrity sha1-sXzEZN7J2DBhlyPoedx0c2c3ghc=
   dependencies:
     inquirer "^6.2.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
-"@lerna/publish@^3.5.1":
-  version "3.5.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/publish/-/publish-3.5.1.tgz#20ea36e05a76755760b67c78719d424fc129f777"
-  integrity sha1-IOo24Fp2dVdgtnx4cZ1CT8Ep93c=
+"@lerna/publish@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/publish/-/publish-3.6.0.tgz#7985b8c549c83114180e99a9e291e8b82db57aac"
+  integrity sha1-eYW4xUnIMRQYDpmp4pHouC21eqw=
   dependencies:
-    "@lerna/batch-packages" "^3.1.2"
-    "@lerna/check-working-tree" "^3.5.0"
+    "@lerna/batch-packages" "^3.6.0"
+    "@lerna/check-working-tree" "^3.6.0"
     "@lerna/child-process" "^3.3.0"
-    "@lerna/collect-updates" "^3.5.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/describe-ref" "^3.5.0"
-    "@lerna/get-npm-exec-opts" "^3.0.0"
+    "@lerna/collect-updates" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/describe-ref" "^3.6.0"
+    "@lerna/get-npm-exec-opts" "^3.6.0"
     "@lerna/npm-conf" "^3.4.1"
-    "@lerna/npm-dist-tag" "^3.3.0"
-    "@lerna/npm-publish" "^3.3.1"
-    "@lerna/output" "^3.0.0"
-    "@lerna/prompt" "^3.3.1"
-    "@lerna/run-lifecycle" "^3.4.1"
+    "@lerna/npm-dist-tag" "^3.6.0"
+    "@lerna/npm-publish" "^3.6.0"
+    "@lerna/output" "^3.6.0"
+    "@lerna/prompt" "^3.6.0"
+    "@lerna/run-lifecycle" "^3.6.0"
     "@lerna/run-parallel-batches" "^3.0.0"
-    "@lerna/validation-error" "^3.0.0"
-    "@lerna/version" "^3.5.0"
+    "@lerna/validation-error" "^3.6.0"
+    "@lerna/version" "^3.6.0"
     fs-extra "^7.0.0"
-    libnpmaccess "^3.0.0"
-    npm-package-arg "^6.0.0"
+    libnpm "^2.0.1"
     npm-registry-fetch "^3.8.0"
-    npmlog "^4.1.2"
     p-finally "^1.0.0"
     p-map "^1.2.0"
     p-pipe "^1.2.0"
     p-reduce "^1.0.0"
     semver "^5.5.0"
 
-"@lerna/resolve-symlink@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/resolve-symlink/-/resolve-symlink-3.3.0.tgz#c5d99a60cb17e2ea90b3521a0ba445478d194a44"
-  integrity sha1-xdmaYMsX4uqQs1IaC6RFR40ZSkQ=
+"@lerna/resolve-symlink@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/resolve-symlink/-/resolve-symlink-3.6.0.tgz#985344796b704ff32afa923901e795e80741b86e"
+  integrity sha1-mFNEeWtwT/Mq+pI5AeeV6AdBuG4=
   dependencies:
     fs-extra "^7.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     read-cmd-shim "^1.0.1"
 
-"@lerna/rimraf-dir@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/rimraf-dir/-/rimraf-dir-3.3.0.tgz#687e9bb3668a9e540e281302a52d9a573860f5db"
-  integrity sha1-aH6bs2aKnlQOKBMCpS2aVzhg9ds=
+"@lerna/rimraf-dir@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/rimraf-dir/-/rimraf-dir-3.6.0.tgz#a02c4ad14d9a65c005021da79d545702b7085a74"
+  integrity sha1-oCxK0U2aZcAFAh2nnVRXArcIWnQ=
   dependencies:
     "@lerna/child-process" "^3.3.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     path-exists "^3.0.0"
     rimraf "^2.6.2"
 
-"@lerna/run-lifecycle@^3.4.1":
-  version "3.4.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/run-lifecycle/-/run-lifecycle-3.4.1.tgz#6d7e44eada31cb4ec78b18ef050da0d86f6c892b"
-  integrity sha1-bX5E6toxy07HixjvBQ2g2G9siSs=
+"@lerna/run-lifecycle@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/run-lifecycle/-/run-lifecycle-3.6.0.tgz#2381fd827b4a4135613e7d73d25ae76b7af5e6ef"
+  integrity sha1-I4H9gntKQTVhPn1z0lrna3r15u8=
   dependencies:
     "@lerna/npm-conf" "^3.4.1"
-    npm-lifecycle "^2.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
 "@lerna/run-parallel-batches@^3.0.0":
   version "3.0.0"
@@ -1181,40 +1548,40 @@
     p-map "^1.2.0"
     p-map-series "^1.0.0"
 
-"@lerna/run@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/run/-/run-3.5.0.tgz#f2bf479d8ef12e6a11be5a6404bb1a83eb56146c"
-  integrity sha1-8r9HnY7xLmoRvlpkBLsag+tWFGw=
+"@lerna/run@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/run/-/run-3.6.0.tgz#f545fcde889d7a1433b3f2cc444eeec39713ea62"
+  integrity sha1-9UX83oidehQzs/LMRE7uw5cT6mI=
   dependencies:
-    "@lerna/batch-packages" "^3.1.2"
-    "@lerna/command" "^3.5.0"
-    "@lerna/filter-options" "^3.5.0"
-    "@lerna/npm-run-script" "^3.3.0"
-    "@lerna/output" "^3.0.0"
+    "@lerna/batch-packages" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/filter-options" "^3.6.0"
+    "@lerna/npm-run-script" "^3.6.0"
+    "@lerna/output" "^3.6.0"
     "@lerna/run-parallel-batches" "^3.0.0"
     "@lerna/timer" "^3.5.0"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/validation-error" "^3.6.0"
     p-map "^1.2.0"
 
-"@lerna/symlink-binary@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/symlink-binary/-/symlink-binary-3.3.0.tgz#99ea570b21baabd61ecab27582eeb1d7b2c5f9cf"
-  integrity sha1-mepXCyG6q9YeyrJ1gu6x17LF+c8=
+"@lerna/symlink-binary@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/symlink-binary/-/symlink-binary-3.6.0.tgz#935a5b98908578da7f9eed20818899f728b9f3d9"
+  integrity sha1-k1pbmJCFeNp/nu0ggYiZ9yi589k=
   dependencies:
-    "@lerna/create-symlink" "^3.3.0"
-    "@lerna/package" "^3.0.0"
+    "@lerna/create-symlink" "^3.6.0"
+    "@lerna/package" "^3.6.0"
     fs-extra "^7.0.0"
     p-map "^1.2.0"
     read-pkg "^3.0.0"
 
-"@lerna/symlink-dependencies@^3.3.0":
-  version "3.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/symlink-dependencies/-/symlink-dependencies-3.3.0.tgz#13bcaed3e37986ab01b13498a459c7f609397dc3"
-  integrity sha1-E7yu0+N5hqsBsTSYpFnH9gk5fcM=
+"@lerna/symlink-dependencies@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/symlink-dependencies/-/symlink-dependencies-3.6.0.tgz#76e9d54f6fd3af3e24221cce3ee546e5657ea2d8"
+  integrity sha1-dunVT2/Trz4kIhzOPuVG5WV+otg=
   dependencies:
-    "@lerna/create-symlink" "^3.3.0"
-    "@lerna/resolve-symlink" "^3.3.0"
-    "@lerna/symlink-binary" "^3.3.0"
+    "@lerna/create-symlink" "^3.6.0"
+    "@lerna/resolve-symlink" "^3.6.0"
+    "@lerna/symlink-binary" "^3.6.0"
     fs-extra "^7.0.0"
     p-finally "^1.0.0"
     p-map "^1.2.0"
@@ -1225,32 +1592,32 @@
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/timer/-/timer-3.5.0.tgz#8dee6acf002c55de64678c66ef37ca52143f1b9b"
   integrity sha1-je5qzwAsVd5kZ4xm7zfKUhQ/G5s=
 
-"@lerna/validation-error@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/validation-error/-/validation-error-3.0.0.tgz#a27e90051c3ba71995e2a800a43d94ad04b3e3f4"
-  integrity sha1-on6QBRw7pxmV4qgApD2UrQSz4/Q=
+"@lerna/validation-error@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/validation-error/-/validation-error-3.6.0.tgz#550cf66bb2ef88edc02e36017b575a7a9100d5d8"
+  integrity sha1-VQz2a7LviO3ALjYBe1daepEA1dg=
   dependencies:
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
-"@lerna/version@^3.5.0":
-  version "3.5.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/version/-/version-3.5.0.tgz#df6d4d8ef077b51962126c0f52c800d98c53cc26"
-  integrity sha1-321NjvB3tRliEmwPUsgA2YxTzCY=
+"@lerna/version@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/version/-/version-3.6.0.tgz#7360d8a93b1cc5fe6a7588d7266812b916a281f7"
+  integrity sha1-c2DYqTscxf5qdYjXJmgSuRaigfc=
   dependencies:
-    "@lerna/batch-packages" "^3.1.2"
-    "@lerna/check-working-tree" "^3.5.0"
+    "@lerna/batch-packages" "^3.6.0"
+    "@lerna/check-working-tree" "^3.6.0"
     "@lerna/child-process" "^3.3.0"
-    "@lerna/collect-updates" "^3.5.0"
-    "@lerna/command" "^3.5.0"
-    "@lerna/conventional-commits" "^3.5.0"
-    "@lerna/output" "^3.0.0"
-    "@lerna/prompt" "^3.3.1"
-    "@lerna/run-lifecycle" "^3.4.1"
-    "@lerna/validation-error" "^3.0.0"
+    "@lerna/collect-updates" "^3.6.0"
+    "@lerna/command" "^3.6.0"
+    "@lerna/conventional-commits" "^3.6.0"
+    "@lerna/output" "^3.6.0"
+    "@lerna/prompt" "^3.6.0"
+    "@lerna/run-lifecycle" "^3.6.0"
+    "@lerna/validation-error" "^3.6.0"
     chalk "^2.3.1"
     dedent "^0.7.0"
+    libnpm "^2.0.1"
     minimatch "^3.0.4"
-    npmlog "^4.1.2"
     p-map "^1.2.0"
     p-pipe "^1.2.0"
     p-reduce "^1.0.0"
@@ -1259,12 +1626,12 @@
     slash "^1.0.0"
     temp-write "^3.4.0"
 
-"@lerna/write-log-file@^3.0.0":
-  version "3.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/write-log-file/-/write-log-file-3.0.0.tgz#2f95fee80c6821fe1ee6ccf8173d2b4079debbd2"
-  integrity sha1-L5X+6AxoIf4e5sz4Fz0rQHneu9I=
+"@lerna/write-log-file@^3.6.0":
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@lerna/write-log-file/-/write-log-file-3.6.0.tgz#b8d5a7efc84fa93cbd67d724d11120343b2a849a"
+  integrity sha1-uNWn78hPqTy9Z9ck0REgNDsqhJo=
   dependencies:
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
     write-file-atomic "^2.3.0"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
@@ -1287,10 +1654,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/jest@23.3.9":
-  version "23.3.9"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
-  integrity sha1-wWtVGG7nOuZeAB++5p05LFEzetE=
+"@types/jest@23.3.10":
+  version "23.3.10"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/jest/-/jest-23.3.10.tgz#4897974cc317bf99d4fe6af1efa15957fa9c94de"
+  integrity sha1-SJeXTMMXv5nU/mrx76FZV/qclN4=
 
 "@types/node@^10.11.7":
   version "10.12.11"
@@ -1438,12 +1805,12 @@ append-transform@^0.4.0:
   dependencies:
     default-require-extensions "^1.0.0"
 
-aproba@^1.0.3, aproba@^1.1.1:
+aproba@^1.0.3, aproba@^1.1.1, aproba@^1.1.2:
   version "1.2.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
   integrity sha1-aALmJk79GMeQobDVF/DyYnvyyUo=
 
-aproba@^2.0.0:
+"aproba@^1.1.2 || 2", aproba@^2.0.0:
   version "2.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/aproba/-/aproba-2.0.0.tgz#52520b8ae5b569215b354efc0caa3fe1e45a8adc"
   integrity sha1-UlILiuW1aSFbNU78DKo/4eRaitw=
@@ -1917,6 +2284,17 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bin-links@^1.1.2:
+  version "1.1.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/bin-links/-/bin-links-1.1.2.tgz#fb74bd54bae6b7befc6c6221f25322ac830d9757"
+  integrity sha1-+3S9VLrmt778bGIh8lMirIMNl1c=
+  dependencies:
+    bluebird "^3.5.0"
+    cmd-shim "^2.0.2"
+    gentle-fs "^2.0.0"
+    graceful-fs "^4.1.11"
+    write-file-atomic "^2.3.0"
+
 binary-extensions@^1.0.0:
   version "1.12.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/binary-extensions/-/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
@@ -1934,7 +2312,7 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-bluebird@^3.5.1, bluebird@^3.5.2:
+bluebird@^3.5.0, bluebird@^3.5.1, bluebird@^3.5.2, bluebird@^3.5.3:
   version "3.5.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/bluebird/-/bluebird-3.5.3.tgz#7d01c6f9616c9a51ab0f8c549a79dfe6ec33efa7"
   integrity sha1-fQHG+WFsmlGrD4xUmnnf5uwz76c=
@@ -2089,7 +2467,7 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^4.0.0:
+browserslist@^4.0.0, browserslist@^4.3.4:
   version "4.3.5"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/browserslist/-/browserslist-4.3.5.tgz#1a917678acc07b55606748ea1adf9846ea8920f7"
   integrity sha1-GpF2eKzAe1VgZ0jqGt+YRuqJIPc=
@@ -2766,6 +3144,15 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+
+cosmiconfig@5.0.6:
+  version "5.0.6"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/cosmiconfig/-/cosmiconfig-5.0.6.tgz#dca6cf680a0bd03589aff684700858c81abeeb39"
+  integrity sha1-3KbPaAoL0DWJr/aEcAhYyBq+6zk=
+  dependencies:
+    is-directory "^0.3.1"
+    js-yaml "^3.9.0"
+    parse-json "^4.0.0"
 
 cosmiconfig@^5.0.0, cosmiconfig@^5.0.2, cosmiconfig@^5.0.6:
   version "5.0.7"
@@ -3917,6 +4304,11 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
+find-npm-prefix@^1.0.2:
+  version "1.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/find-npm-prefix/-/find-npm-prefix-1.0.2.tgz#8d8ce2c78b3b4b9e66c8acc6a37c231eb841cfdf"
+  integrity sha1-jYzix4s7S55myKzGo3wjHrhBz98=
+
 find-parent-dir@^0.3.0:
   version "0.3.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
@@ -4034,6 +4426,15 @@ fs-readdir-recursive@^1.1.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/fs-readdir-recursive/-/fs-readdir-recursive-1.1.0.tgz#e32fc030a2ccee44a6b5371308da54be0b397d27"
   integrity sha1-4y/AMKLM7kSmtTcTCNpUvgs5fSc=
 
+fs-vacuum@^1.2.10:
+  version "1.2.10"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/fs-vacuum/-/fs-vacuum-1.2.10.tgz#b7629bec07a4031a2548fdf99f5ecf1cc8b31e36"
+  integrity sha1-t2Kb7AekAxolSP35n17PHMizHjY=
+  dependencies:
+    graceful-fs "^4.1.2"
+    path-is-inside "^1.0.1"
+    rimraf "^2.5.2"
+
 fs-write-stream-atomic@^1.0.8:
   version "1.0.10"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/fs-write-stream-atomic/-/fs-write-stream-atomic-1.0.10.tgz#b47df53493ef911df75731e70a9ded0189db40c9"
@@ -4107,7 +4508,21 @@ genfun@^5.0.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/genfun/-/genfun-5.0.0.tgz#9dd9710a06900a5c4a5bf57aca5da4e52fe76537"
   integrity sha1-ndlxCgaQClxKW/V6yl2k5S/nZTc=
 
-get-caller-file@^1.0.1:
+gentle-fs@^2.0.0:
+  version "2.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/gentle-fs/-/gentle-fs-2.0.1.tgz#585cfd612bfc5cd52471fdb42537f016a5ce3687"
+  integrity sha1-WFz9YSv8XNUkcf20JTfwFqXONoc=
+  dependencies:
+    aproba "^1.1.2"
+    fs-vacuum "^1.2.10"
+    graceful-fs "^4.1.11"
+    iferr "^0.1.5"
+    mkdirp "^0.5.1"
+    path-is-inside "^1.0.2"
+    read-cmd-shim "^1.0.1"
+    slide "^1.1.6"
+
+get-caller-file@^1.0.1, get-caller-file@^1.0.2:
   version "1.0.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
   integrity sha1-+Xj6TJDR3+f/LWvtoqUV5xO9z0o=
@@ -4547,10 +4962,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@1.1.4:
-  version "1.1.4"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/husky/-/husky-1.1.4.tgz#92f61383527d2571e9586234e5864356bfaceaa9"
-  integrity sha1-kvYTg1J9JXHpWGI05YZDVr+s6qk=
+husky@1.2.0:
+  version "1.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/husky/-/husky-1.2.0.tgz#d631dda1e4a9ee8ba69a10b0c51a0e2c66e711e5"
+  integrity sha1-1jHdoeSp7oummhCwxRoOLGbnEeU=
   dependencies:
     cosmiconfig "^5.0.6"
     execa "^1.0.0"
@@ -4670,7 +5085,7 @@ inherits@2.0.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
   integrity sha1-sX0I0ya0Qj5Wjv9xn5GwscvfafE=
 
-ini@^1.3.2, ini@^1.3.4, ini@~1.3.0:
+ini@^1.3.2, ini@^1.3.4, ini@^1.3.5, ini@~1.3.0:
   version "1.3.5"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
   integrity sha1-7uJfVtscnsYIXgwid4CD9Zar+Sc=
@@ -5741,28 +6156,28 @@ left-pad@^1.3.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/left-pad/-/left-pad-1.3.0.tgz#5b8a3a7765dfe001261dde915589e782f8c94d1e"
   integrity sha1-W4o6d2Xf4AEmHd6RVYnngvjJTR4=
 
-lerna@^3.5.1:
-  version "3.5.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lerna/-/lerna-3.5.1.tgz#350b24b58fc2d7bc2c1e1f4ef3058afe827cfa68"
-  integrity sha1-NQsktY/C17wsHh9O8wWK/oJ8+mg=
+lerna@^3.6.0:
+  version "3.6.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lerna/-/lerna-3.6.0.tgz#b6616873fa038ee1dae514e04322c191ff71a369"
+  integrity sha1-tmFoc/oDjuHa5RTgQyLBkf9xo2k=
   dependencies:
-    "@lerna/add" "^3.5.0"
-    "@lerna/bootstrap" "^3.5.0"
-    "@lerna/changed" "^3.5.0"
-    "@lerna/clean" "^3.5.0"
-    "@lerna/cli" "^3.2.0"
-    "@lerna/create" "^3.5.0"
-    "@lerna/diff" "^3.5.0"
-    "@lerna/exec" "^3.5.0"
-    "@lerna/import" "^3.5.0"
-    "@lerna/init" "^3.5.0"
-    "@lerna/link" "^3.5.0"
-    "@lerna/list" "^3.5.0"
-    "@lerna/publish" "^3.5.1"
-    "@lerna/run" "^3.5.0"
-    "@lerna/version" "^3.5.0"
+    "@lerna/add" "^3.6.0"
+    "@lerna/bootstrap" "^3.6.0"
+    "@lerna/changed" "^3.6.0"
+    "@lerna/clean" "^3.6.0"
+    "@lerna/cli" "^3.6.0"
+    "@lerna/create" "^3.6.0"
+    "@lerna/diff" "^3.6.0"
+    "@lerna/exec" "^3.6.0"
+    "@lerna/import" "^3.6.0"
+    "@lerna/init" "^3.6.0"
+    "@lerna/link" "^3.6.0"
+    "@lerna/list" "^3.6.0"
+    "@lerna/publish" "^3.6.0"
+    "@lerna/run" "^3.6.0"
+    "@lerna/version" "^3.6.0"
     import-local "^1.0.0"
-    npmlog "^4.1.2"
+    libnpm "^2.0.1"
 
 leven@^2.1.0:
   version "2.1.0"
@@ -5777,7 +6192,33 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libnpmaccess@^3.0.0:
+libnpm@^2.0.1:
+  version "2.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpm/-/libnpm-2.0.1.tgz#a48fcdee3c25e13c77eb7c60a0efe561d7fb0d8f"
+  integrity sha1-pI/N7jwl4Tx363xgoO/lYdf7DY8=
+  dependencies:
+    bin-links "^1.1.2"
+    bluebird "^3.5.3"
+    find-npm-prefix "^1.0.2"
+    libnpmaccess "^3.0.1"
+    libnpmconfig "^1.2.1"
+    libnpmhook "^5.0.2"
+    libnpmorg "^1.0.0"
+    libnpmpublish "^1.1.0"
+    libnpmsearch "^2.0.0"
+    libnpmteam "^1.0.1"
+    lock-verify "^2.0.2"
+    npm-lifecycle "^2.1.0"
+    npm-logical-tree "^1.2.1"
+    npm-package-arg "^6.1.0"
+    npm-profile "^4.0.1"
+    npm-registry-fetch "^3.8.0"
+    npmlog "^4.1.2"
+    pacote "^9.2.3"
+    read-package-json "^2.0.13"
+    stringify-package "^1.0.0"
+
+libnpmaccess@^3.0.1:
   version "3.0.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmaccess/-/libnpmaccess-3.0.1.tgz#5b3a9de621f293d425191aa2e779102f84167fa8"
   integrity sha1-Wzqd5iHyk9QlGRqi53kQL4QWf6g=
@@ -5787,15 +6228,78 @@ libnpmaccess@^3.0.0:
     npm-package-arg "^6.1.0"
     npm-registry-fetch "^3.8.0"
 
-lint-staged@8.0.5:
-  version "8.0.5"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-8.0.5.tgz#8eeca1a213eaded09c4e217da455b6f432046034"
-  integrity sha1-juyhohPq3tCcTiF9pFW29DIEYDQ=
+libnpmconfig@^1.2.1:
+  version "1.2.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmconfig/-/libnpmconfig-1.2.1.tgz#c0c2f793a74e67d4825e5039e7a02a0044dfcbc0"
+  integrity sha1-wML3k6dOZ9SCXlA556AqAETfy8A=
+  dependencies:
+    figgy-pudding "^3.5.1"
+    find-up "^3.0.0"
+    ini "^1.3.5"
+
+libnpmhook@^5.0.2:
+  version "5.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmhook/-/libnpmhook-5.0.2.tgz#d12817b0fb893f36f1d5be20017f2aea25825d94"
+  integrity sha1-0SgXsPuJPzbx1b4gAX8q6iWCXZQ=
+  dependencies:
+    aproba "^2.0.0"
+    figgy-pudding "^3.4.1"
+    get-stream "^4.0.0"
+    npm-registry-fetch "^3.8.0"
+
+libnpmorg@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmorg/-/libnpmorg-1.0.0.tgz#979b868c48ba28c5820e3bb9d9e73c883c16a232"
+  integrity sha1-l5uGjEi6KMWCDju52ec8iDwWojI=
+  dependencies:
+    aproba "^2.0.0"
+    figgy-pudding "^3.4.1"
+    get-stream "^4.0.0"
+    npm-registry-fetch "^3.8.0"
+
+libnpmpublish@^1.1.0:
+  version "1.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmpublish/-/libnpmpublish-1.1.0.tgz#773bd6fc9ed247e4a41a68ebd69fdc096ea630a3"
+  integrity sha1-dzvW/J7SR+SkGmjr1p/cCW6mMKM=
+  dependencies:
+    aproba "^2.0.0"
+    figgy-pudding "^3.5.1"
+    get-stream "^4.0.0"
+    lodash.clonedeep "^4.5.0"
+    normalize-package-data "^2.4.0"
+    npm-package-arg "^6.1.0"
+    npm-registry-fetch "^3.8.0"
+    semver "^5.5.1"
+    ssri "^6.0.1"
+
+libnpmsearch@^2.0.0:
+  version "2.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmsearch/-/libnpmsearch-2.0.0.tgz#de05af47ada81554a5f64276a69599070d4a5685"
+  integrity sha1-3gWvR62oFVSl9kJ2ppWZBw1KVoU=
+  dependencies:
+    figgy-pudding "^3.5.1"
+    get-stream "^4.0.0"
+    npm-registry-fetch "^3.8.0"
+
+libnpmteam@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/libnpmteam/-/libnpmteam-1.0.1.tgz#ff704b1b6c06ea674b3b1101ac3e305f5114f213"
+  integrity sha1-/3BLG2wG6mdLOxEBrD4wX1EU8hM=
+  dependencies:
+    aproba "^2.0.0"
+    figgy-pudding "^3.4.1"
+    get-stream "^4.0.0"
+    npm-registry-fetch "^3.8.0"
+
+lint-staged@8.1.0:
+  version "8.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-8.1.0.tgz#dbc3ae2565366d8f20efb9f9799d076da64863f2"
+  integrity sha1-28OuJWU2bY8g77n5eZ0HbaZIY/I=
   dependencies:
     "@iamstarkov/listr-update-renderer" "0.4.1"
     chalk "^2.3.1"
     commander "^2.14.1"
-    cosmiconfig "^5.0.2"
+    cosmiconfig "5.0.6"
     debug "^3.1.0"
     dedent "^0.7.0"
     del "^3.0.0"
@@ -5899,6 +6403,14 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
+lock-verify@^2.0.2:
+  version "2.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lock-verify/-/lock-verify-2.0.2.tgz#148e4f85974915c9e3c34d694b7de9ecb18ee7a8"
+  integrity sha1-FI5PhZdJFcnjw01pS33p7LGO56g=
+  dependencies:
+    npm-package-arg "^5.1.2 || 6"
+    semver "^5.4.1"
+
 lodash._reinterpolate@~3.0.0:
   version "3.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
@@ -5908,6 +6420,11 @@ lodash.clone@^4.5.0:
   version "4.5.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lodash.clone/-/lodash.clone-4.5.0.tgz#195870450f5a13192478df4bc3d23d2dea1907b6"
   integrity sha1-GVhwRQ9aExkkeN9Lw9I9LeoZB7Y=
+
+lodash.clonedeep@^4.5.0:
+  version "4.5.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -6341,6 +6858,14 @@ mkdirp@0.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdir
   dependencies:
     minimist "0.0.8"
 
+mock-require@^3.0.2:
+  version "3.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/mock-require/-/mock-require-3.0.2.tgz#7ce759b559e3b194be5f20a5b1cece0eb363f53d"
+  integrity sha1-fOdZtVnjsZS+XyClsc7ODrNj9T0=
+  dependencies:
+    get-caller-file "^1.0.2"
+    normalize-path "^2.1.1"
+
 modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
@@ -6597,7 +7122,7 @@ npm-bundled@^1.0.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/npm-bundled/-/npm-bundled-1.0.5.tgz#3c1732b7ba936b3a10325aef616467c0ccbcc979"
   integrity sha1-PBcyt7qTazoQMlrvYWRnwMy8yXk=
 
-npm-lifecycle@^2.0.0:
+npm-lifecycle@^2.1.0:
   version "2.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/npm-lifecycle/-/npm-lifecycle-2.1.0.tgz#1eda2eedb82db929e3a0c50341ab0aad140ed569"
   integrity sha1-Htou7bgtuSnjoMUDQasKrRQO1Wk=
@@ -6611,7 +7136,12 @@ npm-lifecycle@^2.0.0:
     umask "^1.1.0"
     which "^1.3.1"
 
-"npm-package-arg@^4.0.0 || ^5.0.0 || ^6.0.0", npm-package-arg@^6.0.0, npm-package-arg@^6.1.0:
+npm-logical-tree@^1.2.1:
+  version "1.2.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/npm-logical-tree/-/npm-logical-tree-1.2.1.tgz#44610141ca24664cad35d1e607176193fd8f5b88"
+  integrity sha1-RGEBQcokZkytNdHmBxdhk/2PW4g=
+
+"npm-package-arg@^4.0.0 || ^5.0.0 || ^6.0.0", "npm-package-arg@^5.1.2 || 6", npm-package-arg@^6.0.0, npm-package-arg@^6.1.0:
   version "6.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/npm-package-arg/-/npm-package-arg-6.1.0.tgz#15ae1e2758a5027efb4c250554b85a737db7fcc1"
   integrity sha1-Fa4eJ1ilAn77TCUFVLhac323/ME=
@@ -6644,6 +7174,15 @@ npm-pick-manifest@^2.2.3:
     figgy-pudding "^3.5.1"
     npm-package-arg "^6.0.0"
     semver "^5.4.1"
+
+npm-profile@^4.0.1:
+  version "4.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/npm-profile/-/npm-profile-4.0.1.tgz#d350f7a5e6b60691c7168fbb8392c3603583f5aa"
+  integrity sha1-01D3pea2BpHHFo+7g5LDYDWD9ao=
+  dependencies:
+    aproba "^1.1.2 || 2"
+    figgy-pudding "^3.4.1"
+    npm-registry-fetch "^3.8.0"
 
 npm-registry-fetch@^3.8.0:
   version "3.8.0"
@@ -6992,7 +7531,7 @@ package-json@^4.0.0:
     registry-url "^3.0.3"
     semver "^5.1.0"
 
-pacote@^9.1.0:
+pacote@^9.2.3:
   version "9.2.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/pacote/-/pacote-9.2.3.tgz#48cfe87beb9177acd6594355a584a538835424b3"
   integrity sha1-SM/oe+uRd6zWWUNVpYSlOINUJLM=
@@ -7885,10 +8424,10 @@ preserve@^0.2.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-prettier@1.15.2:
-  version "1.15.2"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/prettier/-/prettier-1.15.2.tgz#d31abe22afa4351efa14c7f8b94b58bb7452205e"
-  integrity sha1-0xq+Iq+kNR76FMf4uUtYu3RSIF4=
+prettier@1.15.3:
+  version "1.15.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
+  integrity sha1-H+qsW90YEje1Tb5l2HTgKhRyeGo=
 
 pretty-format@^23.6.0:
   version "23.6.0"
@@ -8110,7 +8649,7 @@ read-cmd-shim@^1.0.1:
   dependencies:
     graceful-fs "^4.1.2"
 
-"read-package-json@1 || 2", read-package-json@^2.0.0:
+"read-package-json@1 || 2", read-package-json@^2.0.0, read-package-json@^2.0.13:
   version "2.0.13"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/read-package-json/-/read-package-json-2.0.13.tgz#2e82ebd9f613baa6d2ebe3aa72cefe3f68e41f4a"
   integrity sha1-LoLr2fYTuqbS6+Oqcs7+P2jkH0o=
@@ -8452,7 +8991,7 @@ resolve@1.1.7:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/resolve/-/resolve-1.1.7.tgz#203114d82ad2c5ed9e8e0411b3932875e889e97b"
   integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
 
-resolve@^1.1.5, resolve@^1.3.2, resolve@^1.4.0:
+resolve@1.x, resolve@^1.1.5, resolve@^1.3.2, resolve@^1.4.0:
   version "1.8.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/resolve/-/resolve-1.8.1.tgz#82f1ec19a423ac1fbd080b0bab06ba36e84a7a26"
   integrity sha1-gvHsGaQjrB+9CAsLqwa6NuhKeiY=
@@ -8487,7 +9026,7 @@ rgba-regex@^1.0.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/rgba-regex/-/rgba-regex-1.0.0.tgz#43374e2e2ca0968b0ef1523460b7d730ff22eeb3"
   integrity sha1-QzdOLiyglosO8VI0YLfXMP8i7rM=
 
-rimraf@2, rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
+rimraf@2, rimraf@^2.2.8, rimraf@^2.5.2, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.2"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   integrity sha1-LtgVDSShbqhlHm1u8PR8QVjOejY=
@@ -8590,7 +9129,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5, semver@^5.5.0, semver@^5.6.0:
+"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.4.1, semver@^5.5, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.6.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
   integrity sha1-fnQlb7qknHWqfHogXMInmcrIAAQ=
@@ -9110,6 +9649,11 @@ stringify-object@^3.2.2:
     is-obj "^1.0.1"
     is-regexp "^1.0.0"
 
+stringify-package@^1.0.0:
+  version "1.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/stringify-package/-/stringify-package-1.0.0.tgz#e02828089333d7d45cd8c287c30aa9a13375081b"
+  integrity sha1-4CgoCJMz19Rc2MKHwwqpoTN1CBs=
+
 strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/strip-ansi/-/strip-ansi-3.0.1.tgz#6a385fb8853d952d5ff05d0e8aaf94278dc63dcf"
@@ -9462,10 +10006,10 @@ trim-right@^1.0.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-ts-jest@23.10.4:
-  version "23.10.4"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/ts-jest/-/ts-jest-23.10.4.tgz#a7a953f55c9165bcaa90ff91014a178e87fe0df8"
-  integrity sha1-p6lT9VyRZbyqkP+RAUoXjof+Dfg=
+ts-jest@23.10.5:
+  version "23.10.5"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/ts-jest/-/ts-jest-23.10.5.tgz#cdb550df4466a30489bf70ba867615799f388dd5"
+  integrity sha1-zbVQ30RmowSJv3C6hnYVeZ84jdU=
   dependencies:
     bs-logger "0.x"
     buffer-from "1.x"
@@ -9473,6 +10017,7 @@ ts-jest@23.10.4:
     json5 "2.x"
     make-error "1.x"
     mkdirp "0.x"
+    resolve "1.x"
     semver "^5.5"
     yargs-parser "10.x"
 
@@ -9486,10 +10031,10 @@ tslib@^1.8.0, tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
   integrity sha1-1+TdeSRdhUKMTX5IIqeZF5VMooY=
 
-tslint-config-prettier@1.16.0:
-  version "1.16.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslint-config-prettier/-/tslint-config-prettier-1.16.0.tgz#4627d0e2639554d89210e480093c381b5186963f"
-  integrity sha1-RifQ4mOVVNiSEOSACTw4G1GGlj8=
+tslint-config-prettier@1.17.0:
+  version "1.17.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslint-config-prettier/-/tslint-config-prettier-1.17.0.tgz#946ed6117f98f3659a65848279156d87628c33dc"
+  integrity sha1-lG7WEX+Y82WaZYSCeRVth2KMM9w=
 
 tslint-config-standard@8.0.1:
   version "8.0.1"
@@ -9568,23 +10113,19 @@ typedarray@^0.0.6:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript-tslint-plugin@0.1.0:
-  version "0.1.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript-tslint-plugin/-/typescript-tslint-plugin-0.1.0.tgz#08d6f56fdba88700aa95710e26672e692a29ebc2"
-  integrity sha1-CNb1b9uohwCqlXEOJmcuaSop68I=
+typescript-tslint-plugin@0.1.2:
+  version "0.1.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript-tslint-plugin/-/typescript-tslint-plugin-0.1.2.tgz#2523a003ad399eeaf8b0b97fe1f0d80614cc5ecd"
+  integrity sha1-JSOgA605nur4sLl/4fDYBhTMXs0=
   dependencies:
     minimatch "^3.0.4"
+    mock-require "^3.0.2"
     vscode-languageserver "^5.1.0"
 
-typescript@3.1.6, typescript@^3.1.5:
-  version "3.1.6"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript/-/typescript-3.1.6.tgz#b6543a83cfc8c2befb3f4c8fba6896f5b0c9be68"
-  integrity sha1-tlQ6g8/Iwr77P0yPumiW9bDJvmg=
-
-typescript@3.2.1:
-  version "3.2.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript/-/typescript-3.2.1.tgz#0b7a04b8cf3868188de914d9568bd030f0c56192"
-  integrity sha1-C3oEuM84aBiN6RTZVovQMPDFYZI=
+typescript@3.2.2, typescript@^3.2.2:
+  version "3.2.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
+  integrity sha1-/oEBxGqhI/g1NSPr3PVzDCrkk+U=
 
 uglify-js@^3.1.4:
   version "3.4.9"
