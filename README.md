@@ -1,4 +1,4 @@
-# boilerplate-3d
+# starterkit
 
 # What is this?
 
