@@ -5,14 +5,15 @@
   "main": "index.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && parcel build index.html",
+    "build": "yarn clean && parcel build --no-minify index.html",
     "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
-    "test": "exit 1"
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",
+    "test": "exit 0"
   },
   "dependencies": {
-    "@babel/cli": "7.1.5",
+    "@babel/cli": "7.2.0",
     "babylonjs": "4.0.0-alpha.10",
     "babylonjs-gui": "3.3.0",
     "babylonjs-loaders": "3.3.0",
@@ -21,6 +22,6 @@
     "cannon": "0.6.2",
     "parcel-bundler": "1.10.3",
     "pep": "1.0.13",
-    "typescript": "3.1.6"
+    "typescript": "3.2.2"
   }
 }

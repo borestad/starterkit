@@ -17,7 +17,7 @@
   "scripts": {
     "ci": "yarn lint && yarn test --coverage --ci && lerna run build --stream",
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint --fix",
-    "lint": "tslint -c tslint.json --project tsconfig.json -t codeFrame",
+    "lint": "lerna run lint -- ",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
     "test": "jest --notify",
@@ -57,30 +57,30 @@
   },
   "devDependencies": {
     "del-cli": "1.1.0",
-    "husky": "1.1.4",
-    "lint-staged": "8.0.5",
-    "prettier": "1.15.2"
+    "husky": "1.2.0",
+    "lint-staged": "8.1.0",
+    "prettier": "1.15.3"
   },
   "dependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "@babel/preset-typescript": "^7.1.0",
-    "@types/jest": "23.3.9",
+    "@types/jest": "23.3.10",
     "babel-plugin-loop-optimizer": "1.4.1",
     "if-env": "1.0.4",
     "jest": "23.6.0",
     "jest-cli": "23.6.0",
-    "lerna": "^3.5.1",
-    "ts-jest": "23.10.4",
+    "lerna": "^3.6.0",
+    "ts-jest": "23.10.5",
     "tslint": "5.11.0",
-    "tslint-config-prettier": "1.16.0",
+    "tslint-config-prettier": "1.17.0",
     "tslint-config-standard": "8.0.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "^3.1.5",
-    "typescript-tslint-plugin": "0.1.0",
+    "typescript": "^3.2.2",
+    "typescript-tslint-plugin": "0.1.2",
     "yarn": "1.12.3"
   }
 }
