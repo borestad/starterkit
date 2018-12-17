@@ -17,8 +17,8 @@ describe('greeter function', () => {
   it('delays the greeting by 5 seconds', () => {
     expect.assertions(2)
 
-    expect(window.setTimeout).toHaveBeenCalledTimes(1)
-    expect((window.setTimeout as jest.Mock).mock.calls[0][1]).toBe(Delays.Long)
+    expect(global.setTimeout).toHaveBeenCalledTimes(1)
+    expect((global.setTimeout as jest.Mock).mock.calls[0][1]).toBe(Delays.Long)
   })
 
   // Assert greeter result
