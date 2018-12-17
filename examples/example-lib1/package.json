@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix"
   },
   "dependencies": {
     "typescript": "3.2.2"
