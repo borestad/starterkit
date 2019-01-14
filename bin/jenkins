@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+URL=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
+
+export ARTIFACTORY_NPM_REGISTRY=$URL
+./node_modules/.bin/yarn ci

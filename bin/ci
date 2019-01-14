@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+. `dirname $0`/_helpers
+
+hr
+
+yarn && \
+yarn lint && \
+yarn test --coverage --ci && \
+lerna run build --stream && \
+git status && \
+git diff && \
+# Jenkins overwrites .npmrc
+git checkout .npmrc && \
+lerna publish

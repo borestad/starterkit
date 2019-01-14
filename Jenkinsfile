@@ -18,7 +18,7 @@ agent("npm") {
     stage("CI") {
       withNode("10.13.0") {
         sh """
-        ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local ./node_modules/.bin/yarn ci
+        ./bin/jenkins
         """
       }
     }
