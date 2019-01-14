@@ -16,7 +16,7 @@
     "examples/example-lib1"
   ],
   "scripts": {
-    "ci": "yarn && yarn lint && yarn test --coverage --ci && lerna run build --stream && ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local/ mono release",
+    "ci": "yarn && yarn lint && yarn test --coverage --ci && lerna run build --stream && mono release",
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint",
     "lint": "lerna run lint",
     "preinstall": "rm -f .git/hooks/pre-commit || true",

@@ -17,8 +17,10 @@ agent("npm") {
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-
-        sh './node_modules/.bin/yarn ci'
+        sh """
+            export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
+           ./node_modules/.bin/yarn ci
+           """
       }
     }
   }
