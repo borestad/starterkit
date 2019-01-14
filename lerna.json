@@ -1,9 +1,18 @@
 {
-  "lerna": "3.5.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": [
-    "examples/*"
+    "examples/example-babylon1",
+    "examples/example-lib1"
   ],
-  "version": "1.0.0"
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "conventionalCommits": true,
+      "exact": true,
+      "gitRemote": "upstream",
+      "message": "chore(release): %s"
+    }
+  },
+  "version": "independent"
 }
