@@ -1,6 +1,6 @@
 {
   "name": "@netent/starterkit",
-  "version": "0.0.1",
+  "version": "2.0.2",
   "private": true,
   "license": "UNLICENSED",
   "author": {
@@ -12,10 +12,11 @@
     "Johan Borestad <johan.borestad@netent.com>"
   ],
   "workspaces": [
-    "examples/*"
+    "examples/example-babylon1",
+    "examples/example-lib1"
   ],
   "scripts": {
-    "ci": "yarn lint && yarn test --coverage --ci && lerna run build --stream",
+    "ci": "yarn && yarn lint && yarn test --coverage --ci && lerna run build --stream && mono release",
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint",
     "lint": "lerna run lint",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
@@ -56,6 +57,7 @@
     "parser": "typescript"
   },
   "devDependencies": {
+    "@netent/mono": "2.0.1",
     "del-cli": "1.1.0",
     "husky": "1.3.1",
     "lint-staged": "8.1.0",
