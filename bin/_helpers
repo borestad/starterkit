@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
+
 export GIT_ROOT=$(git rev-parse --show-toplevel)
 
 hr () {

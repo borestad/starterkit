@@ -12,4 +12,4 @@ git status && \
 git diff && \
 # Jenkins overwrites .npmrc
 git checkout .npmrc && \
-lerna publish
+lerna publish -y --registry=$ARTIFACTORY_NPM_REGISTRY
