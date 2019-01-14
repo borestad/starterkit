@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+. `dirname $0`/_helpers
+
+# Bumps versions automatically with a patch version
+
+#    Changes:
+#    - example-babylon1: 1.0.2 => 1.0.3 (private)
+#    - example-lib1: 1.0.2 => 1.0.3
+#
+
+
+git stash --include-untracked &&
+lerna version patch --no-git-tag-version -y &&
+git stash show &&
+lerna publish from-package --no-git-tag-version -y
