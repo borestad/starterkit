@@ -7,10 +7,9 @@
   ],
   "command": {
     "version": {
-      "allowBranch": "master",
+      "allowBranch":["master", "feature/*"],
       "conventionalCommits": true,
       "exact": true,
-      "gitRemote": "upstream",
       "message": "chore(release): %s"
     }
   },
