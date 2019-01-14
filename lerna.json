@@ -9,8 +9,7 @@
     "version": {
       "allowBranch":["master", "feature/*"],
       "conventionalCommits": true,
-      "exact": true,
-      "message": "chore(release): %s"
+      "exact": true
     }
   },
   "version": "independent"
