@@ -4,4 +4,7 @@
 
 cd "$(dirname $0)"/..
 
+# Jenkins Node plugin is overwriting our own .npmrc. Don't!!
+git reset --hard
+
 ./node_modules/.bin/yarn ci
