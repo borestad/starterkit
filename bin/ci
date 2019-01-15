@@ -4,6 +4,15 @@
 
 cd "$(dirname $0)"
 
+function finish {
+  echo $? >&2
+  git status
+  failure
+}
+
+trap finish EXIT
+
+
 hr && \
 yarn && \
 hr && \
@@ -17,5 +26,5 @@ lerna run build --stream && \
 # Jenkins overwrites .npmrc
 git checkout $ROOT/.npmrc && \
 hr && \
-./bump-version-patch
+./publish
 #lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY

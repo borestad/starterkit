@@ -9,24 +9,12 @@
 
 . `dirname $0`/_helpers
 
-errors=0
-
-function finish {
-  echo $? >&2
-  git status
-  failure
-
-}
-
-trap finish EXIT
-
-
 git-is-repo-dirty && \
-    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing'
-
+    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' && \
+    exit 1
 
 line 'Create patch version' &&
-lerna version patch --no-git-tag-version -y &&
+#lerna version patch --no-git-tag-version -y &&
 line 'Publish' &&
 lerna publish from-package --no-git-tag-version -y &&
 success
