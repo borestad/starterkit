@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "ci": "./bin/ci",
+    "build": "lerna run build --stream",
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint",
     "lint": "lerna run lint",
     "preinstall": "rm -f .git/hooks/pre-commit || true",

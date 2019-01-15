@@ -19,7 +19,7 @@ line '[3/5] Run tests'
 yarn test --coverage --ci
 
 line '[4/5] Build packages'
-lerna run build --stream
+yarn build
 
 line '[5/5] Publish packages if new version is available'
 $ROOT/bin/publish

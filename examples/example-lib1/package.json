@@ -2,11 +2,17 @@
   "name": "example-lib1",
   "private": false,
   "version": "1.1.0",
-  "license": "UNKNOWN",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "NetEnt AB (publ)",
+    "email": "info@netent.com",
+    "url": "https://www.netent.com/"
+  },
   "main": "index.ts",
   "scripts": {
     "test": "jest",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix"
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
+    "build": "exit 0"
   },
   "dependencies": {
     "typescript": "3.2.2"
