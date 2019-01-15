@@ -2,15 +2,20 @@
 
 . `dirname $0`/_helpers
 
-hr
+cd "$(dirname $0)"
 
+hr && \
 yarn && \
+hr && \
 yarn lint && \
+hr && \
 yarn test --coverage --ci && \
+hr && \
 lerna run build --stream && \
 #git status && \
 #git diff && \
 # Jenkins overwrites .npmrc
-git checkout .npmrc && \
+git checkout $GIT_ROOT/.npmrc && \
+hr && \
 ./bump-version-patch
 #lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY
