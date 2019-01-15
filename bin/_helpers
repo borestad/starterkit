@@ -13,8 +13,11 @@ hr2 () {
 }
 
 
+git-is-repo-clean () {
+    [ -z "$(git status --porcelain)" ]
+}
 git-is-repo-dirty () {
-    git status --porcelain | grep .
+    ! git-is-repo-clean
 }
 
 
@@ -45,13 +48,13 @@ bold()          { ansi 1 "$@"; }
 italic()        { ansi 3 "$@"; }
 underline()     { ansi 4 "$@"; }
 strikethrough() { ansi 9 "$@"; }
-red()           { ansi 31 "$@"; }
+red()           { echo; ansi 31 "$@"; echo;}
 
 line () {
   local text=$@
   echo ""
-  hr2 '-'
-  echo -e "⚡ ${IBla}${text}${RCol}"
+  hr '-'
+  echo -e "⚡ ${text}"
   echo ""
 }
 
@@ -71,7 +74,6 @@ cat << "EOF"
 
 EOF
 echo -e $RCol
-exit 0
 }
 
 failure () {
@@ -91,7 +93,5 @@ cat << "EOF"
 EOF
 echo -e $RCol
 
-# Jenkins is hardcoded to use error code 1
-exit 1
 }
 

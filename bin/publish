@@ -8,14 +8,15 @@
 #
 
 . `dirname $0`/_helpers
-
+line 'Publish packages if available'
 
 git-is-repo-dirty && \
-    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing'
+    failure && \
+    echo 'The git repository is "dirty"' && \
+    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' && \
+    echo && \
+    git status -s &&
+    exit 1
 
-
-line 'Create "patch" version' &&
-#lerna version patch --no-git-tag-version -y &&
-line 'Publish' &&
 lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY &&
-success
+  success

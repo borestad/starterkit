@@ -4,28 +4,29 @@
 
 cd "$(dirname $0)"
 
-function finish {
-  echo $? >&2
-  git status
-  git diff
-  failure
+function trap-exit {
+  err=$?
+  #failure
+  #exit $err
+  #git status
+  #git diff
+
 }
 
-trap finish EXIT
+function trap-error {
+  err=$?
+  #git status -s
+  #git diff
+  #failure
+}
+
+trap trap-error EXIT
+trap trap-finish INT TERM
 
 
-hr && \
-yarn && \
-hr && \
-yarn lint && \
-hr && \
-yarn test --coverage --ci && \
-hr && \
-lerna run build --stream && \
-#git status && \
-#git diff && \
-# Jenkins overwrites .npmrc
-git checkout $ROOT/.npmrc && \
-hr && \
+line 'Yarn install'         && yarn && \
+line 'Lint'                 && yarn lint && \
+line 'Run tests'            && yarn test --coverage --ci && \
+line 'Build packages'       && \
+lerna run build --stream    && \
 ./publish
-#lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY
