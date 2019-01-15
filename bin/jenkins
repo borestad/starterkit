@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eEu
+#!/bin/bash -eEu
 
 . `dirname $0`/_helpers
 

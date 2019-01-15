@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eEu
+#!/bin/bash -eEu
 
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
 

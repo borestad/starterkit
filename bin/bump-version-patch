@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eEu
+#!/bin/bash -eEu
 
 # Bump versions automatically with a minor version
 #
