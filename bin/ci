@@ -15,7 +15,7 @@ lerna run build --stream && \
 #git status && \
 #git diff && \
 # Jenkins overwrites .npmrc
-git checkout $GIT_ROOT/.npmrc && \
+git checkout $ROOT/.npmrc && \
 hr && \
 ./bump-version-patch
 #lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY

@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -eEu
 
 . `dirname $0`/_helpers
 
-./node_modules/.bin/yarn ci
+$ROOT/node_modules/.bin/yarn ci
