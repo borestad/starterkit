@@ -1,16 +1,31 @@
-#!/usr/bin/env bash
+#!/usr/bin/env bash -eEu
 
-. `dirname $0`/_helpers
-
-# Bumps versions automatically with a patch version
-
+# Bump versions automatically with a minor version
+#
 #    Changes:
 #    - example-babylon1: 1.0.2 => 1.0.3 (private)
 #    - example-lib1: 1.0.2 => 1.0.3
 #
 
+. `dirname $0`/_helpers
 
-git stash --include-untracked &&
+errors=0
+
+function finish {
+  echo $? >&2
+  failure
+
+}
+
+trap finish EXIT
+
+
+git-is-repo-dirty && \
+    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing'
+
+
+line 'Create patch version' &&
 lerna version patch --no-git-tag-version -y &&
-git stash show &&
-lerna publish from-package --no-git-tag-version -y
+line 'Publish' &&
+lerna publish from-package --no-git-tag-version -y &&
+success
