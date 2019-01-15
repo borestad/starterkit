@@ -1,7 +1,7 @@
 {
   "name": "example-babylon1",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "index.ts",
   "scripts": {
     "clean": "rm -rf dist",
