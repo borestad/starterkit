@@ -13,6 +13,7 @@ errors=0
 
 function finish {
   echo $? >&2
+  git status
   failure
 
 }
