@@ -8,8 +8,9 @@ yarn && \
 yarn lint && \
 yarn test --coverage --ci && \
 lerna run build --stream && \
-git status && \
-git diff && \
+#git status && \
+#git diff && \
 # Jenkins overwrites .npmrc
 git checkout .npmrc && \
-lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY
+./bump-version-patch
+#lerna publish --preid alpha -y --registry=$ARTIFACTORY_NPM_REGISTRY
