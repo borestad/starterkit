@@ -7,15 +7,15 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'npm run install:yarn'
-        sh './node_modules/.bin/yarn --link-duplicates --production'
+        sh 'set +x; npm run install:yarn'
+        sh 'set +x; ./node_modules/.bin/yarn --link-duplicates'
       }
     }
 
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-        sh './bin/jenkins'
+        sh 'set +x; ./bin/jenkins'
       }
     }
   }
