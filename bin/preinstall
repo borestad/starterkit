@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+// tslint:disable no-floating-promises await-promise whitespace
+const exec = require('execa')
+const path = require('path')
+const run = exec.shell
+const ROOT = path.join(__dirname, '..')
+
+preinstall()
+
+async function preinstall() {
+  // Remove githooks
+  await run(`node ${ROOT}/node_modules/husky/husky.js install`)
+
+  // Install githooks
+  //   await run(`node ${ROOT}/node_modules/husky/husky.js install`)
+}
