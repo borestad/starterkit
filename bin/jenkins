@@ -2,4 +2,6 @@
 
 . `dirname $0`/_helpers
 
-$ROOT/node_modules/.bin/yarn ci
+cd "$(dirname $0)"/..
+
+./node_modules/.bin/yarn ci
