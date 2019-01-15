@@ -1,22 +1,19 @@
 #!/bin/bash -eEu
 
-# Bump versions automatically with a minor version
 #
-#    Changes:
-#    - example-babylon1: 1.0.2 => 1.0.3 (private)
-#    - example-lib1: 1.0.2 => 1.0.3
+## Publishes all changed packages with new versions to Artifactory
 #
-
 . `dirname $0`/_helpers
-line 'Publish packages if available'
 
-git-is-repo-dirty && \
-    failure && \
-    echo 'The git repository is "dirty"' && \
-    echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' && \
-    echo && \
-    git status -s &&
-    exit 1
+export PATH="./node_modules/.bin:$PATH"
+
+git-is-repo-dirty \
+  && failure \
+  && echo 'The git repository is "dirty"' \
+  && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
+  && echo \
+  && git status -s \
+  && exit 1
 
 lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY &&
   success

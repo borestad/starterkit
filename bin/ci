@@ -1,32 +1,25 @@
-#!/bin/bash -eEu
+#!/bin/bash
+set +x -eEu
+export PATH="./node_modules/.bin:$PATH"
 
 . `dirname $0`/_helpers
 
-cd "$(dirname $0)"
+cd $ROOT
 
-function trap-exit {
-  err=$?
-  #failure
-  #exit $err
-  #git status
-  #git diff
+trap trap-exit EXIT
+trap trap-error INT TERM
 
-}
+line '|1/5] Yarn install'
+yarn
 
-function trap-error {
-  err=$?
-  #git status -s
-  #git diff
-  #failure
-}
+line '[2/5] Lint'
+yarn lint
 
-trap trap-error EXIT
-trap trap-finish INT TERM
+line '[3/5] Run tests'
+yarn test --coverage --ci
 
+line '[4/5] Build packages'
+lerna run build --stream
 
-line 'Yarn install'         && yarn && \
-line 'Lint'                 && yarn lint && \
-line 'Run tests'            && yarn test --coverage --ci && \
-line 'Build packages'       && \
-lerna run build --stream    && \
-./publish
+line '[5/5] Publish packages if new version is available'
+$ROOT/bin/publish

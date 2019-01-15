@@ -1,7 +1,6 @@
 #!/bin/bash -eEu
 
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
-
 export ROOT=$(git rev-parse --show-toplevel)
 
 hr () {
@@ -16,10 +15,19 @@ hr2 () {
 git-is-repo-clean () {
     [ -z "$(git status --porcelain)" ]
 }
+
 git-is-repo-dirty () {
     ! git-is-repo-clean
 }
 
+trap-exit () {
+  err=$?
+}
+
+trap-error () {
+  err=$?
+  failure
+}
 
 
 # ===================================_he==========================================
