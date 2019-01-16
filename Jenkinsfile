@@ -1,5 +1,3 @@
-@Library("gdp-jenkins-pipeline-library@feature/GDP-811-jenkins-node-module-overwrites-.npmrc") _
-
 agent("npm") {
   checkoutScm(false)
 
