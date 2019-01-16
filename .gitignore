@@ -216,4 +216,3 @@ fabric.properties
 
 # Avoid Jenkins error "Working tree has uncommitted changes"
 git-vars
-.npmrc
