@@ -10,7 +10,7 @@
   },
   "main": "index.ts",
   "scripts": {
-    "test": "jest",
+    "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "build": "exit 0"
   },

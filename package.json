@@ -22,7 +22,7 @@
     "lint": "lerna run lint --parallel",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
-    "test": "jest --notify",
+    "test": "lerna exec -- yarn test",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
     "typecheck:watch": "yarn typecheck -- --watch",
