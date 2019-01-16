@@ -17,9 +17,9 @@
   ],
   "scripts": {
     "ci": "./bin/ci",
-    "build": "lerna run build --stream",
+    "build": "lerna run build --parallel --stream",
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint",
-    "lint": "lerna run lint",
+    "lint": "lerna run lint --parallel",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
     "test": "jest --notify",
