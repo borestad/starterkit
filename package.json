@@ -12,8 +12,7 @@
     "Johan Borestad <johan.borestad@netent.com>"
   ],
   "workspaces": [
-    "examples/example-babylon1",
-    "examples/example-lib1"
+    "examples/*"
   ],
   "scripts": {
     "ci": "./bin/ci",

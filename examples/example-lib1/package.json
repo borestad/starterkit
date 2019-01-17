@@ -1,5 +1,5 @@
 {
-  "name": "example-lib1",
+  "name": "@scope/example-lib1",
   "private": false,
   "version": "3.0.0",
   "license": "UNLICENSED",
