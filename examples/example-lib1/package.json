@@ -8,11 +8,12 @@
     "email": "info@netent.com",
     "url": "https://www.netent.com/"
   },
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
-    "build": "exit 0"
+    "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
+    "build": " yarn compile"
   },
   "dependencies": {
     "typescript": "3.2.2"
