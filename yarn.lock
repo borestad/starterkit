@@ -1360,10 +1360,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@types/jest@23.3.12":
-  version "23.3.12"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/jest/-/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"
-  integrity sha1-fgztJR+pTDvC0QI9S4SymS+gY3Y=
+"@types/jest@23.3.13":
+  version "23.3.13"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/jest/-/jest-23.3.13.tgz#c81484b6f4ca007bb09887ed15ecb3286d58f928"
+  integrity sha1-yBSEtvTKAHuwmIftFeyzKG1Y+Sg=
 
 "@types/node@^10.11.7":
   version "10.12.18"
@@ -8100,10 +8100,10 @@ preserve@^0.2.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
   integrity sha1-gV7R9uvGWSb4ZbMQwHE7yzMVzks=
 
-prettier@1.15.3:
-  version "1.15.3"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/prettier/-/prettier-1.15.3.tgz#1feaac5bdd181237b54dbe65d874e02a1472786a"
-  integrity sha1-H+qsW90YEje1Tb5l2HTgKhRyeGo=
+prettier@1.16.0:
+  version "1.16.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/prettier/-/prettier-1.16.0.tgz#104dd25f5ee3d0c9d0a6ce4bb40ced8481d51219"
+  integrity sha1-EE3SX17j0MnQps5LtAzthIHVEhk=
 
 pretty-format@^23.6.0:
   version "23.6.0"
@@ -9733,10 +9733,10 @@ tslint-eslint-rules@5.4.0, tslint-eslint-rules@^5.3.1:
     tslib "1.9.0"
     tsutils "^3.0.0"
 
-tslint@5.12.0:
-  version "5.12.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslint/-/tslint-5.12.0.tgz#47f2dba291ed3d580752d109866fb640768fca36"
-  integrity sha1-R/LbopHtPVgHUtEJhm+2QHaPyjY=
+tslint@5.12.1:
+  version "5.12.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
+  integrity sha1-jOydRUz4od6bCibXvbrW3jYuUsE=
   dependencies:
     babel-code-frame "^6.22.0"
     builtin-modules "^1.1.1"
@@ -9803,12 +9803,7 @@ typescript-tslint-plugin@0.2.1:
     mock-require "^3.0.2"
     vscode-languageserver "^5.1.0"
 
-typescript@3.2.2:
-  version "3.2.2"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript/-/typescript-3.2.2.tgz#fe8101c46aa123f8353523ebdcf5730c2ae493e5"
-  integrity sha1-/oEBxGqhI/g1NSPr3PVzDCrkk+U=
-
-typescript@^3.2.2:
+typescript@3.2.4, typescript@^3.2.2:
   version "3.2.4"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
   integrity sha1-xYXLlSkSJj2RW0YnJs4kS6UQ7z0=

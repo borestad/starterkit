@@ -16,6 +16,6 @@
     "build": " yarn compile"
   },
   "dependencies": {
-    "typescript": "3.2.2"
+    "typescript": "3.2.4"
   }
 }
