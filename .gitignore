@@ -141,6 +141,7 @@ examples/**/yarn.lock
 
 # Don't allow a mix of ts and js files
 src/**/*.js
+examples/*/*.config.js
 
 # Reports
 *-report.json
@@ -216,3 +217,6 @@ fabric.properties
 
 # Avoid Jenkins error "Working tree has uncommitted changes"
 git-vars
+
+# Rollup cache
+.rpt2_cache

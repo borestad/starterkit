@@ -1,0 +1,22 @@
+{
+  "name": "@scope/example-lib2",
+  "private": false,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "NetEnt AB (publ)",
+    "email": "info@netent.com",
+    "url": "https://www.netent.com/"
+  },
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest --notify",
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
+    "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
+    "build": " yarn compile"
+  },
+  "dependencies": {
+    "@scope/example-lib1": "*",
+    "typescript": "3.2.2"
+  }
+}
