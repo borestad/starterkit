@@ -9,12 +9,17 @@
     "url": "https://www.netent.com/"
   },
   "main": "src/index.ts",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
     "build": " yarn compile"
   },
+  "files": [
+    "dist/*",
+    "index.d.ts"
+  ],
   "dependencies": {
     "@scope/example-lib1": "*",
     "typescript": "3.2.4"

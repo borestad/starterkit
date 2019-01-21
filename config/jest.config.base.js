@@ -7,6 +7,12 @@ module.exports = pkg => {
     },
     testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$',
     moduleFileExtensions: ['ts', 'js'],
+    globals: {
+      'ts-jest': {
+        diagnostics: false,
+        isolatedModules: false
+      }
+    },
     coverageThreshold: {
       global: {
         branches: 90,
