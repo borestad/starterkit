@@ -141,7 +141,6 @@ examples/**/yarn.lock
 
 # Don't allow a mix of ts and js files
 src/**/*.js
-examples/*/*.config.js
 
 # Reports
 *-report.json
