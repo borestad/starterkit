@@ -1,5 +1,5 @@
-import { NAME } from '../'
+import { double } from '../'
 
 test('Something', () => {
-  expect(NAME).toBe('example-lib2')
+  expect(double(10)).toBe(20)
 })
