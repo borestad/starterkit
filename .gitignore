@@ -217,5 +217,5 @@ fabric.properties
 # Avoid Jenkins error "Working tree has uncommitted changes"
 git-vars
 
-# Rollup cache
-.rpt2_cache
+# Common cache folder
+.*cache*

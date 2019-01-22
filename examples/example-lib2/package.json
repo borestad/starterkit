@@ -9,19 +9,30 @@
     "url": "https://www.netent.com/"
   },
   "main": "src/index.ts",
-  "types": "./index.d.ts",
+  "types.bak": "./index.d.ts",
+  "_main": "dist/foo-bar.umd.js",
+  "_module": "dist/foo-bar.es5.js",
+  "_typings": "dist/types/foo-bar.d.ts",
   "scripts": {
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
-    "build": " yarn compile"
+    "build": "rimraf dist && microbundle build src/index.ts -o dist/"
   },
   "files": [
     "dist/*",
     "index.d.ts"
   ],
-  "dependencies": {
-    "@scope/example-lib1": "*",
+  "devDependencies": {
+    "microbundle": "0.9.0",
+    "prettier": "1.16.1",
     "typescript": "3.2.4"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.1",
+    "@babel/preset-env": "^7.3.1",
+    "@scope/example-lib1": "*",
+    "typescript-tslint-plugin": "0.3.0"
   }
 }

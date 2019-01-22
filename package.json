@@ -12,7 +12,8 @@
     "Johan Borestad <johan.borestad@netent.com>"
   ],
   "workspaces": [
-    "examples/*"
+    "examples/*",
+    "config/*"
   ],
   "scripts": {
     "ci": "./bin/ci",
@@ -21,7 +22,7 @@
     "fix": "prettier --write 'examples/**/*.ts' && yarn lint",
     "lint": "lerna run lint --parallel",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
-    "postinstall": "yarn run clean && if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
+    "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
     "test": "lerna exec -- yarn test",
     "test:watch": "jest --watch --notify",
     "typecheck": "tsc --noEmit",
