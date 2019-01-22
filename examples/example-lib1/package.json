@@ -13,9 +13,11 @@
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
-    "build": " yarn compile"
+    "build": "rimraf dist && microbundle build src/index.ts -o dist"
   },
-  "dependencies": {
+  "devDependencies": {
+    "microbundle": "0.9.0",
     "typescript": "3.2.4"
-  }
+  },
+  "dependencies": {}
 }
