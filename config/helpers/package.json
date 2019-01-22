@@ -4,6 +4,9 @@
     "description": "Configuration Helpers",
     "main": "index.ts",
     "private": true,
+    "scripts": {
+        "test": "exit 0 || true"
+    },
     "devDependencies": {
         "execa": "1.0.0",
         "lodash": "4.17.11"
