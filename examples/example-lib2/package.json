@@ -16,7 +16,9 @@
   "scripts": {
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
-    "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
+    "compile": "run-p -l compile:*",
+    "compile:ts": "rimraf dist && tsc -b tsconfig.json",
+    "compile:js": "babel src --root-mode upward --verbose --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
     "build": "rimraf dist && microbundle build src/index.ts -o dist/"
   },
   "files": [
