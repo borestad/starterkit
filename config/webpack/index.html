@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Gonzo's Quest 3D</title>
+  <script type="text/javascript">console.time('❤️ First Byte => Start')</script>
+  <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <script type="text/javascript">
+    window.requestTimeout = function (fn, delay) {
+      var start = Date.now();
+      var handle = { id: requestAnimationFrame(loop) };
+      return handle;
+
+      function loop() {
+        if (Date.now() - start >= delay) {
+          fn();
+        } else {
+          handle.id = requestAnimationFrame(loop);
+        }
+      }
+    };
+
+    window.clearRequestTimeout = window.clearRequestInterval = function (handle) {
+      if (handle) {
+        if (handle.id) { window.cancelAnimationFrame(handle.id) }
+        else { window.cancelAnimationFrame(handle) };
+      }
+    };
+
+    window.requestInterval = function requestInterval(fn, delay) {
+      var start = Date.now();
+      var handle = { id: requestAnimationFrame(loop) };
+      return handle;
+
+      function loop() {
+        handle.id = requestAnimationFrame(loop);
+        if (Date.now() - start >= delay) {
+          fn();
+          start = Date.now();
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loaderBackground" style="background: transparent;"></div>
+  <div id="loaderWrapper" style="background: transparent;"></div>
+  <div class="viewport-wrapper">
+    <div id="viewport">
+      <div id="gameWrapper">
+        <div id="gameElements">
+        </div>
+      </div>
+    </div>
+    <div class="play-ui"></div>
+    <div class="modal-ui"></div>
+    <div id="static-ui" class="static-ui"></div>
+  </div>
+
+</body>
+
+</html>
