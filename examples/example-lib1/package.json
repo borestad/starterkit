@@ -16,8 +16,8 @@
     "build": "rimraf dist && microbundle build src/index.ts -o dist"
   },
   "devDependencies": {
-    "microbundle": "0.9.0",
-    "typescript": "3.2.4"
+    "microbundle": "0.11.0",
+    "typescript": "3.3.3333"
   },
   "dependencies": {}
 }
