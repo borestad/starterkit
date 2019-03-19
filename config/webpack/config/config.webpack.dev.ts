@@ -1,12 +1,10 @@
-import * as HardSourcePlugin from 'hard-source-webpack-plugin'
+// import * as HardSourcePlugin from 'hard-source-webpack-plugin'
 import * as path from 'path'
 import * as webpack from 'webpack'
-import * as BuildNotifierPlugin from 'webpack-build-notifier'
+// import * as BuildNotifierPlugin from 'webpack-build-notifier'
 import * as merge from 'webpack-merge'
-import * as gameConfig from '../../game.config'
 import * as config from './config'
 import base from './config.webpack.base'
-import sserve from './config.webpack.serve'
 
 const smartMerge: any = merge.smart
 
@@ -32,19 +30,17 @@ export default () => {
   }
 
   c.plugins = [
-    new HardSourcePlugin(),
+    // new HardSourcePlugin(),
     // prints more readable module names in the browser console on HMR updates
     new webpack.NamedModulesPlugin(),
     // new webpack.DefinePlugin(config.globals),
     // do not emit compiled assets that include errors
-    new webpack.NoEmitOnErrorsPlugin(),
-    new BuildNotifierPlugin({
-      title: 'Webpack Build',
-      suppressSuccess: true
-    })
+    new webpack.NoEmitOnErrorsPlugin()
+    // new BuildNotifierPlugin({
+    //   title: 'Webpack Build',
+    //   suppressSuccess: true
+    // })
   ]
 
-  return smartMerge(base(), c, {
-    serve: sserve()
-  })
+  return smartMerge(base(), c)
 }

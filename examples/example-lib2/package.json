@@ -19,7 +19,8 @@
     "compile": "run-p -l compile:*",
     "compile:ts": "rimraf dist && tsc -b tsconfig.json",
     "compile:js": "babel src --root-mode upward --verbose --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
-    "build": "rimraf dist && microbundle build src/index.ts -o dist/"
+    "build": "rimraf dist && microbundle build src/index.ts -o dist/",
+    "dist": "NODE_ENV=production webpack --config ../../config/webpack/index.ts --colors --hide-modules --display-error-details"
   },
   "files": [
     "dist/*",
