@@ -8,7 +8,7 @@ agent("npm") {
     stage("Install") {
       withNode("10.13.0") {
         sh 'npm run install:yarn'
-        sh './node_modules/.bin/yarn --pure-lockfile'
+        sh './node_modules/.bin/yarn --pure-lockfile --link-duplicates --skip-integrity-check --no-progress --non-interactive'
       }
     }
 

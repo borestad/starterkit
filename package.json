@@ -75,6 +75,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "24.0.11",
     "babel-plugin-loop-optimizer": "1.4.1",
+    "envinfo": "7.1.0",
     "if-env": "1.0.4",
     "jest": "24.5.0",
     "jest-cli": "24.5.0",

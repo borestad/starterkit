@@ -9,25 +9,28 @@ cd $ROOT
 trap trap-exit EXIT
 trap trap-error INT TERM
 
-line 'Cleanup'
+line '[1/8] Cleanup'
 yarn clean
 
-line '|1/6] Install'
+line '[2/8] Install'
 yarn
 
-line '[2/6] Lint'
+line '[3/8] Show Environment'
+$ROOT/node_modules/.bin/envinfo
+
+line '[4/8] Lint'
 yarn lint
 
-line '[3/6] Compile'
+line '[5/8] Compile'
 yarn compile
 
-line '[4/6] Run tests'
+line '[6/8] Run tests'
 yarn test --coverage --ci
 
-line '[5/6] Build packages'
+line '[7/8] Build packages'
 yarn build
 
-line '[6/6] Publish packages (if version is bumped)'
+line '[8/8] Publish packages (if version is bumped)'
 $ROOT/bin/publish
 
 line
