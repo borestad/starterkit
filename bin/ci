@@ -9,17 +9,23 @@ cd $ROOT
 trap trap-exit EXIT
 trap trap-error INT TERM
 
-line '|1/5] Yarn install'
+line 'Cleanup'
+yarn clean
+
+line '|1/6] Install'
 yarn
 
-line '[2/5] Lint'
+line '[2/6] Lint'
 yarn lint
 
-line '[3/5] Run tests'
+line '[3/6] Compile'
+yarn lint
+
+line '[4/6] Run tests'
 yarn test --coverage --ci
 
-line '[4/5] Build packages'
+line '[5/6] Build packages'
 yarn build
 
-line '[5/5] Publish packages if new version is available'
+line '[6/6] Publish packages if new version is available'
 $ROOT/bin/publish

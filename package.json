@@ -27,7 +27,7 @@
     "test": "jest -c config/jest/jest.config.js",
     "test:workspace": "lerna exec -- yarn test",
     "test:watch": "jest --watch --notify",
-    "typecheck": "lerna exec -- yarn typecheck",
+    "compile": "tsc -b tsconfig.json",
     "upgrade:deps": "yarn upgrade-interactive --latest",
     "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock"
   },

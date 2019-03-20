@@ -12,14 +12,8 @@ This is a small sample repository that uses Babel to transform TypeScript to pla
 yarn build
 ```
 
-## Type-checking the repo
+## Liniting & Type-checking & the repo
 
 ```sh
-yarn typecheck
-```
-
-And to run in `--watch` mode:
-
-```sh
-yarn typecheck:watch
+yarn lint
 ```

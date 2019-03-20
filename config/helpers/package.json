@@ -5,8 +5,7 @@
     "main": "index.ts",
     "private": true,
     "scripts": {
-        "test": "exit 0 || true",
-        "typecheck": "tsc --noEmit"
+        "test": "exit 0 || true"
     },
     "dependencies": {
         "@types/execa": "0.9.0",

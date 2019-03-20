@@ -5,8 +5,7 @@
     "main": "index.ts",
     "private": true,
     "scripts": {
-        "test": "exit 0 || true",
-        "typecheck": "tsc --noEmit"
+        "test": "exit 0 || true"
     },
     "devDependencies": {
         "compression-webpack-plugin": "2.0.0",
