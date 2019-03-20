@@ -13,7 +13,9 @@ git-is-repo-dirty \
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
   && git status -s \
+  && line \
   && exit 1
 
-lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY &&
+lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY && \
+  line && \
   success

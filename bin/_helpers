@@ -58,13 +58,16 @@ underline()     { ansi 4 "$@"; }
 strikethrough() { ansi 9 "$@"; }
 red()           { echo; ansi 31 "$@"; echo;}
 
+
 line () {
   local text=$@
   echo ""
   hr '-'
-  echo -e "⚡ ${text}"
+  [ ! -z "$text" ] && echo -e "⚡ ${text}"
   echo ""
 }
+
+
 
 success () {
 echo -e $Gre

@@ -27,5 +27,7 @@ yarn test --coverage --ci
 line '[5/6] Build packages'
 yarn build
 
-line '[6/6] Publish packages if new version is available'
+line '[6/6] Publish packages (if version is bumped)'
 $ROOT/bin/publish
+
+line
