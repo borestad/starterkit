@@ -19,7 +19,7 @@ line '[2/6] Lint'
 yarn lint
 
 line '[3/6] Compile'
-yarn lint
+yarn compile
 
 line '[4/6] Run tests'
 yarn test --coverage --ci
