@@ -60,7 +60,7 @@
     "parser": "typescript"
   },
   "devDependencies": {
-    "@babel/register": "7.0.0",
+    "@babel/register": "7.4.0",
     "del-cli": "1.1.0",
     "husky": "1.3.1",
     "lint-staged": "8.1.5",
@@ -68,10 +68,10 @@
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
-    "@babel/core": "7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
-    "@babel/preset-env": "^7.3.4",
+    "@babel/core": "7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/preset-env": "^7.4.1",
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "24.0.11",
     "babel-plugin-loop-optimizer": "1.4.1",
@@ -85,7 +85,7 @@
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "8.0.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "^3.3.3333",
+    "typescript": "^3.3.4000",
     "typescript-tslint-plugin": "0.3.1",
     "yarn": "1.13.0"
   }
