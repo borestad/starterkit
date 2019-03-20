@@ -1,0 +1,17 @@
+{
+  "name": "example-nightwatch1",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc",
+    "test": "./node_modules/.bin/nightwatch",
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
+  },
+  "dependencies": {
+    "@types/nightwatch": "^0.9.12",
+    "chromedriver": "^2.46.0",
+    "nightwatch": "^1.0.19",
+    "typescript": "^3.3.3333"
+  }
+}
