@@ -1,3 +1,9 @@
+/**
+ *
+ * https://jestjs.io/docs/en/configuration.html
+ *
+ */
+
 module.exports = pkg => {
   return {
     displayName: pkg.name,

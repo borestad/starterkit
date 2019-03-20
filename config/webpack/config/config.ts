@@ -1,4 +1,4 @@
-import * as ip from 'internal-ip'
+import ip from 'internal-ip'
 import * as moment from 'moment'
 import { gitRoot, gitShortHash } from '../lib/index'
 import { env, util } from './helper'

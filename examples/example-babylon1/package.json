@@ -10,7 +10,8 @@
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",
-    "test": "jest --notify"
+    "test": "jest --notify",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/cli": "7.2.3",

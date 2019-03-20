@@ -7,7 +7,7 @@
 const path = require('path')
 const cwd = path.relative(__dirname, process.cwd())
 
-console.log(`❤️  babel.config.js (${cwd})`)
+console.log(`❤️ babel.config.js (${cwd})`)
 
 module.exports = api => {
   const isProd = expr => api.env('production') && expr

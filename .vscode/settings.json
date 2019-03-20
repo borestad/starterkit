@@ -22,7 +22,7 @@
     "editor.formatOnType": true
   },
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', Inconsolata, 'Droid Sans Fallback', monospace",
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', Inconsolata, 'Droid Sans Fallback', 'DejaVu Sans Mono', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.autoIndent": true,
   "editor.codeLens": true,
@@ -32,6 +32,10 @@
     "comments": true,
     "other": true,
     "strings": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": false,
+    "source.fixAll": true
   },
   "editor.snippetSuggestions": "bottom",
   "eslint.alwaysShowStatus": false,
@@ -78,5 +82,6 @@
   "tslint.jsEnable": true,
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
-  "typescript.referencesCodeLens.enabled": false
+  "typescript.referencesCodeLens.enabled": false,
+  "terminal.explorerKind": "external"
 }

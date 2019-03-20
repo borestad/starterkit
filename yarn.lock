@@ -1818,6 +1818,13 @@
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
   integrity sha1-4Xfmme4bjCLSMXTKqnQiZEOJUJ8=
 
+"@types/execa@0.9.0":
+  version "0.9.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/execa/-/execa-0.9.0.tgz#9b025d2755f17e80beaf9368c3f4f319d8b0fb93"
+  integrity sha1-mwJdJ1XxfoC+r5Now/TzGdiw+5M=
+  dependencies:
+    "@types/node" "*"
+
 "@types/istanbul-lib-coverage@^1.1.0":
   version "1.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
@@ -1834,6 +1841,11 @@
   integrity sha1-Hwmb6jMsIo6mUFqIFZv6hqWFg0A=
   dependencies:
     "@types/jest-diff" "*"
+
+"@types/lodash@4.14.123":
+  version "4.14.123"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
+  integrity sha1-Ob5dIRR4yN072umO51u37+Sr/k0=
 
 "@types/node@*", "@types/node@^10.11.7":
   version "10.12.18"
