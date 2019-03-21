@@ -17,3 +17,9 @@ yarn build
 ```sh
 yarn lint
 ```
+
+## Howto update packages?
+
+```sh
+yarn upgrade-interactive --latest
+```
