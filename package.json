@@ -24,7 +24,7 @@
     "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock",
     "lint": "lerna run lint --parallel",
     "postinstall": "del package-lock.json && node node_modules/husky/husky.js install",
-    "preinstall": "del .git/hooks/pre-commit || true",
+    "preinstall": "rm -f .git/hooks/pre-commit || true",
     "prettier:": "prettier --write \"examples/**/*.ts\"",
     "test": "jest -c config/jest/jest.config.js",
     "test:watch": "yarn test -- --watch --notify",
