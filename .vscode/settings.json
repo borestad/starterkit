@@ -42,6 +42,9 @@
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
   "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    ".yarnrc": "properties"
+  },
   "files.exclude": {
     "**/node_modules": true,
     "*.log": true,
@@ -82,5 +85,6 @@
   "tslint.jsEnable": true,
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
-  "typescript.referencesCodeLens.enabled": false
+  "typescript.referencesCodeLens.enabled": false,
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false
 }
