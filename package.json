@@ -16,20 +16,19 @@
     "config/*"
   ],
   "scripts": {
-    "ci": "./bin/ci",
     "build": "lerna run build --parallel --stream",
+    "ci": "./bin/ci",
     "clean": "git clean -dxf -e node_modules",
-    "fix": "prettier --write \"examples/**/*.ts\" && yarn lint",
-    "prettier:": "prettier --write \"examples/**/*.ts\"",
-    "lint": "lerna run lint --parallel",
-    "preinstall": "rm -f .git/hooks/pre-commit || true",
-    "postinstall": "if-env NODE_ENV=production && true || node node_modules/husky/husky.js install",
-    "test": "jest -c config/jest/jest.config.js",
-    "test:workspace": "lerna exec -- yarn test",
-    "test:watch": "jest --watch --notify",
     "compile": "tsc -b tsconfig.json",
-    "upgrade:deps": "yarn upgrade-interactive --latest",
-    "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock"
+    "fix": "prettier --write \"examples/**/*.ts\" && yarn lint",
+    "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock",
+    "lint": "lerna run lint --parallel",
+    "postinstall": "node node_modules/husky/husky.js install",
+    "preinstall": "rm -f .git/hooks/pre-commit || true",
+    "prettier:": "prettier --write \"examples/**/*.ts\"",
+    "test": "jest -c config/jest/jest.config.js",
+    "test:watch": "yarn test -- --watch --notify",
+    "test:serial": "lerna exec -- yarn test"
   },
   "engines": {
     "node": "10.x",
@@ -76,7 +75,6 @@
     "@types/jest": "24.0.11",
     "babel-plugin-loop-optimizer": "1.4.1",
     "envinfo": "7.1.0",
-    "if-env": "1.0.4",
     "jest": "24.5.0",
     "jest-cli": "24.5.0",
     "lerna": "^3.13.1",
@@ -88,6 +86,6 @@
     "tslint-eslint-rules": "5.4.0",
     "typescript": "^3.3.4000",
     "typescript-tslint-plugin": "0.3.1",
-    "yarn": "1.13.0"
+    "yarn": "1.15.2"
   }
 }
