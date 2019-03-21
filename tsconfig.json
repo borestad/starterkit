@@ -1,4 +1,5 @@
 {
+  "filesGlob": ["types/**/*.d.ts", "**/*.d.ts", "**/*.ts", "**/*.tsx"],
   "references": [
     //{ "path": "examples/*", }
   ],

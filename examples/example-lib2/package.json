@@ -10,9 +10,9 @@
   },
   "main": "src/index.ts",
   "types.bak": "./index.d.ts",
-  "_main": "dist/foo-bar.umd.js",
-  "_module": "dist/foo-bar.es5.js",
-  "_typings": "dist/types/foo-bar.d.ts",
+  "_main": "dist/example-lib2.umd.js",
+  "_module": "dist/example-lib2.es5.js",
+  "_typings": "dist/types/example-lib2.d.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
     "clean": "git clean -dxf -e node_modules",

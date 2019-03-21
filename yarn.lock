@@ -122,15 +122,6 @@
     "@babel/types" "^7.3.0"
     esutils "^2.0.0"
 
-"@babel/helper-call-delegate@^7.1.0":
-  version "7.1.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helper-call-delegate/-/helper-call-delegate-7.1.0.tgz#6a957f105f37755e8645343d3038a22e1449cc4a"
-  integrity sha1-apV/EF83dV6GRTQ9MDiiLhRJzEo=
-  dependencies:
-    "@babel/helper-hoist-variables" "^7.0.0"
-    "@babel/traverse" "^7.1.0"
-    "@babel/types" "^7.0.0"
-
 "@babel/helper-call-delegate@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helper-call-delegate/-/helper-call-delegate-7.4.0.tgz#f308eabe0d44f451217853aedf4dea5f6fe3294f"
@@ -194,13 +185,6 @@
   version "7.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0.tgz#83572d4320e2a4657263734113c42868b64e49c3"
   integrity sha1-g1ctQyDipGVyY3NBE8QoaLZOScM=
-  dependencies:
-    "@babel/types" "^7.0.0"
-
-"@babel/helper-hoist-variables@^7.0.0":
-  version "7.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/helper-hoist-variables/-/helper-hoist-variables-7.0.0.tgz#46adc4c5e758645ae7a45deb92bab0918c23bb88"
-  integrity sha1-Rq3ExedYZFrnpF3rkrqwkYwju4g=
   dependencies:
     "@babel/types" "^7.0.0"
 
@@ -420,16 +404,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-optional-catch-binding" "^7.2.0"
 
-"@babel/plugin-proposal-unicode-property-regex@^7.2.0":
-  version "7.2.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.2.0.tgz#abe7281fe46c95ddc143a65e5358647792039520"
-  integrity sha1-q+coH+Rsld3BQ6ZeU1hkd5IDlSA=
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/helper-regex" "^7.0.0"
-    regexpu-core "^4.2.0"
-
-"@babel/plugin-proposal-unicode-property-regex@^7.4.0":
+"@babel/plugin-proposal-unicode-property-regex@^7.2.0", "@babel/plugin-proposal-unicode-property-regex@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.4.0.tgz#202d91ee977d760ef83f4f416b280d568be84623"
   integrity sha1-IC2R7pd9dg74P09BaygNVovoRiM=
@@ -539,14 +514,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-destructuring@^7.2.0":
-  version "7.2.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.2.0.tgz#e75269b4b7889ec3a332cd0d0c8cff8fed0dc6f3"
-  integrity sha1-51JptLeInsOjMs0NDIz/j+0NxvM=
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-
-"@babel/plugin-transform-destructuring@^7.4.0":
+"@babel/plugin-transform-destructuring@^7.2.0", "@babel/plugin-transform-destructuring@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.4.0.tgz#acbb9b2418d290107db333f4d6cd8aa6aea00343"
   integrity sha1-rLubJBjSkBB9szP01s2Kpq6gA0M=
@@ -585,14 +553,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-flow" "^7.2.0"
 
-"@babel/plugin-transform-for-of@^7.2.0":
-  version "7.2.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.2.0.tgz#ab7468befa80f764bb03d3cb5eef8cc998e1cad9"
-  integrity sha1-q3RovvqA92S7A9PLXu+MyZjhytk=
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-
-"@babel/plugin-transform-for-of@^7.4.0":
+"@babel/plugin-transform-for-of@^7.2.0", "@babel/plugin-transform-for-of@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.4.0.tgz#56c8c36677f5d4a16b80b12f7b768de064aaeb5f"
   integrity sha1-VsjDZnf11KFrgLEve3aN4GSq618=
@@ -622,7 +583,7 @@
     "@babel/helper-module-transforms" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-modules-commonjs@^7.0.0 <7.4.0", "@babel/plugin-transform-modules-commonjs@^7.2.0":
+"@babel/plugin-transform-modules-commonjs@^7.0.0 <7.4.0":
   version "7.2.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.2.0.tgz#c4f1933f5991d5145e9cfad1dfd848ea1727f404"
   integrity sha1-xPGTP1mR1RRenPrR39hI6hcn9AQ=
@@ -631,7 +592,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-simple-access" "^7.1.0"
 
-"@babel/plugin-transform-modules-commonjs@^7.4.0":
+"@babel/plugin-transform-modules-commonjs@^7.2.0", "@babel/plugin-transform-modules-commonjs@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.4.0.tgz#3b8ec61714d3b75d20c5ccfa157f2c2e087fd4ca"
   integrity sha1-O47GFxTTt10gxcz6FX8sLgh/1Mo=
@@ -656,28 +617,14 @@
     "@babel/helper-module-transforms" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-named-capturing-groups-regex@^7.3.0":
-  version "7.3.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-named-capturing-groups-regex/-/plugin-transform-named-capturing-groups-regex-7.3.0.tgz#140b52985b2d6ef0cb092ef3b29502b990f9cd50"
-  integrity sha1-FAtSmFstbvDLCS7zspUCuZD5zVA=
-  dependencies:
-    regexp-tree "^0.1.0"
-
-"@babel/plugin-transform-named-capturing-groups-regex@^7.4.2":
+"@babel/plugin-transform-named-capturing-groups-regex@^7.3.0", "@babel/plugin-transform-named-capturing-groups-regex@^7.4.2":
   version "7.4.2"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-named-capturing-groups-regex/-/plugin-transform-named-capturing-groups-regex-7.4.2.tgz#800391136d6cbcc80728dbdba3c1c6e46f86c12e"
   integrity sha1-gAORE21svMgHKNvbo8HG5G+GwS4=
   dependencies:
     regexp-tree "^0.1.0"
 
-"@babel/plugin-transform-new-target@^7.0.0":
-  version "7.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-new-target/-/plugin-transform-new-target-7.0.0.tgz#ae8fbd89517fa7892d20e6564e641e8770c3aa4a"
-  integrity sha1-ro+9iVF/p4ktIOZWTmQeh3DDqko=
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-
-"@babel/plugin-transform-new-target@^7.4.0":
+"@babel/plugin-transform-new-target@^7.0.0", "@babel/plugin-transform-new-target@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-new-target/-/plugin-transform-new-target-7.4.0.tgz#67658a1d944edb53c8d4fa3004473a0dd7838150"
   integrity sha1-Z2WKHZRO21PI1PowBEc6DdeDgVA=
@@ -692,16 +639,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/helper-replace-supers" "^7.1.0"
 
-"@babel/plugin-transform-parameters@^7.2.0":
-  version "7.2.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.2.0.tgz#0d5ad15dc805e2ea866df4dd6682bfe76d1408c2"
-  integrity sha1-DVrRXcgF4uqGbfTdZoK/520UCMI=
-  dependencies:
-    "@babel/helper-call-delegate" "^7.1.0"
-    "@babel/helper-get-function-arity" "^7.0.0"
-    "@babel/helper-plugin-utils" "^7.0.0"
-
-"@babel/plugin-transform-parameters@^7.4.0":
+"@babel/plugin-transform-parameters@^7.2.0", "@babel/plugin-transform-parameters@^7.4.0":
   version "7.4.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.4.0.tgz#a1309426fac4eecd2a9439a4c8c35124a11a48a9"
   integrity sha1-oTCUJvrE7s0qlDmkyMNRJKEaSKk=
@@ -2901,7 +2839,7 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.4, browserslist@^4.4.1:
+browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.4.1:
   version "4.4.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/browserslist/-/browserslist-4.4.1.tgz#42e828954b6b29a7a53e352277be429478a69062"
   integrity sha1-QugolUtrKaelPjUid75ClHimkGI=
@@ -2910,7 +2848,7 @@ browserslist@^4.0.0, browserslist@^4.1.0, browserslist@^4.3.4, browserslist@^4.4
     electron-to-chromium "^1.3.103"
     node-releases "^1.1.3"
 
-browserslist@^4.4.2, browserslist@^4.5.1:
+browserslist@^4.3.4, browserslist@^4.4.2, browserslist@^4.5.1:
   version "4.5.2"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/browserslist/-/browserslist-4.5.2.tgz#36ad281f040af684555a23c780f5c2081c752df0"
   integrity sha1-Nq0oHwQK9oRVWiPHgPXCCBx1LfA=
