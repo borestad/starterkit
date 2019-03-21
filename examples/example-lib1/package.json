@@ -13,7 +13,7 @@
     "test": "jest --notify",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
-    "build": "rimraf dist && microbundle build src/index.ts -o dist"
+    "build": "rimraf dist && microbundle build src/index.ts -o dist --target web -f umd"
   },
   "devDependencies": {
     "microbundle": "0.11.0",
