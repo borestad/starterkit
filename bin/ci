@@ -1,5 +1,6 @@
 #!/bin/bash
 set +x -eEu
+
 export PATH="./node_modules/.bin:$PATH"
 
 . `dirname $0`/_helpers
@@ -9,28 +10,29 @@ cd $ROOT
 trap trap-exit EXIT
 trap trap-error INT TERM
 
-line '[1/8] Cleanup'
+hr '-'
+
+npx envinfo --system --binaries
+
+line '[1/7] Cleanup'
 yarn clean
 
-line '[2/8] Install'
+line '[2/7] Install'
 yarn
 
-line '[3/8] Show Environment'
-$ROOT/node_modules/.bin/envinfo
-
-line '[4/8] Lint'
+line '[3/7] Lint'
 yarn lint
 
-line '[5/8] Compile'
+line '[4/7] Compile'
 yarn compile
 
-line '[6/8] Run tests'
+line '[5/7] Run tests'
 yarn test --coverage --ci
 
-line '[7/8] Build packages'
+line '[6/7] Build packages'
 yarn build
 
-line '[8/8] Publish packages (if version is bumped)'
+line '[7/7] Publish packages (if version is bumped)'
 $ROOT/bin/publish
 
 line
