@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && parcel build --no-minify index.html",
+    "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
     "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
