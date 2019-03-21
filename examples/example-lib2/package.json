@@ -1,7 +1,7 @@
 {
   "name": "@scope/example-lib2",
-  "private": true,
-  "version": "1.0.0",
+  "private": false,
+  "version": "1.0.1",
   "license": "UNLICENSED",
   "author": {
     "name": "NetEnt AB (publ)",
