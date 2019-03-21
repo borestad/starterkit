@@ -27,7 +27,7 @@ line '[4/7] Compile'
 yarn compile
 
 line '[5/7] Run tests'
-yarn test --coverage --ci
+yarn test --coverage --ci --runInBand
 
 line '[6/7] Build packages'
 yarn build
