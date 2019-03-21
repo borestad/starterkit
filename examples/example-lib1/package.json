@@ -10,14 +10,14 @@
   },
   "main": "src/index.ts",
   "scripts": {
-    "test": "jest --notify",
+    "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
+    "clean": "git clean -dxf -e node_modules",
+    "compile": "del dist && tsc -b tsconfig.json --listEmittedFiles",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
-    "compile": "rimraf dist && tsc -b tsconfig.json --listEmittedFiles",
-    "build": "rimraf dist && microbundle build src/index.ts -o dist --target web -f umd"
+    "test": "jest --notify"
   },
-  "devDependencies": {
+  "dependencies": {
     "microbundle": "0.11.0",
     "typescript": "3.3.4000"
-  },
-  "dependencies": {}
+  }
 }

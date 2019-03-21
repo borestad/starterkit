@@ -82,6 +82,5 @@
   "tslint.jsEnable": true,
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
-  "typescript.referencesCodeLens.enabled": false,
-  "terminal.explorerKind": "external"
+  "typescript.referencesCodeLens.enabled": false
 }

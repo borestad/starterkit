@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "git clean -dxf -e node_modules",
     "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
     "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
