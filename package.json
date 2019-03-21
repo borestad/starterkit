@@ -32,7 +32,7 @@
     "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock"
   },
   "engines": {
-    "node": ">= 8.x",
+    "node": "10.x",
     "yarn": ">= 1.12.x",
     "npm": ">= this-repo-is-yarn-only:see-npmrc"
   },
