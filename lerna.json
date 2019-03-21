@@ -8,8 +8,7 @@
   "command": {
     "version": {
       "allowBranch": [
-        "master",
-        "feature/*"
+        "master"
       ],
       "conventionalCommits": true,
       "exact": true
