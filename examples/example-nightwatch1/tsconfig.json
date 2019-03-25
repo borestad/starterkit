@@ -4,7 +4,12 @@
     "tests/**/*.ts"
   ],
   "compilerOptions": {
-    "module": "esnext",
+    "module": "commonjs",
     "outDir": "dist",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "rootDir": "tests"
   }
 }

@@ -3,7 +3,7 @@
         "dist"
     ],
     "output_folder": "reports",
-    "globals_path": "./globals.ts",
+    "globals_path": "./globals.js",
     "selenium": {
         "start_process": false
     },

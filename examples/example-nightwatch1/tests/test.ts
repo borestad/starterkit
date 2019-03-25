@@ -1,6 +1,6 @@
 import { NightwatchBrowser } from 'nightwatch'
 
-module.exports = {
+export = {
   'Launch Babylon Yeti Scene': (browser: NightwatchBrowser) => {
     browser
       .url('https://www.babylonjs.com/demos/yeti/')
