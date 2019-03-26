@@ -1,0 +1,21 @@
+#!/bin/bash -eEu
+
+#
+## Publishes all changed packages with new versions to Artifactory
+#
+. `dirname $0`/_helpers
+
+export PATH="./node_modules/.bin:$PATH"
+
+git-is-repo-dirty \
+  && failure \
+  && echo 'The git repository is "dirty"' \
+  && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
+  && echo \
+  && git status -s \
+  && line \
+  && exit 1
+
+lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY && \
+  line && \
+  success

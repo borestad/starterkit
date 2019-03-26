@@ -1,8 +1,9 @@
 {
   "extends": "../../tsconfig.json",
+  "include": ["./**/*.ts"],
   "compilerOptions": {
-      "noUnusedLocals": false,
-      "outDir": "dist",
-      "module": "esnext"
+    "noUnusedLocals": false,
+    "outDir": "node_modules/.tmp/dist",
+    "module": "esnext"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "outDir": "dist",
+    "rootDir": "src",
+    "module": "esnext"
+  }
+}

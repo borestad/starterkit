@@ -3,7 +3,7 @@
   "compilerOptions": {
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "outDir": "dist",
+    "outDir": "node_modules/.tmp/dist",
     "rootDir": "./",
     "baseUrl": "./"
   }

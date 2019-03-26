@@ -1,16 +1,16 @@
 {
-  "name": "example-babylon1",
+  "name": "@scope/example-babylon1",
   "private": true,
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "yarn clean && parcel build --no-minify index.html",
+    "clean": "git clean -dxf -e node_modules",
+    "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
     "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",
-    "test": "exit 0"
+    "test": "jest --notify"
   },
   "dependencies": {
     "@babel/cli": "7.2.3",
@@ -20,8 +20,8 @@
     "babylonjs-materials": "3.3.0",
     "babylonjs-viewer": "3.3.0",
     "cannon": "0.6.2",
-    "parcel-bundler": "1.11.0",
+    "parcel-bundler": "1.12.3",
     "pep": "1.0.13",
-    "typescript": "3.2.2"
+    "typescript": "3.3.4000"
   }
 }

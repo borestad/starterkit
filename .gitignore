@@ -18,6 +18,9 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
+# Test report directory used by Nightwatch
+reports
+
 # nyc test coverage
 .nyc_output
 
@@ -139,8 +142,12 @@ dist
 package-lock.json
 examples/**/yarn.lock
 
-# Don't allow a mix of ts and js files
-src/**/*.js
+# Don't allow a mix of ts and js files in this repository...
+*.js
+# ...except config files (jest.config.js, babel.config.js etc)
+!*.config.js
+# ...and some extra files
+!wallaby.js
 
 # Reports
 *-report.json
@@ -212,3 +219,10 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+
+# Avoid Jenkins error "Working tree has uncommitted changes"
+git-vars
+
+# Common cache folder
+.*cache*

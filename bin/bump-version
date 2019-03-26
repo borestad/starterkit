@@ -1,0 +1,18 @@
+#!/bin/bash -eEu
+
+#
+## Bump versions automatically with a minor version
+#
+#    Changes:
+#    - @scope/example-babylon1: 1.0.2 => 1.0.3 (private)
+#    - @scope/example-lib1: 1.0.2 => 1.0.3
+#
+
+. `dirname $0`/_helpers
+
+git-is-repo-dirty \
+    && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
+    && exit 1
+
+line 'Create patch version'
+lerna version minor --no-git-tag-version -y

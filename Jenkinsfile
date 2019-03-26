@@ -8,14 +8,14 @@ agent("npm") {
     stage("Install") {
       withNode("10.13.0") {
         sh 'npm run install:yarn'
-        sh './node_modules/.bin/yarn --link-duplicates --production'
+        sh './node_modules/.bin/yarn --pure-lockfile --link-duplicates --skip-integrity-check --no-progress --non-interactive'
       }
     }
 
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-        sh './node_modules/.bin/yarn ci'
+        sh './bin/ci'
       }
     }
   }

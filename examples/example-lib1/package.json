@@ -1,13 +1,28 @@
 {
-  "name": "example-lib1",
+  "name": "@scope/example-lib1",
   "private": true,
   "version": "1.0.0",
-  "main": "index.ts",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "NetEnt AB (publ)",
+    "email": "info@netent.com",
+    "url": "https://www.netent.com/"
+  },
+  "engines": {
+    "node": "10.x",
+    "yarn": ">= 1.12.x",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
+  "main": "src/index.ts",
   "scripts": {
-    "test": "jest",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix"
+    "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
+    "clean": "git clean -dxf -e node_modules",
+    "compile": "del dist && tsc -b tsconfig.json",
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
+    "test": "jest --notify"
   },
   "dependencies": {
-    "typescript": "3.2.2"
+    "microbundle": "0.11.0",
+    "typescript": "3.3.4000"
   }
 }

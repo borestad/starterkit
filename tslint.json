@@ -4,6 +4,9 @@
     "tslint-eslint-rules",
     "tslint-config-prettier"
   ],
+  "linterOptions": {
+    "exclude": ["**/node_modules/**"]
+  },
   "rules": {
     "interface-name": false,
     "no-unexpected-multiline": false,
@@ -13,10 +16,16 @@
     "no-implicit-dependencies": false,
     "no-irregular-whitespace": true,
     "no-trailing-whitespace": true,
-    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    "only-arrow-functions": [
+      true,
+      "allow-declarations",
+      "allow-named-functions"
+    ],
     "prefer-const": true,
+    "prefer-template": [true, "allow-single-concat"],
     "ordered-imports": [
-      true, {
+      true,
+      {
         "import-sources-order": "lowercase-last"
       }
     ],
@@ -34,6 +43,14 @@
     ],
     "ban": [
       true,
+      {
+        "name": ["window", "alert"],
+        "message": "Dont use global blocking methods"
+      },
+      {
+        "name": ["document", "write"],
+        "message": "Dont use global blocking methods"
+      },
       { "name": ["test", "only"], "message": "Don't focus tests" },
       { "name": ["it", "only"], "message": "Don't focus tests" },
       { "name": ["describe", "only"], "message": "Don't focus tests" },
