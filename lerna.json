@@ -1,15 +1,10 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": [
-    "examples/*",
-    "config/*"
-  ],
+  "packages": ["examples/*", "config/*"],
   "command": {
     "version": {
-      "allowBranch": [
-        "master"
-      ],
+      "allowBranch": ["master"],
       "conventionalCommits": true,
       "exact": true
     }

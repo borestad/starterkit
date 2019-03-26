@@ -1,15 +1,15 @@
 {
-  "[json]": {
-    "editor.formatOnSave": true
-  },
-  "[jsonc]": {
-    "editor.formatOnSave": false
-  },
   "[javascript]": {
     "editor.formatOnSave": true
   },
   "[javascriptreact]": {
     "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.acceptSuggestionOnEnter": "off",
@@ -18,14 +18,17 @@
     "editor.wordWrap": "on"
   },
   "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true
+    "editor.formatOnSave": true
   },
   "diffEditor.ignoreTrimWhitespace": false,
+  "editor.autoIndent": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": false
+  },
+  "editor.codeLens": true,
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', Inconsolata, 'Droid Sans Fallback', 'DejaVu Sans Mono', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "editor.autoIndent": true,
-  "editor.codeLens": true,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
   "editor.quickSuggestions": {
@@ -33,58 +36,58 @@
     "other": true,
     "strings": true
   },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": false,
-    "source.fixAll": true
-  },
   "editor.snippetSuggestions": "bottom",
+  "editor.renderIndentGuides": true,
   "eslint.alwaysShowStatus": false,
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
   "extensions.ignoreRecommendations": false,
   "files.associations": {
-    ".yarnrc": "properties"
+    ".*rc": "properties"
   },
   "files.exclude": {
-    "**/node_modules": true,
-    "*.log": true,
-    ".cache": true,
-    ".code": true,
     ".gitignore": false,
-    ".nyc_output": true,
-    ".tmp": true,
     ".vscode": false,
-    "build": true,
-    "node_modules": true
+    "**/.*cache*": true,
+    "**/.code/**": true,
+    "**/.nyc_output": true,
+    "**/.pnp*": true,
+    "**/.tmp": true,
+    "**/*.log": true,
+    "**/node_modules/**": true,
+    "**/reports": true,
+    "**/build": true,
+    "**/dist": true,
+    "examples/**/dist": true
   },
   "files.trimTrailingWhitespace": true,
   "files.useExperimentalFileWatcher": true,
   "files.watcherExclude": {
-    "**/dist/**": true,
+    "**/*.log": true,
+    "**/.*cache*": true,
+    "**/.code/**": true,
+    "**/.git/**": true,
+    "**/.tmp*/**": true,
     "**/coverage/**": true,
-    "**/.git/objects/**": true,
-    "**/.git/subtree-cache/**": true,
-    "**/.tmp/**": true,
-    "**/node_modules/**": true,
-    "/node_modules": true,
-    "/node_modules/": true
+    "**/dist/**": true,
+    "**/node_modules/**": true
   },
+  "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
   "prettier.eslintIntegration": true,
   "prettier.tslintIntegration": true,
   "problems.decorations.enabled": true,
   "search.exclude": {
     "**/.tmp": true,
     "**/build": true,
+    "**/coverage/**": true,
     "**/dist": true,
     "**/node_modules": true,
-    "**/reports": true,
-    "**/coverage/**": true,
+    "**/reports": true
   },
   "search.smartCase": true,
   "tslint.ignoreDefinitionFiles": false,
   "tslint.jsEnable": true,
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
-  "typescript.referencesCodeLens.enabled": false,
-  "javascript.format.insertSpaceAfterSemicolonInForStatements": false
+  "typescript.referencesCodeLens.enabled": false
 }

@@ -1,14 +1,12 @@
 {
-    "recommendations": [
-      "dbaeumer.vscode-eslint",
-      "EditorConfig.EditorConfig",      
-      "ms-vscode.vscode-typescript-tslint-plugin",
-      "esbenp.prettier-vscode",
-      "jedmao.tabsanity",
-      "kisstkondoros.typelens",
-      "vikas.code-navigation"
-    ],
-    "unwantedRecommendations": [
-      "eg2.tslint"
-    ]
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "esbenp.prettier-vscode",
+    "jedmao.tabsanity",
+    "kisstkondoros.typelens",
+    "vikas.code-navigation"
+  ],
+  "unwantedRecommendations": ["eg2.tslint"]
 }
