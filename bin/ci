@@ -20,8 +20,8 @@ yarn clean
 line '[2/7] Install'
 yarn --pure-lockfile --link-duplicates --skip-integrity-check --no-progress --non-interactive
 
-line '[3/7] Lint'
-yarn lint
+line '[3/7] Codestyle & Lint'
+yarn fix
 
 line '[4/7] Compile'
 yarn compile
