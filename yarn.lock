@@ -1870,6 +1870,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/fs-extra@5.0.5":
+  version "5.0.5"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/fs-extra/-/fs-extra-5.0.5.tgz#080d90a792f3fa2c5559eb44bd8ef840aae9104b"
+  integrity sha1-CA2Qp5Lz+ixVWetEvY74QKrpEEs=
+  dependencies:
+    "@types/node" "*"
+
 "@types/istanbul-lib-coverage@^1.1.0":
   version "1.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-1.1.0.tgz#2cc2ca41051498382b43157c8227fea60363f94a"
@@ -2246,6 +2253,11 @@ are-we-there-yet@~1.1.2:
   dependencies:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
+
+arg@^4.1.0:
+  version "4.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/arg/-/arg-4.1.0.tgz#583c518199419e0037abb74062c37f8519e575f0"
+  integrity sha1-WDxRgZlBngA3q7dAYsN/hRnldfA=
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -4342,7 +4354,7 @@ diff-sequences@^24.3.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/diff-sequences/-/diff-sequences-24.3.0.tgz#0f20e8a1df1abddaf4d9c226680952e64118b975"
   integrity sha1-DyDood8avdr02cImaAlS5kEYuXU=
 
-diff@^3.2.0:
+diff@^3.1.0, diff@^3.2.0:
   version "3.5.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
   integrity sha1-gAwN0eCov7yVg1wgKtIg/jF+WhI=
@@ -7612,7 +7624,7 @@ make-dir@^1.0.0, make-dir@^1.3.0:
   dependencies:
     pify "^3.0.0"
 
-make-error@1.x:
+make-error@1.x, make-error@^1.1.1:
   version "1.3.5"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/make-error/-/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
   integrity sha1-7+ToH22yjK3WBccPKcgxtY73dsg=
@@ -12109,6 +12121,17 @@ ts-jest@24.0.0:
     semver "^5.5"
     yargs-parser "10.x"
 
+ts-node@8.0.3:
+  version "8.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/ts-node/-/ts-node-8.0.3.tgz#aa60b836a24dafd8bf21b54766841a232fdbc641"
+  integrity sha1-qmC4NqJNr9i/IbVHZoQaIy/bxkE=
+  dependencies:
+    arg "^4.1.0"
+    diff "^3.1.0"
+    make-error "^1.1.1"
+    source-map-support "^0.5.6"
+    yn "^3.0.0"
+
 tslib@1.9.0:
   version "1.9.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
@@ -12961,6 +12984,11 @@ yarn@1.15.2:
   version "1.15.2"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/yarn/-/yarn-1.15.2.tgz#7a064ca81ca34235f16376ad2f796ed432f9e285"
   integrity sha1-egZMqByjQjXxY3atL3lu1DL54oU=
+
+yn@^3.0.0:
+  version "3.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/yn/-/yn-3.0.0.tgz#0073c6b56e92aed652fbdfd62431f2d6b9a7a091"
+  integrity sha1-AHPGtW6SrtZS+9/WJDHy1rmnoJE=
 
 yup@^0.26.10:
   version "0.26.10"

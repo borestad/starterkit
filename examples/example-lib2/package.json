@@ -8,11 +8,12 @@
     "email": "info@netent.com",
     "url": "https://www.netent.com/"
   },
+  "engines": {
+    "node": "10.x",
+    "yarn": ">= 1.12.x",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
   "main": "src/index.ts",
-  "types.bak": "./index.d.ts",
-  "_main": "dist/example-lib2.umd.js",
-  "_module": "dist/example-lib2.es5.js",
-  "_typings": "dist/types/example-lib2.d.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
     "clean": "git clean -dxf -e node_modules",
@@ -27,12 +28,13 @@
     "dist/*",
     "index.d.ts"
   ],
+  "bundledDependencies": [],
   "dependencies": {
+    "@babel/core": "7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@scope/example-lib1": "*",
-    "typescript-tslint-plugin": "0.3.1",
     "microbundle": "0.11.0",
     "prettier": "1.16.4",
     "typescript": "3.3.4000"

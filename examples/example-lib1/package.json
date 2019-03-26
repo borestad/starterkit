@@ -8,6 +8,11 @@
     "email": "info@netent.com",
     "url": "https://www.netent.com/"
   },
+  "engines": {
+    "node": "10.x",
+    "yarn": ">= 1.12.x",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
   "main": "src/index.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",

@@ -36,7 +36,7 @@
     "lint": "tslint -c tslint.json --project tsconfig.root.json --fix && lerna run lint --parallel",
     "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
-    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
+    "prettier": "prettier --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "jest -c config/jest/jest.config.js",
     "test:watch": "yarn test -- --watch --notify",
     "test:serial": "lerna exec -- yarn test"
