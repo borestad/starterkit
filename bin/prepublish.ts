@@ -1,46 +1,55 @@
 #!/usr/bin/env node_modules/.bin/ts-node -T
-
 // tslint:disable no-floating-promises
 
-// import exec from 'execa'
+// TODO: Validate against some tool like:
+// http://package-json-validator.com/
+
 import * as fs from 'fs-extra'
+import { isNil, pickBy, times } from 'lodash'
 import path from 'path'
 
-// const run = exec.shell
-// const ROOT = path.join(__dirname, '..')
+const { log, error } = console
 const cwd = process.cwd()
-
-const removeDeps = (json, key, keep = [] as any) => {
-  if (json[key]) {
-    for (const prop in json[key]) {
-      if (!keep.includes(prop)) {
-        delete json[key][prop]
-      }
-    }
-  }
-}
-
 ; (async () => {
   try {
     const [from, to] = [`${cwd}/package.json`, `${cwd}/dist/package.json`]
 
-    await fs.copy(`${cwd}/package.json`, `${cwd}/dist/package.json`)
-    const pkg = JSON.parse(await fs.readFile('dist/package.json', 'utf-8'))
+    await fs.copy(from, to)
 
-    const pkg2 = {
+    const pkg = JSON.parse(await fs.readFile(to, 'utf-8'))
+
+    const output = {
       name: pkg.name,
-      version: pkg.version,
-      licence: pkg.licence,
-      author: pkg.author,
       description: pkg.description,
-      main: './dist/' + path.basename(pkg.name) + '.umd.js',
-      module: './dist/' + path.basename(pkg.name) + '.es5.js',
+      version: pkg.version,
+      license: pkg.license,
+      author: pkg.author,
+      maintainers: pkg.maintainers,
+      bugs: pkg.bugs,
+      homepage: pkg.homepage,
+      main: `dist/${path.basename(pkg.name)}.umd.js`,
+      module: `dist/${path.basename(pkg.name)}.es5.js`,
       types: './index.d.ts',
       files: pkg.files
     }
 
-    await fs.writeFile('dist/package.json', JSON.stringify(pkg2, null, 2))
+    if (Object.values(output).includes(undefined)) {
+      log(output)
+      log()
+      log()
+
+      const missing = Object.keys(pickBy(output, isNil))
+      error(`Some fields within "${to}" are missing following properties:`)
+      log(missing)
+      log()
+
+      throw new Error()
+    } else {
+      log(output)
+    }
+
+    await fs.writeFile(to, JSON.stringify(output, null, 2))
   } catch (e) {
-    console.log('Error', e)
+    log(e)
   }
 })()
