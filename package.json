@@ -1,5 +1,6 @@
 {
   "name": "@netent/starterkit",
+  "description": "Starterkit is a `batteries included` base for creating awesome software using Typescript and best practices within Netent",
   "version": "1.0.0",
   "private": true,
   "license": "UNLICENSED",
@@ -8,9 +9,18 @@
     "email": "info@netent.com",
     "url": "https://www.netent.com/"
   },
-  "contributors": [
+  "maintainers": [
     "Johan Borestad <johan.borestad@netent.com>"
   ],
+  "homepage": "https://git.netent.com/projects/GS/repos/starterkit",
+  "bugs": {
+    "url": "https://jira.netent.com/secure/RapidBoard.jspa?rapidView=1587"
+  },
+  "engines": {
+    "node": "10.x",
+    "yarn": ">= 1.12.x",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
   "workspaces": [
     "examples/*",
     "config/*"
@@ -19,21 +29,17 @@
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
     "clean": "git clean -dxf -e node_modules",
-    "compile": "tsc -b tsconfig.json",
+    "compile": "yarn compile:root && lerna run compile",
+    "compile:root": "tsc --build tsconfig.root.json",
     "fix": "yarn prettier && yarn lint",
     "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock",
-    "lint": "tslint -c tslint.json \"bin/*.ts\" --fix && lerna run lint --parallel",
-    "postinstall": "del package-lock.json && node node_modules/husky/husky.js install",
+    "lint": "tslint -c tslint.json --project tsconfig.root.json --fix && lerna run lint --parallel",
+    "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
-    "prettier": "prettier --write \"examples/**/*.ts\" \"bin/*.ts\"",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "jest -c config/jest/jest.config.js",
     "test:watch": "yarn test -- --watch --notify",
     "test:serial": "lerna exec -- yarn test"
-  },
-  "engines": {
-    "node": "10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
   },
   "husky": {
     "hooks": {
@@ -42,7 +48,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,js,jsx,json,md,html,css}": [
       "yarn fix",
       "git add"
     ]
@@ -55,8 +61,7 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none",
-    "useTabs": false,
-    "parser": "typescript"
+    "useTabs": false
   },
   "dependencies": {
     "@babel/cli": "^7.2.3",
