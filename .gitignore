@@ -142,8 +142,12 @@ dist
 package-lock.json
 examples/**/yarn.lock
 
-# Don't allow a mix of ts and js files
-src/**/*.js
+# Don't allow a mix of ts and js files in this repository...
+*.js
+# ...except config files (jest.config.js, babel.config.js etc)
+!*.config.js
+# ...and some extra files
+!wallaby.js
 
 # Reports
 *-report.json
