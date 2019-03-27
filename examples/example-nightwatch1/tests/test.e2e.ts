@@ -1,9 +1,10 @@
 import { NightwatchBrowser } from 'nightwatch'
 
 export = {
-  'Launch Babylon chibirex demo': (browser: NightwatchBrowser) => {
+  '@disabled': false,
+  'Launch Babylon chibirex': (browser: NightwatchBrowser) => {
     browser
-      .url('https://www.babylonjs.com/demos/chibirex/')
+      .url('https://www.babylonjs.com/demos/actions/')
       .waitForElementNotPresent('#babylonjsLoadingDiv', 30000)
       .end()
   }

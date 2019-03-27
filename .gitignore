@@ -146,6 +146,7 @@ examples/**/yarn.lock
 *.js
 # ...except config files (jest.config.js, babel.config.js etc)
 !*.config.js
+!*.conf.js
 # ...and some extra files
 !wallaby.js
 

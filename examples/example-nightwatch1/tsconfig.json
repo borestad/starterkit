@@ -4,13 +4,20 @@
     "tests/**/*.ts"
   ],
   "compilerOptions": {
+    // Create *.js files (disabled by default)
+    "noEmit": false,
+
+    // Disable sourcemaps and declaration files like (*.dts.ts, *.dts.js.map etc)
+    "sourceMap": false,
+    "declarationMap": false,
+    "declaration": false,
+
     "module": "commonjs",
     "outDir": "dist",
     "moduleResolution": "node",
     "target": "es5",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "rootDir": "tests",
-    "noEmit": false
+    "rootDir": "tests"
   }
 }

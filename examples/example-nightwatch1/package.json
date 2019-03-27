@@ -4,9 +4,10 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "git clean -e node_modules -e dist -dxf -n",
     "build": "tsc -b tsconfig.json",
-    "test": "yarn clean && yarn build && nightwatch",
+    "test": "run-p -l test:*",
+    "test:e2e": "yarn clean && yarn build && nightwatch",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
   },
   "dependencies": {
