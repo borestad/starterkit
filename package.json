@@ -37,7 +37,9 @@
     "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "prettier": "prettier --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
-    "test": "jest -c config/jest/jest.config.js",
+    "test": "run-p -l test:unit test:e2e",
+    "test:unit":"jest -c config/jest/jest.config.js",
+    "test:e2e":"lerna run test:e2e",
     "test:watch": "yarn test -- --watch --notify",
     "test:serial": "lerna exec -- yarn test"
   },

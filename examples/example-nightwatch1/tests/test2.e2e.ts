@@ -1,9 +1,16 @@
-import { NightwatchTest } from 'nightwatch'
+import { NightwatchTests } from 'nightwatch'
 
-interface E2E {
-  [key: string]: NightwatchTest | boolean
+// ============================================================================
+// Setup
+// ============================================================================
+
+const q = {
+  searchField: 'input[type=text]'
 }
 
+// ============================================================================
+// Tests
+// ============================================================================
 export = {
   '@disabled': false,
 
@@ -13,22 +20,20 @@ export = {
 
   'Test Google: #2': browser => {
     browser
-      .setValue('input[type=text]', 'rickroll')
-      .keys(browser.Keys.ENTER as any)
+      .setValue(q.searchField, 'rickroll')
+      .keys([browser.Keys.ENTER])
       .pause(1000)
       .assert.containsText('#main', 'Rick Astley')
   },
 
-  'Test Google: #3': client => {
-    const field = 'input[type=text]'
-
-    client
+  'Test Google: #3': browser => {
+    browser
       .url('https://google.com')
       .waitForElementVisible('body', 1000)
       .assert.title('Google')
-      .assert.visible(field)
-      .setValue(field, 'dolph lundgren')
-      .setValue(field, client.Keys.ENTER) // press Enter to search
+      .assert.visible(q.searchField)
+      .setValue(q.searchField, 'dolph lundgren')
+      .setValue(q.searchField, browser.Keys.ENTER) // press Enter to search
       .pause(1000)
       .assert.containsText(
         '#rso a:first-child',
@@ -38,4 +43,4 @@ export = {
       // End session
       .end()
   }
-} as E2E
+} as NightwatchTests

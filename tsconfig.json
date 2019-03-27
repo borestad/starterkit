@@ -9,7 +9,12 @@
 //
 // ========================================================================s
 {
-  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+
   "exclude": [
     // Test files are already covered by Jest
     "**/*.test.ts",
