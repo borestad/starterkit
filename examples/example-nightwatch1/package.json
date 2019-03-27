@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "git clean -e node_modules -e dist -dxf -n",
+    "clean": "git clean -e node_modules -e dist -dxf",
     "build": "tsc -b tsconfig.json",
     "test": "run-p -l test:*",
     "test:e2e": "yarn clean && yarn build && nightwatch",

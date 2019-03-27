@@ -1,7 +1,7 @@
 module.exports = {
-  src_folders: ['dist'],
+  src_folders: ['dist/tests'],
   output_folder: 'reports',
-  globals_path: './globals.js',
+  globals_path: 'dist/globals.js',
   test_workers: false,
   selenium: {
     start_process: false

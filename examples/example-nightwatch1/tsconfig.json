@@ -1,10 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "include": [
-    "**/*.d.ts",
-    "tests/**/*.ts"
+    "./**/*.d.ts",
+    "./**/*.ts"
   ],
   "compilerOptions": {
+    "rootDir": ".",
+
     // Create *.js files (disabled by default)
     "noEmit": false,
 
@@ -19,6 +21,10 @@
     "target": "es5",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "rootDir": "tests"
+    "noImplicitAny": false,
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ],
   }
 }
