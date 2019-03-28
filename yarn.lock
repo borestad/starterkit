@@ -4819,6 +4819,11 @@ eslint-scope@^4.0.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
+esm@3.2.21:
+  version "3.2.21"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/esm/-/esm-3.2.21.tgz#9cf6f1d7c70e22a641534f88ac01d6a1de5ba0a5"
+  integrity sha1-nPbx18cOIqZBU0+IrAHWod5boKU=
+
 esprima@3.x.x, esprima@^3.1.3:
   version "3.1.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/esprima/-/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"

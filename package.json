@@ -38,8 +38,8 @@
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "prettier": "prettier --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "run-p -l test:unit test:e2e",
-    "test:unit":"jest -c config/jest/jest.config.js",
-    "test:e2e":"lerna run test:e2e",
+    "test:unit": "jest -w 2 -c config/jest/jest.config.js",
+    "test:e2e": "lerna run test:e2e",
     "test:watch": "yarn test -- --watch --notify",
     "test:serial": "lerna exec -- yarn test"
   },
@@ -77,6 +77,7 @@
     "@types/jest": "24.0.11",
     "babel-plugin-loop-optimizer": "1.4.1",
     "del-cli": "1.1.0",
+    "esm": "3.2.21",
     "fs-extra": "7.0.1",
     "husky": "1.3.1",
     "jest": "24.5.0",

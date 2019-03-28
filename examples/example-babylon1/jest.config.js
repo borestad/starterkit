@@ -5,5 +5,5 @@
  */
 
 module.exports = require('../../config/jest/jest.config.base')(
-  require('./package')
+  require('./package.json')
 )

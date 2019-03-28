@@ -1,5 +1,5 @@
-#!/usr/bin/env node_modules/.bin/ts-node -T
-// tslint:disable no-floating-promises
+#!/usr/bin/env node -r esm
+// tslint:disable: no-floating-promises
 
 // TODO: Validate against some tool like:
 // http://package-json-validator.com/
@@ -10,13 +10,20 @@ import path from 'path'
 
 const { log, error } = console
 const cwd = process.cwd()
+
 ; (async () => {
   try {
-    const [from, to] = [`${cwd}/package.json`, `${cwd}/dist/package.json`]
+
+    const [from, to] = [
+      `${cwd}/package.json`,
+      `${cwd}/dist/package.json`
+    ]
 
     await fs.copy(from, to)
 
-    const pkg = JSON.parse(await fs.readFile(to, 'utf-8'))
+    const pkg = JSON.parse(
+      await fs.readFile(to, 'utf-8')
+    )
 
     const output = {
       name: pkg.name,

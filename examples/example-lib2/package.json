@@ -22,7 +22,7 @@
     "compile:ts": "del dist && tsc -b tsconfig.json",
     "dist": "NODE_ENV=production webpack --config ../../config/webpack/index.ts --colors --hide-modules --display-error-details",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
-    "test": "jest --notify"
+    "test": "jest -w 2 --notify"
   },
   "files": [
     "dist/*",

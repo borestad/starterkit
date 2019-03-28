@@ -12,6 +12,7 @@ module.exports = {
       selenium_host: 'localhost',
       default_path_prefix: '',
       desiredCapabilities: {
+        acceptSslCerts: true,
         browserName: 'chrome',
         chromeOptions: {
           args: ['headless']
