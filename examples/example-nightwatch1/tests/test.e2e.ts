@@ -6,6 +6,7 @@ export = {
     browser
       .url('https://www.babylonjs.com/demos/actions/')
       .waitForElementNotPresent('#babylonjsLoadingDiv', 30000)
+      .waitForElementPresent('#renderCanvas', 30000)
       .end()
   }
 }
