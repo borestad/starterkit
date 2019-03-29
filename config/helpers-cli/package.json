@@ -1,8 +1,8 @@
 {
-  "name": "@config/helpers",
+  "name": "@config/helpers-cli",
   "version": "0.0.0-test-only",
   "description": "Configuration Helpers",
-  "main": "helpers-cli.js",
+  "main": "./helpers-cli.js",
   "private": true,
   "engines": {
     "node": "10.x",

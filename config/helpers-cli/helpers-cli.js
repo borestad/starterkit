@@ -1,5 +1,5 @@
 const execa = require('execa')
-const { memoize } = require('lodash')
+const { memoize, compact } = require('lodash')
 const path = require('path')
 
 // Privates
@@ -10,20 +10,22 @@ const mexec = str => memoize(exec(str[0]))
 // Publics
 // ----------------------------------------------------------------------------
 
-const gitRoot = mexec`
+export const gitRoot = mexec`
   git rev-parse --show-toplevel
 `
 
-const gitShortHash = mexec`
+export const gitShortHash = mexec`
   git rev-parse --short HEAD
 `
 
-const pathRoot = (...args) => {
+export const pathRoot = (...args) => {
   return path.join(gitRoot(), ...args)
 }
 
-module.exports = {
-  gitRoot,
-  gitShortHash,
-  pathRoot
+export const getIgnoredFilesStillInIndex = () => {
+  return compact(
+    mexec`
+      git ls-files --ignored --exclude-standard
+  `().split('\n')
+  )
 }

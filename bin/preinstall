@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env node -r esm
 
 // tslint:disable no-floating-promises await-promise whitespace
 const exec = require('execa')
