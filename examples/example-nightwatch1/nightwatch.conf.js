@@ -1,3 +1,5 @@
+const chromium = require('chromium')
+
 module.exports = {
   src_folders: ['dist/tests'],
   output_folder: 'reports',
@@ -13,9 +15,10 @@ module.exports = {
       default_path_prefix: '',
       desiredCapabilities: {
         acceptSslCerts: true,
-        browserName: 'chrome',
+        browserName: 'chromium',
         chromeOptions: {
-          args: ['headless', '--no-sandbox']
+          args: ['headless', '--no-sandbox'],
+          binary: chromium.path
         }
       }
     }

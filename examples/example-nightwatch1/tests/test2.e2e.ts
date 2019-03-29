@@ -3,6 +3,7 @@ import { NightwatchTests } from 'nightwatch'
 // ============================================================================
 // Setup
 // ============================================================================
+const PAUSE = 1000
 
 const q = {
   searchField: 'input[type=text]'
@@ -15,26 +16,26 @@ export = {
   '@disabled': false,
 
   'Test Google: #1': browser => {
-    browser.url('https://www.google.com').waitForElementPresent('body', 30000)
+    browser.url('https://www.google.com').waitForElementPresent('body')
   },
 
   'Test Google: #2': browser => {
     browser
       .setValue(q.searchField, 'rickroll')
       .keys([browser.Keys.ENTER])
-      .pause(30000)
+      .pause(PAUSE)
       .assert.containsText('#main', 'Rick Astley')
   },
 
   'Test Google: #3': browser => {
     browser
       .url('https://www.google.com')
-      .waitForElementVisible('body', 30000)
+      .waitForElementVisible('body')
       .assert.title('Google')
       .assert.visible(q.searchField)
       .setValue(q.searchField, 'dolph lundgren')
       .setValue(q.searchField, browser.Keys.ENTER) // press Enter to search
-      .pause(30000)
+      .pause(PAUSE)
       .assert.containsText(
         '#rso a:first-child',
         'Dolph Lundgren – Wikipedia',

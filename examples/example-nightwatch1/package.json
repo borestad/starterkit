@@ -11,8 +11,10 @@
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
   },
   "dependencies": {
+    "@types/chromedriver": "2.38.0",
     "@types/nightwatch": "^0.9.12",
     "chromedriver": "^2.46.0",
+    "chromium": "2.1.0",
     "nightwatch": "^1.0.19",
     "typescript": "^3.3.3333"
   }

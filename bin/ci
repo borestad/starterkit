@@ -2,6 +2,7 @@
 set +x -eEu
 
 export PATH="./node_modules/.bin:$PATH"
+#export PATH="./node_modules/chromium/lib"
 
 . `dirname $0`/_helpers
 

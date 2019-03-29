@@ -1858,6 +1858,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/chromedriver@2.38.0":
+  version "2.38.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/chromedriver/-/chromedriver-2.38.0.tgz#971032b73eb7f44036f4f5bed59a7fd5b468014f"
+  integrity sha1-lxAytz639EA29PW+1Zp/1bRoAU8=
+  dependencies:
+    "@types/node" "*"
+
 "@types/estree@0.0.39":
   version "0.0.39"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/estree/-/estree-0.0.39.tgz#e177e699ee1b8c22d23174caaa7422644389509f"
@@ -3244,6 +3251,17 @@ chromedriver@^2.46.0:
     request "^2.88.0"
     tcp-port-used "^1.0.1"
 
+chromium@2.1.0:
+  version "2.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/chromium/-/chromium-2.1.0.tgz#9f54ed68cd4d338188b68cfa52479cfe426eccde"
+  integrity sha1-n1TtaM1NM4GItoz6Ukec/kJuzN4=
+  dependencies:
+    debug "^4.1.0"
+    extract-zip "^1.6.7"
+    got "^7.1.0"
+    tmp "0.0.33"
+    tunnel "^0.0.6"
+
 ci-info@^1.5.0:
   version "1.6.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/ci-info/-/ci-info-1.6.0.tgz#2ca20dbb9ceb32d4524a683303313f0304b1e497"
@@ -4252,7 +4270,7 @@ decode-uri-component@^0.2.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
   integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
 
-decompress-response@^3.3.0:
+decompress-response@^3.2.0, decompress-response@^3.3.0:
   version "3.3.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/decompress-response/-/decompress-response-3.3.0.tgz#80a4dd323748384bfa248083622aedec982adff3"
   integrity sha1-gKTdMjdIOEv6JICDYirt7Jgq3/M=
@@ -5688,6 +5706,26 @@ got@^6.7.1:
     unzip-response "^2.0.1"
     url-parse-lax "^1.0.0"
 
+got@^7.1.0:
+  version "7.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
+  integrity sha1-BUUP2ECU5rvqVvRRpDqcKJFmOFo=
+  dependencies:
+    decompress-response "^3.2.0"
+    duplexer3 "^0.1.4"
+    get-stream "^3.0.0"
+    is-plain-obj "^1.1.0"
+    is-retry-allowed "^1.0.0"
+    is-stream "^1.0.0"
+    isurl "^1.0.0-alpha5"
+    lowercase-keys "^1.0.0"
+    p-cancelable "^0.3.0"
+    p-timeout "^1.1.1"
+    safe-buffer "^5.0.1"
+    timed-out "^4.0.0"
+    url-parse-lax "^1.0.0"
+    url-to-options "^1.0.1"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"
@@ -5797,10 +5835,22 @@ has-flag@^3.0.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
   integrity sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
 
+has-symbol-support-x@^1.4.1:
+  version "1.4.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/has-symbol-support-x/-/has-symbol-support-x-1.4.2.tgz#1409f98bc00247da45da67cee0a36f282ff26455"
+  integrity sha1-FAn5i8ACR9pF2mfO4KNvKC/yZFU=
+
 has-symbols@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/has-symbols/-/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
   integrity sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=
+
+has-to-string-tag-x@^1.2.0:
+  version "1.4.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/has-to-string-tag-x/-/has-to-string-tag-x-1.4.1.tgz#a045ab383d7b4b2012a00148ab0aa5f290044d4d"
+  integrity sha1-oEWrOD17SyASoAFIqwql8pAETU0=
+  dependencies:
+    has-symbol-support-x "^1.4.1"
 
 has-unicode@^2.0.0, has-unicode@^2.0.1:
   version "2.0.1"
@@ -6555,6 +6605,11 @@ is-obj@^1.0.0, is-obj@^1.0.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
   integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
 
+is-object@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/is-object/-/is-object-1.0.1.tgz#8952688c5ec2ffd6b03ecc85e769e02903083470"
+  integrity sha1-iVJojF7C/9awPsyF52ngKQMINHA=
+
 is-observable@^1.1.0:
   version "1.1.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/is-observable/-/is-observable-1.1.0.tgz#b3e986c8f44de950867cab5403f5a3465005975e"
@@ -6816,6 +6871,14 @@ istanbul-reports@^2.1.1:
   integrity sha1-cu8WtOy5pKe9DiAB4A+V0e7Ir6k=
   dependencies:
     handlebars "^4.1.0"
+
+isurl@^1.0.0-alpha5:
+  version "1.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/isurl/-/isurl-1.0.0.tgz#b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67"
+  integrity sha1-sn9PSfPNqj6kSgpbfzRi5u3DnWc=
+  dependencies:
+    has-to-string-tag-x "^1.2.0"
+    is-object "^1.0.1"
 
 jest-changed-files@^24.5.0:
   version "24.5.0"
@@ -9032,6 +9095,11 @@ output-file-sync@^2.0.0:
     is-plain-obj "^1.1.0"
     mkdirp "^0.5.1"
 
+p-cancelable@^0.3.0:
+  version "0.3.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/p-cancelable/-/p-cancelable-0.3.0.tgz#b9e123800bcebb7ac13a479be195b507b98d30fa"
+  integrity sha1-ueEjgAvOu3rBOkeb4ZW1B7mNMPo=
+
 p-defer@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/p-defer/-/p-defer-1.0.0.tgz#9f6eb182f6c9aa8cd743004a7d4f96b196b0fb0c"
@@ -9113,6 +9181,13 @@ p-reduce@^1.0.0:
   version "1.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
   integrity sha1-GMKw3ZNqRpClKfgjH1ig/bakffo=
+
+p-timeout@^1.1.1:
+  version "1.2.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/p-timeout/-/p-timeout-1.2.1.tgz#5eb3b353b7fce99f101a1038880bb054ebbea386"
+  integrity sha1-XrOzU7f86Z8QGhA4iAuwVOu+o4Y=
+  dependencies:
+    p-finally "^1.0.0"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -12425,7 +12500,7 @@ tiny-inflate@^1.0.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tiny-inflate/-/tiny-inflate-1.0.2.tgz#93d9decffc8805bd57eae4310f0b745e9b6fb3a7"
   integrity sha1-k9nez/yIBb1X6uQxDwt0Xptvs6c=
 
-tmp@^0.0.33:
+tmp@0.0.33, tmp@^0.0.33:
   version "0.0.33"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"
   integrity sha1-bTQzWIl2jSGyvNoKonfO07G/rfk=
@@ -12650,6 +12725,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tunnel@^0.0.6:
+  version "0.0.6"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/tunnel/-/tunnel-0.0.6.tgz#72f1314b34a5b192db012324df2cc587ca47f92c"
+  integrity sha1-cvExSzSlsZLbASMk3yzFh8pH+Sw=
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
@@ -12913,6 +12993,11 @@ url-template@^2.0.8:
   version "2.0.8"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/url-template/-/url-template-2.0.8.tgz#fc565a3cccbff7730c775f5641f9555791439f21"
   integrity sha1-/FZaPMy/93MMd19WQflVV5FDnyE=
+
+url-to-options@^1.0.1:
+  version "1.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/url-to-options/-/url-to-options-1.0.1.tgz#1505a03a289a48cbd7a434efbaeec5055f5633a9"
+  integrity sha1-FQWgOiiaSMvXpDTvuu7FBV9WM6k=
 
 url@^0.11.0:
   version "0.11.0"

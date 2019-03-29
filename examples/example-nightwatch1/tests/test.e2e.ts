@@ -5,8 +5,8 @@ export = {
   'Launch Babylon chibirex': (browser: NightwatchBrowser) => {
     browser
       .url('https://www.babylonjs.com/demos/actions/')
-      .waitForElementNotPresent('#babylonjsLoadingDiv', 30000)
-      .waitForElementPresent('#renderCanvas', 30000)
+      .waitForElementNotPresent('#babylonjsLoadingDiv')
+      .waitForElementPresent('#renderCanvas')
       .end()
   }
 }
