@@ -38,7 +38,7 @@ export = {
       .pause(PAUSE)
       .assert.containsText(
         '#rso a:first-child',
-        'Dolph Lundgren - Wikipedia',
+        'Dolph Lundgren – Wikipedia',
         'Dolph not found!'
       )
       // End session
