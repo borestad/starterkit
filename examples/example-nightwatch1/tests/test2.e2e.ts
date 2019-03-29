@@ -36,11 +36,8 @@ export = {
       .setValue(q.searchField, 'dolph lundgren')
       .setValue(q.searchField, browser.Keys.ENTER) // press Enter to search
       .pause(PAUSE)
-      .assert.containsText(
-        '#rso a:first-child',
-        'Dolph Lundgren – Wikipedia',
-        'Dolph not found!'
-      )
+      .assert.containsText('#rso a:first-child', 'Dolph Lundgren')
+      .assert.containsText('#rso a:first-child', 'Wikipedia')
       // End session
       .end()
   }
