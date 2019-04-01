@@ -20,6 +20,20 @@ git-is-repo-dirty () {
     ! git-is-repo-clean
 }
 
+git-validate-repo () {
+  git-is-repo-dirty \
+  && failure \
+  && echo 'The git repository is "dirty"' \
+  && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
+  && echo \
+  && git status -s \
+  && line \
+  && exit 1
+}
+
+
+
+
 trap-exit () {
   err=$?
 }
@@ -105,4 +119,3 @@ EOF
 echo -e $RCol
 
 }
-
