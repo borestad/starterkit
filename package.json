@@ -28,7 +28,7 @@
   "scripts": {
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
-    "clean": "git clean -dxf -e node_modules",
+    "clean": "git clean -dxf -e node_modules -e \"*cache*\"",
     "compile": "yarn compile:root && lerna run compile",
     "compile:root": "tsc --build tsconfig.root.json",
     "fix": "yarn prettier && yarn lint",
