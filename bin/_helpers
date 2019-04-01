@@ -12,17 +12,20 @@ hr2 () {
 }
 
 
+git-validate-repo () {
+  git-is-repo-dirty || (echo 'dirty' && git-show-dirty-repo-error)
+}
+
 git-is-repo-clean () {
-    [ -z "$(git status --porcelain)" ]
+    ! [ -z "$(git status --porcelain)" ]
 }
 
 git-is-repo-dirty () {
     ! git-is-repo-clean
 }
 
-git-validate-repo () {
-  git-is-repo-dirty \
-  && failure \
+git-show-dirty-repo-error () {
+  failure \
   && echo 'The git repository is "dirty"' \
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
@@ -30,9 +33,6 @@ git-validate-repo () {
   && line \
   && exit 1
 }
-
-
-
 
 trap-exit () {
   err=$?
@@ -119,3 +119,4 @@ EOF
 echo -e $RCol
 
 }
+

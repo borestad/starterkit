@@ -14,6 +14,8 @@ export PATH="./node_modules/.bin:$PATH"
 
 cd $ROOT
 
+git-validate-repo
+
 trap trap-exit EXIT
 trap trap-error INT TERM
 
@@ -21,11 +23,9 @@ npx envinfo --system --binaries
 
 line '[1/8] Cleanup'
 yarn clean
-git-validate-repo
 
 line '[2/8] Install'
 yarn --pure-lockfile --link-duplicates --no-progress --non-interactive
-git-validate-repo
 
 line '[3/8] Custom validation'
 # ./bin/validate
@@ -34,6 +34,7 @@ line '[3/8] Codestyle & Lint'
 yarn prettier --loglevel silent
 yarn lint
 git-validate-repo
+
 
 line '[4/8] Compile'
 yarn compile
