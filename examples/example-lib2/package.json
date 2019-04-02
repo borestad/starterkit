@@ -18,11 +18,11 @@
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
     "clean": "git clean -dxf -e node_modules",
     "compile": "run-p -l compile:*",
-    "compile:js": "babel src --root-mode upward --verbose --out-dir lib --extensions \".ts,.tsx\" --source-maps inline",
+    "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "del dist && tsc -b tsconfig.json",
     "dist": "NODE_ENV=production webpack --config ../../config/webpack/index.ts --colors --hide-modules --display-error-details",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
-    "test": "jest --notify"
+    "test": "jest -w 2 --notify"
   },
   "files": [
     "dist/*",

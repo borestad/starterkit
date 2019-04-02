@@ -1,38 +1,55 @@
 #!/bin/bash
 set +x -eEu
 
+# Update the index
+git update-index --again
+
+# Delete untracked files in .gitignore
+git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo
+
 export PATH="./node_modules/.bin:$PATH"
+#export PATH="./node_modules/chromium/lib"
 
 . `dirname $0`/_helpers
 
 cd $ROOT
 
+git-validate-repo
+
 trap trap-exit EXIT
 trap trap-error INT TERM
 
-hr '-'
-
 npx envinfo --system --binaries
 
-line '[1/7] Cleanup'
+line '[1/8] Cleanup'
 yarn clean
 
-line '[2/7] Install'
-yarn --pure-lockfile --link-duplicates --skip-integrity-check --no-progress --non-interactive
+line '[2/8] Install'
+yarn --pure-lockfile --link-duplicates --no-progress --non-interactive
 
-line '[3/7] Codestyle & Lint'
-yarn fix
+line '[3/8] Custom validation'
+# ./bin/validate
 
-line '[4/7] Compile'
+line '[3/8] Codestyle & Lint'
+yarn prettier --loglevel silent
+yarn lint
+git-validate-repo
+
+
+line '[4/8] Compile'
 yarn compile
+git-validate-repo
 
-line '[5/7] Run tests'
-yarn test --coverage --ci --runInBand
+line '[5/8] Run tests'
+yarn test:unit
+yarn test:e2e
+git-validate-repo
 
-line '[6/7] Build packages'
+line '[6/8] Build packages'
 yarn build
+git-validate-repo
 
-line '[7/7] Publish packages (if version is bumped)'
+line '[7/8] Publish packages (if version is bumped)'
 $ROOT/bin/publish
 
 line

@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": [
+    "./**/*.d.ts",
+    "./**/*.ts"
+  ],
+  "compilerOptions": {
+    "rootDir": ".",
+
+    // Create *.js files (disabled by default)
+    "noEmit": false,
+
+    // Disable sourcemaps and declaration files like (*.dts.ts, *.dts.js.map etc)
+    "sourceMap": false,
+    "declarationMap": false,
+    "declaration": false,
+
+    "module": "commonjs",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "typeRoots": [
+      "node_modules/@types",
+      "types"
+    ],
+  }
+}

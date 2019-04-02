@@ -1,0 +1,21 @@
+{
+  "name": "@scope/example-nightwatch1",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "git clean -e node_modules -dxf",
+    "build": "tsc -b tsconfig.json",
+    "test": "run-p -l test:*",
+    "test:e2e": "yarn clean && yarn build && nightwatch",
+    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
+  },
+  "dependencies": {
+    "@types/chromedriver": "2.38.0",
+    "@types/nightwatch": "^0.9.12",
+    "chromedriver": "^2.46.0",
+    "chromium": "2.1.0",
+    "nightwatch": "^1.0.19",
+    "typescript": "^3.3.3333"
+  }
+}

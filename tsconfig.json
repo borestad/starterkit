@@ -9,7 +9,12 @@
 //
 // ========================================================================s
 {
-  "include": ["**/*.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "**/*.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+
   "exclude": [
     // Test files are already covered by Jest
     "**/*.test.ts",
@@ -35,7 +40,7 @@
     // 💥 Basic options
     // =======================s=================================================s
     "declaration": true,                          // 🔅 Generates corresponding '.d.ts' file.
-    "declarationMap": true,                       // 🔅 Generates a sourcemap for each corresponding '.d.ts' file.
+    "declarationMap": false,                      // 🔅 Generates a sourcemap for each corresponding '.d.ts' file.
     "importHelpers": true,                        // 🔅 Import emit helpers from 'tslib'.
     "lib": ["es2015", "es2016", "es2017", "dom"], // 🔅 Specify library files to be included in the compilation.
     "module": "commonjs",                         // 🔅 Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
@@ -86,7 +91,10 @@
     // "paths": {},                           // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
     // "preserveSymlinks": true,              // Do not resolve the real path of symlinks.
     // "rootDirs": [],                        // List of root folders whose combined content represents the structure of the project at runtime.
-    // "typeRoots": [],                       // List of folders to include type definitions from.
+    "typeRoots": [                            // List of folders to include type definitions from.
+      "node_modules/@types",
+      "types"
+    ],
     // "types": [],                           // Type declaration files to be included in compilation.
 
 
