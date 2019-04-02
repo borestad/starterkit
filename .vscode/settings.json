@@ -27,7 +27,6 @@
     "source.organizeImports": false
   },
   "editor.codeLens": true,
-  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', Inconsolata, 'Droid Sans Fallback', 'DejaVu Sans Mono', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": true,
