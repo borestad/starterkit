@@ -1,7 +1,10 @@
 # https://github.com/borestad/dotjitsu/blob/master/packages/git/.gitconfig
 
 [hub]
-	protocol = https
+  protocol = https
+
+[commit]
+  verbose = true
 
 [credential]
 
@@ -78,28 +81,28 @@
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
 [core]
-    excludesfile = ~/.gitignore
-    editor = nano
-    ignorecase = false
+  excludesfile = ~/.gitignore
+  editor = nano
+  ignorecase = false
 
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 
 [difftool]
-        prompt = false
+  prompt = false
 
 [help]
-        autocorrect = 1
+  autocorrect = 1
 
 [push]
-        # See `git help config` (search for push.default)
-        # for more information on different options of the below setting.
-        #
-        # Setting to git 2.0 default to suppress warning message
-        default = simple
+  # See `git help config` (search for push.default)
+  # for more information on different options of the below setting.
+  #
+  # Setting to git 2.0 default to suppress warning message
+  default = simple
 
 [rerere]
   # Remember my merges
@@ -118,9 +121,6 @@
 [gc]
   autoDetach = false
 
-[commit]
-  gpgSign = false
-
 [pull]
   rebase = true
 
@@ -136,4 +136,4 @@
   pruneDuringFetch = true
 
 [http]
-	postBuffer = 524288000
+  postBuffer = 524288000
