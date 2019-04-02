@@ -68,12 +68,12 @@ It currently adds support for
 
 Glad you asked.
 
-1. Fork the repository
-2. Read package.json
-3. Look through the `examples` folder3.
-4. Delete the examples you don't need.
-5. Modify => commit => push.
-6. Profit!
+1.  Fork the repository
+2.  Read package.json
+3.  Look through the `examples` folder3.
+4.  Delete the examples you don't need.
+5.  Modify => commit => push.
+6.  Profit!
 
 ## That sounds too simple.
 

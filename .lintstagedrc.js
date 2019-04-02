@@ -1,8 +1,12 @@
+/*
+ * Run linters on git staged files
+ * https://github.com/okonet/lint-staged
+ *
+ */
+
 console.log(`❤️  lint-staged\n`)
 
 module.exports = {
-  "*.{ts,tsx,js,jsx,json,md,html,css}": [
-    "yarn fix",
-    "git add"
-  ]
+  '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
+  '*.{js,jsx,ts,tsx}': ['prettier -c --write', 'yarn lint', 'git add']
 }

@@ -1,6 +1,10 @@
-.*
 .*cache*
+.*ignore
+.*rc
+.editorconfig
+.git*
 .tmp
+.yarnrc
 *-report.json
 *.ejs
 *.lock
@@ -8,8 +12,6 @@
 *.properties
 *.xml
 **/package.json
-tsconfig.json
-tsconfig*.json
 bin/*
 build
 coverage
@@ -19,3 +21,5 @@ LICENSE
 node_modules
 package-lock.json
 reports
+tsconfig.json
+tsconfig*.json
