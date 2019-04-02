@@ -8,6 +8,7 @@ git update-index --again
 git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo
 
 export PATH="./node_modules/.bin:$PATH"
+
 #export PATH="./node_modules/chromium/lib"
 
 . `dirname $0`/_helpers
