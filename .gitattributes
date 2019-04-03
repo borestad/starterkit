@@ -6,55 +6,65 @@
 # checkin and prevent conversion to CRLF when they are checked out
 # (this is required in order to prevent newline related issues like,
 # for example, after the build script is run)
-.*      text eol=lf
-*.css   text eol=lf
-*.ejs   text eol=lf
-*.frag  text eol=lf
-*.html  text eol=lf
-*.js    text eol=lf
-*.json  text eol=lf
-*.jsx   text eol=lf
-*.less  text eol=lf
-*.lock  text eol=lf
-*.md    text eol=lf
-*.mjs   text eol=lf
-*.obj   text eol=lf
+.*            text eol=lf
+*.atlas       text eol=lf
+*.babylon     text eol=lf
+*.config      text eol=lf
+*.css         text eol=lf
+*.ejs         text eol=lf
+*.frag        text eol=lf
+*.html        text eol=lf
+*.js          text eol=lfx
+*.json        text eol=lf
+*.jsx         text eol=lf
+*.less        text eol=lf
+*.lock        text eol=lf
+*.manifest    text eol=lf
+*.md          text eol=lf
+*.mjs         text eol=lf
+*.obj         text eol=lf
 *.properties  text eol=lf
-*.sh    text eol=lf
-*.svg   text eol=lf
-*.ts    text eol=lf
-*.tsx   text eol=lf
-*.txt   text eol=lf
-*.vert  text eol=lf
-*.xhtml text eol=lf
-*.xml   text eol=lf
+*.sh          text eol=lf
+*.svg         text eol=lf
+*.ts          text eol=lf
+*.tsx         text eol=lf
+*.txt         text eol=lf
+*.vert        text eol=lf
+*.xhtml       text eol=lf
+*.xml         text eol=lf
 
 #
 ## These files are binary and should be left untouched
 #
 # (binary is a macro for -text -diff)
-*.7z binary
-*.eot binary
-*.fla binary
-*.flv binary
-*.gif binary
-*.gz binary
-*.ico binary
-*.jpeg binary
-*.jpg binary
-*.mov binary
-*.mp3 binary
-*.mp4 binary
-*.pdf binary
-*.png binary
-*.otf binary
-*.pyc binary
-*.swf binary
-*.ttf binary
-*.wav binary
-*.woff binary
-*.woff2 binary
-*.zip binary
+*.7z            filter=lfs diff=lfs merge=lfs -text
+*.acf           filter=lfs diff=lfs merge=lfs -text
+*.dds           filter=lfs diff=lfs merge=lfs -text
+*.env           filter=lfs diff=lfs merge=lfs -text
+*.eot           filter=lfs diff=lfs merge=lfs -text
+*.fla           filter=lfs diff=lfs merge=lfs -text
+*.flv           filter=lfs diff=lfs merge=lfs -text
+*.gif           filter=lfs diff=lfs merge=lfs -text
+*.gz            filter=lfs diff=lfs merge=lfs -text
+*.gzip          filter=lfs diff=lfs merge=lfs -text
+*.hdr           filter=lfs diff=lfs merge=lfs -text
+*.ico           filter=lfs diff=lfs merge=lfs -text
+*.jpeg          filter=lfs diff=lfs merge=lfs -text
+*.jpg           filter=lfs diff=lfs merge=lfs -text
+*.mov           filter=lfs diff=lfs merge=lfs -text
+*.mp3           filter=lfs diff=lfs merge=lfs -text
+*.mp4           filter=lfs diff=lfs merge=lfs -text
+*.otf           filter=lfs diff=lfs merge=lfs -text
+*.pdf           filter=lfs diff=lfs merge=lfs -text
+*.png           filter=lfs diff=lfs merge=lfs -text
+*.pyc           filter=lfs diff=lfs merge=lfs -text
+*.swf           filter=lfs diff=lfs merge=lfs -text
+*.tga           filter=lfs diff=lfs merge=lfs -text
+*.ttf           filter=lfs diff=lfs merge=lfs -text
+*.wav           filter=lfs diff=lfs merge=lfs -text
+*.woff          filter=lfs diff=lfs merge=lfs -text
+*.woff2         filter=lfs diff=lfs merge=lfs -text
+*.zip           filter=lfs diff=lfs merge=lfs -text
 
 
 # Documents
@@ -69,50 +79,9 @@
 *.rtf  diff=astextplain
 *.RTF  diff=astextplain
 
-
 # Don't allow people to merge changes to these generated files, because the result
 # may be invalid. You need to run "rush update"  or "yarn install" or "npm install" or "pnpm install" again,
 # depending on what package manager you're using
 shrinkwrap.yaml              merge=binary
 npm-shrinkwrap.json          merge=binary
 yarn.lock                    merge=binary
-
-
-# GIT LFS Support (Large File Storage)
-# Image
-*.ai filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-
-# Audio
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.ogg filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text
-
-# Video
-*.mov filter=lfs diff=lfs merge=lfs -text
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-
-# 3D Object
-*.blend filter=lfs diff=lfs merge=lfs -text
-*.FBX filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
-
-# ETC
-*.a filter=lfs diff=lfs merge=lfs -text
-*.aif filter=lfs diff=lfs merge=lfs -text
-*.dll filter=lfs diff=lfs merge=lfs -text
-*.exe filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
-*.lxo filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.reason filter=lfs diff=lfs merge=lfs -text
-*.rns filter=lfs diff=lfs merge=lfs -text
-*.tga filter=lfs diff=lfs merge=lfs -text
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.unitypackage filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
