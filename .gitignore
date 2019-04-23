@@ -151,6 +151,7 @@ src/*.js
 *.js
 
 # ...except config files (babel.config.js, jest.config.base.js etc)
+!/.*.js
 !*.conf*.js
 !/config/**/*.js
 # ...and some extra files
@@ -233,3 +234,14 @@ git-vars
 
 # Common cache folder
 .*cache*
+
+# -----------------------------------------------------------------------------
+### SOURCE TREE
+# -----------------------------------------------------------------------------
+# Windows stack dump
+*.exe.stackdump
+
+settings.xml
+
+# Ignore temporary POM-files from GDP
+*-pom.xml
