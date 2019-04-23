@@ -1,6 +1,10 @@
-const chromium = require('chromium')
+const chromium = require('puppeteer').executablePath()
+process.env.CHROMIUM_BIN = require('puppeteer').executablePath()
 
-module.exports = {
+const ln = '-'.repeat(80)
+const { log } = console
+
+const settings = {
   src_folders: ['dist/tests'],
   output_folder: 'reports',
   globals_path: 'dist/globals.js',
@@ -17,10 +21,24 @@ module.exports = {
         acceptSslCerts: true,
         browserName: 'chromium',
         chromeOptions: {
-          args: ['headless', '--no-sandbox'],
-          binary: chromium.path
+          args: [
+            '--headless',
+            '--no-sandbox',
+            '--ignore-certificate-errors',
+            '--enable-logging=v=1'
+          ],
+          binary: chromium
         }
       }
     }
   }
 }
+
+log(ln)
+log(
+  `Browser: ${settings.test_settings.default.desiredCapabilities.browserName}`
+)
+log(`Path:    ${chromium}`)
+log(ln)
+
+module.exports = settings
