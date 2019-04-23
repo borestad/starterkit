@@ -19,7 +19,7 @@
   "engines": {
     "node": "10.x",
     "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+    "npm":">= 999-this-repo-is-yarn-only:see-npmrc"
   },
   "workspaces": [
     "examples/*",
