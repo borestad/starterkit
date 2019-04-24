@@ -34,7 +34,7 @@
     "compile:root": "tsc --build tsconfig.root.json",
     "fix": "yarn prettier && yarn lint",
     "lint": "tslint -c tslint.json --project tsconfig.root.json --fix && lerna run lint --parallel",
-    "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
+    "postinstall": "ts-node -T bin/post-install.ts",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "prettier": "prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "run-p -l test:unit test:e2e",
