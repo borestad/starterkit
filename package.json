@@ -29,11 +29,10 @@
   "scripts": {
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
-    "clean": "git clean -dxf -e node_modules -e \"*cache*\"",
+    "clean": "git clean -dxf -e node_modules",
     "compile": "yarn compile:root && lerna run compile",
     "compile:root": "tsc --build tsconfig.root.json",
     "fix": "yarn prettier && yarn lint",
-    "install:yarn": "npx yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --frozen-lockfile --link-duplicates --non-interactive",
     "lint": "tslint -c tslint.json --project tsconfig.root.json --fix && lerna run lint --parallel",
     "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
     "preinstall": "rm -f .git/hooks/pre-commit || true",

@@ -9,8 +9,6 @@ git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/n
 
 export PATH="./node_modules/.bin:$PATH"
 
-#export PATH="./node_modules/chromium/lib"
-
 . `dirname $0`/_helpers
 
 cd $ROOT
@@ -23,10 +21,10 @@ trap trap-error INT TERM
 npx envinfo --system --binaries
 
 line '[1/8] Cleanup'
-yarn clean
+npm run clean
 
 line '[2/8] Install'
-yarn --frozen-lockfile --link-duplicates --non-interactive
+$ROOT/bin/install-all
 
 line '[3/8] Custom validation'
 # ./bin/validate
