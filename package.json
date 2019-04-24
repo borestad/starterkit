@@ -17,7 +17,7 @@
     "url": "https://jira.netent.com/secure/RapidBoard.jspa?rapidView=1587"
   },
   "engines": {
-    "node": "10.x",
+    "node": ">= 10.x",
     "yarn": ">= 1.12.x",
     "npm":">= 999-this-repo-is-yarn-only:see-npmrc"
   },
