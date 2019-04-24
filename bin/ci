@@ -26,7 +26,7 @@ line '[1/8] Cleanup'
 yarn clean
 
 line '[2/8] Install'
-yarn --pure-lockfile --link-duplicates --no-progress --non-interactive
+yarn --frozen-lockfile --link-duplicates --non-interactive
 
 line '[3/8] Custom validation'
 # ./bin/validate
