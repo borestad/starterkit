@@ -14,7 +14,7 @@
 *.ejs         text eol=lf
 *.frag        text eol=lf
 *.html        text eol=lf
-*.js          text eol=lfx
+*.js          text eol=lf
 *.json        text eol=lf
 *.jsx         text eol=lf
 *.less        text eol=lf
