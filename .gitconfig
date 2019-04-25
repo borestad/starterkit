@@ -77,6 +77,15 @@
 
   squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-Initial commit}\");};f"
 
+[pager]
+  # insanely beautiful diffs: https://github.com/so-fancy/diff-so-fancy
+  diff = npx diff-so-fancy
+  show = npx diff-so-fancy
+
+[interactive]
+  diffFilter = npx diff-so-fancy
+
+
 [format]
   pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
