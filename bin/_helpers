@@ -36,6 +36,8 @@ git-show-dirty-repo-error () {
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
   && git status -s \
+  && echo \
+  && git diff \
   && line \
   && exit 1
 }
