@@ -30,13 +30,13 @@
   ],
   "bundledDependencies": [],
   "dependencies": {
-    "@babel/core": "7.4.0",
+    "@babel/core": "7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "@scope/example-lib1": "*",
     "microbundle": "0.11.0",
-    "prettier": "1.16.4",
-    "typescript": "3.3.4000"
+    "prettier": "1.17.0",
+    "typescript": "3.4.5"
   }
 }
