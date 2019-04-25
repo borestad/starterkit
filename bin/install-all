@@ -28,7 +28,6 @@ echo -e "💥 Yarn [ required version ]      $color$YARN_WANTED_VERSION$R"
 echo -e "💥 Yarn [ installed version ]     $color$YARN_INSTALLED_VERSION$R"
 echo -e "💥 Yarn [ installation ]         $YARN_METHOD"
 
-
 echo
 echo -e "$Gray\$ $cmd $R"
 echo

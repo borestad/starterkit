@@ -16,7 +16,7 @@
     "declaration": false,
 
     "module": "commonjs",
-    "outDir": "dist",
+    "outDir": "./node_modules/.tmp/build.typescript",
     "moduleResolution": "node",
     "target": "es5",
     "allowSyntheticDefaultImports": true,

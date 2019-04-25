@@ -3,7 +3,7 @@
   "include": ["src"],
   "compilerOptions": {
     "noUnusedLocals": false,
-    "outDir": "dist",
+    "outDir": "./node_modules/.tmp/build.typescript",
     "rootDir": "src",
     "module": "esnext"
   }
