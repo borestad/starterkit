@@ -14,6 +14,7 @@
     "@types/chromedriver": "2.38.0",
     "@types/nightwatch": "^0.9.12",
     "chromedriver": "^74.0.0",
+    "json5": "2.1.0",
     "nightwatch": "^1.0.19",
     "puppeteer": "1.14.0",
     "typescript": "^3.4.5"

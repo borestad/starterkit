@@ -1,13 +1,18 @@
-const chromium = require('puppeteer').executablePath()
-process.env.CHROMIUM_BIN = require('puppeteer').executablePath()
+const chromium = (process.env.CHROMIUM_BIN = require('puppeteer').executablePath())
+const path = require('path')
+const fs = require('fs')
+const JSON5 = require('json5')
+
+const dist = JSON5.parse(fs.readFileSync('./tsconfig.json', 'utf-8'))
+  .compilerOptions.outDir
 
 const ln = '-'.repeat(80)
 const { log } = console
 
 const settings = {
-  src_folders: ['dist/tests'],
+  src_folders: [path.join(dist, 'tests')],
   output_folder: 'reports',
-  globals_path: 'dist/globals.js',
+  globals_path: path.join(dist, 'globals.js'),
   test_workers: false,
   selenium: {
     start_process: false

@@ -16,7 +16,6 @@ git-validate-repo () {
   # Hackish strategy to get rid of git-dirty files, caused by GDP
   #   - always add pom.xml to local build on Jenkins (but not push it)
   #   - never fail
-  #   -
   (git add $ROOT/pom.xml && git commit -m "Update pom.xml") &>/dev/null && hr && echo 'Update pom.xml' && hr || :
 
   git-is-repo-dirty || (echo 'dirty' && git-show-dirty-repo-error)
