@@ -27,7 +27,9 @@
     "webpack-cleanup-plugin": "0.5.1",
     "webpack-cli": "3.3.1",
     "webpack-concat-plugin": "3.0.0",
-    "webpack-merge": "4.2.1",
-    "webpack-serve-waitpage": "1.0.2"
+    "webpack-merge": "4.2.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server-waitpage": "1.0.0"
   }
 }
