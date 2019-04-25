@@ -15,6 +15,13 @@ module.exports = api => {
 
   const presets = ['@babel/env', '@babel/typescript']
   const plugins = [
+    [
+      '@babel/transform-runtime',
+      {
+        corejs: 3,
+        regenerator: true
+      }
+    ],
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     isProd('babel-plugin-loop-optimizer')
