@@ -2,6 +2,7 @@
 
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
 export ROOT=$(git rev-parse --show-toplevel)
+export PATH="./node_modules/.bin:$PATH"
 
 hr () {
   $ROOT/bin/hr "${@:--}"
@@ -36,7 +37,7 @@ git-show-dirty-repo-error () {
   && echo \
   && git status -s \
   && echo \
-  && git diff \
+  && git diff --color | diff-so-fancy \
   && line \
   && exit 1
 }
