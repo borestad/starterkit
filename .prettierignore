@@ -12,7 +12,6 @@
 *.properties
 *.xml
 **/package.json
-bin/*
 build
 coverage
 dist
