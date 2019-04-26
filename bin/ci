@@ -2,13 +2,12 @@
 set +x -eEu
 
 # Update the index
-#git update-index --again
+git update-index --again
 
-git reset --hard
+# git reset --hard
 
 # Delete untracked files in .gitignore
-#git reset --hard
-#git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo
+git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo
 
 export PATH="./node_modules/.bin:$PATH"
 
@@ -32,26 +31,26 @@ $ROOT/bin/install-all
 line '[3/8] Custom validation'
 # ./bin/validate
 
-line '[3/8] Codestyle & Lint'
+line '[4/8] Codestyle & Lint'
 yarn prettier --loglevel silent
 yarn lint
 git-validate-repo
 
 
-line '[4/8] Compile'
+line '[5/8] Compile'
 yarn compile
 git-validate-repo
 
-line '[5/8] Run tests'
+line '[6/8] Run tests'
 yarn test:unit
 yarn test:e2e
 git-validate-repo
 
-line '[6/8] Build packages'
+line '[7/8] Build packages'
 yarn build
 git-validate-repo
 
-line '[7/8] Publish packages (if version is bumped)'
+line '[8/8] Publish packages (if version is bumped)'
 $ROOT/bin/publish
 
 line

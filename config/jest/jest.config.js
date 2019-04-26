@@ -3,9 +3,9 @@
  * https://jestjs.io/docs/en/configuration.html
  *
  */
-
-console.log(`❤️  <root>/config/jest.config.js`)
 const isCI = require('is-ci')
+
+!isCI && console.log(`❤️  <root>/config/jest.config.js`)
 
 module.exports = {
   rootDir: '../../',

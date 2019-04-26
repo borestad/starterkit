@@ -5,7 +5,7 @@
     "tslint-config-prettier"
   ],
   "linterOptions": {
-    "exclude": ["**/node_modules/**"]
+    "exclude": ["**/node_modules/**", "**/*cache*/**"]
   },
   "rules": {
     "interface-name": false,
