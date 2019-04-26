@@ -10,6 +10,7 @@
   "rules": {
     "interface-name": false,
     "no-unexpected-multiline": false,
+    "no-unused-expression":true,
     "no-consecutive-blank-lines": true,
     "no-duplicate-variable": true,
     "no-debugger": true,

@@ -1,24 +1,16 @@
 #!/usr/bin/env npx ts-node -T
 
+import { remove } from 'fs-extra'
+import { exec, ROOT, run } from './_lib'
+
 /**
  * PostInstall
  * Runs after yarn is finished
  */
-
-import * as execa from 'execa'
-import * as fs from 'fs-extra'
-import * as path from 'path'
-
-const ROOT = path.join(__dirname, '..')
-
-const stream = async (cmd) => {
-  return execa.shell(cmd.trim(), {
-    stdio: 'inherit'
-  })
-}
-
-(async function installGitHooks () {
-  await stream(`git config --local include.path ../.gitconfig`)
-  await fs.remove(`${ROOT}/package-lock.json`)
-  await stream(`node ${ROOT}/node_modules/husky/husky.js install`)
-})().catch(err => process.exit(err.code))
+run(async function postInstall() {
+  return Promise.all([
+    exec(`git config --local include.path ../.gitconfig`),
+    remove(`${ROOT}/package-lock.json`),
+    exec(`node ${ROOT}/node_modules/husky/husky.js install`)
+  ])
+})

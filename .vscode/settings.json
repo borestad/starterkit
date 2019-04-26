@@ -24,7 +24,8 @@
   "editor.autoIndent": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-    "source.organizeImports": false
+    "source.organizeImports": false,
+    "source.fixAll.tslint": true
   },
   "editor.codeLens": true,
   "editor.fontLigatures": true,
@@ -89,5 +90,12 @@
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+   // Experimental usage
+  "javascript.suggestionActions.enabled": false,
+  "javascript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.paths": false,
+  "typescript.suggestionActions.enabled": true,
+  "typescript.suggest.autoImports": true
 }
