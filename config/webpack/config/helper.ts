@@ -6,7 +6,7 @@ const valid = ['development', 'production', 'test']
 // ============================================================================
 // Private Helpers
 // ============================================================================
-function assertValidEnv(env) {
+function assertValidEnv (env) {
   if (!valid.includes(env)) {
     throw new Error(`Missing valid NODE_ENV argument: ${valid.join(',')}`)
   }

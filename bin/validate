@@ -5,7 +5,6 @@ import { getIgnoredFilesStillInIndex } from '@config/helpers-cli'
 let files
 
 if ((files = getIgnoredFilesStillInIndex()).length > 0) {
-
   console.error(`
     There exists files in this repository that mark as .gitignored, but still are committed
   `.trim())

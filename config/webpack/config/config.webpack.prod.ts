@@ -1,6 +1,5 @@
 import * as CompressionPlugin from 'compression-webpack-plugin'
 import * as path from 'path'
-import * as UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 import * as webpack from 'webpack'
 import * as merge from 'webpack-merge'
 import * as config from './config'

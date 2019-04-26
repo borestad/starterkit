@@ -7,7 +7,7 @@ import { exec, ROOT, run } from './_lib'
  * PostInstall
  * Runs after yarn is finished
  */
-run(async function postInstall() {
+run(async function postInstall () {
   return Promise.all([
     exec(`git config --local include.path ../.gitconfig`),
     remove(`${ROOT}/package-lock.json`),

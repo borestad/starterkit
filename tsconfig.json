@@ -33,7 +33,9 @@
     // ========================================================================
     // 💥 Plugins
     // ========================================================================s
-    "plugins": [{ "name": "typescript-tslint-plugin" }],
+    "plugins": [
+      { "name": "typescript-tslint-plugin" }
+    ],
 
 
     // ========================================================================s
@@ -57,7 +59,7 @@
     // "jsx": "preserve",                         // 🔅 Specify JSX code generation: 'preserve', 'react-native', or 'react'.
     // "outFile": "./",                           // 🔅 Concatenate and emit output to single file.
     // "removeComments": true,                    // 🔅 Do not emit comments to output.
-    // "skipLibCheck": true,                      // 🔅 Skip type checking of all declaration files (*.d.ts).
+    // "skipLibCheck": true,                      // 🔅 Improve performance by skippping type checking of all declaration files (*.d.ts). (May be risky)
 
 
     // ========================================================================s
@@ -75,8 +77,8 @@
     // ========================================================================s
     // 💥 Additional Checks
     // ========================================================================s
-    // "noUnusedLocals": true,                // 🔅 Report errors on unused locals.
-    // "noUnusedParameters": true,            // 🔅 Report errors on unused parameters.
+    "noUnusedLocals": true,                // 🔅 Report errors on unused locals.
+    "noUnusedParameters": true,            // 🔅 Report errors on unused parameters.
     // "noImplicitReturns": true,             // 🔅 Report error when not all code paths in function return a value.
     // "noFallthroughCasesInSwitch": true,    // 🔅 Report errors for fallthrough cases in switch statement.
 
@@ -85,34 +87,35 @@
     // 💥 Module Resolution Options
     // ========================================================================s
     // Warning: allowSyntheticDefaultImports MAY trigger undesired behavior: https://github.com/Microsoft/vscode/issues/63013
-    "allowSyntheticDefaultImports": false,    // Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
-    "baseUrl": ".",                           // Base directory to resolve non-absolute module names.
-    "esModuleInterop": true,                  // Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'.
-    "moduleResolution": "node",               // Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
-    // "paths": {},                           // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
-    // "preserveSymlinks": true,              // Do not resolve the real path of symlinks.
-    // "rootDirs": [],                        // List of root folders whose combined content represents the structure of the project at runtime.
-    "typeRoots": [                            // List of folders to include type definitions from.
+    "allowSyntheticDefaultImports": false,    // 🔅 Allow default imports from modules with no default export. This does not affect code emit, just typechecking.
+    "baseUrl": ".",                           // 🔅 Base directory to resolve non-absolute module names.
+    "esModuleInterop": true,                  // 🔅 Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'.
+    "moduleResolution": "node",               // 🔅 Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
+    "resolveJsonModule": true,                // 🔅 Allows for importing, extracting types from and generating .json files
+    // "paths": {},                           // 🔅 A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    // "preserveSymlinks": true,              // 🔅 Do not resolve the real path of symlinks.
+    // "rootDirs": [],                        // 🔅 List of root folders whose combined content represents the structure of the project at runtime.
+    "typeRoots": [                            // 🔅 List of folders to include type definitions from.
       "node_modules/@types",
       "types"
     ],
-    // "types": [],                           // Type declaration files to be included in compilation.
+    // "types": [],                           // 🔅 Type declaration files to be included in compilation.
 
 
     // ========================================================================s
     // 💥 Source Map Options
     // ========================================================================s
-    // "sourceRoot": "./",                    // Specify the location where debugger should locate TypeScript files instead of source locations.
-    // "mapRoot": "./",                       // Specify the location where debugger should locate map files instead of generated locations.
-    // "inlineSourceMap": true,               // Emit a single file with source maps instead of having a separate file.
-    // "inlineSources": true,                 // Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set.
+    // "sourceRoot": "./",                    // 🔅 Specify the location where debugger should locate TypeScript files instead of source locations.
+    // "mapRoot": "./",                       // 🔅 Specify the location where debugger should locate map files instead of generated locations.
+    // "inlineSourceMap": true,               // 🔅 Emit a single file with source maps instead of having a separate file.
+    // "inlineSources": true,                 // 🔅 Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set.
 
 
     // ========================================================================s
     // 💥 Experimental Options
     // ========================================================================s
-    "experimentalDecorators": true,           // Enables experimental support for ES7 decorators.
-    "emitDecoratorMetadata": true             // Enables experimental support for emitting type metadata for decorators.
+    "experimentalDecorators": true,           // 🔅 Enables experimental support for ES7 decorators.
+    "emitDecoratorMetadata": true             // 🔅 Enables experimental support for emitting type metadata for decorators.
 
 
     // ========================================================================s

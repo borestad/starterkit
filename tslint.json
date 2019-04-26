@@ -10,11 +10,12 @@
   "rules": {
     "interface-name": false,
     "no-unexpected-multiline": false,
-    "no-unused-expression":true,
+    "no-unused-expression": true,
     "no-consecutive-blank-lines": true,
     "no-duplicate-variable": true,
     "no-debugger": true,
     "no-implicit-dependencies": false,
+    "space-before-function-paren": true,
     "no-irregular-whitespace": true,
     "no-trailing-whitespace": true,
     "only-arrow-functions": [
@@ -52,12 +53,30 @@
         "name": ["document", "write"],
         "message": "Dont use global blocking methods"
       },
-      { "name": ["test", "only"], "message": "Don't focus tests" },
-      { "name": ["it", "only"], "message": "Don't focus tests" },
-      { "name": ["describe", "only"], "message": "Don't focus tests" },
-      { "name": ["describe", "skip"], "message": "Don't commit skipped tests" },
-      { "name": ["test", "skip"], "message": "Don't commit skipped tests" },
-      { "name": ["it", "skip"], "message": "Don't commit skipped tests" }
+      {
+        "name": ["test", "only"],
+        "message": "Don't focus tests"
+      },
+      {
+        "name": ["it", "only"],
+        "message": "Don't focus tests"
+      },
+      {
+        "name": ["describe", "only"],
+        "message": "Don't focus tests"
+      },
+      {
+        "name": ["describe", "skip"],
+        "message": "Don't commit skipped tests"
+      },
+      {
+        "name": ["test", "skip"],
+        "message": "Don't commit skipped tests"
+      },
+      {
+        "name": ["it", "skip"],
+        "message": "Don't commit skipped tests"
+      }
     ]
   }
 }

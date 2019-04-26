@@ -6,10 +6,12 @@
     "editor.formatOnSave": true
   },
   "[json]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.acceptSuggestionOnEnter": "off",
@@ -43,7 +45,8 @@
   "eslint.packageManager": "yarn",
   "extensions.ignoreRecommendations": false,
   "files.associations": {
-    ".*rc": "properties"
+    ".*rc": "properties",
+    "package.json": "json"
   },
   "files.exclude": {
     ".gitignore": false,
@@ -91,11 +94,11 @@
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
-   // Experimental usage
-  "javascript.suggestionActions.enabled": false,
+  // TODO: Experimental usage
   "javascript.suggest.completeFunctionCalls": true,
+  "javascript.suggestionActions.enabled": true,
+  "typescript.suggest.autoImports": true,
   "typescript.suggest.completeFunctionCalls": true,
-  "typescript.suggest.paths": false,
-  "typescript.suggestionActions.enabled": true,
-  "typescript.suggest.autoImports": true
+  "typescript.suggest.paths": true,
+  "typescript.suggestionActions.enabled": true
 }
