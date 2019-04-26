@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "git clean -dxf -e node_modules -e \"*cache*\"",
     "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
-    "compile": "run-p -l compile:*",
+    "compile": "run-p compile:*",
     "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps true",
-    "compile:ts": "del dist && tsc -b tsconfig.json",
+    "compile:ts": "del dist && tsc -b tsconfig.json --pretty",
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",

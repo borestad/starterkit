@@ -17,9 +17,9 @@
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
     "clean": "git clean -dxf -e node_modules -e \"*cache*\"",
-    "compile": "run-p -l compile:*",
+    "compile": "run-p compile:*",
     "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
-    "compile:ts": "del dist && tsc -b tsconfig.json",
+    "compile:ts": "tsc -b tsconfig.json --pretty",
     "dist": "NODE_ENV=production webpack --config ../../config/webpack/index.ts --colors --hide-modules --display-error-details",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "test": "jest -w 2 --notify"

@@ -4,6 +4,7 @@
   "compilerOptions": {
     "outDir": "./node_modules/.tmp/build.typescript",
     "rootDir": "src",
-    "module": "esnext"
+    "module": "esnext",
+    "noUnusedLocals": true
   }
 }

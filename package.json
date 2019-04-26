@@ -30,8 +30,9 @@
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
     "clean": "git clean -dxf -e node_modules",
-    "compile:root": "tsc --build tsconfig.root.json",
-    "compile": "yarn compile:root && lerna run compile",
+    "compile": "run-p compile:*",
+    "compile:root": "tsc --build tsconfig.root.json --pretty",
+    "compile:packages": "lerna run compile --parallel --stream",
     "fix": "yarn prettier && yarn lint",
     "lint": "run-p lint:js lint:ts",
     "lint:js": "eslint --ignore-path=.gitignore --fix  .",
@@ -100,6 +101,7 @@
     "yarn": "1.15.2"
   },
   "devDependencies": {
-    "diff-so-fancy": "1.2.5"
+    "diff-so-fancy": "1.2.5",
+    "node-notifier": "5.4.0"
   }
 }
