@@ -7,14 +7,14 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'set +x; ./bin/hr; ./bin/install-all; ./bin/hr'
+        sh './bin/hr; NODE_ENV=production ./bin/install-all; ./bin/hr'
       }
     }
 
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-        sh 'set +x; ./bin/ci'
+        sh './bin/ci'
       }
     }
   }

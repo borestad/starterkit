@@ -5,12 +5,11 @@ import { exec, ROOT, run } from './_lib'
 
 /**
  * PostInstall
- * Runs after yarn is finished
+ * Runs after `yarn install` is finished
  */
 run(async function postInstall () {
-  return Promise.all([
-    exec(`git config --local include.path ../.gitconfig`),
-    remove(`${ROOT}/package-lock.json`),
-    exec(`node ${ROOT}/node_modules/husky/husky.js install`)
-  ])
+  await exec(`git config --local include.path ../.gitconfig`)
+  await remove(`${ROOT}/package-lock.json`)
+  await exec(`node ${ROOT}/node_modules/husky/husky.js install`)
+  await exec(`npx lerna link`)
 })

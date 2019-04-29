@@ -32,4 +32,4 @@ echo
 echo -e "$Gray\$ $cmd $R"
 echo
 
-$cmd
+NODE_ENV="production" $cmd --prod
