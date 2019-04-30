@@ -15,12 +15,12 @@
     "test": "jest -w 2 --notify"
   },
   "dependencies": {
-    "@babel/cli": "7.4.3",
-    "babylonjs": "4.0.0-alpha.10",
-    "babylonjs-gui": "3.3.0",
-    "babylonjs-loaders": "3.3.0",
-    "babylonjs-materials": "3.3.0",
-    "babylonjs-viewer": "3.3.0",
+    "@babel/cli": "7.4.4",
+    "babylonjs": "4.0.1",
+    "babylonjs-gui": "4.0.1",
+    "babylonjs-loaders": "4.0.1",
+    "babylonjs-materials": "4.0.1",
+    "babylonjs-viewer": "4.0.1",
     "cannon": "0.6.2",
     "parcel-bundler": "1.12.3",
     "pep": "1.0.13",
