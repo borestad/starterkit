@@ -91,7 +91,6 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor = nano
   ignorecase = false
 
 [apply]
