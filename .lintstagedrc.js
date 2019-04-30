@@ -7,6 +7,7 @@
 console.log(`❤️  lint-staged\n`)
 
 module.exports = {
+  '*.*': ['node -r esm bin/validate'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
   '*.{js,jsx}': [
     'prettier -c --write',
