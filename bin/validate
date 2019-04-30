@@ -1,4 +1,4 @@
-#!/usr/bin/env node -r esm
+#!/usr/bin/env npx node -r esm
 
 import * as helper from '@config/helpers-cli'
 import { isEmpty } from 'lodash'
