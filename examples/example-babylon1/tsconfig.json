@@ -4,7 +4,7 @@
   "compilerOptions": {
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "outDir": "./node_modules/.tmp/build.ts",
+    "outDir": "./node_modules/.tmp/build.tsc",
     "rootDir": "./",
     "baseUrl": "./"
   }

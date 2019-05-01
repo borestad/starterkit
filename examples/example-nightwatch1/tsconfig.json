@@ -16,7 +16,7 @@
     "declaration": false,
 
     "module": "commonjs",
-    "outDir": "./node_modules/.tmp/build.ts",
+    "outDir": "./node_modules/.tmp/build.tsc",
     "moduleResolution": "node",
     "target": "es5",
     "allowSyntheticDefaultImports": true,
