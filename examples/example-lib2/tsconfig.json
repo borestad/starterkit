@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "include": ["src"],
   "compilerOptions": {
-    "outDir": "./node_modules/.tmp/build.typescript",
+    "outDir": "./node_modules/.tmp/build.ts",
     "rootDir": "src",
     "module": "esnext",
     "noUnusedLocals": true
