@@ -5,6 +5,7 @@
 
 [commit]
   verbose = true
+  template = .gitmessage
 
 [credential]
 
