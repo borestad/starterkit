@@ -1,10 +1,13 @@
+const { yellow, underline } = require('chalk')
+const { log } = console
+
 /*
  * Run linters on git staged files
  * https://github.com/okonet/lint-staged
  *
  */
 
-console.log(`❤️  lint-staged\n`)
+log(`${yellow(`⭐ ${underline('lint-staged')}`)}`)
 
 module.exports = {
   '*.*': ['node -r esm bin/validate'],
