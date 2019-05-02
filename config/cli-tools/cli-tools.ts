@@ -3,6 +3,8 @@
  * Written in vanilla JavaScript so *.config.js files can use them
  */
 
+// tslint:disable: no-unused-expression
+
 import chalk from 'chalk'
 import * as execa from 'execa'
 import * as fs from 'fs-extra'
@@ -12,6 +14,7 @@ import * as path from 'path'
 import * as _pkgUp from 'pkg-up'
 
 const { log } = console
+
 const str2Array = (str: string) => {
   return compact(str.split('\n'))
 }
@@ -39,7 +42,11 @@ export const onSuccess = noop
  * Run handler
  */
 export const run = (fn: Function) => {
-  log(`\n${chalk.underline.yellow(kebabCase(fn.name))}\n`)
+  isNotCI && log()
+  log(
+    `=== ${chalk.underline.yellow(kebabCase(`${fn.name}`).toUpperCase())} ===`
+  )
+  isNotCI && log()
 
   return fn()
     .then(onSuccess)

@@ -31,36 +31,44 @@ git-is-repo-dirty () {
 }
 
 git-show-dirty-repo-error () {
-  failure \
-  && (cat << "EOF"
+  print-failure
 
-  Whoopsie poopsie!
+  echo -e $Red
+  cat << "EOF"
+  💩 Whoopsie poopsie! 💩
 
   Your friendly linter found some errors ...
-  ...and how would life be without law & order?
+    ...and this has caused the repository to become "dirty"
+
+  "dirty" = The working tree has uncommitted changes (caused by the linter)
+            and now needs to be cleaned up to give you a green light!
 
   This is often caused by:
-    * Files not being formatted properly
-    * Lack of coffee
-    * Random noise from space
+
+    😇 - Files not being formatted properly before commit.
+    🍺 - Alcohol was involved
+    👽 - Random noise from space
+    ☕ - Lack of coffee
 
   99% of the time - this should automatically be solved by our nifty pre-commit hook (see .lintstagedrc.js).
-  This hook autofixes all these annoying messages.
+  This hook autofixes almost™ all these annoying messages.
+
+  Also, if you're using Visual Studio Code - you'll get autofix on save.
+  (Just make sure to install the prettier plugin)
+
   Please run "yarn fix" and try to commit again.
 
-  Btw - here's the diff for ya'
+  Have a nice day! ❤️
 
-  Have a nice day!
-
+  Pssst! Here's a pretty "git diff" of what went wrong
 EOF
-) && echo 'The git repository is "dirty"' \
-  && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
-  && echo \
-  && git status -s \
-  && echo \
-  && git diff --color | npx diff-so-fancy \
-  && line \
-  && exit 1
+  echo -e $RCol
+  echo
+  git status -s
+  echo
+  git diff --color | npx diff-so-fancy
+  line
+  exit 1
 }
 
 trap-exit () {
@@ -69,7 +77,7 @@ trap-exit () {
 
 trap-error () {
   err=$?
-  failure
+  print-failure
 }
 
 
@@ -114,7 +122,7 @@ line () {
 
 
 
-success () {
+print-success () {
 echo -e $Gre
 # http://patorjk.com/software/taag/#p=display&h=0&v=1&f=Big&t=SUCCESS
 cat << "EOF"
@@ -132,7 +140,7 @@ EOF
 echo -e $RCol
 }
 
-failure () {
+print-failure () {
 echo -e $Red
 # http://patorjk.com/software/taag/#p=display&h=0&v=1&f=Big&t=OH%20NOSE!
 cat << "EOF"

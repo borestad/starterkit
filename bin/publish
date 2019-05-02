@@ -11,4 +11,4 @@ git-validate-repo
 
 lerna publish from-package --no-git-tag-version -y --registry=$ARTIFACTORY_NPM_REGISTRY && \
   line && \
-  success
+  print-success
