@@ -27,7 +27,7 @@ const engine = new BABYLON.Engine(canvas, true)
 // ----------------------------------------------------------------------------
 // Scene Factory
 // ----------------------------------------------------------------------------
-function createScene() {
+function createScene () {
   // Create the scene space
   const scene = new BABYLON.Scene(engine)
 

@@ -2,6 +2,7 @@
 
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
 export ROOT=$(git rev-parse --show-toplevel)
+export PATH="./node_modules/.bin:$PATH"
 
 hr () {
   $ROOT/bin/hr "${@:--}"
@@ -13,6 +14,11 @@ hr2 () {
 
 
 git-validate-repo () {
+  # Hackish strategy to get rid of git-dirty files, caused by GDP
+  #   - always add pom.xml to local build on Jenkins (but not push it)
+  #   - never fail
+  (git add $ROOT/pom.xml && git commit -m "Update pom.xml") &>/dev/null && hr && echo 'Update pom.xml' && hr || :
+
   git-is-repo-dirty || (echo 'dirty' && git-show-dirty-repo-error)
 }
 
@@ -30,6 +36,8 @@ git-show-dirty-repo-error () {
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
   && git status -s \
+  && echo \
+  && git diff --color | diff-so-fancy \
   && line \
   && exit 1
 }
@@ -50,6 +58,7 @@ trap-error () {
 
 # Text Reset
 RCol="\033[0m"
+R="\033[0m"
 
 # Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background
 Bla='\033[30m';     BBla='\033[30m';    UBla='\e[4;30m';    IBla='\033[90m';    BIBla='\033[90m';   On_Bla='\e[40m';
@@ -60,6 +69,7 @@ Blu='\033[34m';     BBlu='\033[34m';    UBlu='\e[4;34m';    IBlu='\033[94m';    
 Pur='\033[35m';     BPur='\033[35m';    UPur='\e[4;35m';    IPur='\033[95m';    BIPur='\033[95m';   On_Pur='\e[45m';
 Cya='\033[36m';     BCya='\033[36m';    UCya='\e[4;36m';    ICya='\033[96m';    BICya='\033[96m';   On_Cya='\e[46m';
 Whi='\033[37m';     BWhi='\033[37m';    UWhi='\e[4;37m';    IWhi='\033[97m';    BIWhi='\033[97m';   On_Whi='\e[47m';
+Gray='\033[90m';
 
 # =============================================================================
 # ⚡ HELPER FUNCTIONS

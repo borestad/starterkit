@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["config/**/*.ts", "bin/**/*.ts"],
+  "include": ["./config/**/*.ts", "./bin/**/*.ts"],
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,
@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "noLib": false,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
     "sourceMap": false,
     "target": "es6"
   }

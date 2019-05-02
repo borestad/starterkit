@@ -1,5 +1,5 @@
 import * as chromedriver from 'chromedriver'
-import { NightwatchBrowser } from 'nightwatch'
+// import { NightwatchBrowser } from 'nightwatch'
 
 export = {
   // this controls whether to abort the test execution when an assertion failed and skip the rest

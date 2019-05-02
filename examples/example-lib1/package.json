@@ -9,20 +9,20 @@
     "url": "https://www.netent.com/"
   },
   "engines": {
-    "node": "10.x",
+    "node": ">= 10.x",
     "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
   },
   "main": "src/index.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
-    "clean": "git clean -dxf -e node_modules",
-    "compile": "del dist && tsc -b tsconfig.json",
+    "clean": "git clean -dXf -e node_modules -e \"*cache*\"",
+    "compile": "del dist && tsc -b tsconfig.json --pretty",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "test": "jest -w 2 --notify"
   },
   "dependencies": {
     "microbundle": "0.11.0",
-    "typescript": "3.3.4000"
+    "typescript": "3.4.5"
   }
 }

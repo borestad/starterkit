@@ -7,7 +7,7 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'npm run install:yarn'
+        sh './bin/hr; NODE_ENV=production ./bin/install-all; ./bin/hr'
       }
     }
 

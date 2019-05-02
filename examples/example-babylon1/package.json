@@ -4,24 +4,26 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "git clean -dxf -e node_modules",
+    "clean": "git clean -dXf -e node_modules -e \"*cache*\"",
     "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
-    "build:js": "babel . --out-dir dist --extensions \".ts,.tsx\" --source-maps true",
+    "compile": "run-p compile:*",
+    "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps true",
+    "compile:ts": "del dist && tsc -b tsconfig.json --pretty",
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",
     "test": "jest -w 2 --notify"
   },
   "dependencies": {
-    "@babel/cli": "7.2.3",
-    "babylonjs": "4.0.0-alpha.10",
-    "babylonjs-gui": "3.3.0",
-    "babylonjs-loaders": "3.3.0",
-    "babylonjs-materials": "3.3.0",
-    "babylonjs-viewer": "3.3.0",
+    "@babel/cli": "7.4.4",
+    "babylonjs": "4.0.1",
+    "babylonjs-gui": "4.0.1",
+    "babylonjs-loaders": "4.0.1",
+    "babylonjs-materials": "4.0.1",
+    "babylonjs-viewer": "4.0.1",
     "cannon": "0.6.2",
     "parcel-bundler": "1.12.3",
     "pep": "1.0.13",
-    "typescript": "3.3.4000"
+    "typescript": "3.4.5"
   }
 }

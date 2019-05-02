@@ -6,10 +6,12 @@
     "editor.formatOnSave": true
   },
   "[json]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.acceptSuggestionOnEnter": "off",
@@ -24,7 +26,8 @@
   "editor.autoIndent": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-    "source.organizeImports": false
+    "source.organizeImports": false,
+    "source.fixAll.tslint": true
   },
   "editor.codeLens": true,
   "editor.fontLigatures": true,
@@ -42,7 +45,8 @@
   "eslint.packageManager": "yarn",
   "extensions.ignoreRecommendations": false,
   "files.associations": {
-    ".*rc": "properties"
+    ".*rc": "properties",
+    "package.json": "json"
   },
   "files.exclude": {
     ".gitignore": false,
@@ -56,8 +60,7 @@
     "**/node_modules/**": true,
     "**/reports": true,
     "**/build": true,
-    "**/dist": true,
-    "examples/**/dist": true
+    "**/dist": true
   },
   "files.trimTrailingWhitespace": true,
   "files.useExperimentalFileWatcher": true,
@@ -88,5 +91,13 @@
   "tslint.jsEnable": true,
   "typelens.decorateunused": false,
   "typescript.implementationsCodeLens.enabled": false,
-  "typescript.referencesCodeLens.enabled": false
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  // TODO: Experimental usage
+  "javascript.suggest.completeFunctionCalls": true,
+  "javascript.suggestionActions.enabled": true,
+  "typescript.suggest.autoImports": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.suggest.paths": true,
+  "typescript.suggestionActions.enabled": true
 }

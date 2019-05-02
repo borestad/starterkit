@@ -139,8 +139,10 @@ dist
 .cache
 
 # Don't allow both yarn.lock & package-lock.json
-package-lock.json
-examples/**/yarn.lock
+**/package-lock.json
+**/yarn.lock
+!/yarn.lock
+
 
 # Don't allow a mix of ts and js files in this repository...
 examples/*.js
@@ -149,8 +151,10 @@ src/*.js
 *.js
 
 # ...except config files (babel.config.js, jest.config.base.js etc)
+!/.*.js
 !*.conf*.js
 !/config/**/*.js
+!/bin/**/*.js
 # ...and some extra files
 !wallaby.js
 
@@ -231,3 +235,20 @@ git-vars
 
 # Common cache folder
 .*cache*
+
+# -----------------------------------------------------------------------------
+### SOURCE TREE
+# -----------------------------------------------------------------------------
+# Windows stack dump
+*.exe.stackdump
+
+settings.xml
+
+# Ignore temporary POM-files from GDP
+*-pom.xml
+
+# https://medium.com/@jdxcode/for-the-love-of-god-dont-use-npmignore-f93c08909d8d
+.npmignore
+
+# Avoid using same foldername as 'npm pack'
+package

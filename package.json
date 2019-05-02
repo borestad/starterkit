@@ -17,43 +17,36 @@
     "url": "https://jira.netent.com/secure/RapidBoard.jspa?rapidView=1587"
   },
   "engines": {
-    "node": "10.x",
+    "node": ">= 10.x",
     "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
   },
   "workspaces": [
     "examples/*",
-    "config/*"
+    "config/*",
+    "packages/*"
   ],
   "scripts": {
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
-    "clean": "git clean -dxf -e node_modules -e \"*cache*\"",
-    "compile": "yarn compile:root && lerna run compile",
-    "compile:root": "tsc --build tsconfig.root.json",
+    "clean": "git snapshot -q && git clean -dXf -e node_modules",
+    "compile": "run-p compile:*",
+    "compile:root": "tsc --build tsconfig.root.json --pretty",
+    "compile:packages": "lerna run compile --parallel --stream",
     "fix": "yarn prettier && yarn lint",
-    "install:yarn": "npm install yarn@`node -p -e \"require('./package.json').dependencies.yarn\"` --ignore-scripts --no-save --no-optional --no-package-lock",
-    "lint": "tslint -c tslint.json --project tsconfig.root.json --fix && lerna run lint --parallel",
-    "postinstall": "git config --local include.path ../.gitconfig && del package-lock.json && node node_modules/husky/husky.js install",
+    "lint": "run-p lint:ts lint:js",
+    "lint:js": "eslint --ignore-path=.gitignore --fix  \"**/*.js\"",
+    "lint:ts": "run-p lint:ts:root lint:ts:packages",
+    "lint:ts:root": "tslint -c tslint.json --project tsconfig.json --fix -t codeFrame --project tsconfig.root.json",
+    "lint:ts:packages": "tslint -c tslint.json --project tsconfig.packages.json --fix -t codeFrame --project tsconfig.json",
+    "postinstall": "ts-node -T bin/post-install.ts",
     "preinstall": "rm -f .git/hooks/pre-commit || true",
     "prettier": "prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "run-p -l test:unit test:e2e",
     "test:unit": "jest -w 2 -c config/jest/jest.config.js",
     "test:e2e": "lerna run test:e2e",
-    "test:watch": "yarn test -- --watch --notify",
-    "test:serial": "lerna exec -- yarn test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "git update-index --again"
-    }
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx,json,md,html,css}": [
-      "yarn fix",
-      "git add"
-    ]
+    "test:serial": "lerna exec -- yarn test",
+    "test:watch": "yarn test -- --watch --notify"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -66,34 +59,49 @@
     "useTabs": false
   },
   "dependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "7.4.0",
-    "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
-    "@babel/preset-env": "^7.4.1",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "^7.4.4",
     "@babel/preset-typescript": "^7.3.3",
-    "@babel/register": "7.4.0",
+    "@babel/register": "7.4.4",
+    "@babel/runtime-corejs3": "7.4.4",
     "@types/fs-extra": "5.0.5",
-    "@types/jest": "24.0.11",
+    "@types/jest": "24.0.12",
     "babel-plugin-loop-optimizer": "1.4.1",
+    "chalk": "2.4.2",
     "del-cli": "1.1.0",
-    "esm": "3.2.21",
+    "eslint": "5.16.0",
+    "eslint-config-prettier": "4.2.0",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-standard": "4.0.0",
+    "esm": "3.2.22",
     "fs-extra": "7.0.1",
-    "husky": "1.3.1",
-    "jest": "24.5.0",
-    "jest-cli": "24.5.0",
-    "lerna": "^3.13.1",
-    "lint-staged": "8.1.5",
+    "husky": "2.1.0",
+    "jest": "24.7.1",
+    "jest-cli": "24.7.1",
+    "lerna": "^3.13.4",
+    "lodash": "4.17.11",
     "npm-run-all": "4.1.5",
-    "prettier": "1.16.4",
-    "ts-jest": "24.0.0",
-    "ts-node": "8.0.3",
-    "tslint": "5.14.0",
+    "prettier": "1.17.0",
+    "ts-jest": "24.0.2",
+    "ts-node": "8.1.0",
+    "tslint": "5.16.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "8.0.1",
     "tslint-eslint-rules": "5.4.0",
-    "typescript": "^3.3.4000",
+    "typescript": "^3.4.5",
     "typescript-tslint-plugin": "0.3.1",
     "yarn": "1.15.2"
+  },
+  "devDependencies": {
+    "diff-so-fancy": "1.2.5",
+    "lint-staged": "8.1.5",
+    "node-notifier": "5.4.0"
   }
 }

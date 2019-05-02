@@ -1,0 +1,28 @@
+{
+  "name": "@netent/logger",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "NetEnt AB (publ)",
+    "email": "info@netent.com",
+    "url": "https://www.netent.com/"
+  },
+  "engines": {
+    "node": "10.x",
+    "yarn": ">= 1.12.x",
+    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+  },
+  "main": "logger.ts",
+  "scripts": {
+    "dev": "parcel .playground/playground.html",
+    "compile": "del dist && tsc -b tsconfig.json"
+  },
+  "dependencies": {
+    "@types/figures": "2.0.0",
+    "figures": "3.0.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.3"
+  }
+}

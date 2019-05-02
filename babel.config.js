@@ -4,10 +4,13 @@
  *
  */
 
-const path = require('path')
-const cwd = path.relative(__dirname, process.cwd())
+const { isNotCI } = require('@config/helpers-cli')
+const { yellow } = require('chalk')
+const cwd = require('path').relative(__dirname, process.cwd())
 
-console.log(`❤️ babel.config.js (${cwd})`)
+if (isNotCI) {
+  console.log(`\n⭐ ${yellow.underline('babel.config.js')} [${cwd}]\n`)
+}
 
 module.exports = api => {
   const isProd = expr => api.env('production') && expr
@@ -15,6 +18,13 @@ module.exports = api => {
 
   const presets = ['@babel/env', '@babel/typescript']
   const plugins = [
+    [
+      '@babel/transform-runtime',
+      {
+        corejs: 3,
+        regenerator: true
+      }
+    ],
     '@babel/proposal-class-properties',
     '@babel/proposal-object-rest-spread',
     isProd('babel-plugin-loop-optimizer')

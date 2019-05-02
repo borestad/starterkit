@@ -1,16 +1,26 @@
-#!/usr/bin/env node -r esm
+#!/usr/bin/env npx node -r esm
 
-import { getIgnoredFilesStillInIndex } from '@config/helpers-cli'
+import * as helper from '@config/helpers-cli'
+import { isEmpty } from 'lodash'
+import * as util from 'util'
 
 let files
 
-if ((files = getIgnoredFilesStillInIndex()).length > 0) {
+/**
+ * Validate if files are ignored
+ */
+if (!isEmpty((files = helper.getIgnoredFilesStillInIndex()))) {
+  throw new Error(
+    util.format(
+      `
+      There exists committed files in this repository that are ignored by git.
+      This usually happens when files are beeing added to .gitignore before deleting them.
 
-  console.error(`
-    There exists files in this repository that mark as .gitignored, but still are committed
-  `.trim())
 
-  console.error(files)
-
-  throw new Error('IGNORED_FILES_STILL_IN_INDEX')
+      This can cause a lot of unwanted side effects - Please remove them!
+      https://www.google.com/search?q=delete+files+still+in+in+gitignore
+      \n%s`,
+      JSON.stringify(files, null, 4)
+    )
+  )
 }
