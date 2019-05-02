@@ -3,8 +3,19 @@
  * https://jestjs.io/docs/en/configuration.html
  *
  */
+const { gray } = require('chalk')
+const { isNotCI, relativeToGitRoot } = require('@config/helpers-cli')
+const { log } = console
 
-module.exports = pkg => {
+// Create some spacing for readability
+setImmediate(log)
+
+module.exports = options => {
+  const { pkg, filename } = options
+  if (isNotCI) {
+    log(`★  ${gray.underline(relativeToGitRoot(filename))}`)
+  }
+
   return {
     displayName: pkg.name,
     name: pkg.name,

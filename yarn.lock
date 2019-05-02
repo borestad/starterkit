@@ -10305,6 +10305,13 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^3.0.0"
 
+pkg-up@3.1.0:
+  version "3.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/pkg-up/-/pkg-up-3.1.0.tgz#100ec235cc150e4fd42519412596a28512a0def5"
+  integrity sha1-EA7CNcwVDk/UJRlBJZaihRKg3vU=
+  dependencies:
+    find-up "^3.0.0"
+
 please-upgrade-node@^3.0.2, please-upgrade-node@^3.1.1:
   version "3.1.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/please-upgrade-node/-/please-upgrade-node-3.1.1.tgz#ed320051dfcc5024fae696712c8288993595e8ac"

@@ -7,7 +7,11 @@ const { memoize, compact } = require('lodash')
 const path = require('path')
 const isCI = require('is-ci')
 const fs = require('fs-extra')
+const _pkgUp = require('pkg-up')
 
+/**
+ * Returns Boolean if environment is NOT run on a CI-environment
+ */
 const isNotCI = !isCI
 
 /**
@@ -52,8 +56,8 @@ const fromGitRoot = (...args) => {
  * Returns an relative path to git-root
  * @param {*} str
  */
-const relativeToGitRoot = from => {
-  return relativeFrom({ to: gitRoot(), from })
+const relativeToGitRoot = to => {
+  return relativeFrom({ to, from: gitRoot() })
 }
 
 /**
@@ -82,8 +86,17 @@ const getIgnoredFilesStillInIndex = () => {
   )
 }
 
-const rootPkg = () => {
-  return fs.readJSONSync(fromGitRoot('package.json'))
+const rootPkg = prop => {
+  const json = fs.readJSONSync(pkgUp(gitRoot()))
+  return prop ? json[prop] : json
+}
+
+/**
+ * Find the closest package.json file from path
+ * @param {*} path
+ */
+const pkgUp = path => {
+  return _pkgUp.sync({ cwd: path })
 }
 
 module.exports = {
@@ -98,5 +111,6 @@ module.exports = {
   relativeToGitRoot,
   relativeFrom,
   relativeFromGitRoot,
-  rootPkg
+  rootPkg,
+  pkgUp
 }
