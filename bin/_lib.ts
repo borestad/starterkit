@@ -8,7 +8,7 @@ const { log } = console
 // tslint:disable-next-line: no-empty
 const noop = () => {}
 
-export const ROOT = path.join(__dirname, '..')
+export const ROOT = path.resolve(__dirname, '..')
 
 export async function exec (cmd: string) {
   return execa.shell(cmd.trim(), {

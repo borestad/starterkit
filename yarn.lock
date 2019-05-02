@@ -2180,6 +2180,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/figures@2.0.0":
+  version "2.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/figures/-/figures-2.0.0.tgz#e624a9ad71db49b9c8b9bbd59fe1ad04c443913c"
+  integrity sha1-5iSprXHbSbnIubvVn+GtBMRDkTw=
+
 "@types/fs-extra@5.0.5":
   version "5.0.5"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/fs-extra/-/fs-extra-5.0.5.tgz#080d90a792f3fa2c5559eb44bd8ef840aae9104b"
@@ -5698,6 +5703,13 @@ figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
   version "3.5.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha1-hiRwESkBxyeg5JWoB0S9W6odZ5A=
+
+figures@3.0.0:
+  version "3.0.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/figures/-/figures-3.0.0.tgz#756275c964646163cc6f9197c7a0295dbfd04de9"
+  integrity sha1-dWJ1yWRkYWPMb5GXx6ApXb/QTek=
+  dependencies:
+    escape-string-regexp "^1.0.5"
 
 figures@^1.0.1, figures@^1.7.0:
   version "1.7.0"

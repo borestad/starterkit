@@ -4,14 +4,12 @@
  *
  */
 
-const path = require('path')
-const isCI = require('is-ci')
+const { isNotCI } = require('@config/helpers-cli')
 const { yellow } = require('chalk')
-const { log } = console
-const cwd = path.relative(__dirname, process.cwd())
+const cwd = require('path').relative(__dirname, process.cwd())
 
-if (!isCI) {
-  log(`\n⭐ ${yellow.underline('babel.config.js')} [${cwd}]\n`)
+if (isNotCI) {
+  console.log(`\n⭐ ${yellow.underline('babel.config.js')} [${cwd}]\n`)
 }
 
 module.exports = api => {

@@ -3,21 +3,32 @@
  * https://jestjs.io/docs/en/configuration.html
  *
  */
-const isCI = require('is-ci')
+const { yellow } = require('chalk')
+const { isNotCI, gitRoot, rootPkg } = require('@config/helpers-cli')
 
-!isCI && console.log(`❤️  <root>/config/jest.config.js`)
+if (isNotCI) {
+  console.log(`\n⭐ ${yellow.underline('<root>/config/jest.config.js')}\n`)
+}
+
+const projects = rootPkg().workspaces.map(p => `<rootDir>/${p}`)
+console.log(projects)
 
 module.exports = {
-  rootDir: '../../',
+  rootDir: gitRoot(),
   testEnvironment: 'node',
-  projects: ['<rootDir>/examples/*'],
+  projects: [
+    '<rootDir>/examples/*',
+    '<rootDir>/packages/*',
+    '<rootDir>/config/*'
+  ],
+  // projects,
   bail: true,
   silent: false,
-  collectCoverage: isCI,
-  verbose: !isCI,
+  collectCoverage: true,
+  verbose: isNotCI,
   moduleFileExtensions: ['js', 'json', 'jsx', 'node', 'ts', 'tsx'],
-  coverageDirectory: '<rootDir>/coverage',
-  coverageReporters: ['lcov', 'text', 'text-summary'],
+  coverageDirectory: '<rootDir>/node_modules/.tmp/coverage',
+  coverageReporters: ['text', 'text-summary'],
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!/**/*.d.ts', '!/dist/**'],
-  modulePathIgnorePatterns: ['/node_modules/', '<rootDir>/.*dist', '**']
+  modulePathIgnorePatterns: ['**/node_modules/**']
 }
