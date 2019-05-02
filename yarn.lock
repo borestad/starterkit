@@ -1840,10 +1840,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/figures@2.0.0":
-  version "2.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/figures/-/figures-2.0.0.tgz#e624a9ad71db49b9c8b9bbd59fe1ad04c443913c"
-  integrity sha1-5iSprXHbSbnIubvVn+GtBMRDkTw=
+"@types/figures@3.0.1":
+  version "3.0.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/figures/-/figures-3.0.1.tgz#dcb7222a8e63fd673d916f456019a405fd143acd"
+  integrity sha1-3LciKo5j/Wc9kW9FYBmkBf0UOs0=
+  dependencies:
+    figures "*"
 
 "@types/fs-extra@5.0.5":
   version "5.0.5"
@@ -2397,55 +2399,55 @@ babylon@^6.15.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
   integrity sha1-ry87iPpvXB5MY00aD46sT1WzleM=
 
-babylonjs-gltf2interface@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.0.1.tgz#f006ceab0088b18a6a5ed14c5a7724b9640309e3"
-  integrity sha1-8AbOqwCIsYpqXtFMWnckuWQDCeM=
+babylonjs-gltf2interface@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-gltf2interface/-/babylonjs-gltf2interface-4.0.3.tgz#e81cc65fac93b723feef4980b7497fa4643a8c4c"
+  integrity sha1-6BzGX6yTtyP+70mAt0l/pGQ6jEw=
 
-babylonjs-gui@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-gui/-/babylonjs-gui-4.0.1.tgz#121d265b696108ec054bb3a072b12b309dd29d6e"
-  integrity sha1-Eh0mW2lhCOwFS7OgcrErMJ3SnW4=
+babylonjs-gui@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-gui/-/babylonjs-gui-4.0.3.tgz#a3e15dd8b4c494dbaf9bc23d554f5ac4c37e64e9"
+  integrity sha1-o+Fd2LTElNuvm8I9VU9axMN+ZOk=
   dependencies:
-    babylonjs "4.0.1"
+    babylonjs "4.0.3"
 
-babylonjs-loaders@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-loaders/-/babylonjs-loaders-4.0.1.tgz#ee2c4d6415f3a4670fae6c7e5c2d32c1ac6e6c05"
-  integrity sha1-7ixNZBXzpGcPrmx+XC0ywaxubAU=
+babylonjs-loaders@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-loaders/-/babylonjs-loaders-4.0.3.tgz#aab7fbc695eed29ebe7971e4d9797a385bd365dc"
+  integrity sha1-qrf7xpXu0p6+eXHk2Xl6OFvTZdw=
   dependencies:
-    babylonjs "4.0.1"
-    babylonjs-gltf2interface "4.0.1"
+    babylonjs "4.0.3"
+    babylonjs-gltf2interface "4.0.3"
 
-babylonjs-materials@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-materials/-/babylonjs-materials-4.0.1.tgz#1895fcd05092d40d606d0c3c17317344fab60163"
-  integrity sha1-GJX80FCS1A1gbQw8FzFzRPq2AWM=
+babylonjs-materials@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-materials/-/babylonjs-materials-4.0.3.tgz#b6bf7bc332e1d14c72258ed7bd14ddc3cb3957de"
+  integrity sha1-tr97wzLh0UxyJY7XvRTdw8s5V94=
   dependencies:
-    babylonjs "4.0.1"
+    babylonjs "4.0.3"
 
-babylonjs-viewer-assets@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-viewer-assets/-/babylonjs-viewer-assets-4.0.1.tgz#38729857c58cccb8d6003a9b0aeae2df8ddf9630"
-  integrity sha1-OHKYV8WMzLjWADqbCuri343fljA=
+babylonjs-viewer-assets@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-viewer-assets/-/babylonjs-viewer-assets-4.0.3.tgz#261de78d27103b28166d2d31e0ccfe4b27d26cf7"
+  integrity sha1-Jh3njScQOygWbS0x4Mz+SyfSbPc=
 
-babylonjs-viewer@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-viewer/-/babylonjs-viewer-4.0.1.tgz#6454908eb1fb50dfa51fd8a298392a987829e0af"
-  integrity sha1-ZFSQjrH7UN+lH9iimDkqmHgp4K8=
+babylonjs-viewer@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs-viewer/-/babylonjs-viewer-4.0.3.tgz#b385a286f4e09f491df6278a87ef2427d1e9609a"
+  integrity sha1-s4WihvTgn0kd9ieKh+8kJ9HpYJo=
   dependencies:
-    babylonjs "4.0.1"
-    babylonjs-gltf2interface "4.0.1"
-    babylonjs-loaders "4.0.1"
-    babylonjs-viewer-assets "4.0.1"
+    babylonjs "4.0.3"
+    babylonjs-gltf2interface "4.0.3"
+    babylonjs-loaders "4.0.3"
+    babylonjs-viewer-assets "4.0.3"
     deepmerge "~2.1.1"
     handlebars "~4.0.11"
     pepjs "~0.4.3"
 
-babylonjs@4.0.1:
-  version "4.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs/-/babylonjs-4.0.1.tgz#575e83764f90b8c32e077657bd2ba873ec085c39"
-  integrity sha1-V16Ddk+QuMMuB3ZXvSuoc+wIXDk=
+babylonjs@4.0.3:
+  version "4.0.3"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/babylonjs/-/babylonjs-4.0.3.tgz#5dba9a96a7cb70634338e8dd7a17081e9f902cf6"
+  integrity sha1-XbqalqfLcGNDOOjdehcIHp+QLPY=
 
 balanced-match@^0.4.2:
   version "0.4.2"
@@ -2509,6 +2511,11 @@ bl@^1.0.0:
   dependencies:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
+
+blend-promise-utils@1.22.0:
+  version "1.22.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/blend-promise-utils/-/blend-promise-utils-1.22.0.tgz#7ee0fa9d717b54272e421d10d9be704409970eae"
+  integrity sha1-fuD6nXF7VCcuQh0Q2b5wRAmXDq4=
 
 block-stream@*:
   version "0.0.9"
@@ -4859,7 +4866,7 @@ figgy-pudding@^3.4.1, figgy-pudding@^3.5.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/figgy-pudding/-/figgy-pudding-3.5.1.tgz#862470112901c727a0e495a80744bd5baa1d6790"
   integrity sha1-hiRwESkBxyeg5JWoB0S9W6odZ5A=
 
-figures@3.0.0:
+figures@*, figures@3.0.0:
   version "3.0.0"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/figures/-/figures-3.0.0.tgz#756275c964646163cc6f9197c7a0295dbfd04de9"
   integrity sha1-dWJ1yWRkYWPMb5GXx6ApXb/QTek=
@@ -5720,10 +5727,10 @@ humanize-ms@^1.2.1:
   dependencies:
     ms "^2.0.0"
 
-husky@2.1.0:
-  version "2.1.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/husky/-/husky-2.1.0.tgz#f486dd063596ad3aad4bbbcd8673ca5bface3caa"
-  integrity sha1-9IbdBjWWrTqtS7vNhnPKW/rOPKo=
+husky@2.2.0:
+  version "2.2.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/husky/-/husky-2.2.0.tgz#4dda4370ba0f145b6594be4a4e4e4d4c82a6f2d5"
+  integrity sha1-TdpDcLoPFFtllL5KTk5NTIKm8tU=
   dependencies:
     cosmiconfig "^5.2.0"
     execa "^1.0.0"

@@ -16,7 +16,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
-    "clean": "git clean -dXf -e node_modules -e \"*cache*\"",
+    "clean": "ts-node -T ../../bin/clean.ts",
     "compile": "run-p compile:*",
     "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "tsc -b tsconfig.json --pretty",

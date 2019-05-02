@@ -86,6 +86,14 @@ const getIgnoredFilesStillInIndex = () => {
   )
 }
 
+const getIgnoredFiles = () => {
+  return compact(
+    mexec`
+      git ls-files --directory --others --exclude-standard --ignored
+  `().split('\n')
+  )
+}
+
 const rootPkg = prop => {
   const json = fs.readJSONSync(pkgUp(gitRoot()))
   return prop ? json[prop] : json
@@ -101,6 +109,7 @@ const pkgUp = path => {
 
 module.exports = {
   execFn,
+  getIgnoredFiles,
   getIgnoredFilesStillInIndex,
   gitRoot,
   gitShortHash,
