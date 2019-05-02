@@ -23,7 +23,7 @@ trap trap-error INT TERM
 npx envinfo --system --binaries
 
 line '[1/8] Cleanup'
-npm run clean
+npm run clean 2> /dev/null || true
 
 line '[2/8] Install'
 $ROOT/bin/install-all
