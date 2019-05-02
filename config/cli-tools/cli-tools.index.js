@@ -1,7 +1,10 @@
 require('ts-node').register({
   /* options */
   transpileOnly: true,
-  typeCheck: false
+  typeCheck: false,
+  compilerOptions: {
+    module: 'commonjs'
+  }
 })
 
 module.exports = require('./cli-tools.ts')
