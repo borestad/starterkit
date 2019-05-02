@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./**/*.ts"],
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "outDir": "./node_modules/.tmp/build.tsc",
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true
+  }
+}
