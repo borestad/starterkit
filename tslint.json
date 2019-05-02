@@ -24,6 +24,7 @@
       "allow-named-functions"
     ],
     "prefer-const": true,
+    "cyclomatic-complexity": [true, 20],
     "prefer-template": [true, "allow-single-concat"],
     "ordered-imports": [
       true,

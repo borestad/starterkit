@@ -32,7 +32,28 @@ git-is-repo-dirty () {
 
 git-show-dirty-repo-error () {
   failure \
-  && echo 'The git repository is "dirty"' \
+  && (cat << "EOF"
+
+  Whoopsie poopsie!
+
+  Your friendly linter found some errors ...
+  ...and how would life be without law & order?
+
+  This is often caused by:
+    * Files not being formatted properly
+    * Lack of coffee
+    * Random noise from space
+
+  99% of the time - this should automatically be solved by our nifty pre-commit hook (see .lintstagedrc.js).
+  This hook autofixes all these annoying messages.
+  Please run "yarn fix" and try to commit again.
+
+  Btw - here's the diff for ya'
+
+  Have a nice day!
+
+EOF
+) && echo 'The git repository is "dirty"' \
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
   && git status -s \
@@ -123,7 +144,7 @@ cat << "EOF"
  | |__| | | |  | |   | |\  | | |__| |  ____) | | |____  |_|
   \____/  |_|  |_|   |_| \_|  \____/  |_____/  |______| (_)
 
-   - You haz errors!
+   - You haz errors :(
 
 EOF
 echo -e $RCol
