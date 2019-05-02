@@ -29,7 +29,7 @@
   "scripts": {
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
-    "clean": "git snapshot -q && ts-node -T bin/clean.ts",
+    "clean": "ts-node -T bin/clean.ts",
     "compile": "run-p compile:*",
     "compile:root": "tsc --build tsconfig.root.json --pretty",
     "compile:packages": "lerna run compile --parallel --stream",
