@@ -2510,6 +2510,11 @@ bl@^1.0.0:
     readable-stream "^2.3.5"
     safe-buffer "^5.1.1"
 
+blend-promise-utils@1.22.0:
+  version "1.22.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/blend-promise-utils/-/blend-promise-utils-1.22.0.tgz#7ee0fa9d717b54272e421d10d9be704409970eae"
+  integrity sha1-fuD6nXF7VCcuQh0Q2b5wRAmXDq4=
+
 block-stream@*:
   version "0.0.9"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/block-stream/-/block-stream-0.0.9.tgz#13ebfe778a03205cfe03751481ebb4b3300c126a"

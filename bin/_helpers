@@ -37,7 +37,7 @@ git-show-dirty-repo-error () {
   && echo \
   && git status -s \
   && echo \
-  && git diff --color | diff-so-fancy \
+  && git diff --color | npx diff-so-fancy \
   && line \
   && exit 1
 }

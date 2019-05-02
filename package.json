@@ -29,7 +29,7 @@
   "scripts": {
     "build": "lerna run build --parallel --stream",
     "ci": "./bin/ci",
-    "clean": "git snapshot -q && git clean -dXf -e node_modules",
+    "clean": "git snapshot -q && ts-node -T bin/clean.ts",
     "compile": "run-p compile:*",
     "compile:root": "tsc --build tsconfig.root.json --pretty",
     "compile:packages": "lerna run compile --parallel --stream",
@@ -71,6 +71,7 @@
     "@types/fs-extra": "5.0.5",
     "@types/jest": "24.0.12",
     "babel-plugin-loop-optimizer": "1.4.1",
+    "blend-promise-utils": "1.22.0",
     "chalk": "2.4.2",
     "del-cli": "1.1.0",
     "eslint": "5.16.0",

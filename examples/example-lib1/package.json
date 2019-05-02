@@ -16,7 +16,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
-    "clean": "git clean -dXf -e node_modules -e \"*cache*\"",
+    "clean": "ts-node -T ../../bin/clean.ts",
     "compile": "del dist && tsc -b tsconfig.json --pretty",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "test": "jest -w 2 --notify"
