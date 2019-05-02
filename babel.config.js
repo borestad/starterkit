@@ -4,7 +4,7 @@
  *
  */
 
-const { isNotCI } = require('@config/helpers-cli')
+const { isNotCI } = require('@config/cli-tools')
 const { yellow } = require('chalk')
 const cwd = require('path').relative(__dirname, process.cwd())
 

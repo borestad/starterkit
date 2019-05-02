@@ -1,15 +1,14 @@
 #!/usr/bin/env npx ts-node -T
 
-import { getIgnoredFiles } from '@config/helpers-cli'
+import { GIT, run } from '@config/cli-tools'
 import * as PromiseUtil from 'blend-promise-utils'
 import { default as chalk } from 'chalk'
 import { remove } from 'fs-extra'
 import * as path from 'path'
-import { run } from './_lib'
 const { log } = console
 
 const EXCLUDE = /node_modules/
-const filesToDelete = getIgnoredFiles().filter(x => !EXCLUDE.test(x))
+const filesToDelete = GIT.IGNORED_FILES.filter(x => !EXCLUDE.test(x))
 
 /**
  * Clean
@@ -19,13 +18,11 @@ const filesToDelete = getIgnoredFiles().filter(x => !EXCLUDE.test(x))
  */
 run(async function cleanRepo () {
   if (filesToDelete.length) {
-    for (const file of filesToDelete) {
-      const f = path.parse(file)
-      log(`Removing ${f.dir}${f.dir && '/'}${chalk.underline.yellow(f.base)}`)
-    }
+    filesToDelete.map(path.parse).forEach(({ dir, base }) => {
+      log(`Removing ${dir}${dir && '/'}${chalk.underline.yellow(base)}`)
+    })
+    await PromiseUtil.mapLimit(filesToDelete, 5, path => remove(path))
   } else {
     log('Nothing to do.')
   }
-
-  await PromiseUtil.mapLimit(filesToDelete, 5, path => remove(path))
 })

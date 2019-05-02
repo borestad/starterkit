@@ -6,23 +6,17 @@
 
 import * as fs from 'fs-extra'
 import { isNil, pickBy } from 'lodash'
-import path from 'path'
+import * as path from 'path'
 
 const { log, error } = console
 const cwd = process.cwd()
-
 ; (async () => {
   try {
-    const [from, to] = [
-      `${cwd}/package.json`,
-      `${cwd}/dist/package.json`
-    ]
+    const [from, to] = [`${cwd}/package.json`, `${cwd}/dist/package.json`]
 
     await fs.copy(from, to)
 
-    const pkg = JSON.parse(
-      await fs.readFile(to, 'utf-8')
-    )
+    const pkg = JSON.parse(await fs.readFile(to, 'utf-8'))
 
     const output = {
       name: pkg.name,

@@ -37,7 +37,7 @@
     "lint": "run-p lint:ts lint:js",
     "lint:js": "eslint --ignore-path=.gitignore --fix  \"**/*.js\"",
     "lint:ts": "run-p lint:ts:root lint:ts:packages",
-    "lint:ts:root": "tslint -c tslint.json --project tsconfig.json --fix -t codeFrame --project tsconfig.root.json",
+    "lint:ts:root": "tslint -c tslint.json --fix -t codeFrame --project tsconfig.root.json",
     "lint:ts:packages": "tslint -c tslint.json --project tsconfig.packages.json --fix -t codeFrame --project tsconfig.json",
     "postinstall": "ts-node -T bin/post-install.ts",
     "preinstall": "rm -f .git/hooks/pre-commit || true",

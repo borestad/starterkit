@@ -29,7 +29,7 @@ line '[2/8] Install'
 $ROOT/bin/install-all
 
 line '[3/8] Custom validation'
-node -r esm ./bin/validate
+ts-node -T $ROOT/bin/validate.ts
 
 line '[4/8] Codestyle & Lint'
 yarn prettier --loglevel silent

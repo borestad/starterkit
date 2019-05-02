@@ -10,7 +10,7 @@ const { log } = console
 log(`${yellow(`⭐ ${underline('lint-staged')}`)}`)
 
 module.exports = {
-  '*.*': ['node -r esm bin/validate'],
+  '*.*': ['ts-node -T bin/validate.ts'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
   '*.{js,jsx}': [
     'prettier -c --write',

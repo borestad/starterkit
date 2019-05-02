@@ -4,7 +4,7 @@
  *
  */
 const { yellow } = require('chalk')
-const { isNotCI, gitRoot, rootPkg } = require('@config/helpers-cli')
+const { isNotCI, GIT, rootPkg } = require('@config/cli-tools')
 const isWatchMode = process.argv.includes('--watch')
 
 if (isNotCI) {
@@ -12,7 +12,7 @@ if (isNotCI) {
 }
 
 module.exports = {
-  rootDir: gitRoot(),
+  rootDir: GIT.ROOT,
   testEnvironment: 'node',
   projects: rootPkg('workspaces').map(p => `<rootDir>/${p}`),
   bail: true,

@@ -1,6 +1,6 @@
-#!/usr/bin/env npx node -r esm
+#!/usr/bin/env npx ts-node -T
 
-import * as helper from '@config/helpers-cli'
+import { GIT } from '@config/cli-tools'
 import { isEmpty } from 'lodash'
 import * as util from 'util'
 
@@ -9,7 +9,7 @@ let files
 /**
  * Validate if files are ignored
  */
-if (!isEmpty((files = helper.getIgnoredFilesStillInIndex()))) {
+if (!isEmpty((files = GIT.IGNORED_FILES_STILL_IN_INDEX))) {
   throw new Error(
     util.format(
       `

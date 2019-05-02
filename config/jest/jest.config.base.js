@@ -4,7 +4,7 @@
  *
  */
 const { gray } = require('chalk')
-const { isNotCI, relativeToGitRoot } = require('@config/helpers-cli')
+const { isNotCI, GIT } = require('@config/cli-tools')
 const { log } = console
 
 // Create some spacing for readability
@@ -13,7 +13,7 @@ setImmediate(log)
 module.exports = options => {
   const { pkg, filename } = options
   if (isNotCI) {
-    log(`★  ${gray.underline(relativeToGitRoot(filename))}`)
+    log(`★  ${gray.underline(GIT.relativeToGitRoot(filename))}`)
   }
 
   return {

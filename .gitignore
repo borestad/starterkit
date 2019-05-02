@@ -157,6 +157,8 @@ src/*.js
 !/bin/**/*.js
 # ...and some extra files
 !wallaby.js
+# ...and entrypoints
+!*.index.js
 
 # Reports
 *-report.json

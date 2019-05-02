@@ -1,8 +1,10 @@
 {
-  "name": "@config/helpers-cli",
-  "version": "0.0.0-test-only",
+  "name": "@config/cli-tools",
+  "version": "0.0.1",
   "description": "Configuration Helpers",
-  "main": "./helpers-cli.js",
+  "main": "./cli-tools.index.js",
+  "module": "./cli-tools.ts",
+  "types": "./cli-tools.ts",
   "private": true,
   "engines": {
     "node": ">= 10.x",
