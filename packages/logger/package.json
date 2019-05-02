@@ -19,7 +19,7 @@
     "compile": "del dist && tsc -b tsconfig.json"
   },
   "dependencies": {
-    "@types/figures": "2.0.0",
+    "@types/figures": "3.0.1",
     "figures": "3.0.0"
   },
   "devDependencies": {
