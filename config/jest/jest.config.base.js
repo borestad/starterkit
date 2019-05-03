@@ -12,7 +12,6 @@ setImmediate(log)
 
 module.exports = options => {
   const { pkg, filename } = options
-
   if (isNotCI) {
     log(`★  ${gray.underline(GIT.relativeToGitRoot(filename))}`)
   }
@@ -24,7 +23,7 @@ module.exports = options => {
     transform: {
       '^.+\\.tsx?$': 'ts-jest'
     },
-    testRegex: '.*.test.(ts|tsx)?$',
+    testMatch: ['<rootDir>/**/*.test.ts'],
     moduleFileExtensions: ['ts', 'js'],
     globals: {
       'ts-jest': {

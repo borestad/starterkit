@@ -9,7 +9,7 @@ import chalk from 'chalk'
 import * as execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
-import { compact, kebabCase, memoize, noop } from 'lodash'
+import { compact, isString, kebabCase, memoize, noop } from 'lodash'
 import * as path from 'path'
 import * as _pkgUp from 'pkg-up'
 
@@ -161,7 +161,7 @@ export const GIT = {
    * Returns an absolute path from git-root
    */
   fromGitRoot (...args: string[]) {
-    return path.normalize(path.resolve(GIT.ROOT, ...args))
+    return path.normalize(path.resolve(GIT.ROOT, ...args.filter(isString)))
   },
 
   /**

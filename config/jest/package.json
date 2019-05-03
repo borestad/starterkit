@@ -1,0 +1,13 @@
+{
+  "name": "@config/jest",
+  "version": "0.0.1",
+  "description": "Jest Base configuration",
+  "main": "./jest.config.base.js",
+  "private": true,
+  "scripts": {
+    "test": "exit 0 || true"
+  },
+  "dependencies": {
+    "glob": "7.1.3"
+  }
+}
