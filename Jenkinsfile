@@ -1,21 +1,44 @@
-agent("npm") {
-  checkoutScm(false)
+// agent("npm") {
+//   checkoutScm(false)
 
-  // Use notify-plugin to create a green/red status on Bitbucket
-  bitbucketNotify("CI") {
+//   // Use notify-plugin to create a green/red status on Bitbucket
+//   bitbucketNotify("CI") {
 
-    // 1. Install deps
-    stage("Install") {
-      withNode("10.13.0") {
-        sh './bin/hr; NODE_ENV=production ./bin/install-all; ./bin/hr'
-      }
+//     // 1. Install deps
+//     stage("Install") {
+//       withNode("10.13.0") {
+//         sh './bin/hr; NODE_ENV=production ./bin/install-all; ./bin/hr'
+//       }
+//     }
+
+//     // 2. Run CI Steps (build, test, lint etc)
+//     stage("CI") {
+//       withNode("10.13.0") {
+//         sh './bin/ci'
+//       }
+//     }
+//   }
+// }
+
+// For creating a custom Docker Container - See:
+// https://git.netent.com/projects/REL/repos/games-release-train-akamai-docker/browse/Dockerfile
+
+// Syntax: https://jenkins.io/doc/book/pipeline/docker/
+
+pipeline {
+    agent {
+        docker {
+          image 'node:7-alpine'
+          label 'npm'
+        }
     }
-
-    // 2. Run CI Steps (build, test, lint etc)
-    stage("CI") {
-      withNode("10.13.0") {
-        sh './bin/ci'
-      }
+    stages {
+        stage('Test') {
+            steps {
+                // Inside Docker Container
+                sh 'ls -la'
+                sh 'node --version'
+            }
+        }
     }
-  }
 }
