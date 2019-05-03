@@ -4,7 +4,7 @@
  *
  */
 const { gray } = require('chalk')
-const { isNotCI, GIT } = require('@config/cli-tools')
+const { isNotCI, GIT, pkgUpDir } = require('@config/cli-tools')
 const { log } = console
 
 // Create some spacing for readability
@@ -12,17 +12,19 @@ setImmediate(log)
 
 module.exports = options => {
   const { pkg, filename } = options
+
   if (isNotCI) {
     log(`★  ${gray.underline(GIT.relativeToGitRoot(filename))}`)
   }
 
   return {
     displayName: pkg.name,
+    rootDir: pkgUpDir(filename),
     name: pkg.name,
     transform: {
       '^.+\\.tsx?$': 'ts-jest'
     },
-    testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$',
+    testRegex: '.*.test.(ts|tsx)?$',
     moduleFileExtensions: ['ts', 'js'],
     globals: {
       'ts-jest': {

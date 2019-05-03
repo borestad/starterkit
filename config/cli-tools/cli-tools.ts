@@ -96,6 +96,14 @@ export const pkgUp = (cwd: string) => {
   return _pkgUp.sync({ cwd }) || path.join(GIT.ROOT, 'package.json')
 }
 
+/**
+ * Find the directory with closest package.json file from path
+ * @param {*} path
+ */
+export const pkgUpDir = (cwd: string) => {
+  return path.parse(pkgUp(cwd)).dir
+}
+
 // ----------------------------------------------------------------------------
 // GIT
 // ----------------------------------------------------------------------------

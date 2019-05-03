@@ -9,7 +9,7 @@ const { yellow } = require('chalk')
 const cwd = require('path').relative(__dirname, process.cwd())
 
 if (isNotCI) {
-  console.log(`\n⭐ ${yellow.underline('babel.config.js')} [${cwd}]\n`)
+  console.log(`⭐ ${yellow.underline('babel.config.js')} [${cwd}]`)
 }
 
 module.exports = api => {
