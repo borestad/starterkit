@@ -7,7 +7,7 @@
     "clean": "ts-node -T ../../bin/clean.ts",
     "open": "cypress open",
     "build": "tsc -b tsconfig.json --pretty",
-    "test": "run-p test:*",
+    "test": "yarn test:e2e",
     "test:e2e": "yarn clean && cypress run",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
   },
