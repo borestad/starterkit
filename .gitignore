@@ -159,6 +159,8 @@ src/*.js
 !wallaby.js
 # ...and entrypoints
 !*.index.js
+# ...and cypress
+!**/cypress/**/*.js
 
 # Reports
 *-report.json

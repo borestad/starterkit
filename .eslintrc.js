@@ -1,9 +1,16 @@
 module.exports = {
-  extends: ['standard', 'prettier/standard', 'plugin:import/errors'],
+  plugins: ['cypress'],
+  extends: [
+    'standard',
+    'prettier/standard',
+    'plugin:import/errors',
+    'plugin:cypress/recommended'
+  ],
   env: {
     browser: true,
     es6: true,
-    node: true
+    node: true,
+    'cypress/globals': true
   },
   globals: {
     Atomics: 'readonly',
@@ -14,6 +21,8 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
+    'cypress/no-unnecessary-waiting': 'off',
+    'no-unused-expressions': 'off',
     'no-var': 'error',
     'prefer-const': 'error',
     'prefer-template': 'error',
