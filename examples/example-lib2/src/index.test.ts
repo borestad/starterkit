@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import { double } from '.'
 
 test('Something', () => {

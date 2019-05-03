@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import { add, clone, GenericsExample1, GetterSetter } from './index'
 
 describe('Typescript / Jest features', () => {
