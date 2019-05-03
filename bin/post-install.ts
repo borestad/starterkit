@@ -9,7 +9,7 @@ import { remove } from 'fs-extra'
  * Runs after `yarn install` is finished
  */
 run(async function postInstall () {
-  await exec(`git lfs install`)
+  // FIXME: await exec(`git lfs install`)
   await exec(`git config --local include.path ../.gitconfig`)
   await remove(`${GIT.ROOT}/package-lock.json`)
   await exec(`npx lerna link`)
