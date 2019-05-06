@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "ts-node -T ../../bin/clean.ts",
+    "clean": "sk-clean",
     "build": "tsc -b tsconfig.json --pretty",
     "test": "run-p test:*",
     "test:e2e": "yarn clean && yarn build && nightwatch",

@@ -1,6 +1,6 @@
 {
-  "extends": "./tsconfig.json",
-  "include": ["./config/**/*.ts", "./bin/**/*.ts"],
+  "extends": "../../tsconfig.json",
+  "include": ["../**/*.ts"],
   "compilerOptions": {
     "declaration": false,
     "declarationMap": false,

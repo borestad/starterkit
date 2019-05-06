@@ -1,10 +1,10 @@
 {
-  "name": "@config/cli-tools",
+  "name": "@starterkit/tools",
   "version": "0.0.1",
   "description": "Configuration Helpers",
-  "main": "./cli-tools.index.js",
-  "module": "./cli-tools.ts",
-  "types": "./cli-tools.ts",
+  "main": "./tools.index.js",
+  "module": "./tools.ts",
+  "types": "./tools.ts",
   "private": true,
   "engines": {
     "node": ">= 10.x",

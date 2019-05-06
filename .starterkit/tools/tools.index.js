@@ -7,4 +7,4 @@ require('ts-node').register({
   }
 })
 
-module.exports = require('./cli-tools.ts')
+module.exports = require('./tools.ts')

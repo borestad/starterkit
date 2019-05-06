@@ -4,7 +4,7 @@
  *
  */
 const { gray } = require('chalk')
-const { isNotCI, GIT, pkgUpDir } = require('@config/cli-tools')
+const { isNotCI, GIT, pkgUpDir } = require('@starterkit/tools')
 const { log } = console
 
 // Create some spacing for readability

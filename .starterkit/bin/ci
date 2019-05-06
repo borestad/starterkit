@@ -26,10 +26,10 @@ line '[1/8] Cleanup'
 npm run clean 2> /dev/null || true
 
 line '[2/8] Install'
-$ROOT/bin/install-all
+$STARTERKIT/bin/install-all
 
 line '[3/8] Custom validation'
-ts-node -T $ROOT/bin/validate.ts
+ts-node -T $STARTERKIT/bin/validate.ts
 
 line '[4/8] Codestyle & Lint'
 yarn prettier --loglevel silent
@@ -52,6 +52,6 @@ yarn build
 git-validate-repo
 
 line '[8/8] Publish packages (if version is bumped)'
-$ROOT/bin/publish
+$STARTERKIT/bin/publish
 
 line

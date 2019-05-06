@@ -62,7 +62,7 @@ It currently adds support for
 
 - To enable faster startup time when building software.
 - It enables us to use real web standards, not "old legacy Netent standards".
-- Use it as a springboard for creating prototypes, libraries, cli-tools or games.
+- Use it as a springboard for creating prototypes, libraries, tools or games.
 
 ## How do I use it?
 

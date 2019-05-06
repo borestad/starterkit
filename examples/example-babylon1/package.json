@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "ts-node -T ../../bin/clean.ts",
+    "clean": "sk-clean",
     "build": "yarn clean && parcel build --no-minify --no-source-maps index.html",
     "compile": "run-p compile:*",
     "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps true",
@@ -12,7 +12,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "start": "parcel index.html",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame",
-    "test": "jest -w 2 --notify"
+    "test": "jest -w 4 --detectOpenHandles --notify"
   },
   "dependencies": {
     "@babel/cli": "7.4.4",

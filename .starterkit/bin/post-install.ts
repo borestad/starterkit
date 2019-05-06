@@ -1,7 +1,7 @@
 #!/usr/bin/env npx ts-node -T
 // tslint:disable: no-unused-expression
 
-import { exec, GIT, isNotCI, run } from '@config/cli-tools'
+import { exec, GIT, isNotCI, run } from '@starterkit/tools'
 import { remove } from 'fs-extra'
 
 /**

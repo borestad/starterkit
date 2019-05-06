@@ -5,7 +5,7 @@
  */
 const { yellow } = require('chalk')
 const { flattenDeep } = require('lodash')
-const { isNotCI, GIT, rootPkg, pkgUpDir } = require('@config/cli-tools')
+const { isNotCI, GIT, rootPkg, pkgUpDir } = require('@starterkit/tools')
 const isWatchMode = process.argv.includes('--watch')
 const glob = require('glob')
 
@@ -28,9 +28,7 @@ module.exports = {
   silent: false,
   collectCoverage: !isWatchMode,
   verbose: isNotCI,
-  // testRegex: '.*.test.ts',
-  // testMatch: ['<rootDir>/**/*.test.ts'],
-  testMatch: ['**/*.test.ts'],
+  testMatch: ['<rootDir>/**/*.test.ts'],
   moduleFileExtensions: ['js', 'json', 'jsx', 'node', 'ts', 'tsx'],
   coverageDirectory: '<rootDir>/node_modules/.tmp/coverage',
   coverageReporters: ['text', 'text-summary'],
