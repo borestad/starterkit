@@ -13,6 +13,8 @@ run(async function postInstall () {
   await exec(`git config --local include.path ../.gitconfig`)
   await remove(`${GIT.ROOT}/package-lock.json`)
   await exec(`npx lerna link`)
-  isNotCI &&
-    (await exec(`node ${GIT.ROOT}/node_modules/husky/husky.js install`))
+
+  if (isNotCI) {
+    await exec(`node ${GIT.ROOT}/node_modules/husky/husky.js install`)
+  }
 })

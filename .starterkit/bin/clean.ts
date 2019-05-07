@@ -31,7 +31,7 @@ run(async function cleanRepo () {
   }
 
   filesToDelete.map(path.parse).forEach(({ dir, base }) => {
-    log(`Removing ${dir}${dir && '/'}${chalk.underline.yellow(base)}`)
+    log(`Removing: ${dir}${dir && '/'}${chalk.underline.yellow(base)}`)
   })
 
   return PromiseUtil.mapLimit(filesToDelete, 5, path => remove(path))

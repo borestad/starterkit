@@ -28,6 +28,7 @@ There's also:
   - Autofix on save
 - Wallaby.js for realtime unit testing
 - A bunch of dotfiles for versioning your teams configuration.
+- Git hooks
 
 ## Why have you created this? What's the philosophy behind it?
 
@@ -57,6 +58,7 @@ It currently adds support for
 - Different techniques for E2E testing
 - Support for releasing npm packages
 - Sane defaults
+- Bash/Cygwin (no support for cmd.exe, use bash or bash.exe)
 
 ## Okey, that sounds cool. Why should **I** use it though?
 
