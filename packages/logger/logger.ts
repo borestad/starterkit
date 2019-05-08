@@ -16,12 +16,13 @@
 
 import figures from 'figures'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const win = window as any
 
 // Helpers
 // ----------------------------------------------------------------------------
 const pad = (str = '', len = 10, chars = ' ') => {
-  const filling = (str.trimRight().match(/(\%c|\s)/gi) || []).length
+  const filling = (str.trimRight().match(/(%c|\s)/gi) || []).length
   return str.padEnd(len + filling, chars)
 }
 

@@ -1,8 +1,8 @@
-#!/usr/bin/env npx ts-node -T
+#!/usr/bin/env node
 
 import { GIT, run } from '@starterkit/tools'
 import * as PromiseUtil from 'blend-promise-utils'
-import { default as chalk } from 'chalk'
+import chalk from 'chalk'
 import { remove } from 'fs-extra'
 import { isEmpty } from 'lodash'
 import * as path from 'path'
@@ -17,7 +17,7 @@ const filesToDelete = GIT.IGNORED_FILES.filter(x => !EXCLUDE.test(x))
  *  - all ignored files (.gitignore)
  *  - exclude node_modules
  */
-run(async function cleanRepo () {
+run(async function cleanRepo() {
   if (isEmpty(filesToDelete)) {
     return log('Nothing to do.')
   }

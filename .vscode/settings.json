@@ -1,12 +1,16 @@
 {
   "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[properties]": {
     "editor.formatOnSave": true
   },
   "[javascriptreact]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[json]": {
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
@@ -20,7 +24,11 @@
     "editor.wordWrap": "on"
   },
   "[typescript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoIndent": true,
@@ -40,9 +48,15 @@
   },
   "editor.snippetSuggestions": "bottom",
   "editor.renderIndentGuides": true,
-  "eslint.alwaysShowStatus": false,
+  "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
   "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
   "extensions.ignoreRecommendations": false,
   "files.associations": {
     ".*rc": "properties",
@@ -88,8 +102,8 @@
   },
   "search.smartCase": true,
   "tslint.ignoreDefinitionFiles": false,
-  "tslint.jsEnable": true,
-  "typelens.decorateunused": false,
+  "tslint.jsEnable": false,
+  "typelens.decorateunused": true,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",

@@ -18,7 +18,7 @@
     "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
     "clean": "sk-clean",
     "compile": "run-p compile:*",
-    "compile:js": "babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
+    "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "tsc -b tsconfig.json --pretty",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"

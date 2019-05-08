@@ -10,10 +10,27 @@
     "build": "tsc -b tsconfig.json --pretty",
     "test": "yarn test:e2e",
     "test:e2e": "exit 0 && yarn clean && cypress run",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame"
+    "lint": " npx eslint . --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "../../.eslintrc.js",
+      "plugin:cypress/recommended"
+    ],
+    "plugins": [
+      "cypress"
+    ],
+    "env": {
+      "cypress/globals": true
+    },
+    "rules": {
+      "no-unused-expressions": "off",
+      "cypress/no-unnecessary-waiting": "off"
+    }
   },
   "dependencies": {
     "cypress": "3.2.0",
+    "eslint-plugin-cypress": "2.2.1",
     "typescript": "^3.4.5"
   }
 }

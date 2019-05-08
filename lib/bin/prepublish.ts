@@ -10,7 +10,7 @@ import * as path from 'path'
 
 const { log, error } = console
 const cwd = process.cwd()
-; (async () => {
+;(async () => {
   try {
     const [from, to] = [`${cwd}/package.json`, `${cwd}/dist/package.json`]
 

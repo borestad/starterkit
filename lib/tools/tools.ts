@@ -3,7 +3,7 @@
  * Written in vanilla JavaScript so *.config.js files can use them
  */
 
-// tslint:disable: no-unused-expression
+/* eslint-disable @typescript-eslint/no-use-before-define */
 
 import chalk from 'chalk'
 import * as execa from 'execa'
@@ -19,7 +19,13 @@ const str2Array = (str: string) => {
   return compact(str.split('\n'))
 }
 
-export async function exec (cmd: string) {
+/**
+ * Returns Boolean if environment is NOT run on a CI-environment
+ */
+export const isCI = Boolean(_isCI)
+export const isNotCI = !isCI
+
+export async function exec(cmd: string) {
   return execa.shell(cmd.trim(), {
     stdio: 'inherit'
   })
@@ -28,7 +34,7 @@ export async function exec (cmd: string) {
 /**
  * Generic onError / Exit handler
  */
-export function onError (e) {
+export function onError(e) {
   console.error(`\n${chalk.red(e)}\n`)
   process.exit(e.code || 1)
 }
@@ -52,12 +58,6 @@ export const run = (fn: Function) => {
     .then(onSuccess)
     .catch(onError)
 }
-
-/**
- * Returns Boolean if environment is NOT run on a CI-environment
- */
-export const isCI = Boolean(_isCI)
-export const isNotCI = !isCI
 
 /**
  * Returns a HOC exec function
@@ -116,35 +116,35 @@ export const GIT = {
   /**
    * Returns the git root absolute path
    */
-  get ROOT () {
+  get ROOT() {
     return _gitRoot()
   },
 
   /**
    * Returns the current branch
    */
-  get CURRENT_BRANCH () {
+  get CURRENT_BRANCH() {
     return _gitCurrentBranch()
   },
 
   /**
    * Returns the current commit short hash
    */
-  get SHORTHASH () {
+  get SHORTHASH() {
     return _gitShortHash()
   },
 
   /**
    * Returns an array of ignored files still in index
    */
-  get IGNORED_FILES_STILL_IN_INDEX () {
+  get IGNORED_FILES_STILL_IN_INDEX() {
     return str2Array(mexec` git ls-files --ignored --exclude-standard`())
   },
 
   /**
    * Returns an array of ignored files
    */
-  get IGNORED_FILES () {
+  get IGNORED_FILES() {
     return str2Array(
       mexec` git ls-files --directory --others --exclude-standard --ignored`()
     )
@@ -153,21 +153,21 @@ export const GIT = {
   /**
    * Returns an relative path from git-root
    */
-  relativeFromGitRoot (from: string) {
+  relativeFromGitRoot(from: string) {
     return relativeFrom({ from, to: GIT.ROOT })
   },
 
   /**
    * Returns an absolute path from git-root
    */
-  fromGitRoot (...args: string[]) {
+  fromGitRoot(...args: string[]) {
     return path.normalize(path.resolve(GIT.ROOT, ...args.filter(isString)))
   },
 
   /**
    * Returns an relative path to git-root
    */
-  relativeToGitRoot (to: string) {
+  relativeToGitRoot(to: string) {
     return relativeFrom({ to, from: GIT.ROOT })
   }
 }

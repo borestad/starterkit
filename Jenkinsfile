@@ -7,14 +7,14 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'NODE_ENV=production .starterkit/bin/install-all'
+        sh 'NODE_ENV=production lib/bin/install-all'
       }
     }
 
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-        sh '.starterkit/bin/ci'
+        sh 'lib/bin/ci'
       }
     }
   }

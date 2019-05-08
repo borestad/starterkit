@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 /// <reference types="Cypress" />
 
 context('Cypress.Commands', () => {
@@ -34,6 +35,7 @@ context('Cypress.Commands', () => {
     // @ts-ignore TS2339
     cy.get('button')
       .console('info')
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then($button => {
         // subject is still $button
       })

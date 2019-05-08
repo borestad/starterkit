@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/camelcase */
 const chromium = (process.env.CHROMIUM_BIN = require('puppeteer').executablePath())
 const path = require('path')
 const fs = require('fs')

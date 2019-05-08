@@ -1,4 +1,5 @@
-module.exports = function () {
+/* eslint-disable @typescript-eslint/no-unused-vars */
+module.exports = function() {
   return {
     debug: false,
     files: [
@@ -10,6 +11,6 @@ module.exports = function () {
     tests: [{ pattern: 'examples/**/*.test.ts' }],
     env: { type: 'node' },
     testFramework: 'jest',
-    setup (wallaby) {}
+    setup(wallaby) {}
   }
 }

@@ -11,7 +11,7 @@ let result: any
 /**
  * Validate if files are ignored
  */
-run(async function sanityCheck () {
+run(async function sanityCheck() {
   if (isEmpty((result = GIT.IGNORED_FILES_STILL_IN_INDEX))) {
     log(`${tick} ️Validating ignored files`)
   } else {

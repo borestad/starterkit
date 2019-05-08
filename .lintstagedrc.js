@@ -10,16 +10,11 @@ const { log } = console
 log(`${yellow(`⭐ ${underline('lint-staged')}`)}`)
 
 module.exports = {
-  '*.*': ['ts-node -T .starterkit/bin/validate.ts'],
+  '.gitignore': ['ts-node -T lib/bin/validate.ts'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
-  '*.{js,jsx}': [
-    'prettier -c --write',
-    'eslint --ignore-path=.gitignore --fix',
-    'git add'
-  ],
-  '*.{ts,tsx}': [
-    'prettier -c --write',
-    'tslint -c tslint.json --fix -t codeFrame',
+  '*.{js,jsx,ts,tsx}': [
+    'npx prettier -c --write',
+    'npx eslint --ignore-path=.gitignore --fix --ext js --ext jsx --ext ts --ext tsx',
     'git add'
   ]
 }

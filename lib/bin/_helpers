@@ -2,7 +2,7 @@
 
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
 export ROOT=$(git rev-parse --show-toplevel)
-export STARTERKIT="$ROOT/.starterkit"
+export STARTERKIT="$ROOT/lib"
 export PATH="./node_modules/.bin:$PATH"
 
 hr () {

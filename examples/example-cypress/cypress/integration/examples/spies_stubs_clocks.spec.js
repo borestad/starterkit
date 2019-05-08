@@ -6,7 +6,7 @@ context('Spies, Stubs, and Clock', () => {
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
 
     const obj = {
-      foo () {}
+      foo() {}
     }
 
     const spy = cy.spy(obj, 'foo').as('anyArgs')
@@ -26,7 +26,7 @@ context('Spies, Stubs, and Clock', () => {
        * @param a {string}
        * @param b {string}
        */
-      foo (a, b) {
+      foo(a, b) {
         console.log('a', a, 'b', b)
       }
     }
