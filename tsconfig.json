@@ -49,10 +49,10 @@
     "noEmit": true,                               // 🔅 Do not emit outputs.
     "outDir": "./node_modules/.tmp/build.tsc",    // 🔅 Redirect output structure to the directory.
     "rootDir": ".",                               // 🔅 Specify the root directory of input files. Use to control the output directory structure with --outDir.
-    "sourceMap": true,                            // 🔅 Allow javascript files to be compiled.
+    "sourceMap": true,                            // 🔅 Generates corresponding '.map' file.
     "target": "esnext",                           // 🔅 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    // "allowJs": true,                           // 🔅 Report errors in .js files.
-    // "checkJs": true,                           // 🔅 Generates corresponding '.map' file.
+    "allowJs": true,                              // 🔅 Allow javascript files to be compiled.
+    "checkJs": true,                              // 🔅 Report errors in .js files.
     // "composite": true,                         // 🔅 Enable project compilation
     // "downlevelIteration": true,                // 🔅 Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'.
     // "isolatedModules": true,                   // 🔅 Transpile each file as a separate module (similar to 'ts.transpileModule').

@@ -1,6 +1,6 @@
 /// <reference types="jest" />
 
-import { add, clone, GenericsExample1, GetterSetter } from './index'
+import { add, clone, GenericsExample1, GetterSetter } from '.'
 
 describe('Typescript / Jest features', () => {
   // Read more about fake timers: http://facebook.github.io/jest/docs/en/timer-mocks.html#content
@@ -60,3 +60,11 @@ describe('GenericsExample1', () => {
     ).toEqual(2)
   })
 })
+
+console.log(
+  'reallyLongArg',
+  'reallyLongArg',
+  'reallyLongArg',
+  'reallyLongArg',
+  'reallyLongArg'
+)

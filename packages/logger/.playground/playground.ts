@@ -1,5 +1,5 @@
 // tslint:disable-next-line:no-implicit-dependencies
-import log from '@netent/logger'
+import log from '../../logger/logger'
 
 log.ok()
 log.ok('Hello OK')

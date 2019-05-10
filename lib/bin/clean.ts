@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env npx ts-node -T
 
 import { GIT, run } from '@starterkit/tools'
 import * as PromiseUtil from 'blend-promise-utils'

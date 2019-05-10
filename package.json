@@ -12,6 +12,33 @@
   "maintainers": [
     "Johan Borestad <johan.borestad@netent.com>"
   ],
+  "files": [
+    "/lib",
+    ".editorconfig",
+    ".eslintignore",
+    ".eslintrc.js",
+    ".gitattributes",
+    ".gitconfig",
+    ".gitignore",
+    ".gitmessage",
+    ".huskyrc.js",
+    ".lintstagedrc.js",
+    ".npmrc",
+    ".prettierignore",
+    ".yarnrc",
+    "Jenkinsfile",
+    "LICENSE",
+    "README.md",
+    "babel.config.js",
+    "jenkins.xml",
+    "lerna.json",
+    "package.json",
+    "sonar-project.properties",
+    "tsconfig.json",
+    "tslint.bak",
+    "wallaby.js",
+    "yarn.lock"
+  ],
   "homepage": "https://git.netent.com/projects/GS/repos/starterkit",
   "bugs": {
     "url": "https://jira.netent.com/secure/RapidBoard.jspa?rapidView=1587"
@@ -67,7 +94,6 @@
     "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "7.4.4",
     "@babel/runtime-corejs3": "7.4.4",
-    "@types/figures": "3.0.1",
     "@types/fs-extra": "5.1.0",
     "@types/jest": "24.0.12",
     "@typescript-eslint/eslint-plugin": "1.7.0",

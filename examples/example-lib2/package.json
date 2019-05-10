@@ -20,7 +20,7 @@
     "compile": "run-p compile:*",
     "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "tsc -b tsconfig.json --pretty",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
+    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
   "files": [
@@ -28,14 +28,8 @@
     "index.d.ts"
   ],
   "bundledDependencies": [],
-  "dependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
+  "devDependencies": {
     "@scope/example-lib1": "*",
-    "microbundle": "0.11.0",
-    "prettier": "1.17.0",
-    "typescript": "3.4.5"
+    "microbundle": "0.11.0"
   }
 }

@@ -113,5 +113,6 @@
   "typescript.suggest.autoImports": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.paths": true,
-  "typescript.suggestionActions.enabled": true
+  "typescript.suggestionActions.enabled": true,
+  "typescript.suggest.completeJSDocs": true
 }

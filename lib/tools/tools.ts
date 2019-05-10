@@ -1,6 +1,5 @@
 /**
  * Command Line Utilities
- * Written in vanilla JavaScript so *.config.js files can use them
  */
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
