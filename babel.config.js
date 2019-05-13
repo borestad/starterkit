@@ -1,10 +1,12 @@
-/*
- * Project-wide (root) configuration for Babel
- *
- * https://babeljs.io/docs/en/config-files
- * https://new.babeljs.io/docs/en/next/babelconfigjs.html
- *
- */
+// ========================================================================
+//  💥 Project-wide (root) configuration for Babel
+//
+//    Documentation:
+//
+//    https://babeljs.io/docs/en/config-files
+//    https://new.babeljs.io/docs/en/next/babelconfigjs.html
+//
+// ========================================================================
 
 require('ts-node').register({
   /* options */

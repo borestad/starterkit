@@ -1,13 +1,15 @@
-/**
- * Eslint Configuration
- *
- * Now supports TypeScript via:
- * https://www.npmjs.com/package/@typescript-eslint/parser
- */
+// ========================================================================
+//  Eslint Configuration
+//  Now supports TypeScript!
+//
+//  🔗 https://babeljs.io/docs/en/config-files
+//  🔗 https://new.babeljs.io/docs/en/next/babelconfigjs.html
+//
+// ======================================================================== */
 
-const jsExtensions = ['.js', '.jsx']
-const tsExtensions = ['.ts', '.tsx']
-const allExtensions = [...jsExtensions, ...tsExtensions]
+const js = ['.js', '.jsx']
+const ts = ['.ts', '.tsx']
+const extensions = { js, ts, all: [].concat(js, ts) }
 
 module.exports = {
   // parser: '@typescript-eslint/parser',
@@ -21,22 +23,24 @@ module.exports = {
     // tsconfigRootDir: __dirname,
   },
   settings: {
-    'import/extensions': allExtensions,
+    'import/extensions': extensions.all,
     'import/parsers': {
-      '@typescript-eslint/parser': tsExtensions
+      '@typescript-eslint/parser': extensions.ts
     },
     'import/resolver': {
       node: {
-        extensions: allExtensions
+        extensions: extensions.all
       }
     }
   },
   extends: [
     // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/recommended',
-    // 'standard',
-    // 'prettier',
 
+    // https://github.com/standard/eslint-config-standard/blob/master/eslintrc.json
+    'standard',
+
+    // https://github.com/benmosher/eslint-plugin-import
     'plugin:import/errors',
 
     // Uses eslint-config-prettier to disable ESLint rules from
@@ -70,13 +74,17 @@ module.exports = {
       { allowExpressions: true },
       { allowTypedFunctionExpressions: false }
     ],
-    '@typescript-eslint/explicit-member-accessibility': 'off',
+    '@typescript-eslint/explicit-member-accessibility': {
+      accessibility: 'no-public'
+    },
     '@typescript-eslint/no-var-requires': 'off',
-    // "@typescript-eslint/no-use-before-define": "off",
     // "@typescript-eslint/no-object-literal-type-assertion": "off",
-    // "@typescript-eslint/no-parameter-properties": "off",
+    '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-object-literal-type-assertion': 'off',
+    '@typescript-eslint/no-object-literal-type-assertion': [
+      'error',
+      { 'allow-arguments': true }
+    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {

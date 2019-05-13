@@ -1,13 +1,13 @@
 // ========================================================================
-// 💥 Typescript configuration
+//  Typescript configuration
 //
-//    Documentation:
+//  🔗 http://json.schemastore.org/tsconfig
+//  🔗 https://www.typescriptlang.org/docs/handbook/compiler-options.html
+//  🔗 https://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html
 //
-//    http://json.schemastore.org/tsconfig
-//    https://www.typescriptlang.org/docs/handbook/compiler-options.html
-//    https://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html
-//
-// ========================================================================s
+//  Note:
+//  ❌ === Use alternative Eslint instead.
+// ========================================================================
 {
   "include": [
     "**/*.d.ts",
@@ -77,8 +77,8 @@
     // ========================================================================s
     // 💥 Additional Checks
     // ========================================================================s
-    "noUnusedLocals": true,                // 🔅 Report errors on unused locals.
-    "noUnusedParameters": true,            // 🔅 Report errors on unused parameters.
+    // "noUnusedLocals": true,                // ❌ [Eslint] Report errors on unused locals.
+    "noUnusedParameters": true,               // 🔅 Report errors on unused parameters.
     // "noImplicitReturns": true,             // 🔅 Report error when not all code paths in function return a value.
     // "noFallthroughCasesInSwitch": true,    // 🔅 Report errors for fallthrough cases in switch statement.
 

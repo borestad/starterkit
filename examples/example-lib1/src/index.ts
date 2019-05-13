@@ -21,7 +21,7 @@ export const foo = 'bar'
 export class GetterSetter {
   private _val: string = ''
 
-  get bar() {
+  get bar(): string {
     return `Hello ${this._val}`.trim()
   }
 
