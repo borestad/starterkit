@@ -16,6 +16,7 @@ context('Viewport', () => {
     cy.get('.navbar-toggle')
       .should('be.visible')
       .click()
+
     cy.get('.nav')
       .find('a')
       .should('be.visible')

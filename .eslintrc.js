@@ -11,6 +11,8 @@ const js = ['.js', '.jsx']
 const ts = ['.ts', '.tsx']
 const extensions = { js, ts, all: [].concat(js, ts) }
 
+// TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
+
 module.exports = {
   // parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -130,28 +132,28 @@ module.exports = {
       }
     ],
     'padding-line-between-statements': [
-      'error'
-      // {
-      //   blankLine: 'always',
-      //   prev: [
-      //     'multiline-const',
-      //     'multiline-expression',
-      //     'if',
-      //     'block',
-      //     'function',
-      //     'class',
-      //     'for'
-      //   ],
-      //   next: [
-      //     'multiline-expression',
-      //     'return',
-      //     'if',
-      //     'block',
-      //     'function',
-      //     'class',
-      //     'for'
-      //   ]
-      // },
+      'error',
+      {
+        blankLine: 'always',
+        prev: [
+          'multiline-const',
+          'multiline-expression',
+          'if',
+          'block',
+          'function',
+          'class',
+          'for'
+        ],
+        next: [
+          'multiline-expression',
+          'return',
+          'if',
+          'block',
+          'function',
+          'class',
+          'for'
+        ]
+      }
       // {
       //   blankLine: 'always',
       //   prev: 'multiline-block-like',

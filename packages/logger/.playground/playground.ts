@@ -1,5 +1,4 @@
-// tslint:disable-next-line:no-implicit-dependencies
-import log from '../../logger/logger'
+import log from '../logger'
 
 log.ok()
 log.ok('Hello OK')

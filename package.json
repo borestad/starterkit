@@ -35,7 +35,6 @@
     "package.json",
     "sonar-project.properties",
     "tsconfig.json",
-    "tslint.bak",
     "wallaby.js",
     "yarn.lock"
   ],
@@ -56,23 +55,22 @@
   "scripts": {
     "build": "npx lerna run build --parallel --stream",
     "ci": "lib/bin/ci",
-    "clean": "node lib/bin/clean",
+    "clean": "npx babel-node lib/bin/clean.js",
     "compile": "run-p compile:*",
     "compile:root": "npx tsc --build lib/config/tsconfig.root.json --pretty",
     "compile:packages": "npx lerna run compile --parallel --stream",
     "fix": "npx yarn prettier && yarn lint",
     "lint": "npx run-s lint:*",
-    "lint:js": "npx eslint --ignore-path=.gitignore --fix . --ext js --ext ts",
-    "lint:ts:root": "npx tslint -c tslint.json --fix -t codeFrame --project lib/config/tsconfig.root.json",
-    "lint:ts:packages": "npx tslint -c tslint.json  --fix -t codeFrame --project lib/config/tsconfig.packages.json",
-    "postinstall": "npx ts-node -T lib/bin/post-install.ts",
+    "lint:js": "npx eslint --fix . --ext js --ext ts",
+    "postinstall": "npx babel-node lib/bin/postinstall.js",
     "preinstall": "rm -f .git/hooks/* || true",
     "prettier": "npx prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "npx run-p -l test:unit test:e2e",
     "test:unit": "npx jest -w 3 -c lib/config/jest.config.js",
     "test:e2e": "npx lerna run test:e2e --stream",
     "test:serial": "npx lerna exec -- yarn test",
-    "test:watch": "npx yarn test -- --watch --notify"
+    "test:watch": "npx yarn test -- --watch --notify",
+    "validate": "npx babel-node lib/bin/validate.js"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -87,6 +85,7 @@
   "dependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "7.4.4",
+    "@babel/node": "7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/plugin-transform-runtime": "7.4.4",

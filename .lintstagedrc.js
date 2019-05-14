@@ -11,7 +11,7 @@ const { log } = console
 log(`${yellow(`⭐ ${underline('lint-staged')}`)}`)
 
 module.exports = {
-  '.gitignore': ['ts-node -T lib/bin/validate.ts'],
+  '.gitignore': ['npx babel-node lib/bin/validate.js'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
   '*.{js,jsx,ts,tsx}': [
     'npx prettier -c --write',

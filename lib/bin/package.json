@@ -5,9 +5,9 @@
   "main": ".",
   "private": true,
   "bin": {
-    "sk-clean": "./clean",
-    "sk-prepublish": "./prepublish.ts",
-    "sk-validate": "./validate.ts"
+    "sk-clean": "./clean.js",
+    "sk-prepublish": "./prepublish.js",
+    "sk-validate": "./validate.js"
   },
   "scripts": {
     "test": "exit 0 || true"

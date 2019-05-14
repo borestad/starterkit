@@ -4,6 +4,7 @@ context('Files', () => {
   beforeEach(() => {
     cy.visit('https://example.cypress.io/commands/files')
   })
+
   it('cy.fixture() - load a fixture', () => {
     // https://on.cypress.io/fixture
 
@@ -69,6 +70,7 @@ context('Files', () => {
     cy.request('https://jsonplaceholder.cypress.io/users').then(response => {
       cy.writeFile('cypress/fixtures/users.json', response.body)
     })
+
     cy.fixture('users').should(users => {
       expect(users[0].name).to.exist
     })

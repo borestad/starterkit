@@ -152,7 +152,7 @@ src/*.js
 !/.*.js
 !*.conf*.js
 !/config/**/*.js
-!/bin/**/*.js
+!**/bin/**/*.js
 # ...and some extra files
 !wallaby.js
 # ...and entrypoints

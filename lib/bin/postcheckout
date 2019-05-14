@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "post-checkout"
+echo "postcheckout"
 echo '----------------------------'
 
 echo "Command1: $1"

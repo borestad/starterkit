@@ -67,6 +67,7 @@ context('Actions', () => {
     cy.get('.action-form')
       .find('[type="text"]')
       .type('HALFOFF')
+
     cy.get('.action-form')
       .submit()
       .next()

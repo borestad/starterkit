@@ -63,6 +63,7 @@ context('Network Requests', () => {
       expect(response)
         .property('status')
         .to.equal(200)
+
       expect(response)
         .property('body')
         .to.have.length(500)

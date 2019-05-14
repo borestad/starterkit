@@ -6,6 +6,7 @@ context('Navigation', () => {
     cy.get('.navbar-nav')
       .contains('Commands')
       .click()
+
     cy.get('.dropdown-menu')
       .contains('Navigation')
       .click()
