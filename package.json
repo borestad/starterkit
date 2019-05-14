@@ -55,14 +55,14 @@
   "scripts": {
     "build": "npx lerna run build --parallel --stream",
     "ci": "lib/bin/ci",
-    "clean": "npx babel-node lib/bin/clean.js",
+    "clean": "node lib/bin/clean.js",
     "compile": "run-p compile:*",
     "compile:root": "npx tsc --build lib/config/tsconfig.root.json --pretty",
     "compile:packages": "npx lerna run compile --parallel --stream",
     "fix": "npx yarn prettier && yarn lint",
     "lint": "npx run-s lint:*",
     "lint:js": "npx eslint --fix . --ext js --ext ts",
-    "postinstall": "npx babel-node lib/bin/postinstall.js",
+    "postinstall": "node lib/bin/postinstall.js",
     "preinstall": "rm -f .git/hooks/* || true",
     "prettier": "npx prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "npx run-p -l test:unit test:e2e",
@@ -70,7 +70,7 @@
     "test:e2e": "npx lerna run test:e2e --stream",
     "test:serial": "npx lerna exec -- yarn test",
     "test:watch": "npx yarn test -- --watch --notify",
-    "validate": "npx babel-node lib/bin/validate.js"
+    "validate": "node lib/bin/validate.js"
   },
   "prettier": {
     "bracketSpacing": true,
