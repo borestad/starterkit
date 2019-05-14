@@ -6,8 +6,8 @@
 
 import * as fs from 'fs-extra'
 import { isNil, pickBy } from 'lodash'
-import * as path from 'path'
 import { run } from '@starterkit/tools'
+import * as path from 'path'
 
 const { log, error } = console
 const cwd = process.cwd()

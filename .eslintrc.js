@@ -52,6 +52,7 @@ module.exports = {
     // Make sure this is always the last configuration in the extends array.
     'plugin:prettier/recommended'
   ],
+
   env: {
     browser: true,
     es6: true,
@@ -107,6 +108,20 @@ module.exports = {
     'import/default': 'error',
     'import/export': 'error',
     'import/extensions': ['error', 'never'],
+    'import/newline-after-import': 'error',
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'index',
+          'sibling',
+          'parent',
+          'internal',
+          'external',
+          'builtin'
+        ]
+      }
+    ],
     'object-shorthand': [
       'error',
       'always',
@@ -115,35 +130,74 @@ module.exports = {
       }
     ],
     'padding-line-between-statements': [
-      'error',
-      {
-        blankLine: 'always',
-        prev: ['const', 'let', 'var'],
-        next: [
-          'multiline-expression',
-          // 'return',
-          // 'if',
-          'block',
-          'function',
-          'class',
-          'for'
-        ]
-      },
-      {
-        blankLine: 'never',
-        prev: ['const', 'let', 'var'],
-        next: ['const', 'let', 'var']
-      },
+      'error'
       // {
       //   blankLine: 'always',
-      //   prev: 'multiline-expression',
+      //   prev: [
+      //     'multiline-const',
+      //     'multiline-expression',
+      //     'if',
+      //     'block',
+      //     'function',
+      //     'class',
+      //     'for'
+      //   ],
+      //   next: [
+      //     'multiline-expression',
+      //     'return',
+      //     'if',
+      //     'block',
+      //     'function',
+      //     'class',
+      //     'for'
+      //   ]
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: 'multiline-block-like',
+      //   next: '*'
+      // }
+      // {
+      //   blankLine: 'always',
+      //   prev: ['*'],
+      //   next: ['block-like']
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: ['cjs-import'],
+      //   next: ['*']
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: ['block-like'],
+      //   next: ['const']
+      // }
+
+      // {
+      //   blankLine: 'always',
+      //   prev: ['multiline-const', 'multiline-let'],
+      //   next: ['multiline-const', 'multiline-let']
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: '*',
       //   next: 'multiline-expression'
       // },
-      {
-        blankLine: 'always',
-        prev: 'if',
-        next: 'if'
-      }
+      // {
+      //   blankLine: 'always',
+      //   prev: 'if',
+      //   next: 'if'
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: ['*'],
+      //   next: ['function']
+      // },
+      // {
+      //   blankLine: 'always',
+      //   prev: ['function'],
+      //   next: ['*']
+      // }
     ]
   }
 }

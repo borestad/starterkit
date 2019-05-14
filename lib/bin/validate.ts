@@ -4,6 +4,7 @@ import { GIT, run } from '@starterkit/tools'
 import { tick } from 'figures'
 import { isEmpty } from 'lodash'
 import * as util from 'util'
+
 const { log } = console
 
 let result: any

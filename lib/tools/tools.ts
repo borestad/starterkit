@@ -9,8 +9,8 @@ import * as execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
 import { compact, isString, kebabCase, memoize, noop } from 'lodash'
-import * as path from 'path'
 import * as _pkgUp from 'pkg-up'
+import * as path from 'path'
 
 const { log } = console
 
