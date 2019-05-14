@@ -1,9 +1,10 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./**/*.ts"],
+  "include": ["./**/*"],
   "compilerOptions": {
     "outDir": "./node_modules/.tmp/build.tsc",
     "module": "esnext",
-    "types": ["node"]
+    "allowJs": true,
+    "checkJs": true
   }
 }

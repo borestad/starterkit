@@ -56,7 +56,7 @@
   "scripts": {
     "build": "npx lerna run build --parallel --stream",
     "ci": "lib/bin/ci",
-    "clean": "npx ts-node -T bin/clean.ts",
+    "clean": "node lib/bin/clean",
     "compile": "run-p compile:*",
     "compile:root": "npx tsc --build lib/config/tsconfig.root.json --pretty",
     "compile:packages": "npx lerna run compile --parallel --stream",

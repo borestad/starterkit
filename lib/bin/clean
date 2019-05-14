@@ -1,11 +1,11 @@
-#!/usr/bin/env npx ts-node -T
+#!/usr/bin/env node
 
-import { GIT, run } from '@starterkit/tools'
-import * as PromiseUtil from 'blend-promise-utils'
-import chalk from 'chalk'
-import { remove } from 'fs-extra'
-import { isEmpty } from 'lodash'
-import * as path from 'path'
+const chalk = require('chalk')
+const { remove } = require('fs-extra')
+const { isEmpty } = require('lodash')
+const path = require('path')
+const PromiseUtil = require('blend-promise-utils')
+const { GIT, run } = require('@starterkit/tools')
 const { log } = console
 
 const EXCLUDE = /node_modules/

@@ -34,7 +34,7 @@ git-is-repo-dirty () {
 
 git-show-dirty-repo-error () {
   return
-  failure \
+  print-failure \
   && echo 'The git repository is "dirty"' \
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
   && echo \
@@ -51,7 +51,7 @@ trap-exit () {
 
 trap-error () {
   err=$?
-  failure
+  print-failure
 }
 
 
@@ -96,7 +96,7 @@ line () {
 
 
 
-success () {
+print-success () {
 echo -e $Gre
 # http://patorjk.com/software/taag/#p=display&h=0&v=1&f=Big&t=SUCCESS
 cat << "EOF"
@@ -114,7 +114,7 @@ EOF
 echo -e $RCol
 }
 
-failure () {
+print-failure () {
 echo -e $Red
 # http://patorjk.com/software/taag/#p=display&h=0&v=1&f=Big&t=OH%20NOSE!
 cat << "EOF"

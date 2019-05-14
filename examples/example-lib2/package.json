@@ -15,7 +15,7 @@
   },
   "main": "src/index.ts",
   "scripts": {
-    "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
+    "build": "yarn clean && yarn compile:js",
     "clean": "sk-clean",
     "compile": "run-p compile:*",
     "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
@@ -29,7 +29,17 @@
   ],
   "bundledDependencies": [],
   "devDependencies": {
-    "@scope/example-lib1": "*",
-    "microbundle": "0.11.0"
+    "@starterkit/bin": "*",
+    "@types/fs-extra": "7.0.0",
+    "@types/jest": "24.0.13",
+    "@typescript-eslint/eslint-plugin": "1.9.0",
+    "@typescript-eslint/parser": "1.9.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "fs-extra": "8.0.1",
+    "prettier": "1.17.1",
+    "yarn": "1.16.0"
+  },
+  "dependencies": {
+    "@scope/example-lib1": "*"
   }
 }

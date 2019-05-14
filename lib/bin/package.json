@@ -5,7 +5,7 @@
   "main": ".",
   "private": true,
   "bin": {
-    "sk-clean": "./clean.ts",
+    "sk-clean": "./clean",
     "sk-prepublish": "./prepublish.ts",
     "sk-validate": "./validate.ts"
   },
@@ -13,6 +13,6 @@
     "test": "exit 0 || true"
   },
   "dependencies": {
-    "glob": "7.1.3"
+    "glob": "7.1.4"
   }
 }

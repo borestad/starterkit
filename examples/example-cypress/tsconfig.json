@@ -2,10 +2,11 @@
   "extends": "../../tsconfig.json",
   "include": [
     "./**/*.d.ts",
-    "./**/*.ts"
+    "./**/*"
   ],
   "compilerOptions": {
     "rootDir": ".",
+    "allowJs": true,
 
     // Create *.js files (disabled by default)
     "noEmit": false,

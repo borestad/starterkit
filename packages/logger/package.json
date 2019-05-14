@@ -16,7 +16,7 @@
   "main": "logger.ts",
   "scripts": {
     "dev": "parcel .playground/playground.html",
-    "compile": "del dist && tsc -b tsconfig.json"
+    "compile": "del dist && tsc -b tsconfig.json --pretty"
   },
   "dependencies": {
     "@types/figures": "3.0.1",

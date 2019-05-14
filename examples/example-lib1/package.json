@@ -15,14 +15,13 @@
   },
   "main": "src/index.ts",
   "scripts": {
-    "build": "del dist && microbundle build src/index.ts -o dist --target web -f umd",
+    "build": "del dist && yarn compile",
     "clean": "sk-clean",
     "compile": "del dist && tsc -b tsconfig.json --pretty",
     "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
   "dependencies": {
-    "microbundle": "0.11.0",
     "typescript": "3.4.5"
   }
 }
