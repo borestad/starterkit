@@ -15,7 +15,6 @@ hr2 () {
 
 
 git-validate-repo () {
-  return
   # Hackish strategy to get rid of git-dirty files, caused by GDP
   #   - always add pom.xml to local build on Jenkins (but not push it)
   #   - never fail
@@ -33,7 +32,6 @@ git-is-repo-dirty () {
 }
 
 git-show-dirty-repo-error () {
-  return
   print-failure \
   && echo 'The git repository is "dirty"' \
   && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
