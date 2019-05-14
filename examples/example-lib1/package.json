@@ -18,10 +18,8 @@
     "build": "del dist && yarn compile",
     "clean": "sk-clean",
     "compile": "del dist && tsc -b tsconfig.json --pretty",
-    "lint": "tslint -c ../../tslint.json --project tsconfig.json -t codeFrame --fix",
+    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
-  "dependencies": {
-    "typescript": "3.4.5"
-  }
+  "devDependencies": {}
 }

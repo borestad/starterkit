@@ -28,9 +28,7 @@ module.exports = {
       '@typescript-eslint/parser': extensions.ts
     },
     'import/resolver': {
-      node: {
-        extensions: extensions.all
-      }
+      node: { extensions: extensions.all }
     }
   },
   extends: [
@@ -78,7 +76,6 @@ module.exports = {
       accessibility: 'no-public'
     },
     '@typescript-eslint/no-var-requires': 'off',
-    // "@typescript-eslint/no-object-literal-type-assertion": "off",
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-object-literal-type-assertion': [
@@ -115,6 +112,37 @@ module.exports = {
       'always',
       {
         ignoreConstructors: true
+      }
+    ],
+    'padding-line-between-statements': [
+      'error',
+      {
+        blankLine: 'always',
+        prev: ['const', 'let', 'var'],
+        next: [
+          'multiline-expression',
+          // 'return',
+          // 'if',
+          'block',
+          'function',
+          'class',
+          'for'
+        ]
+      },
+      {
+        blankLine: 'never',
+        prev: ['const', 'let', 'var'],
+        next: ['const', 'let', 'var']
+      },
+      // {
+      //   blankLine: 'always',
+      //   prev: 'multiline-expression',
+      //   next: 'multiline-expression'
+      // },
+      {
+        blankLine: 'always',
+        prev: 'if',
+        next: 'if'
       }
     ]
   }

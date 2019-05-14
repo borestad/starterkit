@@ -7,7 +7,7 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'NODE_ENV=production lib/bin/install-all'
+        sh 'lib/bin/install-all'
       }
     }
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env node -r esm
+#!/usr/bin/env node
 // tslint:disable: no-floating-promises
 
 // TODO: Validate against some tool like:
@@ -7,17 +7,19 @@
 import * as fs from 'fs-extra'
 import { isNil, pickBy } from 'lodash'
 import * as path from 'path'
+import { run } from '@starterkit/tools'
 
 const { log, error } = console
 const cwd = process.cwd()
-;(async () => {
+
+run(async function prePublish() {
   try {
-    const [from, to] = [`${cwd}/package.json`, `${cwd}/dist/package.json`]
+    const from = `${cwd}/package.json`
+    const to = `${cwd}/dist/package.json`
 
     await fs.copy(from, to)
 
     const pkg = JSON.parse(await fs.readFile(to, 'utf-8'))
-
     const output = {
       name: pkg.name,
       description: pkg.description,
@@ -39,6 +41,7 @@ const cwd = process.cwd()
       log()
 
       const missing = Object.keys(pickBy(output, isNil))
+
       error(`Some fields within "${to}" are missing following properties:`)
       log(missing)
       log()
@@ -52,4 +55,4 @@ const cwd = process.cwd()
   } catch (e) {
     log(e)
   }
-})()
+})

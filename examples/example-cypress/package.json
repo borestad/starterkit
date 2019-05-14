@@ -10,7 +10,7 @@
     "build": "tsc -b tsconfig.json --pretty",
     "test": "yarn test:e2e",
     "test:e2e": "exit 0 && yarn clean && cypress run",
-    "lint": " npx eslint . --fix"
+    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts"
   },
   "eslintConfig": {
     "extends": [
@@ -28,9 +28,8 @@
       "cypress/no-unnecessary-waiting": "off"
     }
   },
-  "dependencies": {
+  "devDependencies": {
     "cypress": "3.2.0",
-    "eslint-plugin-cypress": "2.2.1",
-    "typescript": "^3.4.5"
+    "eslint-plugin-cypress": "2.2.1"
   }
 }
