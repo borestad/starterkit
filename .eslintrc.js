@@ -33,10 +33,14 @@ module.exports = {
       node: { extensions: extensions.all }
     }
   },
-  plugins: ['unicorn'],
+
+  plugins: ['unicorn', 'sonarjs'],
+
   extends: [
     // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/recommended',
+
+    'plugin:sonarjs/recommended',
 
     // https://github.com/standard/eslint-config-standard/blob/master/eslintrc.json
     'standard',
@@ -68,6 +72,15 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
+  overrides: [
+    {
+      files: ['*.spec.*', '*.test.*'],
+      rules: {
+        'sonarjs/no-duplicate-string': 'off',
+        'sonarjs/no-identical-functions': 'off'
+      }
+    }
+  ],
   rules: {
     // '@typescript-eslint/indent': 'off',
     // '@typescript-eslint/no-explicit-any': 'off',
@@ -160,6 +173,11 @@ module.exports = {
       //   next: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export']
       // }
     ],
+
+    /**
+     * Unicorn rules
+     */
+
     'unicorn/catch-error-name': 'error',
     'unicorn/custom-error-definition': 'off',
     'unicorn/error-message': 'error',

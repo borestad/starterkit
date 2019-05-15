@@ -10,7 +10,7 @@
     "build": "tsc -b tsconfig.json --pretty",
     "test": "yarn test:e2e",
     "test:e2e": "exit 0 && yarn clean && cypress run",
-    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts"
+    "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix"
   },
   "eslintConfig": {
     "extends": [

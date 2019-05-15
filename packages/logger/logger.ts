@@ -14,7 +14,7 @@
  *
  */
 
-import figures from 'figures'
+import figures = require('figures')
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const win = window as any

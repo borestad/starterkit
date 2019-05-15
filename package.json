@@ -61,7 +61,7 @@
     "compile:packages": "npx lerna run compile --parallel --stream",
     "fix": "npx yarn prettier && yarn lint",
     "lint": "npx run-s lint:*",
-    "lint:js": "npx eslint --fix . --ext js --ext ts",
+    "lint:js": "npx eslint . --ext js --ext ts --fix",
     "postinstall": "node lib/bin/postinstall.js",
     "preinstall": "rm -f .git/hooks/* || true",
     "prettier": "npx prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",

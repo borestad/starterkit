@@ -8,7 +8,7 @@
     "build": "tsc -b tsconfig.json --pretty",
     "test": "run-p test:*",
     "test:e2e": "yarn clean && yarn build && nightwatch",
-    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts"
+    "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix"
   },
   "devDependencies": {
     "@types/chromedriver": "2.38.0",

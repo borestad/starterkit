@@ -11,7 +11,7 @@
     "compile:ts": "del dist && tsc -b tsconfig.json --pretty",
     "build:types": "npx tsc --emitDeclarationOnly",
     "start": "npx parcel index.html",
-    "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts",
+    "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix",
     "test": "jest -w 4 --detectOpenHandles --notify"
   },
   "devDependencies": {
