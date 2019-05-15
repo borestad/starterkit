@@ -9,7 +9,7 @@
 
 const js = ['.js', '.jsx']
 const ts = ['.ts', '.tsx']
-const extensions = { js, ts, all: [...js, ...ts] }
+const extensions = { ts, all: [...js, ...ts] }
 
 // TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
 
@@ -33,6 +33,7 @@ module.exports = {
       node: { extensions: extensions.all }
     }
   },
+  plugins: ['unicorn'],
   extends: [
     // Uses the recommended rules from the @typescript-eslint/eslint-plugin
     'plugin:@typescript-eslint/recommended',
@@ -47,7 +48,9 @@ module.exports = {
     // @typescript-eslint/eslint-plugin that would conflict with prettier
     'prettier/@typescript-eslint',
 
-    // 'prettier/standard',
+    // Turns off all rules that are unnecessary or might conflict with Prettier.
+    // https://github.com/prettier/eslint-config-prettier/blob/master/standard.js
+    'prettier/standard',
 
     // Enables eslint-plugin-prettier and eslint-config-prettier.
     // This will display prettier errors as ESLint errors.
@@ -101,12 +104,7 @@ module.exports = {
     'no-var': 'error',
     'prefer-const': 'error',
     'prefer-template': 'error',
-    'import/no-useless-path-segments': [
-      'error',
-      {
-        noUselessIndex: true
-      }
-    ],
+    'import/no-useless-path-segments': ['error'],
     'import/named': 'error',
     'import/namespace': 'error',
     'import/default': 'error',
@@ -136,14 +134,12 @@ module.exports = {
     'padding-line-between-statements': [
       'error',
       ...(() => {
-        // eslint-disable-next-line prettier/prettier
         const common = [
           'block',
           'block-like',
           'cjs-export',
           'class',
           'directive',
-          'empty',
           'export',
           'for',
           'function',
@@ -163,6 +159,24 @@ module.exports = {
       //   prev: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export'],
       //   next: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export']
       // }
-    ]
+    ],
+    'unicorn/catch-error-name': 'error',
+    'unicorn/custom-error-definition': 'off',
+    'unicorn/error-message': 'error',
+    'unicorn/filename-case': ['error', { case: 'kebabCase' }],
+    'unicorn/import-index': 'error',
+    'unicorn/new-for-builtins': 'error',
+    'unicorn/no-abusive-eslint-disable': 'error',
+    'unicorn/no-array-instanceof': 'error',
+    'unicorn/no-console-spaces': 'error',
+    'unicorn/no-for-loop': 'error',
+    'unicorn/no-process-exit': 'error',
+    'unicorn/no-unreadable-array-destructuring': 'error',
+    'unicorn/no-unused-properties': 'error',
+    'unicorn/no-zero-fractions': 'error',
+    'unicorn/prefer-exponentiation-operator': 'error',
+    'unicorn/prefer-includes': 'error',
+    'unicorn/prefer-type-error': 'error',
+    'unicorn/regex-shorthand': 'error'
   }
 }

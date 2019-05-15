@@ -8,6 +8,6 @@ log.error('A custom error')
 
 try {
   throw new Error('Error')
-} catch (e) {
-  log.error(e)
+} catch (error) {
+  log.error(error)
 }
