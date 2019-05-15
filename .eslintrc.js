@@ -9,7 +9,7 @@
 
 const js = ['.js', '.jsx']
 const ts = ['.ts', '.tsx']
-const extensions = { js, ts, all: [].concat(js, ts) }
+const extensions = { js, ts, all: [...js, ...ts] }
 
 // TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
 
@@ -66,9 +66,9 @@ module.exports = {
     SharedArrayBuffer: 'readonly'
   },
   rules: {
-    // "@typescript-eslint/indent": "off",
-    // "@typescript-eslint/no-explicit-any": "off",
-    // "@typescript-eslint/no-non-null-assertion": "off",
+    // '@typescript-eslint/indent': 'off',
+    // '@typescript-eslint/no-explicit-any': 'off',
+    // '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     '@typescript-eslint/explicit-function-return-type': [
       'warning',
@@ -90,7 +90,9 @@ module.exports = {
       {
         vars: 'all',
         args: 'after-used',
-        ignoreRestSiblings: false
+        caughtErrors: 'none',
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_'
       }
     ],
     'no-unused-expressions': 'off',
@@ -133,72 +135,33 @@ module.exports = {
     ],
     'padding-line-between-statements': [
       'error',
-      {
-        blankLine: 'always',
-        prev: [
+      ...(() => {
+        // eslint-disable-next-line prettier/prettier
+        const common = [
+          'block',
+          'block-like',
+          'cjs-export',
+          'class',
+          'directive',
+          'empty',
+          'export',
+          'for',
+          'function',
+          'if',
           'multiline-const',
-          'multiline-expression',
-          'if',
-          'block',
-          'function',
-          'class',
-          'for'
-        ],
-        next: [
-          'multiline-expression',
-          'return',
-          'if',
-          'block',
-          'function',
-          'class',
-          'for'
+          'throw',
+          'try'
         ]
-      }
-      // {
-      //   blankLine: 'always',
-      //   prev: 'multiline-block-like',
-      //   next: '*'
-      // }
-      // {
-      //   blankLine: 'always',
-      //   prev: ['*'],
-      //   next: ['block-like']
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: ['cjs-import'],
-      //   next: ['*']
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: ['block-like'],
-      //   next: ['const']
-      // }
 
+        return [
+          { blankLine: 'always', prev: common, next: '*' },
+          { blankLine: 'always', prev: '*', next: common }
+        ]
+      })()
       // {
       //   blankLine: 'always',
-      //   prev: ['multiline-const', 'multiline-let'],
-      //   next: ['multiline-const', 'multiline-let']
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: '*',
-      //   next: 'multiline-expression'
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: 'if',
-      //   next: 'if'
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: ['*'],
-      //   next: ['function']
-      // },
-      // {
-      //   blankLine: 'always',
-      //   prev: ['function'],
-      //   next: ['*']
+      //   prev: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export'],
+      //   next: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export']
       // }
     ]
   }

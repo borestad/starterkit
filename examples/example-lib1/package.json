@@ -16,7 +16,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "del dist && yarn compile",
-    "clean": "sk-clean",
+    "clean": "starterkit-clean",
     "compile": "del dist && tsc -b tsconfig.json --pretty",
     "lint": "npx eslint --ignore-path=../../.gitignore --fix . --ext js --ext ts",
     "test": "jest -w 3 --detectOpenHandles --notify"

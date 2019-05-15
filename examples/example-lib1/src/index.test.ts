@@ -60,11 +60,3 @@ describe('GenericsExample1', () => {
     ).toEqual(2)
   })
 })
-
-console.log(
-  'reallyLongArg',
-  'reallyLongArg',
-  'reallyLongArg',
-  'reallyLongArg',
-  'reallyLongArg'
-)

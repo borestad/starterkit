@@ -22,6 +22,7 @@ const str2Array = (str: string) => {
  * Returns Boolean if environment is NOT run on a CI-environment
  */
 export const isCI = Boolean(_isCI)
+
 export const isNotCI = !isCI
 
 export async function exec(cmd: string) {

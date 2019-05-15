@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "sk-clean",
+    "clean": "starterkit-clean",
     "open": "cypress open",
     "build": "tsc -b tsconfig.json --pretty",
     "test": "yarn test:e2e",

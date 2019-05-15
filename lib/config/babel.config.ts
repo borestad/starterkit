@@ -21,6 +21,7 @@ export default api => {
   api.cache.using(() => process.env.NODE_ENV)
 
   const presets = ['@babel/env', '@babel/typescript']
+
   const plugins = [
     [
       '@babel/transform-runtime',

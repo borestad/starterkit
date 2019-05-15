@@ -5,14 +5,14 @@
   "main": ".",
   "private": true,
   "bin": {
-    "sk-clean": "./clean.js",
+    "starterkit-clean": "./clean.js",
     "sk-prepublish": "./prepublish.js",
     "sk-validate": "./validate.js"
   },
   "scripts": {
     "test": "exit 0 || true"
   },
-  "dependencies": {
+  "devDependencies": {
     "glob": "7.1.4"
   }
 }
