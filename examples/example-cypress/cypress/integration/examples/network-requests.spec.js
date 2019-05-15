@@ -67,6 +67,7 @@ context('Network Requests', () => {
       expect(response)
         .property('body')
         .to.have.length(500)
+
       expect(response).to.include.keys('headers', 'duration')
     })
   })

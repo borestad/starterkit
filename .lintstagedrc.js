@@ -1,4 +1,4 @@
-const { yellow, underline } = require('chalk')
+const { yellow, underline } = require('chalk').default
 
 const { log } = console
 

@@ -10,6 +10,7 @@
     "sk-validate": "./validate.js"
   },
   "scripts": {
+    "compile": "tsc -b tsconfig.json --pretty",
     "test": "exit 0 || true"
   },
   "devDependencies": {

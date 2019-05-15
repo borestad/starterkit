@@ -5,7 +5,8 @@
   "main": ".",
   "private": true,
   "scripts": {
-    "test": "exit 0 || true"
+    "test": "exit 0 || true",
+    "compile": "tsc -b tsconfig.json --pretty"
   },
   "devDependencies": {
     "glob": "7.1.4"

@@ -119,7 +119,7 @@ const log = {
 
 // Enable quick debugging access in the browser
 if (win) {
-  win.c = win.c || log
+  win.Console = win.Console || log
 }
 
 export default log

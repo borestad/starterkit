@@ -10,6 +10,6 @@ module.exports = {
   hooks: {
     'pre-commit': 'lint-staged -c .lintstagedrc.js',
     'post-commit': 'git update-index --again',
-    'post-checkout': './bin/postcheckout'
+    'post-checkout': './lib/bin/postcheckout'
   }
 }

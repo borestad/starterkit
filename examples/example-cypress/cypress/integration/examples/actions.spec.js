@@ -130,6 +130,7 @@ context('Actions', () => {
     cy.get('.action-div')
       .dblclick()
       .should('not.be.visible')
+
     cy.get('.action-input-hidden').should('be.visible')
   })
 

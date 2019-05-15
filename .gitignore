@@ -142,13 +142,17 @@ dist
 **/yarn.lock
 !/yarn.lock
 
-# Don't allow a mix of ts and js files in this repository...
+# Only allow a controlled mix of .ts and .js files in this repository.
+# This is usally due to a user accidentally committing files .js files
+# when compiling .ts files via tsc
 examples/*.js
 packages/*.js
 src/*.js
 *.js
 
-# ...except config files (babel.config.js, jest.config.base.js etc)
+# ...except starterkit lib files
+!/lib/**/*.js
+# ...and config files (babel.config.js, jest.config.base.js etc)
 !/.*.js
 !*.conf*.js
 !/config/**/*.js

@@ -5,6 +5,8 @@
 //  🔗 https://babeljs.io/docs/en/config-files
 //  🔗 https://new.babeljs.io/docs/en/next/babelconfigjs.html
 //
+//  The philosophy behind these rules is that 99% should be autofix'able.
+//
 // ======================================================================== */
 
 const js = ['.js', '.jsx']
@@ -82,9 +84,62 @@ module.exports = {
     }
   ],
   rules: {
-    // '@typescript-eslint/indent': 'off',
-    // '@typescript-eslint/no-explicit-any': 'off',
-    // '@typescript-eslint/no-non-null-assertion': 'off',
+    /**
+     * Built-in Eslint Rules
+     * ----------------------------------------------------
+     */
+    'no-unused-expressions': 'off',
+    'no-unused-vars': 'off',
+    'global-require': 'off',
+    'no-var': 'error',
+    'prefer-const': 'error',
+    'prefer-template': 'error',
+    'object-shorthand': [
+      'error',
+      'always',
+      {
+        ignoreConstructors: true
+      }
+    ],
+    // Code-Style rules
+    // https://eslint.org/docs/rules/padding-line-between-statements
+    // Warning: Don't mess with these unless you know what you'e doing since
+    // they can interfere with prettier
+    'padding-line-between-statements': [
+      'error',
+      ...(() => {
+        const common = [
+          'block-like',
+          'block',
+          'cjs-export',
+          'class',
+          'directive',
+          'export',
+          'for',
+          'function',
+          'if',
+          'multiline-const',
+          'throw',
+          'try'
+        ]
+
+        return [
+          { blankLine: 'always', prev: common, next: '*' },
+          { blankLine: 'always', prev: '*', next: common }
+        ]
+      })(),
+      {
+        blankLine: 'always',
+        prev: ['multiline-expression'],
+        next: ['*']
+      }
+    ],
+
+    /**
+     * Typescript-Eslint Rules
+     * ----------------------------------------------------
+     */
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
     '@typescript-eslint/explicit-function-return-type': [
       'warning',
@@ -111,12 +166,11 @@ module.exports = {
         argsIgnorePattern: '^_'
       }
     ],
-    'no-unused-expressions': 'off',
-    'no-unused-vars': 'off',
-    'global-require': 'off',
-    'no-var': 'error',
-    'prefer-const': 'error',
-    'prefer-template': 'error',
+
+    /**
+     * Import Plugin Rules
+     * ----------------------------------------------------
+     */
     'import/no-useless-path-segments': ['error'],
     'import/named': 'error',
     'import/namespace': 'error',
@@ -137,47 +191,11 @@ module.exports = {
         ]
       }
     ],
-    'object-shorthand': [
-      'error',
-      'always',
-      {
-        ignoreConstructors: true
-      }
-    ],
-    'padding-line-between-statements': [
-      'error',
-      ...(() => {
-        const common = [
-          'block',
-          'block-like',
-          'cjs-export',
-          'class',
-          'directive',
-          'export',
-          'for',
-          'function',
-          'if',
-          'multiline-const',
-          'throw',
-          'try'
-        ]
-
-        return [
-          { blankLine: 'always', prev: common, next: '*' },
-          { blankLine: 'always', prev: '*', next: common }
-        ]
-      })()
-      // {
-      //   blankLine: 'always',
-      //   prev: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export'],
-      //   next: ['multiline-const', 'multiline-expression', 'if', 'block', 'class', 'for', 'export']
-      // }
-    ],
 
     /**
      * Unicorn rules
+     * ----------------------------------------------------
      */
-
     'unicorn/catch-error-name': 'error',
     'unicorn/custom-error-definition': 'off',
     'unicorn/error-message': 'error',

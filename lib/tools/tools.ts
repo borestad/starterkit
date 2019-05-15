@@ -54,6 +54,7 @@ export const run = (fn: Function) => {
   log(
     `=== ${chalk.underline.yellow(kebabCase(`${fn.name}`).toUpperCase())} ===`
   )
+
   isNotCI && log()
 
   return fn()

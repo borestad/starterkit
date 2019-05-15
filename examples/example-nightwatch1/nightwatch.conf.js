@@ -44,6 +44,7 @@ log(ln)
 log(
   `Browser: ${settings.test_settings.default.desiredCapabilities.browserName}`
 )
+
 log(`Path:    ${chromium}`)
 log(ln)
 

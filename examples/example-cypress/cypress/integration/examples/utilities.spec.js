@@ -63,12 +63,14 @@ context('Utilities', () => {
     matching = Cypress.minimatch('/users/1/comments/2', '/users/*/comments', {
       matchBase: true
     })
+
     expect(matching, 'comments').to.be.false
 
     // ** matches against all downstream path segments
     matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/**', {
       matchBase: true
     })
+
     expect(matching, 'comments').to.be.true
 
     // whereas * matches only the next path segment
@@ -76,6 +78,7 @@ context('Utilities', () => {
     matching = Cypress.minimatch('/foo/bar/baz/123/quux?a=b&c=2', '/foo/*', {
       matchBase: false
     })
+
     expect(matching, 'comments').to.be.false
   })
 
