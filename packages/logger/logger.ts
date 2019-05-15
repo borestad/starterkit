@@ -14,14 +14,15 @@
  *
  */
 
-import figures from 'figures'
+import figures = require('figures')
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const win = window as any
 
 // Helpers
 // ----------------------------------------------------------------------------
 const pad = (str = '', len = 10, chars = ' ') => {
-  const filling = (str.trimRight().match(/(\%c|\s)/gi) || []).length
+  const filling = (str.trimRight().match(/(%c|\s)/gi) || []).length
   return str.padEnd(len + filling, chars)
 }
 
@@ -118,7 +119,7 @@ const log = {
 
 // Enable quick debugging access in the browser
 if (win) {
-  win.c = win.c || log
+  win.Console = win.Console || log
 }
 
 export default log

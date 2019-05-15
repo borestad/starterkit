@@ -3,6 +3,7 @@
   "include": ["./**/*.ts"],
   "compilerOptions": {
     "outDir": "./node_modules/.tmp/build.tsc",
-    "module": "esnext"
+    "module": "esnext",
+    "types": ["node"]
   }
 }

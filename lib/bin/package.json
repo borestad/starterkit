@@ -1,0 +1,19 @@
+{
+  "name": "@starterkit/bin",
+  "version": "0.0.1",
+  "description": "Starterkit binaries",
+  "main": ".",
+  "private": true,
+  "bin": {
+    "starterkit-clean": "./clean.js",
+    "sk-prepublish": "./prepublish.js",
+    "sk-validate": "./validate.js"
+  },
+  "scripts": {
+    "compile": "tsc -b tsconfig.json --pretty",
+    "test": "exit 0 || true"
+  },
+  "devDependencies": {
+    "glob": "7.1.4"
+  }
+}

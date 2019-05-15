@@ -4,7 +4,7 @@
  *
  */
 
-module.exports = require('../../config/jest/jest.config.base')({
+module.exports = require('@starterkit/config/jest.config.base')({
   pkg: require('./package.json'),
   filename: __filename
 })

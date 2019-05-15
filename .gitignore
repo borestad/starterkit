@@ -38,6 +38,7 @@ build/Release
 
 # Dependency directories
 node_modules/
+node_modules
 jspm_packages/
 
 # Typescript v1 declaration files
@@ -61,7 +62,6 @@ typings/
 # dotenv environment variables file
 #.env
 
-
 ### OSX ###
 *.DS_Store
 .AppleDouble
@@ -69,7 +69,6 @@ typings/
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -143,20 +142,27 @@ dist
 **/yarn.lock
 !/yarn.lock
 
-
-# Don't allow a mix of ts and js files in this repository...
+# Only allow a controlled mix of .ts and .js files in this repository.
+# This is usally due to a user accidentally committing files .js files
+# when compiling .ts files via tsc
 examples/*.js
 packages/*.js
 src/*.js
 *.js
 
-# ...except config files (babel.config.js, jest.config.base.js etc)
+# ...except starterkit lib files
+!/lib/**/*.js
+# ...and config files (babel.config.js, jest.config.base.js etc)
 !/.*.js
 !*.conf*.js
 !/config/**/*.js
-!/bin/**/*.js
+!**/bin/**/*.js
 # ...and some extra files
 !wallaby.js
+# ...and entrypoints
+!*.index.js
+# ...and cypress
+!**/cypress/**/*.js
 
 # Reports
 *-report.json
@@ -228,7 +234,6 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
-
 
 # Avoid Jenkins error "Working tree has uncommitted changes"
 git-vars

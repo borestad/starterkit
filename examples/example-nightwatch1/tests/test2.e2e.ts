@@ -12,7 +12,7 @@ const q = {
 // ============================================================================
 // Tests
 // ============================================================================
-export = {
+const settings: NightwatchTests = {
   '@disabled': false,
 
   'Test Google: #1': browser => {
@@ -41,4 +41,6 @@ export = {
       // End session
       .end()
   }
-} as NightwatchTests
+}
+
+export default settings

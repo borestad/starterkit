@@ -1,13 +1,13 @@
 // ========================================================================
-// 💥 Typescript configuration
+//  Typescript configuration
 //
-//    Documentation:
+//  🔗 http://json.schemastore.org/tsconfig
+//  🔗 https://www.typescriptlang.org/docs/handbook/compiler-options.html
+//  🔗 https://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html
 //
-//    http://json.schemastore.org/tsconfig
-//    https://www.typescriptlang.org/docs/handbook/compiler-options.html
-//    https://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html
-//
-// ========================================================================s
+//  Note:
+//  ❌ === Use alternative Eslint instead.
+// ========================================================================
 {
   "include": [
     "**/*.d.ts",
@@ -17,10 +17,10 @@
 
   "exclude": [
     // Test files are already covered by Jest
-    "**/*.test.ts",
-    "**/node_modules/**",
+    // "**/*.test.ts",
+    // "**/node_modules/**",
     "**/dist/**",
-    "typings/browser.d.ts"
+    // "typings/browser.d.ts"
   ],
 
   // ========================================================================
@@ -44,15 +44,17 @@
     "declaration": true,                          // 🔅 Generates corresponding '.d.ts' file.
     "declarationMap": false,                      // 🔅 Generates a sourcemap for each corresponding '.d.ts' file.
     "importHelpers": true,                        // 🔅 Import emit helpers from 'tslib'.
-    "lib": ["es2015", "es2016", "es2017", "dom"], // 🔅 Specify library files to be included in the compilation.
+    "lib": [                                      // 🔅 Specify library files to be included in the compilation.
+      "es2015", "es2016", "es2017", "dom", "esnext"
+    ],
     "module": "commonjs",                         // 🔅 Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
     "noEmit": true,                               // 🔅 Do not emit outputs.
     "outDir": "./node_modules/.tmp/build.tsc",    // 🔅 Redirect output structure to the directory.
     "rootDir": ".",                               // 🔅 Specify the root directory of input files. Use to control the output directory structure with --outDir.
-    "sourceMap": true,                            // 🔅 Allow javascript files to be compiled.
+    "sourceMap": true,                            // 🔅 Generates corresponding '.map' file.
     "target": "esnext",                           // 🔅 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    // "allowJs": true,                           // 🔅 Report errors in .js files.
-    // "checkJs": true,                           // 🔅 Generates corresponding '.map' file.
+    "allowJs": false,                             // 🔅 Allow javascript files to be compiled.
+    "checkJs": false,                             // 🔅 Report errors in .js files.
     // "composite": true,                         // 🔅 Enable project compilation
     // "downlevelIteration": true,                // 🔅 Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'.
     // "isolatedModules": true,                   // 🔅 Transpile each file as a separate module (similar to 'ts.transpileModule').
@@ -77,8 +79,8 @@
     // ========================================================================s
     // 💥 Additional Checks
     // ========================================================================s
-    "noUnusedLocals": true,                // 🔅 Report errors on unused locals.
-    "noUnusedParameters": true,            // 🔅 Report errors on unused parameters.
+    // "noUnusedLocals": true,                // ❌ [Eslint] Report errors on unused locals.
+    "noUnusedParameters": true,               // 🔅 Report errors on unused parameters.
     // "noImplicitReturns": true,             // 🔅 Report error when not all code paths in function return a value.
     // "noFallthroughCasesInSwitch": true,    // 🔅 Report errors for fallthrough cases in switch statement.
 
@@ -99,7 +101,10 @@
       "node_modules/@types",
       "types"
     ],
-    // "types": [],                           // 🔅 Type declaration files to be included in compilation.
+    "types": [                                // 🔅 Type declaration files to be included in compilation ( node_modules/@types/... )
+      "jest",
+      "node"
+    ],
 
 
     // ========================================================================s

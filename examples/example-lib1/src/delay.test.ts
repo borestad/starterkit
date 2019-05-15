@@ -1,3 +1,5 @@
+/// <reference types="jest" />
+
 import { delayedPromise, Delays } from './delay'
 
 describe('greeter function', () => {

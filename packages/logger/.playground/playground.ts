@@ -1,5 +1,4 @@
-// tslint:disable-next-line:no-implicit-dependencies
-import log from '@netent/logger'
+import log from '../logger'
 
 log.ok()
 log.ok('Hello OK')
@@ -9,6 +8,6 @@ log.error('A custom error')
 
 try {
   throw new Error('Error')
-} catch (e) {
-  log.error(e)
+} catch (error) {
+  log.error(error)
 }

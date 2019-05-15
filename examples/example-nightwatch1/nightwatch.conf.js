@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/camelcase */
 const chromium = (process.env.CHROMIUM_BIN = require('puppeteer').executablePath())
+const JSON5 = require('json5')
 const path = require('path')
 const fs = require('fs')
-const JSON5 = require('json5')
 
 const dist = JSON5.parse(fs.readFileSync('./tsconfig.json', 'utf-8'))
   .compilerOptions.outDir
@@ -43,6 +44,7 @@ log(ln)
 log(
   `Browser: ${settings.test_settings.default.desiredCapabilities.browserName}`
 )
+
 log(`Path:    ${chromium}`)
 log(ln)
 

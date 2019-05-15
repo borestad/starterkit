@@ -1,4 +1,5 @@
-const { yellow, underline } = require('chalk')
+const { yellow, underline } = require('chalk').default
+
 const { log } = console
 
 /*
@@ -10,16 +11,10 @@ const { log } = console
 log(`${yellow(`⭐ ${underline('lint-staged')}`)}`)
 
 module.exports = {
-  '*.*': ['node -r esm bin/validate'],
+  '.gitignore': ['node lib/bin/validate.js'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
-  '*.{js,jsx}': [
-    'prettier -c --write',
-    'eslint --ignore-path=.gitignore --fix',
-    'git add'
-  ],
-  '*.{ts,tsx}': [
-    'prettier -c --write',
-    'tslint -c tslint.json --fix -t codeFrame',
+  '*.{js,jsx,ts,tsx}': [
+    'npx eslint --fix --ext js --ext jsx --ext ts --ext tsx',
     'git add'
   ]
 }

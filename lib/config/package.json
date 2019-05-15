@@ -1,0 +1,14 @@
+{
+  "name": "@starterkit/config",
+  "version": "0.0.1",
+  "description": "Jest Base configuration",
+  "main": ".",
+  "private": true,
+  "scripts": {
+    "test": "exit 0 || true",
+    "compile": "tsc -b tsconfig.json --pretty"
+  },
+  "devDependencies": {
+    "glob": "7.1.4"
+  }
+}
