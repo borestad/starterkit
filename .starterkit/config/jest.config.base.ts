@@ -1,10 +1,12 @@
 /**
+ * Jest Base configuration (@starterkit)
  *
+ * Used per-package as an inherited configuration
  * https://jestjs.io/docs/en/configuration.html
  *
  */
 const { gray } = require('chalk').default
-const { isNotCI, GIT, pkgUpDir } = require('@starterkit/tools')
+const { isNotCI, GIT, pkgUpDir } = require('../tools')
 
 const { log } = console
 

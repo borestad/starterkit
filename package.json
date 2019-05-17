@@ -48,29 +48,28 @@
     "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
   },
   "workspaces": [
-    "lib/*",
+    ".starterkit",
     "examples/*",
     "packages/*"
   ],
   "scripts": {
     "build": "npx lerna run build --parallel --stream",
-    "ci": "lib/bin/ci",
-    "clean": "node lib/bin/clean.js",
+    "ci": "node_modules/@netent/starterkit/bin/ci",
+    "clean": "starterkit-clean",
     "compile": "run-p compile:*",
-    "compile:root": "npx tsc --build lib/config/tsconfig.root.json --pretty",
     "compile:packages": "npx lerna run compile --parallel --stream",
     "fix": "npx yarn prettier && yarn lint",
     "lint": "npx run-s lint:*",
     "lint:js": "npx eslint . --ext js --ext ts --fix",
-    "postinstall": "node lib/bin/postinstall.js",
+    "postinstall": "starterkit-postinstall",
     "preinstall": "rm -f .git/hooks/* || true",
     "prettier": "npx prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "npx run-p -l test:unit test:e2e",
-    "test:unit": "npx jest -w 3 -c lib/config/jest.config.js",
+    "test:unit": "npx jest -w 3",
     "test:e2e": "npx lerna run test:e2e --stream",
     "test:serial": "npx lerna exec -- yarn test",
     "test:watch": "npx yarn test -- --watch --notify",
-    "validate": "node lib/bin/validate.js"
+    "validate": "node node_modules/@netent/starterkit/bin/validate"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -128,6 +127,7 @@
     "yarn": "1.16.0"
   },
   "devDependencies": {
+    "@netent/starterkit": "*",
     "diff-so-fancy": "1.2.5",
     "lint-staged": "8.1.6",
     "node-notifier": "5.4.0"

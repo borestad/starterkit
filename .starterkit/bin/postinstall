@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { remove } = require('fs-extra')
-const { exec, GIT, isNotCI, run } = require('@starterkit/tools')
+const { exec, GIT, isNotCI, run } = require('../tools')
 
 /**
  * PostInstall

@@ -9,4 +9,4 @@
 //
 // ======================================================================== */
 
-module.exports = require('@starterkit/config/eslintrc.config')
+module.exports = require('@netent/starterkit/config/eslintrc').config()

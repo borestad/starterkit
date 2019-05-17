@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { GIT, run } = require('@starterkit/tools')
+const util = require('util')
 const { tick } = require('figures')
 const { isEmpty } = require('lodash')
-const util = require('util')
+const { GIT, run } = require('../tools')
 
 const { log } = console
 

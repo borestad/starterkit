@@ -151,7 +151,7 @@ src/*.js
 *.js
 
 # ...except starterkit lib files
-!/lib/**/*.js
+!/.starterkit/**/*.js
 # ...and config files (babel.config.js, jest.config.base.js etc)
 !/.*.js
 !*.conf*.js

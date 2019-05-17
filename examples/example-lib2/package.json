@@ -16,7 +16,7 @@
   "main": "src/index.ts",
   "scripts": {
     "build": "yarn clean && yarn compile:js",
-    "clean": "starterkit-clean",
+    "clean": "npx starterkit-clean",
     "compile": "run-p compile:*",
     "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "tsc -b tsconfig.json --pretty",
@@ -29,7 +29,7 @@
   ],
   "bundledDependencies": [],
   "devDependencies": {
-    "@starterkit/bin": "*"
+    "@netent/starterkit": "*"
   },
   "dependencies": {
     "@scope/example-lib1": "*"

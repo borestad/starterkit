@@ -1,14 +1,21 @@
 /**
+ * Jest Root/Project§ configuration (@starterkit)
+ *
+ * Used from the root to speedup builds
  *
  * https://jestjs.io/docs/en/configuration.html
+ * https://kulshekhar.github.io/ts-jest/user/config/#jest-preset
  *
  */
-const { yellow } = require('chalk').default
-const { flattenDeep } = require('lodash')
-const { isNotCI, GIT, rootPkg, pkgUpDir } = require('@starterkit/tools')
 
+import { flattenDeep } from 'lodash'
+import glob from 'glob'
+import chalk from 'chalk'
+import { Config } from '@jest/types'
+import { isNotCI, GIT, rootPkg, pkgUpDir } from '../tools'
+
+const { yellow } = chalk
 const isWatchMode = process.argv.includes('--watch')
-const glob = require('glob')
 
 if (isNotCI) {
   console.log(`\n⭐ ${yellow.underline('<root>/config/jest.config.js')}\n`)
@@ -16,16 +23,17 @@ if (isNotCI) {
 
 // Only look for projects that contains a `jest.config.js`
 const projects = flattenDeep(
-  rootPkg('workspaces')
+  (rootPkg('workspaces') as string[])
     .map(GIT.fromGitRoot)
     .map(x => glob.sync(`${x}/jest.config.js`))
-).map(pkgUpDir)
+).map(x => pkgUpDir(x))
 
-module.exports = {
+const config: Config.InitialOptions = {
+  // preset: 'ts-jest/presets/js-with-ts',
   rootDir: GIT.ROOT,
   testEnvironment: 'node',
   projects,
-  bail: true,
+  bail: 1,
   silent: false,
   collectCoverage: !isWatchMode,
   verbose: isNotCI,
@@ -36,3 +44,5 @@ module.exports = {
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!/**/*.d.ts', '!/dist/**'],
   modulePathIgnorePatterns: ['node_modules', '..*']
 }
+
+export default config

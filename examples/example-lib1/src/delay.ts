@@ -1,6 +1,7 @@
 /**
  * Some predefined delays (in milliseconds).
  */
+
 export enum Delays {
   Short = 500,
   Medium = 2000,

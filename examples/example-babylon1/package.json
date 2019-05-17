@@ -15,6 +15,7 @@
     "test": "jest -w 4 --detectOpenHandles --notify"
   },
   "devDependencies": {
+    "@netent/starterkit": "*",
     "@babel/cli": "7.4.4",
     "babylonjs": "4.0.3",
     "babylonjs-gui": "4.0.3",
@@ -26,3 +27,4 @@
     "pep": "1.0.13"
   }
 }
+
