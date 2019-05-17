@@ -5,14 +5,13 @@
  */
 
 /* eslint-disable @typescript-eslint/no-use-before-define */
-
+import * as path from 'path'
 import chalk from 'chalk'
 import * as execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
 import { compact, isString, kebabCase, memoize, noop } from 'lodash'
 import * as _pkgUp from 'pkg-up'
-import * as path from 'path'
 
 const { log } = console
 
@@ -86,7 +85,7 @@ export const relativeFrom = ({ from, to }) => {
 /**
  * Returns content of <gitRoot>/package.json
  */
-export const rootPkg = (prop: string) => {
+export const rootPkg = (prop?: string) => {
   const json = fs.readJSONSync(pkgUp(GIT.ROOT))
   return prop ? json[prop] : json
 }
@@ -163,7 +162,7 @@ export const GIT = {
   /**
    * Returns an absolute path from git-root
    */
-  fromGitRoot(...args: string[]) {
+  fromGitRoot(...args: any[]) {
     return path.normalize(path.resolve(GIT.ROOT, ...args.filter(isString)))
   },
 

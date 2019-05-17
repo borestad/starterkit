@@ -4,12 +4,11 @@
  *
  */
 
-import chalk from 'chalk'
-import { isNotCI } from '@starterkit/tools'
 import * as path from 'path'
+import chalk from 'chalk'
+import { isNotCI } from '../tools'
 
 const cwd = path.relative(__dirname, process.cwd())
-
 const { yellow } = chalk
 
 if (isNotCI) {

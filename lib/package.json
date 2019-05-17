@@ -1,0 +1,30 @@
+{
+  "name": "@netent/starterkit",
+  "version": "0.0.1",
+  "description": "Starterkit cli/tools/configs",
+  "main": "./index.js",
+  "private": true,
+  "bin": {
+    "starterkit-clean": "./bin/clean.js",
+    "starterkit-postinstall": "./bin/postinstall.js",
+    "starterkit-prepublish": "./bin/prepublish.js",
+    "starterkit-validate": "./bin/validate.js"
+  },
+  "scripts": {
+    "compile": "tsc -b tsconfig.json --pretty",
+    "test": "exit 0 || true"
+  },
+  "devDependencies": {
+    "@types/execa": "0.9.0",
+    "@types/lodash": "4.14.126",
+    "execa": "1.0.0",
+    "glob": "7.1.4",
+    "lodash": "4.17.11",
+    "pkg-up": "3.1.0"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "eslint-plugin-unicorn": "8.0.2",
+    "lodash": "4.17.11"
+  }
+}

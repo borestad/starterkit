@@ -21,5 +21,7 @@
     "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@netent/starterkit": "*"
+  }
 }

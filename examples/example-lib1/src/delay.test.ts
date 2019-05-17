@@ -7,12 +7,15 @@ describe('greeter function', () => {
   jest.useFakeTimers()
 
   const message = 'Hello world'
+
   let str: string
 
   // Act before assertions
   beforeAll(async () => {
     const p: Promise<string> = delayedPromise(message, Delays.Long)
+
     jest.runOnlyPendingTimers()
+
     str = await p
   })
 
@@ -20,6 +23,7 @@ describe('greeter function', () => {
     expect.assertions(2)
 
     expect(global.setTimeout).toHaveBeenCalledTimes(1)
+
     expect((global.setTimeout as jest.Mock).mock.calls[0][1]).toBe(Delays.Long)
   })
 

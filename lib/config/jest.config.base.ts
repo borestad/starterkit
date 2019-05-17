@@ -4,7 +4,7 @@
  *
  */
 const { gray } = require('chalk').default
-const { isNotCI, GIT, pkgUpDir } = require('@starterkit/tools')
+const { isNotCI, GIT, pkgUpDir } = require('../tools')
 
 const { log } = console
 
