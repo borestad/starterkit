@@ -1,9 +1,13 @@
 /**
+ * Jest Root/Project§ configuration (@starterkit)
+ *
+ * Used from the root to speedup builds
  *
  * https://jestjs.io/docs/en/configuration.html
  * https://kulshekhar.github.io/ts-jest/user/config/#jest-preset
  *
  */
+
 import { flattenDeep } from 'lodash'
 import glob from 'glob'
 import chalk from 'chalk'

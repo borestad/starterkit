@@ -1,0 +1,28 @@
+// ========================================================================
+//  Typescript CI configuration (@starterkit)
+//
+//  🔗 http://json.schemastore.org/tsconfig
+//  🔗 https://www.typescriptlang.org/docs/handbook/compiler-options.html
+//  🔗 https://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html
+//
+//  Note:
+//  ❌ === Use alternative Eslint instead.
+// ========================================================================
+
+{
+  "extends": "./tsconfig.json",
+  "include": ["**/*.ts"],
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noLib": false,
+    "noUnusedLocals": true,
+    "sourceMap": false,
+    "target": "es6"
+  }
+}

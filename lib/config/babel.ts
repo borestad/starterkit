@@ -1,4 +1,5 @@
 /**
+ * Babel Configuration (@starterkit)
  *
  * https://babeljs.io/docs/en/config-files
  *
