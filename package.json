@@ -48,7 +48,7 @@
     "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
   },
   "workspaces": [
-    "lib",
+    ".starterkit",
     "examples/*",
     "packages/*"
   ],

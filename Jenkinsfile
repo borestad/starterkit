@@ -7,14 +7,14 @@ agent("npm") {
     // 1. Install deps
     stage("Install") {
       withNode("10.13.0") {
-        sh 'lib/bin/install-all'
+        sh '.starterkit/bin/install-all'
       }
     }
 
     // 2. Run CI Steps (build, test, lint etc)
     stage("CI") {
       withNode("10.13.0") {
-        sh 'lib/bin/ci'
+        sh '.starterkit/bin/ci'
       }
     }
   }
