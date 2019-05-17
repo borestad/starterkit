@@ -2,13 +2,12 @@
   "name": "@netent/starterkit",
   "version": "0.0.1",
   "description": "Starterkit cli/tools/configs",
-  "main": "./index.js",
   "private": true,
   "bin": {
-    "starterkit-clean": "./bin/clean.js",
-    "starterkit-postinstall": "./bin/postinstall.js",
-    "starterkit-prepublish": "./bin/prepublish.js",
-    "starterkit-validate": "./bin/validate.js"
+    "starterkit-clean": "./bin/clean",
+    "starterkit-postinstall": "./bin/postinstall",
+    "starterkit-prepublish": "./bin/prepublish",
+    "starterkit-validate": "./bin/validate"
   },
   "scripts": {
     "compile": "tsc -b tsconfig.json --pretty",
