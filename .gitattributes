@@ -1,6 +1,6 @@
 # Automatically normalize line endings for all text-based files
 # http://git-scm.com/docs/gitattributes#_end_of_line_conversion
-* text=auto
+* text=auto eol=lf
 
 # For the following file types, normalize line endings to LF on
 # checkin and prevent conversion to CRLF when they are checked out
@@ -82,6 +82,6 @@
 # Don't allow people to merge changes to these generated files, because the result
 # may be invalid. You need to run "rush update"  or "yarn install" or "npm install" or "pnpm install" again,
 # depending on what package manager you're using
-shrinkwrap.yaml              merge=binary
-npm-shrinkwrap.json          merge=binary
-yarn.lock                    merge=binary
+shrinkwrap.yaml        merge=binary
+npm-shrinkwrap.json    merge=binary
+yarn.lock              merge=binary
