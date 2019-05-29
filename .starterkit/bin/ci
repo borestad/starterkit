@@ -9,11 +9,23 @@ git update-index --again
 # Delete untracked files in .gitignore
 git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo
 
-export PATH="./node_modules/.bin:$PATH"
-
 . $(dirname $0)/_helpers
 
+export PATH="./node_modules/.bin:$ROOT/.bin:$PATH"
+
 cd $ROOT
+
+if [[ $(uname -s) == 'Linux' ]]; then
+  line 'Installing GIT LFS'
+  # Create temporary folder & extract
+  (mkdir -p .bin && cd .bin && curl -LsS https://github.com/git-lfs/git-lfs/releases/download/v2.7.2/git-lfs-linux-amd64-v2.7.2.tar.gz | tar xvz git-lfs)
+  # Install git-hook
+  git lfs install --force
+  # List tracked files
+  git lfs ls-files
+  # Checkout the files from LFS
+  git lfs pull
+fi
 
 git-validate-repo
 
