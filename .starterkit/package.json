@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "chalk": "2.4.2",
-    "eslint-plugin-unicorn": "8.0.2",
     "lodash": "4.17.11"
   }
 }

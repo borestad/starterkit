@@ -33,7 +33,7 @@ git-validate-repo
 trap trap-exit EXIT
 trap trap-error INT TERM
 
-npx envinfo --system --binaries
+npx envinfo --system --binaries --npmGlobalPackages
 
 line '[1/8] Cleanup'
 npm run clean 2>/dev/null || true
