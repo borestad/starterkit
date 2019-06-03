@@ -3,7 +3,8 @@
 export ARTIFACTORY_NPM_REGISTRY=https://artifactory.netent.com/artifactory/api/npm/casino-software-snapshots-npm-local
 export ROOT=$(git rev-parse --show-toplevel)
 export STARTERKIT="$ROOT/.starterkit"
-export PATH="./node_modules/.bin:$PATH"
+export PATH=$(npm bin):$PATH
+export PATH="$ROOT/.bin:$PATH"
 
 hr () {
   "$STARTERKIT/bin/hr" "${@:--}"
@@ -20,7 +21,7 @@ git-validate-repo () {
   #   - never fail
   (git add $ROOT/pom.xml && git commit -m "Update pom.xml") &>/dev/null && hr && echo 'Update pom.xml' && hr || :
 
-  git-is-repo-dirty || (echo 'dirty' && git-show-dirty-repo-error)
+  git-is-repo-dirty || git-show-dirty-repo-error
 }
 
 git-is-repo-clean () {
@@ -32,13 +33,21 @@ git-is-repo-dirty () {
 }
 
 git-show-dirty-repo-error () {
-  print-failure \
-  && echo 'The git repository is "dirty"' \
-  && echo 'Working tree has uncommitted changes, please commit or remove changes before continuing' \
+  print-dirty \
+  && echo 'The git working directory is considered "dirty"' \
+  && echo 'This is usually due to linting/formatting issues - i.e when you forgot to format your code according to the linter rules'\
+  && echo \
+  && echo 'This command usually fixes the problem:' \
+  && echo \
+  && echo "   $ yarn install && yarn fix          # Autofix linting/formatting issues" \
+  && echo "   $ git commit --amend                # Amend previous commit" \
+  && echo \
+  && echo 'This command usually fixes the problem:' \
+  && echo "Working tree has uncommitted changes in these ($(git status -s | wc -l)) files below: " \
   && echo \
   && git status -s \
   && echo \
-  && git diff --color | npx diff-so-fancy \
+  && git diff --color --cached | npx diff-so-fancy \
   && line \
   && exit 1
 }
@@ -53,7 +62,7 @@ trap-error () {
 }
 
 
-# ===================================_he==========================================
+# =============================================================================
 # ⚡ COLORS
 # =============================================================================
 
@@ -125,6 +134,24 @@ cat << "EOF"
   \____/  |_|  |_|   |_| \_|  \____/  |_____/  |______| (_)
 
    - You haz errors!
+
+EOF
+echo -e $RCol
+
+}
+
+print-dirty () {
+echo -e $Red
+cat << "EOF"
+  _____    _____   _____    _______  __     __    _   _   _   _
+ |  __ \  |_   _| |  __ \  |__   __| \ \   / /   | | | | | | | |
+ | |  | |   | |   | |__) |    | |     \ \_/ /    | | | | | | | |
+ | |  | |   | |   |  _  /     | |      \   /     | | | | | | | |
+ | |__| |  _| |_  | | \ \     | |       | |      |_| |_| |_| |_|
+ |_____/  |_____| |_|  \_\    |_|       |_|      (_) (_) (_) (_)
+
+
+   - You haz unformatted code!
 
 EOF
 echo -e $RCol

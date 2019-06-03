@@ -12,7 +12,7 @@ module.exports = {
   '.gitignore': ['node node_modules/@netent/starterkit/bin/validate'],
   '*.{json,md,html,css}': ['prettier -c --write', 'git add'],
   '*.{js,jsx,ts,tsx}': [
-    'npx eslint --fix --ext js --ext jsx --ext ts --ext tsx',
+    'npx eslint --fix --ext .js,.jsx,.ts,.tsx --cache',
     'git add'
   ]
 }

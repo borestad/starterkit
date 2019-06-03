@@ -1,6 +1,7 @@
 # Unlock default behaviours in eslint to not lint dotfiles.
 # https://github.com/eslint/eslint/issues/9942#issuecomment-379347370
 !.*
+!.starterkit/**
 
 /node_modules/.*
 dist

@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/execa": "0.9.0",
-    "@types/lodash": "4.14.126",
+    "@types/lodash": "4.14.133",
     "execa": "1.0.0",
     "glob": "7.1.4",
     "lodash": "4.17.11",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "chalk": "2.4.2",
-    "eslint-plugin-unicorn": "8.0.2",
     "lodash": "4.17.11"
   }
 }

@@ -1,5 +1,5 @@
 /**
- * Jest Root/Project§ configuration (@starterkit)
+ * Jest Root/Project configuration (@starterkit)
  *
  * Used from the root to speedup builds
  *
@@ -8,11 +8,11 @@
  *
  */
 
-import { flattenDeep } from 'lodash'
-import glob from 'glob'
-import chalk from 'chalk'
 import { Config } from '@jest/types'
-import { isNotCI, GIT, rootPkg, pkgUpDir } from '../tools'
+import chalk from 'chalk'
+import * as glob from 'glob'
+import { flattenDeep } from 'lodash'
+import { GIT, isNotCI, pkgUpDir, rootPkg } from '../tools'
 
 const { yellow } = chalk
 const isWatchMode = process.argv.includes('--watch')
@@ -26,7 +26,7 @@ const projects = flattenDeep(
   (rootPkg('workspaces') as string[])
     .map(GIT.fromGitRoot)
     .map(x => glob.sync(`${x}/jest.config.js`))
-).map(x => pkgUpDir(x))
+).map(x => pkgUpDir(x as string))
 
 const config: Config.InitialOptions = {
   // preset: 'ts-jest/presets/js-with-ts',
