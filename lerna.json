@@ -1,7 +1,7 @@
 {
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": [".starterkit", "examples/*", "config/*", "packages/*"],
+  "packages": [".starterkit", "examples/*", "packages/*"],
   "command": {
     "version": {
       "allowBranch": ["master"],

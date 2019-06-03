@@ -1,5 +1,5 @@
 {
-  "name": "@netent/starterkit",
+  "name": "@netent/starterkit-playground",
   "description": "Starterkit is a `batteries included` base for creating awesome software using Typescript and best practices within Netent",
   "version": "1.0.0",
   "private": true,
@@ -11,32 +11,6 @@
   },
   "maintainers": [
     "Johan Borestad <johan.borestad@netent.com>"
-  ],
-  "files": [
-    "/lib",
-    ".editorconfig",
-    ".eslintignore",
-    ".eslintrc.js",
-    ".gitattributes",
-    ".gitconfig",
-    ".gitignore",
-    ".gitmessage",
-    ".huskyrc.js",
-    ".lintstagedrc.js",
-    ".npmrc",
-    ".prettierignore",
-    ".yarnrc",
-    "Jenkinsfile",
-    "LICENSE",
-    "README.md",
-    "babel.config.js",
-    "jenkins.xml",
-    "lerna.json",
-    "package.json",
-    "sonar-project.properties",
-    "tsconfig.json",
-    "wallaby.js",
-    "yarn.lock"
   ],
   "homepage": "https://git.netent.com/projects/GS/repos/starterkit",
   "bugs": {

@@ -5,7 +5,7 @@
 
 [commit]
   verbose = true
-  template = .gitmessage
+  template = .starterkit/config/.gitmessage
 
 [credential]
 
