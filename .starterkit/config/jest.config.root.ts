@@ -1,5 +1,5 @@
 /**
- * Jest Root/Project§ configuration (@starterkit)
+ * Jest Root/Project configuration (@starterkit)
  *
  * Used from the root to speedup builds
  *
