@@ -9,7 +9,7 @@
     "url": "https://www.netent.com/"
   },
   "engines": {
-    "node": "10.x",
+    "node": ">= 10.x",
     "yarn": ">= 1.12.x",
     "npm": ">= this-repo-is-yarn-only:see-npmrc"
   },

@@ -11,10 +11,9 @@ git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/n
 
 . $(dirname $0)/_helpers
 
-export PATH="./node_modules/.bin:$ROOT/.bin:$PATH"
-
 cd $ROOT
 
+# Download/Install statically compiled GIT LFS
 if [[ $(uname -s) == 'Linux' ]]; then
   line 'Installing GIT LFS'
   # Create temporary folder & extract
@@ -26,6 +25,8 @@ if [[ $(uname -s) == 'Linux' ]]; then
   # Checkout the files from LFS
   git lfs pull
 fi
+
+cd $ROOT
 
 git-validate-repo
 
@@ -41,24 +42,24 @@ line '[2/8] Install'
 $STARTERKIT/bin/install-all
 
 line '[3/8] Custom validation'
-yarn validate
+npx yarn validate
 
 line '[4/8] Codestyle & Lint'
-yarn lint
+npx yarn lint
 
 git-validate-repo
 
 line '[5/8] Compile'
-yarn compile
+npx yarn compile
 git-validate-repo
 
 line '[6/8] Run tests'
-yarn test:unit
-yarn test:e2e
+npx yarn test:unit
+npx yarn test:e2e
 git-validate-repo
 
 line '[7/8] Build packages'
-yarn build
+npx yarn build
 git-validate-repo
 
 line '[8/8] Publish packages (if version is bumped)'

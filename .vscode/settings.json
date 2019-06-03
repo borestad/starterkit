@@ -34,8 +34,8 @@
   "editor.autoIndent": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-    "source.organizeImports": false,
-    "source.fixAll.tslint": true
+    "source.organizeImports": true,
+    "source.fixAll.tslint": false
   },
   "editor.codeLens": true,
   "editor.fontLigatures": true,
@@ -60,6 +60,7 @@
   "extensions.ignoreRecommendations": false,
   "files.associations": {
     ".*rc": "properties",
+    ".bash*": "shellscript",
     "package.json": "json"
   },
   "files.exclude": {
@@ -77,7 +78,6 @@
     "**/dist": true
   },
   "files.trimTrailingWhitespace": true,
-  "files.useExperimentalFileWatcher": true,
   "files.watcherExclude": {
     "**/*.log": true,
     "**/.*cache*": true,
