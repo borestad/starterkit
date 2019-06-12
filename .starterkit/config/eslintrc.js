@@ -139,11 +139,6 @@ module.exports = {
               { blankLine: 'always', prev: '*', next: common }
             ]
           })()
-          // {
-          //   blankLine: 'always',
-          //   prev: ['*'],
-          //   next: ['*']
-          // }
         ],
 
         /**
@@ -193,6 +188,7 @@ module.exports = {
         'import/export': 'error',
         'import/extensions': ['error', 'never'],
         'import/newline-after-import': 'error',
+        'import/no-extraneous-dependencies': 'error',
         'import/order': [
           'error',
           {

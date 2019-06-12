@@ -5,6 +5,7 @@
     "outDir": "./node_modules/.tmp/build.tsc",
     "module": "esnext",
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "allowSyntheticDefaultImports": true
   }
 }

@@ -32,6 +32,7 @@
     "@netent/starterkit": "*"
   },
   "dependencies": {
-    "@scope/example-lib1": "*"
+    "@scope/example-lib1": "*",
+    "ts-node": "8.2.0"
   }
 }

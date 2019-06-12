@@ -52,6 +52,22 @@ git-show-dirty-repo-error () {
   && exit 1
 }
 
+
+install-git-lfs() {
+  # Download/Install statically compiled GIT LFS
+  if [[ $(uname -s) == 'Linux' ]]; then
+    line 'Installing GIT LFS'
+    # Create temporary folder & extract
+    (mkdir -p .bin && cd .bin && curl -LsS https://github.com/git-lfs/git-lfs/releases/download/v2.7.2/git-lfs-linux-amd64-v2.7.2.tar.gz | tar xvz git-lfs)
+    # Install git-hook
+    git lfs install --force
+    # List tracked files
+    git lfs ls-files
+    # Checkout the files from LFS
+    git lfs pull
+  fi
+}
+
 trap-exit () {
   err=$?
 }

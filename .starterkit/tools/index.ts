@@ -7,7 +7,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import * as path from 'path'
 import chalk from 'chalk'
-import * as execa from 'execa'
+import execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
 import { compact, isString, kebabCase, memoize, noop } from 'lodash'
@@ -26,10 +26,9 @@ export const isCI = Boolean(_isCI)
 
 export const isNotCI = !isCI
 
-export async function exec(cmd: string) {
-  return execa.shell(cmd.trim(), {
-    stdio: 'inherit'
-  })
+// export async function exec(cmd: string, options?: execa.Options) {
+export async function exec(cmd: string, options?: execa.Options) {
+  return execa.shell(cmd.trim(), Object.assign({ stdio: 'inherit' }, options))
 }
 
 /**
@@ -106,6 +105,9 @@ export const pkgUpDir = (cwd: string) => {
   return path.parse(pkgUp(cwd)).dir
 }
 
+export const br = (lines = 1) => {
+  Array.from(new Array(lines)).forEach(() => console.log())
+}
 // ----------------------------------------------------------------------------
 // GIT
 // ----------------------------------------------------------------------------
