@@ -3,6 +3,10 @@
 const { remove } = require('fs-extra')
 const { exec, GIT, isNotCI, run, br } = require('../tools')
 
+const log = str => {
+  return console.log(`✓ postinstall > ${str}`)
+}
+
 /**
  * PostInstall
  * Runs after `yarn install` is finished
@@ -13,33 +17,33 @@ run(async function postInstall() {
   // Note: Git LFS smudge filter breaks the CI.
   // Atm - we can only use .gitconfig in dev mode
   if (isNotCI) {
-    console.log('✓ postinstall > Linking .gitconfig')
+    log('Linking .gitconfig')
     await exec(
       `git config --local include.path ../.starterkit/config/.gitconfig`
     )
   }
 
-  console.log('✓ postinstall > Cleanup')
+  log('Cleanup')
   await remove(`${GIT.ROOT}/package-lock.json`)
 
-  console.log('✓ postinstall > Lerna linking ...')
+  log('Lerna linking ...')
   await exec(`npx lerna link --loglevel warn`)
 
-  console.log('✓ postinstall > Cleanup existing GIT-hooks')
+  log('Cleanup existing GIT-hooks')
   exec('rm -f .git/hooks/*')
 
   if (isNotCI) {
-    console.log('✓ postinstall > Install git hooks (husky)')
+    log('Install git hooks (husky)')
     await exec(`node ${GIT.ROOT}/node_modules/husky/husky.js install`, {
       stdio: 'ignore'
     })
   }
 
-  console.log('✓ postinstall > Install git hooks (lfs)')
+  log('Install git hooks (lfs)')
   await exec(`git lfs install --force`, {
     stdio: 'ignore'
   })
 
-  console.log('✓ postinstall > CLOC stats') || br()
+  log('CLOC stats') || br()
   await exec(`npx cloc --hide-rate --vcs=git .`)
 })

@@ -13,10 +13,6 @@ git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/n
 
 cd $ROOT
 
-install-git-lfs
-
-cd $ROOT
-
 git-validate-repo
 
 trap trap-exit EXIT
@@ -24,34 +20,31 @@ trap trap-error INT TERM
 
 npx envinfo --system --binaries --npmGlobalPackages
 
-line '[1/8] Cleanup'
+line '[1/7] Cleanup'
 npm run clean 2>/dev/null || true
 
-line '[2/8] Install'
-$STARTERKIT/bin/install-all
-
-line '[3/8] Custom validation'
+line '[2/7] Custom validation'
 npx yarn validate
 
-line '[4/8] Codestyle & Lint'
+line '[3/7] Codestyle & Lint'
 npx yarn lint
 
 git-validate-repo
 
-line '[5/8] Compile'
+line '[4/7] Compile'
 npx yarn compile
 git-validate-repo
 
-line '[6/8] Run tests'
+line '[5/7] Run tests'
 npx yarn test:unit
 npx yarn test:e2e
 git-validate-repo
 
-line '[7/8] Build packages'
+line '[6/7] Build packages'
 npx yarn build
 git-validate-repo
 
-line '[8/8] Publish packages (if version is bumped)'
+line '[7/7] Publish packages (if version is bumped)'
 $STARTERKIT/bin/publish
 
 line

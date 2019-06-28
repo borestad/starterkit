@@ -3,6 +3,10 @@ set +x -eEu
 
 . `dirname $0`/_helpers
 
+line 'Install dependencies'
+
+cd $ROOT
+install-git-lfs
 cd $ROOT
 
 YARN_WANTED_VERSION=`node -p -e require\(\'./package.json\'\).dependencies.yarn`
@@ -24,9 +28,9 @@ else
   cmd="npx yarn@$YARN_WANTED_VERSION $YARN_ARGS"
 fi
 
-echo -e "💥 Yarn [ required version ]      $color$YARN_WANTED_VERSION$R"
-echo -e "💥 Yarn [ installed version ]     $color$YARN_INSTALLED_VERSION$R"
-echo -e "💥 Yarn [ installation ]         $YARN_METHOD"
+echo -e "💥 yarn [ required version ]      $color$YARN_WANTED_VERSION$R"
+echo -e "💥 yarn [ installed version ]     $color$YARN_INSTALLED_VERSION$R"
+echo -e "💥 yarn [ installation ]          $YARN_METHOD"
 
 echo
 echo -e "$Gray\$ $cmd $R"
