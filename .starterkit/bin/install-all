@@ -3,7 +3,8 @@ set +x -eEu
 
 . `dirname $0`/_helpers
 
-line 'Install dependencies'
+hr
+echo -e "⚡ Install dependencies"
 
 cd $ROOT
 install-git-lfs

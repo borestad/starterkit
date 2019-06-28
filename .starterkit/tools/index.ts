@@ -48,12 +48,10 @@ export const onSuccess = noop
  * Run handler
  */
 export const run = (fn: Function) => {
-  isNotCI && log()
-  log(
-    `=== ${chalk.underline.yellow(kebabCase(`${fn.name}`).toUpperCase())} ===`
-  )
-
-  isNotCI && log()
+  const text = chalk.underline.yellow
+  log()
+  log(`=== ${text(kebabCase(`${fn.name}`).toUpperCase())} ===`)
+  log()
 
   return fn()
     .then(onSuccess)
