@@ -10,7 +10,7 @@ import chalk from 'chalk'
 import execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
-import { compact, isString, kebabCase, memoize, noop } from 'lodash'
+import { compact, isString, kebabCase, memoize, noop, times } from 'lodash'
 import * as _pkgUp from 'pkg-up'
 
 const { log } = console
@@ -62,7 +62,7 @@ export const run = (fn: Function) => {
  * Returns a HOC exec function
  */
 export const execFn = (cmd: string) => () => {
-  return execa.shellSync(cmd.trim()).stdout
+  return execa.shellSync(cmd.trim()).stdout.trim()
 }
 
 /**
@@ -89,7 +89,6 @@ export const rootPkg = (prop?: string) => {
 
 /**
  * Find the closest package.json file from path
- * @param {*} path
  */
 export const pkgUp = (cwd: string) => {
   return _pkgUp.sync({ cwd }) || path.join(GIT.ROOT, 'package.json')
@@ -97,15 +96,35 @@ export const pkgUp = (cwd: string) => {
 
 /**
  * Find the directory with closest package.json file from path
- * @param {*} path
  */
 export const pkgUpDir = (cwd: string) => {
   return path.parse(pkgUp(cwd)).dir
 }
 
+/**
+ * Creates n number of linebreaks
+ */
 export const br = (lines = 1) => {
-  Array.from(new Array(lines)).forEach(() => console.log())
+  times(lines, () => console.log())
 }
+
+/**
+ * Formats a Date to a readable string like: "2019-07-02 13:45"
+ */
+export const time = (d = new Date()) => {
+  const format = (x: number) => x.toString().padStart(2, '0')
+
+  const [year, month, date, hours, minutes] = [
+    d.getFullYear(),
+    d.getMonth() + 1,
+    d.getDate(),
+    d.getHours(),
+    d.getMinutes()
+  ].map(format)
+
+  return `${year}-${month}-${date} ${hours}:${minutes}`
+}
+
 // ----------------------------------------------------------------------------
 // GIT
 // ----------------------------------------------------------------------------
@@ -171,5 +190,17 @@ export const GIT = {
    */
   relativeToGitRoot(to: string) {
     return relativeFrom({ to, from: GIT.ROOT })
+  },
+
+  lastCommitDate() {
+    return time(new Date(mexec` git log -1 --format=%cd`()))
+  },
+
+  lastCommitAuthor() {
+    return mexec` git log -1 --format=%an`()
+  },
+
+  lastCommitMessage() {
+    return mexec` git log -1 --format=%B`()
   }
 }

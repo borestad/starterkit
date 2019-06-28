@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { exec, GIT, isNotCI, run, br } = require('../tools')
+const { exec, GIT, isNotCI, isCI, run, br } = require('../tools')
 
 const log = str => {
-  return console.log(`⚡ ${str}`)
+  return console.log(`❯ ${str}`)
 }
 
 /**
@@ -25,7 +25,7 @@ run(async function postInstall() {
   log('Lerna linking ...')
   await exec(`npx lerna link --loglevel warn`)
 
-  log('Cleanup existing GIT-hooks')
+  log('Cleanup git hooks')
   exec('rm -f .git/hooks/*')
 
   if (isNotCI) {
@@ -40,6 +40,10 @@ run(async function postInstall() {
     stdio: 'ignore'
   })
 
-  log('CLOC stats') || br()
-  await exec(`npx cloc --hide-rate --vcs=git .`)
+  if (isCI) {
+    log('CLOC stats') || br()
+    await exec(`npx cloc --hide-rate --vcs=git .`)
+  } else {
+    console.log()
+  }
 })
