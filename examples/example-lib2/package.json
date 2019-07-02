@@ -33,6 +33,6 @@
   },
   "dependencies": {
     "@scope/example-lib1": "*",
-    "ts-node": "8.2.0"
+    "ts-node": "8.3.0"
   }
 }
