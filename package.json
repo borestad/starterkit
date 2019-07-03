@@ -70,7 +70,6 @@
     "@typescript-eslint/eslint-plugin": "1.11.0",
     "@typescript-eslint/parser": "1.11.0",
     "babel-plugin-loop-optimizer": "1.4.1",
-    "blend-promise-utils": "1.22.4",
     "chalk": "2.4.2",
     "del-cli": "2.0.0",
     "eslint": "6.0.1",

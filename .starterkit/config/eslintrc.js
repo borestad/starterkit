@@ -79,7 +79,17 @@ module.exports = {
 
       globals: {
         Atomics: 'readonly',
-        SharedArrayBuffer: 'readonly'
+        SharedArrayBuffer: 'readonly',
+        PIXI: true,
+        PlayUI: true,
+        ModalUI: true,
+        __DEV__: true,
+        __DEBUG__: true,
+        __TEST__: true,
+        __PROD__: true,
+        __BUILD_DATE__: true,
+        __VERSION__: true,
+        __GITHASH__: true
       },
 
       overrides: [
@@ -99,6 +109,7 @@ module.exports = {
          * https://eslint.org/docs/rules/
          * ----------------------------------------------------
          */
+        camelcase: 'off',
         'no-unused-expressions': 'off',
         'no-unused-vars': 'off',
         'global-require': 'off',
@@ -112,6 +123,7 @@ module.exports = {
             ignoreConstructors: true
           }
         ],
+        'lines-between-class-members': ['error', 'always'],
         // Code-Style rules
         // https://eslint.org/docs/rules/padding-line-between-statements
         // Warning: Don't mess with these unless you know what you'e doing since
@@ -151,20 +163,18 @@ module.exports = {
           'error',
           { functions: false }
         ],
-        '@typescript-eslint/explicit-function-return-type': [
-          'warning',
-          { allowExpressions: true },
-          { allowTypedFunctionExpressions: false }
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-member-accessibility': [
+          'error',
+          { accessibility: 'no-public' }
         ],
-        '@typescript-eslint/explicit-member-accessibility': {
-          accessibility: 'no-public'
-        },
         '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/camelcase': ['error'],
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-object-literal-type-assertion': [
           'error',
-          { 'allow-arguments': true }
+          { allowAsParameter: false }
         ],
         '@typescript-eslint/no-unused-vars': [
           'error',
@@ -213,11 +223,11 @@ module.exports = {
         'unicorn/error-message': 'error',
         'unicorn/filename-case': ['error', { case: 'kebabCase' }],
         'unicorn/import-index': 'error',
-        'unicorn/new-for-builtins': 'error',
+        'unicorn/new-for-builtins': 'off',
         'unicorn/no-abusive-eslint-disable': 'error',
         'unicorn/no-array-instanceof': 'error',
         'unicorn/no-console-spaces': 'error',
-        'unicorn/no-for-loop': 'error',
+        'unicorn/no-for-loop': 'off',
         'unicorn/no-process-exit': 'error',
         'unicorn/no-unreadable-array-destructuring': 'error',
         'unicorn/no-unused-properties': 'error',

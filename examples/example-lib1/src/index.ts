@@ -32,10 +32,12 @@ export class GetterSetter {
 
 export class GenericsExample1<T> {
   value!: T
+
   setValue(value: T) {
     this.value = value
     return this
   }
+
   getValue(): T {
     return this.value
   }

@@ -10,7 +10,7 @@ import chalk from 'chalk'
 import execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
-import { compact, isString, kebabCase, memoize, noop, times } from 'lodash'
+import { compact, isString, kebabCase, once, noop, times } from 'lodash'
 import * as _pkgUp from 'pkg-up'
 
 const { log } = console
@@ -25,11 +25,6 @@ const str2Array = (str: string) => {
 export const isCI = Boolean(_isCI)
 
 export const isNotCI = !isCI
-
-// export async function exec(cmd: string, options?: execa.Options) {
-export async function exec(cmd: string, options?: execa.Options) {
-  return execa.shell(cmd.trim(), Object.assign({ stdio: 'inherit' }, options))
-}
 
 /**
  * Generic onError / Exit handler
@@ -58,18 +53,28 @@ export const run = (fn: Function) => {
     .catch(onError)
 }
 
-/**
- * Returns a HOC exec function
- */
-export const execFn = (cmd: string) => () => {
-  return execa.shellSync(cmd.trim()).stdout.trim()
+type CmdArguments = string | TemplateStringsArray
+
+export async function exec(cmd: CmdArguments, options?: execa.Options) {
+  cmd = (typeof cmd === 'object' ? cmd[0] : cmd).trim()
+  options = Object.assign({ stdio: 'inherit' }, options)
+
+  return execa.command(cmd, options)
 }
 
 /**
- * Returns a memoized exec function
+ * Returns a HOC exec function
  */
-export const mexec = (cmd: TemplateStringsArray) => {
-  return memoize(execFn(cmd[0]))
+export const execFn = (cmd: CmdArguments) => () => {
+  cmd = (typeof cmd === 'object' ? cmd[0] : cmd).trim()
+  return execa.commandSync(cmd).stdout.toString()
+}
+
+/**
+ * Returns a exec that only runs once
+ */
+export const execFnOnce = (cmd: TemplateStringsArray) => {
+  return once(execFn(cmd))
 }
 
 /**
@@ -129,9 +134,9 @@ export const time = (d = new Date()) => {
 // GIT
 // ----------------------------------------------------------------------------
 
-const _gitRoot = mexec` git rev-parse --show-toplevel`
-const _gitCurrentBranch = mexec` git symbolic-ref --short HEAD`
-const _gitShortHash = mexec` git rev-parse --short HEAD`
+const _gitRoot = execFnOnce` git rev-parse --show-toplevel`
+const _gitCurrentBranch = execFnOnce` git symbolic-ref --short HEAD`
+const _gitShortHash = execFnOnce` git rev-parse --short HEAD`
 
 export const GIT = {
   /**
@@ -159,7 +164,7 @@ export const GIT = {
    * Returns an array of ignored files still in index
    */
   get IGNORED_FILES_STILL_IN_INDEX() {
-    return str2Array(mexec` git ls-files --ignored --exclude-standard`())
+    return str2Array(execFn` git ls-files --ignored --exclude-standard`())
   },
 
   /**
@@ -167,7 +172,7 @@ export const GIT = {
    */
   get IGNORED_FILES() {
     return str2Array(
-      mexec` git ls-files --directory --others --exclude-standard --ignored`()
+      execFn` git ls-files --directory --others --exclude-standard --ignored`()
     )
   },
 
@@ -193,14 +198,14 @@ export const GIT = {
   },
 
   lastCommitDate() {
-    return time(new Date(mexec` git log -1 --format=%cd`()))
+    return time(new Date(execFn` git log -1 --format=%cd`()))
   },
 
   lastCommitAuthor() {
-    return mexec` git log -1 --format=%an`()
+    return execFn` git log -1 --format=%an`()
   },
 
   lastCommitMessage() {
-    return mexec` git log -1 --format=%B`()
+    return execFn` git log -1 --format=%B`()
   }
 }
