@@ -109,15 +109,12 @@ module.exports = {
          * https://eslint.org/docs/rules/
          * ----------------------------------------------------
          */
-        // 'no-undef': 'off',
         camelcase: 'off',
         'no-unused-expressions': 'off',
-        // 'no-useless-escape': 'off',
-        'no-unused-vars': 'off', // Handled by '@typescript-eslint/no-unused-vars'
+        'no-unused-vars': 'off',
         'global-require': 'off',
         'no-var': 'error',
         'prefer-const': 'error',
-        // 'prefer-template': 'off',
         'prefer-template': 'error',
         'object-shorthand': [
           'error',
@@ -126,15 +123,19 @@ module.exports = {
             ignoreConstructors: true
           }
         ],
+        'lines-between-class-members': [
+          'error',
+          'always',
+          { exceptAfterSingleLine: true }
+        ],
 
         /**
          * Sonar rules
          */
-        // 'sonarjs/no-duplicate-string': 'off',
-        // 'sonarjs/no-identical-functions': 'off',
-        // 'sonarjs/cognitive-complexity': 'warn',
+        'sonarjs/no-duplicate-string': 'off',
+        'sonarjs/no-identical-functions': 'off',
+        'sonarjs/cognitive-complexity': 'warn',
 
-        'lines-between-class-members': ['error', 'always'],
         // Code-Style rules
         // https://eslint.org/docs/rules/padding-line-between-statements
         // Warning: Don't mess with these unless you know what you'e doing since
@@ -148,18 +149,23 @@ module.exports = {
               'cjs-export',
               'class',
               'directive',
-              'export', // Remove?
               'for',
               'function',
               'if',
-              'multiline-const', // Remove?
               'throw',
               'try'
             ]
 
             return [
               { blankLine: 'always', prev: common, next: '*' },
-              { blankLine: 'always', prev: '*', next: common }
+              { blankLine: 'always', prev: '*', next: common },
+              { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+              { blankLine: 'always', prev: '*', next: 'export' },
+              {
+                blankLine: 'any',
+                prev: ['const', 'let', 'export'],
+                next: ['const', 'let', 'export']
+              }
             ]
           })()
         ],
@@ -169,8 +175,8 @@ module.exports = {
          * https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
          * ----------------------------------------------------
          */
-        // '@typescript-eslint/ban-types': 'off',
-        // '@typescript-eslint/camelcase': 'off',
+        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-use-before-define': [
           'error',
@@ -182,8 +188,6 @@ module.exports = {
           { accessibility: 'no-public' }
         ],
         '@typescript-eslint/no-var-requires': 'off',
-        // '@typescript-eslint/camelcase': 'off'
-        '@typescript-eslint/camelcase': ['error'],
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-object-literal-type-assertion': [
@@ -206,7 +210,7 @@ module.exports = {
          * Import Plugin Rules
          * ----------------------------------------------------
          */
-        // 'import/no-unresolved': 'off'
+        'import/no-unresolved': 'off', // FIXME: Doesn't resolve '@netent/origin'
         'import/no-useless-path-segments': ['error'],
         'import/named': 'error',
         'import/namespace': 'error',
