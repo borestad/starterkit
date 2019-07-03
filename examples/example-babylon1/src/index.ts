@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as BABYLON from 'babylonjs'
 
 // ----------------------------------------------------------------------------
@@ -45,20 +44,20 @@ function createScene() {
   camera.attachControl(canvas, true)
 
   // Add lights to the scene
-  const light1 = new BABYLON.HemisphericLight(
+  const _light1 = new BABYLON.HemisphericLight(
     'light1',
     new BABYLON.Vector3(1, 1, 0),
     scene
   )
 
-  const light2 = new BABYLON.PointLight(
+  const _light2 = new BABYLON.PointLight(
     'light2',
     new BABYLON.Vector3(0, 1, -1),
     scene
   )
 
   // Add and manipulate meshes in the scene
-  const sphere = BABYLON.MeshBuilder.CreateSphere(
+  const _sphere = BABYLON.MeshBuilder.CreateSphere(
     'sphere',
     { diameter: 3 },
     scene

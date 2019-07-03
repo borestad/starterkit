@@ -109,12 +109,15 @@ module.exports = {
          * https://eslint.org/docs/rules/
          * ----------------------------------------------------
          */
+        // 'no-undef': 'off',
         camelcase: 'off',
         'no-unused-expressions': 'off',
-        'no-unused-vars': 'off',
+        // 'no-useless-escape': 'off',
+        'no-unused-vars': 'off', // Handled by '@typescript-eslint/no-unused-vars'
         'global-require': 'off',
         'no-var': 'error',
         'prefer-const': 'error',
+        // 'prefer-template': 'off',
         'prefer-template': 'error',
         'object-shorthand': [
           'error',
@@ -123,6 +126,14 @@ module.exports = {
             ignoreConstructors: true
           }
         ],
+
+        /**
+         * Sonar rules
+         */
+        // 'sonarjs/no-duplicate-string': 'off',
+        // 'sonarjs/no-identical-functions': 'off',
+        // 'sonarjs/cognitive-complexity': 'warn',
+
         'lines-between-class-members': ['error', 'always'],
         // Code-Style rules
         // https://eslint.org/docs/rules/padding-line-between-statements
@@ -137,11 +148,11 @@ module.exports = {
               'cjs-export',
               'class',
               'directive',
-              'export',
+              'export', // Remove?
               'for',
               'function',
               'if',
-              'multiline-const',
+              'multiline-const', // Remove?
               'throw',
               'try'
             ]
@@ -158,6 +169,8 @@ module.exports = {
          * https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
          * ----------------------------------------------------
          */
+        // '@typescript-eslint/ban-types': 'off',
+        // '@typescript-eslint/camelcase': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-use-before-define': [
           'error',
@@ -169,6 +182,7 @@ module.exports = {
           { accessibility: 'no-public' }
         ],
         '@typescript-eslint/no-var-requires': 'off',
+        // '@typescript-eslint/camelcase': 'off'
         '@typescript-eslint/camelcase': ['error'],
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
@@ -180,10 +194,11 @@ module.exports = {
           'error',
           {
             vars: 'all',
+            varsIgnorePattern: '^[_$]',
             args: 'after-used',
             caughtErrors: 'none',
             ignoreRestSiblings: true,
-            argsIgnorePattern: '^_'
+            argsIgnorePattern: '^[_$]'
           }
         ],
 
@@ -191,6 +206,7 @@ module.exports = {
          * Import Plugin Rules
          * ----------------------------------------------------
          */
+        // 'import/no-unresolved': 'off'
         'import/no-useless-path-segments': ['error'],
         'import/named': 'error',
         'import/namespace': 'error',
