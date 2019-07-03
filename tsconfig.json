@@ -37,7 +37,6 @@
       { "name": "typescript-tslint-plugin" }
     ],
 
-
     // ========================================================================s
     // 💥 Basic options
     // =======================s=================================================s
@@ -53,10 +52,11 @@
     "rootDir": ".",                               // 🔅 Specify the root directory of input files. Use to control the output directory structure with --outDir.
     "sourceMap": true,                            // 🔅 Generates corresponding '.map' file.
     "target": "esnext",                           // 🔅 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    "allowJs": false,                             // 🔅 Allow javascript files to be compiled.
+    "allowJs": true,                             // 🔅 Allow javascript files to be compiled.
     "checkJs": false,                             // 🔅 Report errors in .js files.
-    // "composite": true,                         // 🔅 Enable project compilation
-    // "downlevelIteration": true,                // 🔅 Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'.
+    // "composite": true,
+
+    "downlevelIteration": true,                   // 🔅 Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'.
     // "isolatedModules": true,                   // 🔅 Transpile each file as a separate module (similar to 'ts.transpileModule').
     // "jsx": "preserve",                         // 🔅 Specify JSX code generation: 'preserve', 'react-native', or 'react'.
     // "outFile": "./",                           // 🔅 Concatenate and emit output to single file.
@@ -67,7 +67,7 @@
     // ========================================================================s
     // 💥 Strict Type-Checking Options
     // ========================================================================s
-    "strict": true,                           // 🔅 Enable all strict type-checking options.
+    "strict": false,                           // 🔅 Enable all strict type-checking options.
     "noImplicitAny": false,                   // 🔅 Raise error on expressions and declarations with an implied 'any' type.
     // "strictNullChecks": true,              // 🔅 Enable strict null checks.
     // "strictFunctionTypes": true,           // 🔅 Enable strict checking of function types.
@@ -95,6 +95,7 @@
     "moduleResolution": "node",               // 🔅 Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
     "resolveJsonModule": true,                // 🔅 Allows for importing, extracting types from and generating .json files
     // "paths": {},                           // 🔅 A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    "preserveConstEnums": true,                   // 🔅 Do not erase const enum declarations in generated code. See const enums documentation for more details.
     // "preserveSymlinks": true,              // 🔅 Do not resolve the real path of symlinks.
     // "rootDirs": [],                        // 🔅 List of root folders whose combined content represents the structure of the project at runtime.
     "typeRoots": [                            // 🔅 List of folders to include type definitions from.
