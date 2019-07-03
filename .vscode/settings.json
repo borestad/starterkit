@@ -4,7 +4,7 @@
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[properties]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[javascriptreact]": {
     "editor.formatOnSave": false
@@ -24,23 +24,27 @@
     "editor.wordWrap": "on"
   },
   "[typescript]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false, // Handled by "eslint.autoFixOnSave"
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[typescriptreact]": {
     "editor.formatOnSave": false
   },
+  "[shellscript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoIndent": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
-    "source.organizeImports": true,
+    "source.organizeImports": false,
     "source.fixAll.tslint": false
   },
   "editor.codeLens": true,
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.quickSuggestions": {
     "comments": true,
     "other": true,
@@ -60,6 +64,8 @@
   "extensions.ignoreRecommendations": false,
   "files.associations": {
     ".*rc": "properties",
+    ".gitattributes": "properties",
+    ".gitignore": "properties",
     ".bash*": "shellscript",
     "package.json": "json"
   },
@@ -101,8 +107,10 @@
     "**/reports": true
   },
   "search.smartCase": true,
-  "tslint.ignoreDefinitionFiles": false,
+  "tslint.ignoreDefinitionFiles": true,
   "tslint.jsEnable": false,
+  "typescript.autoClosingTags": true,
+  "editor.folding": true,
   "typelens.decorateunused": true,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
@@ -114,5 +122,12 @@
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.paths": true,
   "typescript.suggestionActions.enabled": true,
-  "typescript.suggest.completeJSDocs": true
+  "typescript.suggest.completeJSDocs": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "merge-conflict.decorators.enabled": true,
+  "typescript.preferences.renameShorthandProperties": true,
+  "editor.cursorBlinking": "smooth"
+
+  // "typescript.suggest.enabled": true
+  //"terminal.integrated.shell.windows": "bash"
 }

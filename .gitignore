@@ -258,8 +258,7 @@ settings.xml
 # Avoid using same foldername as 'npm pack'
 package
 
-
 # -----------------------------------------------------------------------------
-### GIT LFS Binary
+### Temporary binary files
 # -----------------------------------------------------------------------------
 .bin

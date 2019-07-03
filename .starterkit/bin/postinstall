@@ -1,20 +1,49 @@
 #!/usr/bin/env node
 
-const { remove } = require('fs-extra')
-const { exec, GIT, isNotCI, run } = require('../tools')
+const { exec, GIT, isNotCI, isCI, run, br } = require('../tools')
+
+const log = str => {
+  return console.log(`❯ ${str}`)
+}
 
 /**
  * PostInstall
  * Runs after `yarn install` is finished
  */
 run(async function postInstall() {
-  // FIXME: await exec(`git lfs install`)
+  process.chdir(GIT.ROOT)
 
-  await exec(`git config --local include.path ../.starterkit/config/.gitconfig`)
-  await remove(`${GIT.ROOT}/package-lock.json`)
-  await exec(`npx lerna link`)
+  // Note: Git LFS smudge filter breaks the CI.
+  // Atm - we can only use .gitconfig in dev mode
+  if (isNotCI) {
+    log('Linking .gitconfig')
+    await exec(
+      `git config --local include.path ../.starterkit/config/.gitconfig`
+    )
+  }
+
+  log('Lerna linking ...')
+  await exec(`npx lerna link --loglevel warn`)
+
+  log('Cleanup git hooks')
+  exec('rm -f .git/hooks/*')
 
   if (isNotCI) {
-    await exec(`node ${GIT.ROOT}/node_modules/husky/husky.js install`)
+    log('Install git hooks (husky)')
+    await exec(`node ${GIT.ROOT}/node_modules/husky/husky.js install`, {
+      stdio: 'ignore'
+    })
+  }
+
+  log('Install git hooks (lfs)')
+  await exec(`git lfs install --force`, {
+    stdio: 'ignore'
+  })
+
+  if (isCI) {
+    log('CLOC stats') || br()
+    await exec(`npx cloc --hide-rate --vcs=git .`)
+  } else {
+    console.log()
   }
 })

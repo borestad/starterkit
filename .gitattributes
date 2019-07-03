@@ -33,40 +33,6 @@
 *.xhtml       text eol=lf
 *.xml         text eol=lf
 
-#
-## These files are binary and should be left untouched
-#
-# (binary is a macro for -text -diff)
-*.7z            filter=lfs diff=lfs merge=lfs -text
-*.acf           filter=lfs diff=lfs merge=lfs -text
-*.dds           filter=lfs diff=lfs merge=lfs -text
-*.env           filter=lfs diff=lfs merge=lfs -text
-*.eot           filter=lfs diff=lfs merge=lfs -text
-*.fla           filter=lfs diff=lfs merge=lfs -text
-*.flv           filter=lfs diff=lfs merge=lfs -text
-*.gif           filter=lfs diff=lfs merge=lfs -text
-*.gz            filter=lfs diff=lfs merge=lfs -text
-*.gzip          filter=lfs diff=lfs merge=lfs -text
-*.hdr           filter=lfs diff=lfs merge=lfs -text
-*.ico           filter=lfs diff=lfs merge=lfs -text
-*.jpeg          filter=lfs diff=lfs merge=lfs -text
-*.jpg           filter=lfs diff=lfs merge=lfs -text
-*.mov           filter=lfs diff=lfs merge=lfs -text
-*.mp3           filter=lfs diff=lfs merge=lfs -text
-*.mp4           filter=lfs diff=lfs merge=lfs -text
-*.otf           filter=lfs diff=lfs merge=lfs -text
-*.pdf           filter=lfs diff=lfs merge=lfs -text
-*.png           filter=lfs diff=lfs merge=lfs -text
-*.pyc           filter=lfs diff=lfs merge=lfs -text
-*.swf           filter=lfs diff=lfs merge=lfs -text
-*.tga           filter=lfs diff=lfs merge=lfs -text
-*.ttf           filter=lfs diff=lfs merge=lfs -text
-*.wav           filter=lfs diff=lfs merge=lfs -text
-*.woff          filter=lfs diff=lfs merge=lfs -text
-*.woff2         filter=lfs diff=lfs merge=lfs -text
-*.zip           filter=lfs diff=lfs merge=lfs -text
-
-
 # Documents
 *.doc  diff=astextplain
 *.DOC  diff=astextplain
@@ -82,6 +48,45 @@
 # Don't allow people to merge changes to these generated files, because the result
 # may be invalid. You need to run "rush update"  or "yarn install" or "npm install" or "pnpm install" again,
 # depending on what package manager you're using
-shrinkwrap.yaml        merge=binary
 npm-shrinkwrap.json    merge=binary
+shrinkwrap.yaml        merge=binary
 yarn.lock              merge=binary
+
+
+
+# -----------------------------------------------------------------------------
+##  GIT LFS
+#   These files are binary and should be left untouched (binary is a macro for -text -diff)
+*.7z            filter=lfs diff=lfs merge=lfs -text
+*.acf           filter=lfs diff=lfs merge=lfs -text
+*.blend         filter=lfs diff=lfs merge=lfs -text
+*.dds           filter=lfs diff=lfs merge=lfs -text
+*.env           filter=lfs diff=lfs merge=lfs -text
+*.eot           filter=lfs diff=lfs merge=lfs -text
+*.fbx           filter=lfs diff=lfs merge=lfs -text
+*.FBX           filter=lfs diff=lfs merge=lfs -text
+*.fla           filter=lfs diff=lfs merge=lfs -text
+*.flv           filter=lfs diff=lfs merge=lfs -text
+*.gif           filter=lfs diff=lfs merge=lfs -text
+*.gz            filter=lfs diff=lfs merge=lfs -text
+*.gzip          filter=lfs diff=lfs merge=lfs -text
+*.hdr           filter=lfs diff=lfs merge=lfs -text
+*.ico           filter=lfs diff=lfs merge=lfs -text
+*.jpeg          filter=lfs diff=lfs merge=lfs -text
+*.jpg           filter=lfs diff=lfs merge=lfs -text
+*.mov           filter=lfs diff=lfs merge=lfs -text
+*.mp3           filter=lfs diff=lfs merge=lfs -text
+*.mp4           filter=lfs diff=lfs merge=lfs -text
+*.obj           filter=lfs diff=lfs merge=lfs -text
+*.ogg           filter=lfs diff=lfs merge=lfs -text
+*.otf           filter=lfs diff=lfs merge=lfs -text
+*.pdf           filter=lfs diff=lfs merge=lfs -text
+*.png           filter=lfs diff=lfs merge=lfs -text
+*.pyc           filter=lfs diff=lfs merge=lfs -text
+*.swf           filter=lfs diff=lfs merge=lfs -text
+*.tga           filter=lfs diff=lfs merge=lfs -text
+*.ttf           filter=lfs diff=lfs merge=lfs -text
+*.wav           filter=lfs diff=lfs merge=lfs -text
+*.woff          filter=lfs diff=lfs merge=lfs -text
+*.woff2         filter=lfs diff=lfs merge=lfs -text
+*.zip           filter=lfs diff=lfs merge=lfs -text
