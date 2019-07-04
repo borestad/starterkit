@@ -15,3 +15,11 @@ module.exports = (_on, _config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
+
+const $foo = 'bar'
+const $foo2 = 'bar'
+
+const _light2 = new window.PointLight('light2', new window.Vector3(0, 1, -1), window)
+
+const _foo3 = 'bar'
+const _foo4 = 'bar'

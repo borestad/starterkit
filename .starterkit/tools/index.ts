@@ -4,7 +4,6 @@
  * Command Line Utilities
  */
 
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import * as path from 'path'
 import chalk from 'chalk'
 import execa from 'execa'
@@ -97,7 +96,7 @@ export const rootPkg = (prop?: string) => {
 /**
  * Find the closest package.json file from path
  */
-export const pkgUp = (cwd: string) => {
+export function pkgUp(cwd: string) {
   return _pkgUp.sync({ cwd }) || path.join(GIT.ROOT, 'package.json')
 }
 
@@ -209,3 +208,5 @@ export const GIT = {
     return execFn` git log -1 --format=%B`()
   }
 }
+export const foo1 = 1
+export const foo2 = 1

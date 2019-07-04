@@ -6,4 +6,3 @@
 /node_modules/.*
 dist
 node_modules
-*.d.ts
