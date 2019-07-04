@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 /// <reference types="Cypress" />
 
 context('Assertions', () => {

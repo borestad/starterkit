@@ -81,8 +81,6 @@ module.exports = {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
         PIXI: true,
-        PlayUI: true,
-        ModalUI: true,
         __DEV__: true,
         __DEBUG__: true,
         __TEST__: true,
@@ -174,7 +172,10 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
+        '@typescript-eslint/no-use-before-define': [
+          'error',
+          { functions: false, variables: false }
+        ],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': [
           'error',
@@ -191,7 +192,7 @@ module.exports = {
           'error',
           {
             vars: 'all',
-            varsIgnorePattern: '^[_$]',
+            varsIgnorePattern: '^[_$]|[_$]$',
             args: 'after-used',
             caughtErrors: 'none',
             ignoreRestSiblings: true,

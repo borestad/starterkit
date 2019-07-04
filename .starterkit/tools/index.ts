@@ -4,7 +4,6 @@
  * Command Line Utilities
  */
 
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import * as path from 'path'
 import chalk from 'chalk'
 import execa from 'execa'
