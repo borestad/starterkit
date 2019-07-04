@@ -137,6 +137,7 @@ module.exports = {
         'padding-line-between-statements': [
           'error',
           ...(() => {
+            // Common base rules to be used for line breaks
             const common = [
               'block-like',
               'block',
@@ -151,10 +152,17 @@ module.exports = {
             ]
 
             return [
+              // 1. Common rules to create linebreaks
               { blankLine: 'always', prev: common, next: '*' },
               { blankLine: 'always', prev: '*', next: common },
+
+              // 2. Enforces const,let to always create a block of code
               { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+
+              // 3. Enforces exports to always create a block of code
               { blankLine: 'always', prev: '*', next: 'export' },
+
+              // 4. Allows const & export const to be grouped
               {
                 blankLine: 'any',
                 prev: ['const', 'let', 'export'],
