@@ -26,11 +26,13 @@ test('clone()', () => {
 describe('GetterSetter', () => {
   test('get()', () => {
     const val = new GetterSetter()
+
     expect(val.bar).toBe('Hello')
   })
 
   test('set()', () => {
     const val = new GetterSetter()
+
     val.bar = 'world'
 
     expect(val.bar).toBe('Hello world')

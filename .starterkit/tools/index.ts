@@ -44,6 +44,7 @@ export const onSuccess = noop
  */
 export const run = (fn: Function) => {
   const text = chalk.underline.yellow
+
   log()
   log(`=== ${text(kebabCase(`${fn.name}`).toUpperCase())} ===`)
   log()
@@ -89,6 +90,7 @@ export const relativeFrom = ({ from, to }) => {
  */
 export const rootPkg = (prop?: string) => {
   const json = fs.readJSONSync(pkgUp(GIT.ROOT))
+
   return prop ? json[prop] : json
 }
 
@@ -171,9 +173,7 @@ export const GIT = {
    * Returns an array of ignored files
    */
   get IGNORED_FILES() {
-    return str2Array(
-      execFn` git ls-files --directory --others --exclude-standard --ignored`()
-    )
+    return str2Array(execFn` git ls-files --directory --others --exclude-standard --ignored`())
   },
 
   /**

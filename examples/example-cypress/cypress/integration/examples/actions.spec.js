@@ -208,11 +208,7 @@ context('Actions', () => {
     // Select option(s) with matching value
     cy.get('.action-select').select('fr-bananas')
 
-    cy.get('.action-select-multiple').select([
-      'fr-apples',
-      'fr-oranges',
-      'fr-bananas'
-    ])
+    cy.get('.action-select-multiple').select(['fr-apples', 'fr-oranges', 'fr-bananas'])
   })
 
   it('.scrollIntoView() - scroll an element into view', () => {

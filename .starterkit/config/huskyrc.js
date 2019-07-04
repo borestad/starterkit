@@ -11,7 +11,6 @@ module.exports = {
   hooks: {
     'pre-commit': 'lint-staged -c .lintstagedrc.js',
     'post-commit': 'git update-index --again',
-    'post-checkout':
-      'git submodule sync && git submodule update --init --recursive'
+    'post-checkout': 'git submodule sync && git submodule update --init --recursive'
   }
 }

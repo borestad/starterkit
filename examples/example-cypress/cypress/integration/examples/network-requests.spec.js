@@ -47,14 +47,12 @@ context('Network Requests', () => {
 
   it('cy.request() - make an XHR request', () => {
     // https://on.cypress.io/request
-    cy.request('https://jsonplaceholder.cypress.io/comments').should(
-      response => {
-        expect(response.status).to.eq(200)
-        expect(response.body).to.have.length(500)
-        expect(response).to.have.property('headers')
-        expect(response).to.have.property('duration')
-      }
-    )
+    cy.request('https://jsonplaceholder.cypress.io/comments').should(response => {
+      expect(response.status).to.eq(200)
+      expect(response.body).to.have.length(500)
+      expect(response).to.have.property('headers')
+      expect(response).to.have.property('duration')
+    })
   })
 
   it('cy.request() - verify response using BDD syntax', () => {
@@ -123,10 +121,7 @@ context('Network Requests', () => {
     cy.get('@postComment').should(xhr => {
       expect(xhr.requestBody).to.include('email')
       expect(xhr.requestHeaders).to.have.property('Content-Type')
-      expect(xhr.responseBody).to.have.property(
-        'name',
-        'Using POST in cy.route()'
-      )
+      expect(xhr.responseBody).to.have.property('name', 'Using POST in cy.route()')
     })
 
     // Stub a response to PUT comments/ ****

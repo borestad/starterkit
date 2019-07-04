@@ -123,11 +123,7 @@ module.exports = {
             ignoreConstructors: true
           }
         ],
-        'lines-between-class-members': [
-          'error',
-          'always',
-          { exceptAfterSingleLine: true }
-        ],
+        'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
 
         /**
          * Sonar rules
@@ -178,10 +174,7 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
         '@typescript-eslint/no-non-null-assertion': 'off',
-        '@typescript-eslint/no-use-before-define': [
-          'error',
-          { functions: false }
-        ],
+        '@typescript-eslint/no-use-before-define': ['error', { functions: false }],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': [
           'error',
@@ -222,14 +215,7 @@ module.exports = {
         'import/order': [
           'error',
           {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index'
-            ]
+            groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']
           }
         ],
 

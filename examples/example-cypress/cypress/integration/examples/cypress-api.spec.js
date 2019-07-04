@@ -178,10 +178,7 @@ context('Cypress.env()', () => {
 
     // get all environment variable
     expect(Cypress.env()).to.have.property('host', 'veronica.dev.local')
-    expect(Cypress.env()).to.have.property(
-      'api_server',
-      'http://localhost:8888/v2/'
-    )
+    expect(Cypress.env()).to.have.property('api_server', 'http://localhost:8888/v2/')
   })
 })
 
