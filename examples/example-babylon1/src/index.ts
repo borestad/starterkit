@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import * as BABYLON from 'babylonjs'
+import * as B from 'babylonjs'
 
 // ----------------------------------------------------------------------------
 // DEBUG
@@ -23,46 +22,34 @@ if (module.hot) {
 const canvas = document.getElementById('renderCanvas') as HTMLCanvasElement
 
 // Generate the BABYLON 3D engine
-const engine = new BABYLON.Engine(canvas, true)
+const engine = new B.Engine(canvas, true)
 
 // ----------------------------------------------------------------------------
 // Scene Factory
 // ----------------------------------------------------------------------------
 function createScene() {
   // Create the scene space
-  const scene = new BABYLON.Scene(engine)
+  const scene = new B.Scene(engine)
 
   // Add a camera to the scene and attach it to the canvas
-  const camera = new BABYLON.ArcRotateCamera(
+  const camera = new B.ArcRotateCamera(
     'Camera',
     Math.PI / 2,
     Math.PI / 2,
     2,
-    new BABYLON.Vector3(0, 0, 5),
+    new B.Vector3(0, 0, 5),
     scene
   )
 
   camera.attachControl(canvas, true)
 
   // Add lights to the scene
-  const light1 = new BABYLON.HemisphericLight(
-    'light1',
-    new BABYLON.Vector3(1, 1, 0),
-    scene
-  )
+  const o: any = {}
 
-  const light2 = new BABYLON.PointLight(
-    'light2',
-    new BABYLON.Vector3(0, 1, -1),
-    scene
-  )
-
+  o.light1 = new B.HemisphericLight('light1', new B.Vector3(1, 1, 0), scene)
+  o.light2 = new B.PointLight('light2', new B.Vector3(0, 1, -1), scene)
   // Add and manipulate meshes in the scene
-  const sphere = BABYLON.MeshBuilder.CreateSphere(
-    'sphere',
-    { diameter: 3 },
-    scene
-  )
+  o.sphere = B.MeshBuilder.CreateSphere('sphere', { diameter: 3 }, scene)
 
   return scene
 }

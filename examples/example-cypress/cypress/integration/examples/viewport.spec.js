@@ -13,6 +13,7 @@ context('Viewport', () => {
 
     // the navbar should have collapse since our screen is smaller
     cy.get('#navbar').should('not.be.visible')
+
     cy.get('.navbar-toggle')
       .should('be.visible')
       .click()

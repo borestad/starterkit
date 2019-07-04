@@ -17,9 +17,7 @@ run(async function postInstall() {
   // Atm - we can only use .gitconfig in dev mode
   if (isNotCI) {
     log('Linking .gitconfig')
-    await exec(
-      `git config --local include.path ../.starterkit/config/.gitconfig`
-    )
+    await exec(`git config --local include.path ../.starterkit/config/.gitconfig`)
   }
 
   log('Lerna linking ...')

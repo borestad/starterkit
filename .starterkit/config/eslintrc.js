@@ -10,7 +10,9 @@
 // ======================================================================== */
 
 const js = ['.js', '.jsx']
+
 const ts = ['.ts', '.tsx']
+
 const extensions = { ts, all: [...js, ...ts] }
 
 // TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
@@ -81,8 +83,6 @@ module.exports = {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
         PIXI: true,
-        PlayUI: true,
-        ModalUI: true,
         __DEV__: true,
         __DEBUG__: true,
         __TEST__: true,
@@ -92,14 +92,11 @@ module.exports = {
         __GITHASH__: true
       },
 
+      // Overrides
       overrides: [
         {
-          // It's rather common for test files to contain duplicate content - let's ignore them.
           files: ['*.spec.*', '*.test.*'],
-          rules: {
-            'sonarjs/no-duplicate-string': 'off',
-            'sonarjs/no-identical-functions': 'off'
-          }
+          rules: {}
         }
       ],
 
@@ -123,32 +120,58 @@ module.exports = {
             ignoreConstructors: true
           }
         ],
-        'lines-between-class-members': ['error', 'always'],
-        // Code-Style rules
-        // https://eslint.org/docs/rules/padding-line-between-statements
-        // Warning: Don't mess with these unless you know what you'e doing since
-        // they can interfere with prettier
+        'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+
+        /**
+         * Sonar rules
+         */
+        'sonarjs/no-duplicate-string': 'off',
+        'sonarjs/no-identical-functions': 'off',
+        'sonarjs/cognitive-complexity': 'warn',
+
+        /**
+         *  Linebreak / Codestyle
+         *  https://eslint.org/docs/rules/padding-line-between-statements
+         *  Warning: Don't mess with these unless you know what you'e doing since
+         *  they can interfere with prettier
+         */
         'padding-line-between-statements': [
           'error',
           ...(() => {
+            // Common base rules to be used for line breaks
             const common = [
               'block-like',
               'block',
               'cjs-export',
               'class',
               'directive',
-              'export',
               'for',
               'function',
               'if',
-              'multiline-const',
               'throw',
               'try'
             ]
 
             return [
+              // 1. Common rules to create linebreaks
               { blankLine: 'always', prev: common, next: '*' },
-              { blankLine: 'always', prev: '*', next: common }
+              { blankLine: 'always', prev: '*', next: common },
+
+              // // 2. Enforces const,let to always create a block of code
+              { blankLine: 'always', prev: ['const', 'let'], next: '*' },
+
+              // // 3. Enforces exports to always create a block of code
+              { blankLine: 'always', prev: '*', next: 'export' },
+
+              // 4. Allows const & export const to be grouped
+              {
+                blankLine: 'any',
+                prev: ['const', 'let', 'export'],
+                next: ['const', 'let', 'export']
+              },
+
+              // 5. Avoid unreadable multiline commands
+              { blankLine: 'always', prev: 'multiline-expression', next: '*' }
             ]
           })()
         ],
@@ -158,10 +181,12 @@ module.exports = {
          * https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
          * ----------------------------------------------------
          */
+        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-use-before-define': [
           'error',
-          { functions: false }
+          { functions: false, variables: false }
         ],
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': [
@@ -169,7 +194,6 @@ module.exports = {
           { accessibility: 'no-public' }
         ],
         '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/camelcase': ['error'],
         '@typescript-eslint/no-parameter-properties': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-object-literal-type-assertion': [
@@ -180,10 +204,11 @@ module.exports = {
           'error',
           {
             vars: 'all',
+            varsIgnorePattern: '^[_$]|[_$]$',
             args: 'after-used',
             caughtErrors: 'none',
             ignoreRestSiblings: true,
-            argsIgnorePattern: '^_'
+            argsIgnorePattern: '^[_$]'
           }
         ],
 
@@ -191,6 +216,7 @@ module.exports = {
          * Import Plugin Rules
          * ----------------------------------------------------
          */
+        'import/no-unresolved': 'off', // FIXME: Doesn't resolve '@netent/origin'
         'import/no-useless-path-segments': ['error'],
         'import/named': 'error',
         'import/namespace': 'error',
@@ -202,14 +228,7 @@ module.exports = {
         'import/order': [
           'error',
           {
-            groups: [
-              'builtin',
-              'external',
-              'internal',
-              'parent',
-              'sibling',
-              'index'
-            ]
+            groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']
           }
         ],
 

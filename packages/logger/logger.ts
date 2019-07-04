@@ -23,6 +23,7 @@ const win = window as any
 // ----------------------------------------------------------------------------
 const pad = (str = '', len = 10, chars = ' ') => {
   const filling = (str.trimRight().match(/(%c|\s)/gi) || []).length
+
   return str.padEnd(len + filling, chars)
 }
 
@@ -33,11 +34,7 @@ const jsToCss = (obj = {}) => {
     .replace(/([A-Z])/g, m => `-${m[0].toLowerCase()}`)
 }
 
-const formatter = ({ icon = '', text = '', css = {} }) => [
-  `${icon} %c%s`,
-  jsToCss(css),
-  pad(text)
-]
+const formatter = ({ icon = '', text = '', css = {} }) => [`${icon} %c%s`, jsToCss(css), pad(text)]
 
 const bind = (logger: any, args: any) => {
   return logger.bind(console, ...args)

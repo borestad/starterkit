@@ -15,15 +15,12 @@ describe('greeter function', () => {
     const p: Promise<string> = delayedPromise(message, Delays.Long)
 
     jest.runOnlyPendingTimers()
-
     str = await p
   })
 
   it('delays the greeting by 5 seconds', () => {
     expect.assertions(2)
-
     expect(global.setTimeout).toHaveBeenCalledTimes(1)
-
     expect((global.setTimeout as jest.Mock).mock.calls[0][1]).toBe(Delays.Long)
   })
 

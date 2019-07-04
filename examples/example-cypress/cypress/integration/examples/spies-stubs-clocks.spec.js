@@ -61,11 +61,13 @@ context('Spies, Stubs, and Clock', () => {
 
     cy.clock(now)
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
+
     cy.get('#tick-div')
       .click()
       .should('have.text', '1489449600')
 
     cy.tick(10000) // 10 seconds passed
+
     cy.get('#tick-div')
       .click()
       .should('have.text', '1489449610')

@@ -18,6 +18,7 @@ if (isNotCI) {
 
 export default api => {
   const isProd = expr => api.env('production') && expr
+
   api.cache.using(() => process.env.NODE_ENV)
 
   const presets = ['@babel/env', '@babel/typescript']
