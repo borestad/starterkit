@@ -114,6 +114,19 @@ This is also run automatically when commiting code.
 yarn fix
 ```
 
+### Auto formatting
+
+**Visual Studio Code**
+It's setup by default to format on save. You will be prompted to install recommended packages and some of them are in charge for auto formatting. Configuration can be changed in .vscode/settings.json
+
+**Vim Editor**
+
+1. [Prettier](https://github.com/prettier/vim-prettier)
+2. [Linting Guide](https://medium.com/jimeno0/eslint-and-prettier-in-vim-neovim-7e45f85cf8f9)
+
+**Webstorm**
+Linting reports are turned on by default. If you want to format on save (or format on _cmd + s_) follow this [guide](https://prettier.io/docs/en/webstorm.html)
+
 ## Howto update packages?
 
 ```sh
