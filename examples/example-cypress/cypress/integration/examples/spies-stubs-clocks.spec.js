@@ -47,6 +47,7 @@ context('Spies, Stubs, and Clock', () => {
 
     cy.clock(now)
     cy.visit('https://example.cypress.io/commands/spies-stubs-clocks')
+
     cy.get('#clock-div')
       .click()
       .should('have.text', '1489449600')

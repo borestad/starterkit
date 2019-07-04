@@ -10,12 +10,21 @@
 // ======================================================================== */
 
 const js = ['.js', '.jsx']
-
 const ts = ['.ts', '.tsx']
-
 const extensions = { ts, all: [...js, ...ts] }
 
-// TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
+const OFF = 'off'
+
+/**
+ *  Helpers
+ * ----------------------------------------------------
+ */
+const paddingWildcard = (blankLine = 'always', rules = []) => {
+  return [
+    { blankLine, prev: rules, next: '*' }, //
+    { blankLine, prev: '*', next: rules }
+  ]
+}
 
 module.exports = {
   config() {
@@ -79,6 +88,8 @@ module.exports = {
         jest: true
       },
 
+      // Allow globals to exist without throwing an error.
+      // i.e: Sys, Environment, jQuery
       globals: {
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -95,8 +106,16 @@ module.exports = {
       // Overrides
       overrides: [
         {
-          files: ['*.spec.*', '*.test.*'],
-          rules: {}
+          files: ['*.spec.*', '*.test.*', '*.e2e.*', 'test.*'],
+          rules: {
+            // Keep tests simple & clean
+            'padding-line-between-statements': [
+              'error',
+              ...paddingWildcard('always', ['multiline-expression'])
+            ],
+            'sonarjs/cognitive-complexity': ['error', 10],
+            complexity: ['error', 5]
+          }
         }
       ],
 
@@ -106,10 +125,11 @@ module.exports = {
          * https://eslint.org/docs/rules/
          * ----------------------------------------------------
          */
-        camelcase: 'off',
-        'no-unused-expressions': 'off',
-        'no-unused-vars': 'off',
-        'global-require': 'off',
+        complexity: ['error', 20],
+        camelcase: OFF,
+        'no-unused-expressions': OFF,
+        'no-unused-vars': OFF,
+        'global-require': OFF,
         'no-var': 'error',
         'prefer-const': 'error',
         'prefer-template': 'error',
@@ -125,9 +145,11 @@ module.exports = {
         /**
          * Sonar rules
          */
-        'sonarjs/no-duplicate-string': 'off',
-        'sonarjs/no-identical-functions': 'off',
-        'sonarjs/cognitive-complexity': 'warn',
+        'sonarjs/prefer-immediate-return': 'error',
+        'sonarjs/no-duplicate-string': OFF,
+        'sonarjs/no-identical-functions': OFF,
+        // Tweak cognitive complexity to your liking
+        'sonarjs/cognitive-complexity': ['error', 10],
 
         /**
          *  Linebreak / Codestyle
@@ -154,23 +176,17 @@ module.exports = {
 
             return [
               // 1. Common rules to create linebreaks
-              { blankLine: 'always', prev: common, next: '*' },
-              { blankLine: 'always', prev: '*', next: common },
+              ...paddingWildcard('always', common),
 
-              // // 2. Enforces const,let to always create a block of code
+              // 2. Enforces const,let to always create a block of code
               { blankLine: 'always', prev: ['const', 'let'], next: '*' },
 
-              // // 3. Enforces exports to always create a block of code
+              // 3. Enforces exports to always create a block of code
+              // Allows const & export const to be grouped
               { blankLine: 'always', prev: '*', next: 'export' },
+              ...paddingWildcard('any', ['const', 'let', 'export']),
 
-              // 4. Allows const & export const to be grouped
-              {
-                blankLine: 'any',
-                prev: ['const', 'let', 'export'],
-                next: ['const', 'let', 'export']
-              },
-
-              // 5. Avoid unreadable multiline commands
+              // 4. Avoid unreadable multiline commands
               { blankLine: 'always', prev: 'multiline-expression', next: '*' }
             ]
           })()
@@ -181,21 +197,22 @@ module.exports = {
          * https://www.npmjs.com/package/@typescript-eslint/eslint-plugin
          * ----------------------------------------------------
          */
-        '@typescript-eslint/ban-types': 'off',
+        '@typescript-eslint/ban-types': OFF,
+        '@typescript-eslint/no-floating-promises': OFF, // TODO: https://github.com/typescript-eslint/typescript-eslint/issues/464
         '@typescript-eslint/camelcase': ['error', { properties: 'never' }],
-        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-non-null-assertion': OFF,
         '@typescript-eslint/no-use-before-define': [
           'error',
           { functions: false, variables: false }
         ],
-        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-function-return-type': OFF,
         '@typescript-eslint/explicit-member-accessibility': [
           'error',
           { accessibility: 'no-public' }
         ],
-        '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/no-parameter-properties': 'off',
-        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-var-requires': OFF,
+        '@typescript-eslint/no-parameter-properties': OFF,
+        '@typescript-eslint/no-explicit-any': OFF,
         '@typescript-eslint/no-object-literal-type-assertion': [
           'error',
           { allowAsParameter: false }
@@ -216,7 +233,7 @@ module.exports = {
          * Import Plugin Rules
          * ----------------------------------------------------
          */
-        'import/no-unresolved': 'off', // FIXME: Doesn't resolve '@netent/origin'
+        'import/no-unresolved': OFF, // FIXME: Doesn't resolve '@netent/origin'
         'import/no-useless-path-segments': ['error'],
         'import/named': 'error',
         'import/namespace': 'error',
@@ -238,15 +255,15 @@ module.exports = {
          * ----------------------------------------------------
          */
         'unicorn/catch-error-name': 'error',
-        'unicorn/custom-error-definition': 'off',
+        'unicorn/custom-error-definition': OFF,
         'unicorn/error-message': 'error',
         'unicorn/filename-case': ['error', { case: 'kebabCase' }],
         'unicorn/import-index': 'error',
-        'unicorn/new-for-builtins': 'off',
+        'unicorn/new-for-builtins': OFF,
         'unicorn/no-abusive-eslint-disable': 'error',
         'unicorn/no-array-instanceof': 'error',
         'unicorn/no-console-spaces': 'error',
-        'unicorn/no-for-loop': 'off',
+        'unicorn/no-for-loop': OFF,
         'unicorn/no-process-exit': 'error',
         'unicorn/no-unreadable-array-destructuring': 'error',
         'unicorn/no-unused-properties': 'error',
