@@ -52,7 +52,7 @@
     "rootDir": ".",                               // 🔅 Specify the root directory of input files. Use to control the output directory structure with --outDir.
     "sourceMap": true,                            // 🔅 Generates corresponding '.map' file.
     "target": "esnext",                           // 🔅 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    "allowJs": true,                             // 🔅 Allow javascript files to be compiled.
+    "allowJs": true,                              // 🔅 Allow javascript files to be compiled.
     "checkJs": false,                             // 🔅 Report errors in .js files.
     // "composite": true,
 
@@ -67,7 +67,7 @@
     // ========================================================================s
     // 💥 Strict Type-Checking Options
     // ========================================================================s
-    "strict": false,                           // 🔅 Enable all strict type-checking options.
+    "strict": false,                          // 🔅 Enable all strict type-checking options.
     "noImplicitAny": false,                   // 🔅 Raise error on expressions and declarations with an implied 'any' type.
     // "strictNullChecks": true,              // 🔅 Enable strict null checks.
     // "strictFunctionTypes": true,           // 🔅 Enable strict checking of function types.
@@ -80,9 +80,9 @@
     // 💥 Additional Checks
     // ========================================================================s
     // "noUnusedLocals": true,                // ❌ [Eslint] Report errors on unused locals.
-    "noUnusedParameters": true,               // 🔅 Report errors on unused parameters.
-    // "noImplicitReturns": true,             // 🔅 Report error when not all code paths in function return a value.
-    // "noFallthroughCasesInSwitch": true,    // 🔅 Report errors for fallthrough cases in switch statement.
+    "noUnusedParameters": true,               // ❌ [Eslint] Report errors on unused parameters.
+    // "noImplicitReturns": true,             // ❌ [Eslint] Report error when not all code paths in function return a value.
+    // "noFallthroughCasesInSwitch": true,    // ❌ [Eslint] Report errors for fallthrough cases in switch statement.
 
 
     // ========================================================================s

@@ -10,7 +10,9 @@
 // ======================================================================== */
 
 const js = ['.js', '.jsx']
+
 const ts = ['.ts', '.tsx']
+
 const extensions = { ts, all: [...js, ...ts] }
 
 // TODO: Add: https://github.com/typescript-eslint/typescript-eslint/issues/464
@@ -90,14 +92,11 @@ module.exports = {
         __GITHASH__: true
       },
 
+      // Overrides
       overrides: [
         {
-          // It's rather common for test files to contain duplicate content - let's ignore them.
           files: ['*.spec.*', '*.test.*'],
-          rules: {
-            'sonarjs/no-duplicate-string': 'off',
-            'sonarjs/no-identical-functions': 'off'
-          }
+          rules: {}
         }
       ],
 
@@ -130,10 +129,12 @@ module.exports = {
         'sonarjs/no-identical-functions': 'off',
         'sonarjs/cognitive-complexity': 'warn',
 
-        // Code-Style rules
-        // https://eslint.org/docs/rules/padding-line-between-statements
-        // Warning: Don't mess with these unless you know what you'e doing since
-        // they can interfere with prettier
+        /**
+         *  Linebreak / Codestyle
+         *  https://eslint.org/docs/rules/padding-line-between-statements
+         *  Warning: Don't mess with these unless you know what you'e doing since
+         *  they can interfere with prettier
+         */
         'padding-line-between-statements': [
           'error',
           ...(() => {
@@ -156,10 +157,10 @@ module.exports = {
               { blankLine: 'always', prev: common, next: '*' },
               { blankLine: 'always', prev: '*', next: common },
 
-              // 2. Enforces const,let to always create a block of code
+              // // 2. Enforces const,let to always create a block of code
               { blankLine: 'always', prev: ['const', 'let'], next: '*' },
 
-              // 3. Enforces exports to always create a block of code
+              // // 3. Enforces exports to always create a block of code
               { blankLine: 'always', prev: '*', next: 'export' },
 
               // 4. Allows const & export const to be grouped
@@ -167,7 +168,10 @@ module.exports = {
                 blankLine: 'any',
                 prev: ['const', 'let', 'export'],
                 next: ['const', 'let', 'export']
-              }
+              },
+
+              // 5. Avoid unreadable multiline commands
+              { blankLine: 'always', prev: 'multiline-expression', next: '*' }
             ]
           })()
         ],
