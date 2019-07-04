@@ -6701,10 +6701,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lint-staged@9.0.1:
-  version "9.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-9.0.1.tgz#dc31e3808052cf65727d26a3568620e4f75a5aa5"
-  integrity sha1-3DHjgIBSz2VyfSajVoYg5PdaWqU=
+lint-staged@9.0.2:
+  version "9.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-9.0.2.tgz#238e1ed7cba2d422faaf4499e6a5686f0f5c1331"
+  integrity sha1-I44e18ui1CL6r0SZ5qVobw9cEzE=
   dependencies:
     chalk "^2.4.2"
     commander "^2.20.0"
