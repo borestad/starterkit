@@ -17,4 +17,4 @@ require('ts-node').register({
   }
 })
 
-module.exports = require('@netent/starterkit/config/babel')
+module.exports = require('@netent/starterkit/config/config.babel')

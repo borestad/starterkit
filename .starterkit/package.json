@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Starterkit cli/tools/configs",
   "private": true,
+  "main": "./index.js",
   "bin": {
     "starterkit-clean": "./bin/clean",
     "starterkit-postinstall": "./bin/postinstall",
@@ -11,6 +12,7 @@
   },
   "scripts": {
     "compile": "tsc -b tsconfig.json --pretty",
+    "lint": "npx eslint . --ext js --ext ts --fix",
     "test": "exit 0 || true"
   },
   "devDependencies": {

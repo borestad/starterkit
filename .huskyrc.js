@@ -6,4 +6,4 @@
  * https://githooks.com/
  */
 
-module.exports = require('@netent/starterkit/config/huskyrc')
+module.exports = require('@netent/starterkit/config/config.husky')

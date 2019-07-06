@@ -3,7 +3,7 @@
 const util = require('util')
 const { tick } = require('figures')
 const { isEmpty } = require('lodash')
-const { GIT, run } = require('../tools')
+const { GIT, run } = require('..')
 
 const { log } = console
 

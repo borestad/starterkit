@@ -12,7 +12,7 @@ import { Config } from '@jest/types'
 import chalk from 'chalk'
 import * as glob from 'glob'
 import { flattenDeep } from 'lodash'
-import { GIT, isNotCI, pkgUpDir, rootPkg } from '../tools'
+import { GIT, isNotCI, pkgUpDir, rootPkg } from '..'
 
 const { yellow } = chalk
 const isWatchMode = process.argv.includes('--watch')

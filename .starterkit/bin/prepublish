@@ -7,7 +7,7 @@ const { basename } = require('path')
 const { isNil, pickBy } = require('lodash')
 const { copy, readFile, writeFile } = require('fs-extra')
 
-const { run } = require('../tools')
+const { run } = require('..')
 
 const { log, error } = console
 const cwd = process.cwd()
@@ -53,7 +53,7 @@ run(async function prePublish() {
     }
 
     await writeFile(to, JSON.stringify(output, null, 2))
-  } catch (error) {
-    log(error)
+  } catch (error_) {
+    log(error_)
   }
 })

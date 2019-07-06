@@ -4,4 +4,4 @@
  *
  */
 
-module.exports = require('@netent/starterkit/config/lintstagedrc')
+module.exports = require('@netent/starterkit/config/config.lintstaged')

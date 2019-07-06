@@ -5,7 +5,7 @@ const { remove } = require('fs-extra')
 const { isEmpty } = require('lodash')
 const { mapLimit } = require('blend-promise-utils')
 const chalk = require('chalk').default
-const { GIT, run } = require('../tools')
+const { GIT, run } = require('..')
 
 const { log } = console
 const EXCLUDE = /node_modules/

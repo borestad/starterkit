@@ -7,4 +7,4 @@ require('ts-node').register({
   }
 })
 
-module.exports = require('./index.ts')
+module.exports = require('./config/config.helpers')

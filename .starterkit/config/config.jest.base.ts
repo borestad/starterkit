@@ -6,7 +6,7 @@
  *
  */
 const { gray } = require('chalk').default
-const { isNotCI, GIT, pkgUpDir } = require('../tools')
+const { isNotCI, GIT, pkgUpDir } = require('..')
 
 const { log } = console
 

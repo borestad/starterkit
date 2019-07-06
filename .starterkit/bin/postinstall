@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { exec, GIT, isNotCI, isCI, run, br } = require('../tools')
+const { exec, GIT, isNotCI, isCI, run, br } = require('..')
 
 const log = str => {
   return console.log(`❯ ${str}`)

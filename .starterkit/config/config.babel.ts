@@ -7,7 +7,7 @@
 
 import * as path from 'path'
 import chalk from 'chalk'
-import { isNotCI } from '../tools'
+import { isNotCI } from '..'
 
 const cwd = path.relative(__dirname, process.cwd())
 const { yellow } = chalk
