@@ -18,7 +18,7 @@
     "build": "del dist && yarn compile",
     "clean": "starterkit-clean",
     "compile": "del dist && tsc -b tsconfig.json --pretty",
-    "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix",
+    "lint": "npx eslint . --ignore-path=../../.eslintignore --ext js --ext ts --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
   "devDependencies": {
