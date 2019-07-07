@@ -9,8 +9,9 @@ import chalk from 'chalk'
 import execa from 'execa'
 import * as fs from 'fs-extra'
 import _isCI from 'is-ci'
-import { compact, isString, kebabCase, once, noop, times } from 'lodash'
+import { flattenDeep, compact, isString, kebabCase, once, noop, times } from 'lodash'
 import * as _pkgUp from 'pkg-up'
+import * as glob from 'glob'
 
 const { log } = console
 
@@ -99,6 +100,18 @@ export const rootPkg = (prop?: string) => {
  */
 export const pkgUp = (cwd: string) => {
   return _pkgUp.sync({ cwd }) || path.join(GIT.ROOT, 'package.json')
+}
+
+/**
+ * Filter for workspace/projects that contains i.e `jest.config.js`
+ */
+export const filterProjectWorkspacesByFile = filename => {
+  const ws = rootPkg('workspaces') as string[]
+  return flattenDeep(
+    ws
+      .map(GIT.fromGitRoot) //
+      .map(x => glob.sync(`${x}/${filename}`))
+  ).map(x => pkgUpDir(x as string))
 }
 
 /**

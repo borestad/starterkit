@@ -10,9 +10,7 @@
 
 import { Config } from '@jest/types'
 import chalk from 'chalk'
-import * as glob from 'glob'
-import { flattenDeep } from 'lodash'
-import { GIT, isNotCI, pkgUpDir, rootPkg } from '..'
+import { GIT, isNotCI, filterProjectWorkspacesByFile } from '..'
 
 const { yellow } = chalk
 const isWatchMode = process.argv.includes('--watch')
@@ -21,18 +19,11 @@ if (isNotCI) {
   console.log(`\n⭐ ${yellow.underline('<root>/config/jest.config.js')}\n`)
 }
 
-// Only look for projects that contains a `jest.config.js`
-const projects = flattenDeep(
-  (rootPkg('workspaces') as string[])
-    .map(GIT.fromGitRoot)
-    .map(x => glob.sync(`${x}/jest.config.js`))
-).map(x => pkgUpDir(x as string))
-
 const config: Config.InitialOptions = {
   // preset: 'ts-jest/presets/js-with-ts',
   rootDir: GIT.ROOT,
   testEnvironment: 'node',
-  projects,
+  projects: filterProjectWorkspacesByFile('jest.config.js'),
   bail: 1,
   silent: false,
   collectCoverage: !isWatchMode,
