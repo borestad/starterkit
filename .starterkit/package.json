@@ -16,22 +16,22 @@
     "test": "exit 0 || true"
   },
   "devDependencies": {
-    "@types/execa": "0.9.0",
-    "@types/lodash": "4.14.135",
+    "@types/execa": "2.0.0",
+    "@types/lodash": "4.14.136",
     "cloc": "2.5.0",
-    "execa": "2.0.2",
+    "execa": "2.0.3",
     "glob": "7.1.4",
     "lodash": "4.17.11",
     "pkg-up": "3.1.0"
   },
   "dependencies": {
     "@jest/types": "24.8.0",
-    "blend-promise-utils": "1.22.4",
+    "blend-promise-utils": "1.24.0",
     "chalk": "2.4.2",
     "figures": "3.0.0",
     "fs-extra": "8.1.0",
     "is-ci": "2.0.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.15",
     "ora": "3.4.0",
     "ts-node": "8.3.0"
   }
