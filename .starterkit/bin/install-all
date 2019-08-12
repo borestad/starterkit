@@ -3,38 +3,29 @@ set +x -eEu
 
 . `dirname $0`/_helpers
 
-hr
-echo -e "⚡ Install dependencies"
+echo; hr;
 
-cd $ROOT
 install-git-lfs
 cd $ROOT
 
 YARN_WANTED_VERSION=`node -p -e require\(\'./.starterkit/package.json\'\).devDependencies.yarn`
 YARN_INSTALLED_VERSION=`node -p -e require\(\'./node_modules/yarn/package.json\'\).version 2>/dev/null | tr -d '\n'` || '0'
 YARN_ARGS='--frozen-lockfile --link-duplicates --non-interactive --no-progress'
-YARN_METHOD=''
-
 
 if [ "$YARN_WANTED_VERSION" == "$YARN_INSTALLED_VERSION" ]
 then
   # Use local yarn version
   color=$Gre
-  YARN_METHOD="$color local$R"
   cmd="./node_modules/.bin/yarn $YARN_ARGS"
 else
   # Use npx instead
   color=$Red
-  YARN_METHOD="$color npx$R"
   cmd="npx yarn@$YARN_WANTED_VERSION $YARN_ARGS"
 fi
 
-echo -e "❯ yarn [ required ]      $YARN_WANTED_VERSION$R"
-echo -e "❯ yarn [ installed ]     $YARN_INSTALLED_VERSION"
-echo -e "❯ yarn [ installation ]  $YARN_METHOD"
 
 echo
-echo -e "$Gray\$ $cmd $R"
+echo "$cmd"
 echo
 
 $cmd
