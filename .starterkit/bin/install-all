@@ -10,7 +10,7 @@ cd $ROOT
 install-git-lfs
 cd $ROOT
 
-YARN_WANTED_VERSION=`node -p -e require\(\'./package.json\'\).dependencies.yarn`
+YARN_WANTED_VERSION=`node -p -e require\(\'./.starterkit/package.json\'\).devDependencies.yarn`
 YARN_INSTALLED_VERSION=`node -p -e require\(\'./node_modules/yarn/package.json\'\).version 2>/dev/null | tr -d '\n'` || '0'
 YARN_ARGS='--frozen-lockfile --link-duplicates --non-interactive --no-progress'
 YARN_METHOD=''
