@@ -2216,13 +2216,6 @@
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
 
-"@types/execa@2.0.0":
-  version "2.0.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/execa/-/execa-2.0.0.tgz#4dd5523520c51834bf8d0c280f460814e5238281"
-  integrity sha1-TdVSNSDFGDS/jQwoD0YIFOUjgoE=
-  dependencies:
-    execa "*"
-
 "@types/figures@3.0.1":
   version "3.0.1"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/figures/-/figures-3.0.1.tgz#dcb7222a8e63fd673d916f456019a405fd143acd"
@@ -4886,7 +4879,20 @@ exec-sh@^0.3.2:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/exec-sh/-/exec-sh-0.3.2.tgz#6738de2eb7c8e671d0366aea0b0db8c6f7d7391b"
   integrity sha1-ZzjeLrfI5nHQNmrqCw24xvfXORs=
 
-execa@*, execa@2.0.3, execa@^2.0.3:
+execa@0.10.0:
+  version "0.10.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
+  integrity sha1-/0Vqj1P5D47MxxqW0Rvfx/CCy1A=
+  dependencies:
+    cross-spawn "^6.0.0"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
+execa@2.0.3, execa@^2.0.3:
   version "2.0.3"
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/execa/-/execa-2.0.3.tgz#4b84301b33042cfb622771e886ed0b10e5634642"
   integrity sha1-S4QwGzMELPtiJ3Hohu0LEOVjRkI=
@@ -4900,19 +4906,6 @@ execa@*, execa@2.0.3, execa@^2.0.3:
     p-finally "^2.0.0"
     signal-exit "^3.0.2"
     strip-final-newline "^2.0.0"
-
-execa@0.10.0:
-  version "0.10.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/execa/-/execa-0.10.0.tgz#ff456a8f53f90f8eccc71a96d11bdfc7f082cb50"
-  integrity sha1-/0Vqj1P5D47MxxqW0Rvfx/CCy1A=
-  dependencies:
-    cross-spawn "^6.0.0"
-    get-stream "^3.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
 
 execa@^1.0.0:
   version "1.0.0"
