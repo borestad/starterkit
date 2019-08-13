@@ -37,7 +37,7 @@
     "test": "npx run-p -l test:unit test:e2e",
     "test:e2e": "npx lerna run test:e2e --stream",
     "test:serial": "npx lerna exec -- yarn test",
-    "test:unit": "npx jest -w 3",
+    "test:unit": "npx jest -w 3 --config=.starterkit/config/jest.config.js",
     "test:watch": "npx yarn test -- --watch --notify",
     "validate": "node node_modules/@netent/starterkit/bin/validate"
   },

@@ -1,7 +1,7 @@
 /**
  * Jest Root/Project configuration (@starterkit)
  *
- * Used from the root to speedup builds
+ * Used from the root to speedup builds (initialized from jest.config.js)
  *
  * https://jestjs.io/docs/en/configuration.html
  * https://kulshekhar.github.io/ts-jest/user/config/#jest-preset

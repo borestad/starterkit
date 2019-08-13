@@ -16,4 +16,4 @@ require('ts-node').register({
   }
 })
 
-module.exports = require('@netent/starterkit/config/config.jest.root').default
+module.exports = require('./config.jest.root').default
