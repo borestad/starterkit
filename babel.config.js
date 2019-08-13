@@ -8,6 +8,7 @@
 //
 // ========================================================================
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 require('ts-node').register({
   /* options */
   transpileOnly: true,
