@@ -1,17 +1,17 @@
 {
   "name": "@example/example-lib1",
-  "private": true,
   "version": "1.0.0",
   "license": "UNLICENSED",
-  "author": {
-    "name": "NetEnt AB (publ)",
-    "email": "info@netent.com",
-    "url": "https://www.netent.com/"
-  },
+  "private": true,
   "engines": {
     "node": ">= 10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
+    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc",
+    "yarn": ">= 1.12.x"
+  },
+  "author": {
+    "email": "info@netent.com",
+    "name": "NetEnt AB (publ)",
+    "url": "https://www.netent.com/"
   },
   "main": "src/index.ts",
   "scripts": {
@@ -21,10 +21,10 @@
     "lint": "npx eslint . --ignore-path=../../.eslintignore --ext js --ext ts --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
-  "devDependencies": {
-    "@netent/starterkit": "*"
-  },
   "dependencies": {
     "ts-node": "8.3.0"
+  },
+  "devDependencies": {
+    "@netent/starterkit": "*"
   }
 }

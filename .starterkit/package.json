@@ -3,17 +3,20 @@
   "version": "0.0.1",
   "description": "Starterkit cli/tools/configs",
   "private": true,
-  "main": "./index.js",
   "bin": {
     "starterkit-clean": "./bin/clean",
     "starterkit-postinstall": "./bin/postinstall",
     "starterkit-prepublish": "./bin/prepublish",
     "starterkit-validate": "./bin/validate"
   },
+  "main": "./index.js",
   "scripts": {
     "compile": "tsc -b tsconfig.json --pretty",
     "lint": "npx eslint . --ext js --ext ts --fix",
     "test": "exit 0 || true"
+  },
+  "dependencies": {
+    "format-package": "5.2.0"
   },
   "devDependencies": {
     "@jest/types": "24.8.0",
@@ -39,6 +42,5 @@
     "prettier": "1.18.2",
     "ts-node": "8.3.0",
     "yarn": "1.17.3"
-  },
-  "dependencies": {}
+  }
 }

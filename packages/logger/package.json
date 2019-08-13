@@ -1,25 +1,25 @@
 {
   "name": "@netent/logger",
-  "private": true,
   "version": "1.0.0",
   "license": "UNLICENSED",
-  "author": {
-    "name": "NetEnt AB (publ)",
-    "email": "info@netent.com",
-    "url": "https://www.netent.com/"
-  },
+  "private": true,
   "engines": {
     "node": ">= 10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
+    "npm": ">= this-repo-is-yarn-only:see-npmrc",
+    "yarn": ">= 1.12.x"
+  },
+  "author": {
+    "email": "info@netent.com",
+    "name": "NetEnt AB (publ)",
+    "url": "https://www.netent.com/"
   },
   "main": "logger.ts",
   "scripts": {
-    "dev": "parcel .playground/playground.html",
     "clean": "del node_modules/.tmp",
     "compile": "yarn clean && run-p compile:*",
     "compile:js": "npx babel ./ --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
-    "compile:ts": "tsc -b tsconfig.json --pretty"
+    "compile:ts": "tsc -b tsconfig.json --pretty",
+    "dev": "parcel .playground/playground.html"
   },
   "dependencies": {
     "@types/figures": "3.0.1",

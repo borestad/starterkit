@@ -1,18 +1,18 @@
 {
   "name": "@types/common",
-  "description": "Common types used globally within a project",
-  "private": true,
   "version": "1.0.0",
+  "description": "Common types used globally within a project",
   "license": "UNLICENSED",
-  "main": "",
-  "author": {
-    "name": "NetEnt AB (publ)",
-    "email": "info@netent.com",
-    "url": "https://www.netent.com/"
-  },
+  "private": true,
   "engines": {
     "node": ">= 10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= this-repo-is-yarn-only:see-npmrc"
-  }
+    "npm": ">= this-repo-is-yarn-only:see-npmrc",
+    "yarn": ">= 1.12.x"
+  },
+  "author": {
+    "email": "info@netent.com",
+    "name": "NetEnt AB (publ)",
+    "url": "https://www.netent.com/"
+  },
+  "main": ""
 }
