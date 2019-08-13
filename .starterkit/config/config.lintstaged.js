@@ -2,6 +2,9 @@
  * Run linters on git staged files (@starterkit)
  * https://github.com/okonet/lint-staged
  *
+ * To extend this functionality, one can also add a .lintstagedrc.js in the root folder:
+ *    module.exports = require('@netent/starterkit/config/config.lintstaged')
+ *
  */
 
 const { yellow, underline } = require('chalk').default
