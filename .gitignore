@@ -260,3 +260,4 @@ package
 ### Temporary binary files
 # -----------------------------------------------------------------------------
 .bin
+.starterkit/bin/git-lfs
