@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const execa = require('execa')
 const { exec, GIT, isNotCI, isCI, run, br } = require('..')
 
 const log = str => {
@@ -37,6 +38,34 @@ run(async function postInstall() {
   await exec(`git lfs install --force`, {
     stdio: 'ignore'
   })
+
+  if (isNotCI) {
+    log('Deduplicating yarn.lock')
+    const res = await execa('npx', ['yarn-deduplicate', '-l'])
+    if (res.stdout.length) {
+      console.log('    ...found duplicates:\n')
+      console.log(
+        res.stdout
+          .split('\n')
+          .map(l => `    ${l}`)
+          .join('\n')
+      )
+
+      console.log('\n    ...rewriting yarn.lock:\n')
+      await exec(`npx yarn-deduplicate`)
+
+      console.log('Folder size before:')
+      await exec(`npx get-folder-size --folder=node_modules`)
+
+      log('Running `yarn install` again\n')
+      await exec(`npx yarn install --ignore-scripts`)
+
+      console.log('Folder size after:')
+      await exec(`npx get-folder-size --folder=node_modules`)
+    }
+
+    // await exec(`npx yarn-deduplicate`)
+  }
 
   if (isCI) {
     log('CLOC stats') || br()
