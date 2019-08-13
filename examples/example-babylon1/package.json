@@ -1,5 +1,5 @@
 {
-  "name": "@scope/example-babylon1",
+  "name": "@example/example-babylon1",
   "private": true,
   "version": "1.0.0",
   "main": "index.ts",

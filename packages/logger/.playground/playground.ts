@@ -11,3 +11,5 @@ try {
 } catch (error) {
   log.error(error)
 }
+
+log.info('Some info')

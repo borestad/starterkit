@@ -1,13 +1,11 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["./**/*.ts", "./**/*.d.ts"],
+  "include": ["**/*.ts", "**/*.d.ts"],
   "compilerOptions": {
-    "target": "esnext",
-    "strict": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": false,
-    "outDir": "./node_modules/.tmp/build.tsc",
-    "module": "commonjs",
-    "allowSyntheticDefaultImports": true
+    "rootDir": ".",
+    "noEmit": false,
+    "outDir": "node_modules/.tmp/build.tsc",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }

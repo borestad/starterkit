@@ -14,7 +14,7 @@
  *
  */
 
-import figures = require('figures')
+import figures from 'figures'
 
 // Helpers
 // ----------------------------------------------------------------------------
