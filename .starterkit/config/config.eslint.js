@@ -213,10 +213,7 @@ module.exports = {
         '@typescript-eslint/no-var-requires': OFF,
         '@typescript-eslint/no-parameter-properties': OFF,
         '@typescript-eslint/no-explicit-any': OFF,
-        '@typescript-eslint/no-object-literal-type-assertion': [
-          'error',
-          { allowAsParameter: false }
-        ],
+        '@typescript-eslint/consistent-type-assertions': 'error',
         '@typescript-eslint/no-unused-vars': [
           'error',
           {
