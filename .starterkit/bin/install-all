@@ -15,11 +15,9 @@ YARN_ARGS='--frozen-lockfile --link-duplicates --non-interactive --no-progress'
 if [ "$YARN_WANTED_VERSION" == "$YARN_INSTALLED_VERSION" ]
 then
   # Use local yarn version
-  color=$Gre
   cmd="./node_modules/.bin/yarn $YARN_ARGS"
 else
   # Use npx instead
-  color=$Red
   cmd="npx yarn@$YARN_WANTED_VERSION $YARN_ARGS"
 fi
 
