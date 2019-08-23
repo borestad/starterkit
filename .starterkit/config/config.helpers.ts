@@ -57,7 +57,7 @@ export const run = (fn: Function) => {
 type CmdArguments = string | TemplateStringsArray
 
 export const args2str = (args: CmdArguments): string => {
-  return (args.map ? args[0] : args.toString()).trim()
+  return (typeof args === 'string' ? args.toString() : args[0]).trim()
 }
 
 export async function exec(args: CmdArguments, opts?: execa.Options) {

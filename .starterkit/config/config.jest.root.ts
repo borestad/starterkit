@@ -22,6 +22,7 @@ if (isNotCI) {
 const config: Config.InitialOptions = {
   // preset: 'ts-jest/presets/js-with-ts',
   rootDir: GIT.ROOT,
+  maxWorkers: 3,
   testEnvironment: 'node',
   projects: filterProjectWorkspacesByFile('jest.config.js'),
   bail: 1,
