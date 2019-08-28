@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["./**/*.ts", "./**/*.d.ts"],
+  "compilerOptions": {
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "outDir": "./node_modules/.tmp/build.tsc",
+    "rootDir": "./",
+    "baseUrl": "./"
+  }
+}

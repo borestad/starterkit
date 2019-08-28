@@ -8,37 +8,41 @@ declare interface Window {
 
 declare module '*.jpg' {
   const image: any
-  export = image
+  export default image
 }
 
 declare module '*.png' {
   const image: any
-  export = image
+  export default image
 }
 
 declare module '*.svg' {
   const image: any
-  export = image
+  export default image
 }
 
 declare module '*.json' {
   const json: any
-  export = json
+  export default json
 }
 
 declare module '*.css' {
   const styles: any
-  export = styles
+  export default styles
 }
 
 declare module '*.woff' {
   const fonts: any
-  export = fonts
+  export default fonts
 }
 
 declare module '*.woff2' {
   const fonts: any
-  export = fonts
+  export default fonts
+}
+
+declare interface NodeModule {
+  hot?: any
 }
 
 declare const __DEV__: boolean
