@@ -21,9 +21,6 @@
     "lint": "npx eslint . --ignore-path=../../.eslintignore --ext js --ext ts --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
-  "dependencies": {
-    "ts-node": "8.3.0"
-  },
   "devDependencies": {
     "@netent/starterkit": "*"
   }

@@ -28,8 +28,7 @@
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
   "dependencies": {
-    "@example/example-lib1": "*",
-    "ts-node": "8.3.0"
+    "@example/example-lib1": "*"
   },
   "devDependencies": {
     "@netent/starterkit": "*"
