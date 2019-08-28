@@ -254,7 +254,18 @@ module.exports = {
         'unicorn/catch-error-name': 'error',
         'unicorn/custom-error-definition': OFF,
         'unicorn/error-message': 'error',
-        'unicorn/filename-case': ['error', { case: 'kebabCase' }],
+        'unicorn/filename-case': [
+          'error',
+          {
+            // https://github.com/sindresorhus/eslint-plugin-unicorn/blob/master/docs/rules/filename-case.md
+            cases: {
+              kebabCase: true,
+              camelCase: true,
+              pascalCase: true,
+              snakeCase: false
+            }
+          }
+        ],
         'unicorn/import-index': 'error',
         'unicorn/new-for-builtins': OFF,
         'unicorn/no-abusive-eslint-disable': 'error',

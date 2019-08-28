@@ -16,6 +16,7 @@ if (isNotCI) {
   console.log(`⭐ ${yellow.underline('babel.config.js')} [${cwd}]`)
 }
 
+// https://babeljs.io/docs/en/config-files#config-function-api
 export default api => {
   const isProd = expr => api.env('production') && expr
 

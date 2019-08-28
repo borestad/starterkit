@@ -25,7 +25,7 @@ run(async function postInstall() {
   await exec(`npx lerna link --loglevel warn`)
 
   log('Cleanup git hooks')
-  exec('rm -f .git/hooks/*')
+  await exec('rm -f .git/hooks/*')
 
   if (isNotCI) {
     log('Install git hooks (husky)')
@@ -43,7 +43,7 @@ run(async function postInstall() {
     log('Deduplicating yarn.lock')
     const res = await execa('npx', ['yarn-deduplicate', '-l'])
     if (res.stdout.length) {
-      console.log('    ...found duplicates:\n')
+      console.log('    ...found duplicates:') || br()
       console.log(
         res.stdout
           .split('\n')
@@ -51,7 +51,7 @@ run(async function postInstall() {
           .join('\n')
       )
 
-      console.log('\n    ...rewriting yarn.lock:\n')
+      console.log('\n    ...rewriting yarn.lock:') || br()
       await exec(`npx yarn-deduplicate`)
 
       console.log('Folder size before:')
@@ -63,8 +63,6 @@ run(async function postInstall() {
       console.log('Folder size after:')
       await exec(`npx get-folder-size --folder=node_modules`)
     }
-
-    // await exec(`npx yarn-deduplicate`)
   }
 
   if (isCI) {

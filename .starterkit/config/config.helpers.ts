@@ -35,14 +35,9 @@ export function onError(e) {
 }
 
 /**
- * Generic onSuccess handler
- */
-export const onSuccess = noop
-
-/**
  * Run handler
  */
-export const run = (fn: Function) => {
+export const run = (fn: Function, onSuccess = noop) => {
   const text = chalk.underline.yellow
 
   br()
@@ -107,6 +102,7 @@ export const pkgUp = (cwd: string) => {
  */
 export const filterProjectWorkspacesByFile = filename => {
   const ws = rootPkg('workspaces') as string[]
+
   return flattenDeep(
     ws
       .map(GIT.fromGitRoot) //
