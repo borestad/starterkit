@@ -2117,10 +2117,10 @@
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/json-schema/-/json-schema-7.0.3.tgz#bdfd69d61e464dcc81b25159c270d75a73c1a636"
   integrity sha1-vf1p1h5GTcyBslFZwnDXWnPBpjY=
 
-"@types/lodash@4.14.137":
-  version "4.14.137"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/lodash/-/lodash-4.14.137.tgz#8a4804937dc6462274ffcc088df8f14fc1b368e2"
-  integrity sha1-ikgEk33GRiJ0/8wIjfjxT8GzaOI=
+"@types/lodash@4.14.138":
+  version "4.14.138"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/@types/lodash/-/lodash-4.14.138.tgz#34f52640d7358230308344e579c15b378d91989e"
+  integrity sha1-NPUmQNc1gjAwg0TlecFbN42RmJ4=
 
 "@types/minimatch@*":
   version "3.0.3"
@@ -2237,10 +2237,10 @@ acorn-globals@^4.1.0, acorn-globals@^4.3.2:
     acorn "^6.0.1"
     acorn-walk "^6.0.1"
 
-acorn-jsx@^5.0.0:
-  version "5.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/acorn-jsx/-/acorn-jsx-5.0.1.tgz#32a064fd925429216a09b141102bfdd185fae40e"
-  integrity sha1-MqBk/ZJUKSFqCbFBECv90YX65A4=
+acorn-jsx@^5.0.2:
+  version "5.0.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/acorn-jsx/-/acorn-jsx-5.0.2.tgz#84b68ea44b373c4f8686023a551f61a21b7c4a4f"
+  integrity sha1-hLaOpEs3PE+GhgI6VR9hoht8Sk8=
 
 acorn-walk@^6.0.1:
   version "6.2.0"
@@ -2725,10 +2725,10 @@ bindings@~1.2.1:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
   integrity sha1-FK1hE4EtLTfXLme0ystLtyZQXxE=
 
-blend-promise-utils@1.24.0:
-  version "1.24.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/blend-promise-utils/-/blend-promise-utils-1.24.0.tgz#62b65b3bfb61a549c459f420485d822b08c2ab22"
-  integrity sha1-YrZbO/thpUnEWfQgSF2CKwjCqyI=
+blend-promise-utils@1.24.1:
+  version "1.24.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/blend-promise-utils/-/blend-promise-utils-1.24.1.tgz#025594b155783c76388787a18e6c0827ae6ee537"
+  integrity sha1-AlWUsVV4PHY4h4ehjmwIJ65u5Tc=
 
 bluebird@^3.5.1, bluebird@^3.5.3, bluebird@^3.5.5:
   version "3.5.5"
@@ -4354,10 +4354,10 @@ eslint-config-prettier@6.1.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-standard@14.0.1:
-  version "14.0.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/eslint-config-standard/-/eslint-config-standard-14.0.1.tgz#375c3636fb4bd453cb95321d873de12e4eef790b"
-  integrity sha1-N1w2NvtL1FPLlTIdhz3hLk7veQs=
+eslint-config-standard@14.1.0:
+  version "14.1.0"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/eslint-config-standard/-/eslint-config-standard-14.1.0.tgz#b23da2b76fe5a2eba668374f246454e7058f15d4"
+  integrity sha1-sj2it2/louumaDdPJGRU5wWPFdQ=
 
 eslint-import-resolver-node@^0.3.2:
   version "0.3.2"
@@ -4480,10 +4480,10 @@ eslint-visitor-keys@^1.0.0, eslint-visitor-keys@^1.1.0:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/eslint-visitor-keys/-/eslint-visitor-keys-1.1.0.tgz#e2a82cea84ff246ad6fb57f9bde5b46621459ec2"
   integrity sha1-4qgs6oT/JGrW+1f5veW0ZiFFnsI=
 
-eslint@6.2.1:
-  version "6.2.1"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/eslint/-/eslint-6.2.1.tgz#66c2e4fe8b6356b9f01e828adc3ad04030122df1"
-  integrity sha1-ZsLk/otjVrnwHoKK3DrQQDASLfE=
+eslint@6.2.2:
+  version "6.2.2"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/eslint/-/eslint-6.2.2.tgz#03298280e7750d81fcd31431f3d333e43d93f24f"
+  integrity sha1-AymCgOd1DYH80xQx89Mz5D2T8k8=
   dependencies:
     "@babel/code-frame" "^7.0.0"
     ajv "^6.10.0"
@@ -4494,7 +4494,7 @@ eslint@6.2.1:
     eslint-scope "^5.0.0"
     eslint-utils "^1.4.2"
     eslint-visitor-keys "^1.1.0"
-    espree "^6.1.0"
+    espree "^6.1.1"
     esquery "^1.0.1"
     esutils "^2.0.2"
     file-entry-cache "^5.0.1"
@@ -4523,13 +4523,13 @@ eslint@6.2.1:
     text-table "^0.2.0"
     v8-compile-cache "^2.0.3"
 
-espree@^6.1.0:
-  version "6.1.0"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/espree/-/espree-6.1.0.tgz#a1e8aa65bf29a331d70351ed814a80e7534e0884"
-  integrity sha1-oeiqZb8pozHXA1HtgUqA51NOCIQ=
+espree@^6.1.1:
+  version "6.1.1"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/espree/-/espree-6.1.1.tgz#7f80e5f7257fc47db450022d723e356daeb1e5de"
+  integrity sha1-f4Dl9yV/xH20UAItcj41ba6x5d4=
   dependencies:
     acorn "^7.0.0"
-    acorn-jsx "^5.0.0"
+    acorn-jsx "^5.0.2"
     eslint-visitor-keys "^1.1.0"
 
 esprima@^3.1.3:
@@ -6722,10 +6722,10 @@ lines-and-columns@^1.1.6:
   resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-lint-staged@9.2.3:
-  version "9.2.3"
-  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-9.2.3.tgz#a4ef2b7033f83e8dbc718556610e20e0098356c0"
-  integrity sha1-pO8rcDP4Po28cYVWYQ4g4AmDVsA=
+lint-staged@9.2.5:
+  version "9.2.5"
+  resolved "https://artifactory.netent.com:443/artifactory/api/npm/npm-virtual/lint-staged/-/lint-staged-9.2.5.tgz#5a3e1e0a539a403bd7f88542bc3d34ce52efdbb3"
+  integrity sha1-Wj4eClOaQDvX+IVCvD00zlLv27M=
   dependencies:
     chalk "^2.4.2"
     commander "^2.20.0"
