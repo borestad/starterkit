@@ -1,38 +1,37 @@
 {
-  "name": "@scope/example-lib2",
-  "private": false,
+  "name": "@example/example-lib2",
   "version": "1.0.2",
   "license": "UNLICENSED",
-  "author": {
-    "name": "NetEnt AB (publ)",
-    "email": "info@netent.com",
-    "url": "https://www.netent.com/"
-  },
+  "private": false,
   "engines": {
     "node": ">= 10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
+    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc",
+    "yarn": ">= 1.12.x"
+  },
+  "author": {
+    "email": "info@netent.com",
+    "name": "NetEnt AB (publ)",
+    "url": "https://www.netent.com/"
   },
   "main": "src/index.ts",
+  "files": [
+    "dist/*",
+    "index.d.ts"
+  ],
   "scripts": {
     "build": "yarn clean && yarn compile:js",
     "clean": "npx starterkit-clean",
     "compile": "run-p compile:*",
     "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps inline",
     "compile:ts": "tsc -b tsconfig.json --pretty",
-    "lint": "npx eslint . --ignore-path=../../.npmignore --ext js --ext ts --fix",
+    "lint": "npx eslint . --ignore-path=../../.eslintignore --ext js --ext ts --fix",
     "test": "jest -w 3 --detectOpenHandles --notify"
   },
-  "files": [
-    "dist/*",
-    "index.d.ts"
-  ],
-  "bundledDependencies": [],
+  "dependencies": {
+    "@example/example-lib1": "*"
+  },
   "devDependencies": {
     "@netent/starterkit": "*"
   },
-  "dependencies": {
-    "@scope/example-lib1": "*",
-    "ts-node": "8.3.0"
-  }
+  "bundledDependencies": []
 }

@@ -15,6 +15,10 @@
     "**/*.tsx"
   ],
 
+  "files": [
+    "packages/types/global.d.ts"
+  ],
+
   "exclude": [
     // Test files are already covered by Jest
     // "**/*.test.ts",
@@ -52,7 +56,8 @@
     "rootDir": ".",                               // 🔅 Specify the root directory of input files. Use to control the output directory structure with --outDir.
     "sourceMap": true,                            // 🔅 Generates corresponding '.map' file.
     "target": "esnext",                           // 🔅 Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'.
-    "allowJs": true,                              // 🔅 Allow javascript files to be compiled.
+    // Option 'allowJs' cannot be specified with option 'declaration'.
+    "allowJs": false,                             // 🔅 Allow javascript files to be compiled.
     "checkJs": false,                             // 🔅 Report errors in .js files.
     // "composite": true,
 
@@ -100,7 +105,7 @@
     // "rootDirs": [],                        // 🔅 List of root folders whose combined content represents the structure of the project at runtime.
     "typeRoots": [                            // 🔅 List of folders to include type definitions from.
       "node_modules/@types",
-      "types"
+      "packages/types"
     ],
     "types": [                                // 🔅 Type declaration files to be included in compilation ( node_modules/@types/... )
       "jest",

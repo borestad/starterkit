@@ -4,7 +4,7 @@ set +x -eEu
 # Update the index
 git update-index --again
 
-# git reset --hard
+git reset --hard
 
 # Delete untracked files in .gitignore
 git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/null || echo

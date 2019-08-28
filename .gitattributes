@@ -55,38 +55,40 @@ yarn.lock              merge=binary
 
 
 # -----------------------------------------------------------------------------
-##  GIT LFS
-#   These files are binary and should be left untouched (binary is a macro for -text -diff)
-*.7z            filter=lfs diff=lfs merge=lfs -text
-*.acf           filter=lfs diff=lfs merge=lfs -text
-*.blend         filter=lfs diff=lfs merge=lfs -text
-*.dds           filter=lfs diff=lfs merge=lfs -text
-*.env           filter=lfs diff=lfs merge=lfs -text
-*.eot           filter=lfs diff=lfs merge=lfs -text
-*.fbx           filter=lfs diff=lfs merge=lfs -text
-*.FBX           filter=lfs diff=lfs merge=lfs -text
-*.fla           filter=lfs diff=lfs merge=lfs -text
-*.flv           filter=lfs diff=lfs merge=lfs -text
-*.gif           filter=lfs diff=lfs merge=lfs -text
-*.gz            filter=lfs diff=lfs merge=lfs -text
-*.gzip          filter=lfs diff=lfs merge=lfs -text
-*.hdr           filter=lfs diff=lfs merge=lfs -text
-*.ico           filter=lfs diff=lfs merge=lfs -text
-*.jpeg          filter=lfs diff=lfs merge=lfs -text
-*.jpg           filter=lfs diff=lfs merge=lfs -text
-*.mov           filter=lfs diff=lfs merge=lfs -text
-*.mp3           filter=lfs diff=lfs merge=lfs -text
-*.mp4           filter=lfs diff=lfs merge=lfs -text
-*.obj           filter=lfs diff=lfs merge=lfs -text
-*.ogg           filter=lfs diff=lfs merge=lfs -text
-*.otf           filter=lfs diff=lfs merge=lfs -text
-*.pdf           filter=lfs diff=lfs merge=lfs -text
-*.png           filter=lfs diff=lfs merge=lfs -text
-*.pyc           filter=lfs diff=lfs merge=lfs -text
-*.swf           filter=lfs diff=lfs merge=lfs -text
-*.tga           filter=lfs diff=lfs merge=lfs -text
-*.ttf           filter=lfs diff=lfs merge=lfs -text
-*.wav           filter=lfs diff=lfs merge=lfs -text
-*.woff          filter=lfs diff=lfs merge=lfs -text
-*.woff2         filter=lfs diff=lfs merge=lfs -text
-*.zip           filter=lfs diff=lfs merge=lfs -text
+# - GIT LFS
+# These files are binary and should be left untouched (binary is a macro for -text -diff)
+# For now, we treat binaries as usual, since git-lfs is not installed in Jenkins properly
+# TODO: Replace binary with: 'filter=lfs diff=lfs merge=lfs -text'
+*.7z            binary
+*.acf           binary
+*.blend         binary
+*.dds           binary
+*.env           binary
+*.eot           binary
+*.fbx           binary
+*.FBX           binary
+*.fla           binary
+*.flv           binary
+*.gif           binary
+*.gz            binary
+*.gzip          binary
+*.hdr           binary
+*.ico           binary
+*.jpeg          binary
+*.jpg           binary
+*.mov           binary
+*.mp3           binary
+*.mp4           binary
+*.obj           binary
+*.ogg           binary
+*.otf           binary
+*.pdf           binary
+*.png           binary
+*.pyc           binary
+*.swf           binary
+*.tga           binary
+*.ttf           binary
+*.wav           binary
+*.woff          binary
+*.woff2         binary
+*.zip           binary

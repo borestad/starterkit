@@ -19,7 +19,7 @@ export function clone(obj: {}): object {
 export const foo = 'bar'
 
 export class GetterSetter {
-  private _val: string = ''
+  private _val = ''
 
   get bar(): string {
     return `Hello ${this._val}`.trim()

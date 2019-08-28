@@ -1,25 +1,22 @@
 {
   "name": "@netent/starterkit-playground",
-  "description": "Starterkit is a `batteries included` base for creating awesome software using Typescript and best practices within Netent",
   "version": "1.0.0",
+  "description": "Starterkit is a `batteries included` base for creating awesome software using Typescript and best practices within Netent",
+  "license": "UNLICENSED2",
   "private": true,
-  "license": "UNLICENSED",
-  "author": {
-    "name": "NetEnt AB (publ)",
-    "email": "info@netent.com",
-    "url": "https://www.netent.com/"
+  "engines": {
+    "node": ">= 10.x",
+    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc",
+    "yarn": ">= 1.12.x"
   },
-  "maintainers": [
-    "Johan Borestad <johan.borestad@netent.com>"
-  ],
-  "homepage": "https://git.netent.com/projects/GS/repos/starterkit",
   "bugs": {
     "url": "https://jira.netent.com/secure/RapidBoard.jspa?rapidView=1587"
   },
-  "engines": {
-    "node": ">= 10.x",
-    "yarn": ">= 1.12.x",
-    "npm": ">= 999-this-repo-is-yarn-only:see-npmrc"
+  "homepage": "https://git.netent.com/projects/GS/repos/starterkit",
+  "author": {
+    "email": "info@netent.com",
+    "name": "NetEnt AB (publ)",
+    "url": "https://www.netent.com/"
   },
   "workspaces": [
     ".starterkit",
@@ -34,16 +31,19 @@
     "compile:packages": "npx lerna run compile --parallel --stream",
     "fix": "npx yarn prettier && yarn lint",
     "lint": "npx run-s lint:*",
-    "lint:js": "npx eslint . --ext js --ext ts --fix",
+    "lint:js": "DEBUG=eslint:cli-engine npx eslint . --ext js --ext ts --fix",
     "postinstall": "npx starterkit-postinstall",
     "prettier": "npx prettier -c --write \"**/*.{ts,js,tsx,jsx,json,md,html,css}\"",
     "test": "npx run-p -l test:unit test:e2e",
-    "test:unit": "npx jest -w 3",
     "test:e2e": "npx lerna run test:e2e --stream",
     "test:serial": "npx lerna exec -- yarn test",
+    "test:unit": "npx jest -w 3 --config=.starterkit/config/jest.config.js",
     "test:watch": "npx yarn test -- --watch --notify",
     "validate": "node node_modules/@netent/starterkit/bin/validate"
   },
+  "maintainers": [
+    "Johan Borestad <johan.borestad@netent.com>"
+  ],
   "prettier": {
     "bracketSpacing": true,
     "jsxBracketSameLine": true,
@@ -54,53 +54,8 @@
     "trailingComma": "none",
     "useTabs": false
   },
-  "dependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "7.4.5",
-    "@babel/node": "7.4.5",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "@babel/plugin-transform-runtime": "7.4.4",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/preset-typescript": "^7.3.3",
-    "@babel/register": "7.4.4",
-    "@babel/runtime-corejs3": "7.4.5",
-    "@types/fs-extra": "8.0.0",
-    "@types/jest": "24.0.15",
-    "@typescript-eslint/eslint-plugin": "1.11.0",
-    "@typescript-eslint/parser": "1.11.0",
-    "babel-plugin-loop-optimizer": "1.4.1",
-    "chalk": "2.4.2",
-    "del-cli": "2.0.0",
-    "eslint": "6.0.1",
-    "eslint-config-prettier": "6.0.0",
-    "eslint-config-standard": "12.0.0",
-    "eslint-plugin-cypress": "2.2.1",
-    "eslint-plugin-import": "2.18.0",
-    "eslint-plugin-node": "9.1.0",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-sonarjs": "0.4.0",
-    "eslint-plugin-standard": "4.0.0",
-    "eslint-plugin-unicorn": "9.1.1",
-    "figures": "3.0.0",
-    "fs-extra": "8.1.0",
-    "husky": "3.0.0",
-    "jest": "24.8.0",
-    "jest-cli": "24.8.0",
-    "lerna": "^3.15.0",
-    "lodash": "4.17.11",
-    "npm-run-all": "4.1.5",
-    "prettier": "1.18.2",
-    "ts-jest": "24.0.2",
-    "ts-node": "8.3.0",
-    "typescript": "^3.5.2",
-    "yarn": "1.16.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@netent/starterkit": "*",
-    "diff-so-fancy": "1.2.5",
-    "lint-staged": "9.0.2",
-    "node-notifier": "5.4.0"
+    "@netent/starterkit": "*"
   }
 }

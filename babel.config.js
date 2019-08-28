@@ -8,6 +8,7 @@
 //
 // ========================================================================
 
+// eslint-disable-next-line import/no-extraneous-dependencies
 require('ts-node').register({
   /* options */
   transpileOnly: true,
@@ -17,4 +18,4 @@ require('ts-node').register({
   }
 })
 
-module.exports = require('@netent/starterkit/config/babel')
+module.exports = require('@netent/starterkit/config/config.babel')

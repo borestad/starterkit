@@ -1,4 +1,11 @@
+// This file contains Visual Studio Code workspace settings
+// to be used for sharing settings between team members.
+
+// It has carefully been crafted to allow proper use
+// of "eslint.autoFixOnSave" for .js(x) and .ts(x), without
+// conflicting with other formatters like prettier/tslint etc.
 {
+  // ⬇ important ⬇
   "[javascript]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
@@ -6,13 +13,16 @@
   "[properties]": {
     "editor.formatOnSave": false
   },
+  // ⬇ important ⬇
   "[javascriptreact]": {
-    "editor.formatOnSave": false
-  },
-  "[json]": {
     "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  // ⬇ important ⬇
+  "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // ⬇ important ⬇
   "[jsonc]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -23,19 +33,32 @@
     "editor.renderWhitespace": "all",
     "editor.wordWrap": "on"
   },
+  // ⬇ important ⬇
   "[typescript]": {
-    "editor.formatOnSave": false, // Handled by "eslint.autoFixOnSave"
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  // ⬇ important ⬇
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[shellscript]": {
-    "editor.formatOnSave": false,
     "editor.defaultFormatter": null
+  },
+  // ⬇ important ⬇
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  // ⬇ important ⬇
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.autoIndent": true,
+  // ⬇ important ⬇
   "editor.codeActionsOnSave": {
     "source.fixAll": true,
     "source.organizeImports": false,
@@ -44,7 +67,6 @@
   "editor.codeLens": true,
   "editor.fontLigatures": true,
   "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
   "editor.quickSuggestions": {
     "comments": true,
     "other": true,
@@ -53,8 +75,11 @@
   "editor.snippetSuggestions": "bottom",
   "editor.renderIndentGuides": true,
   "eslint.alwaysShowStatus": true,
+  // ⬇ important ⬇
   "eslint.autoFixOnSave": true,
+  // ⬇ important ⬇
   "eslint.packageManager": "yarn",
+  // ⬇ important ⬇
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -62,6 +87,7 @@
     { "language": "typescriptreact", "autoFix": true }
   ],
   "extensions.ignoreRecommendations": false,
+  // ⬇ important ⬇
   "files.associations": {
     ".*rc": "properties",
     ".gitattributes": "properties",
@@ -95,8 +121,6 @@
     "**/node_modules/**": true
   },
   "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "prettier.eslintIntegration": true,
-  "prettier.tslintIntegration": true,
   "problems.decorations.enabled": true,
   "search.exclude": {
     "**/.tmp": true,
@@ -110,11 +134,11 @@
   "tslint.ignoreDefinitionFiles": true,
   "tslint.jsEnable": false,
   "typescript.autoClosingTags": true,
-  "editor.folding": true,
   "typelens.decorateunused": true,
   "typescript.implementationsCodeLens.enabled": false,
   "typescript.referencesCodeLens.enabled": false,
   "typescript.tsdk": "node_modules/typescript/lib",
+
   // TODO: Experimental usage
   "javascript.suggest.completeFunctionCalls": true,
   "javascript.suggestionActions.enabled": true,
@@ -125,9 +149,5 @@
   "typescript.suggest.completeJSDocs": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "merge-conflict.decorators.enabled": true,
-  "typescript.preferences.renameShorthandProperties": true,
-  "editor.cursorBlinking": "smooth"
-
-  // "typescript.suggest.enabled": true
-  //"terminal.integrated.shell.windows": "bash"
+  "typescript.preferences.renameShorthandProperties": true
 }

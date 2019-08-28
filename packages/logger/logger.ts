@@ -14,10 +14,7 @@
  *
  */
 
-import figures = require('figures')
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const win = window as any
+import figures from 'figures'
 
 // Helpers
 // ----------------------------------------------------------------------------
@@ -115,8 +112,8 @@ const log = {
 }
 
 // Enable quick debugging access in the browser
-if (win) {
-  win.Console = win.Console || log
+if (typeof window !== 'undefined') {
+  window.Console = window.Console || log
 }
 
 export default log

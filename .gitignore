@@ -161,8 +161,6 @@ src/*.js
 !wallaby.js
 # ...and entrypoints
 !*.index.js
-# ...and cypress
-!**/cypress/**/*.js
 
 # Reports
 *-report.json
@@ -262,3 +260,4 @@ package
 ### Temporary binary files
 # -----------------------------------------------------------------------------
 .bin
+.starterkit/bin/git-lfs

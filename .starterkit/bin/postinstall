@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const { exec, GIT, isNotCI, isCI, run, br } = require('../tools')
+const execa = require('execa')
+const { exec, GIT, isNotCI, isCI, run, br } = require('..')
 
 const log = str => {
   return console.log(`❯ ${str}`)
@@ -24,7 +25,7 @@ run(async function postInstall() {
   await exec(`npx lerna link --loglevel warn`)
 
   log('Cleanup git hooks')
-  exec('rm -f .git/hooks/*')
+  await exec('rm -f .git/hooks/*')
 
   if (isNotCI) {
     log('Install git hooks (husky)')
@@ -37,6 +38,32 @@ run(async function postInstall() {
   await exec(`git lfs install --force`, {
     stdio: 'ignore'
   })
+
+  if (isNotCI) {
+    log('Deduplicating yarn.lock')
+    const res = await execa('npx', ['yarn-deduplicate', '-l'])
+    if (res.stdout.length) {
+      console.log('    ...found duplicates:') || br()
+      console.log(
+        res.stdout
+          .split('\n')
+          .map(l => `    ${l}`)
+          .join('\n')
+      )
+
+      console.log('\n    ...rewriting yarn.lock:') || br()
+      await exec(`npx yarn-deduplicate`)
+
+      console.log('Folder size before:')
+      await exec(`npx get-folder-size --folder=node_modules`)
+
+      log('Running `yarn install` again\n')
+      await exec(`npx yarn install --ignore-scripts`)
+
+      console.log('Folder size after:')
+      await exec(`npx get-folder-size --folder=node_modules`)
+    }
+  }
 
   if (isCI) {
     log('CLOC stats') || br()
