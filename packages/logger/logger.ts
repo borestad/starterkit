@@ -113,7 +113,7 @@ const log = {
 
 // Enable quick debugging access in the browser
 if (typeof window !== 'undefined') {
-  window.Console = window.Console || log
+  ;(window as any).$Logger = window.$Logger || log
 }
 
 export default log
