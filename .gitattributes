@@ -1,6 +1,6 @@
 # Automatically normalize line endings for all text-based files
 # http://git-scm.com/docs/gitattributes#_end_of_line_conversion
-* text=auto eol=lf
+* text=auto
 
 # For the following file types, normalize line endings to LF on
 # checkin and prevent conversion to CRLF when they are checked out
@@ -9,10 +9,13 @@
 .*            text eol=lf
 *.atlas       text eol=lf
 *.babylon     text eol=lf
+*.bat         text eol=crlf
+*.cmd         text eol=crlf
 *.config      text eol=lf
 *.css         text eol=lf
 *.ejs         text eol=lf
 *.frag        text eol=lf
+*.hbs         text eol=lf
 *.html        text eol=lf
 *.js          text eol=lf
 *.json        text eol=lf
@@ -30,8 +33,12 @@
 *.tsx         text eol=lf
 *.txt         text eol=lf
 *.vert        text eol=lf
+*.vue         text eol=lf
 *.xhtml       text eol=lf
 *.xml         text eol=lf
+Jenkinsfile   text eol=lf
+Makefile*     text eol=lf
+/.starterkit/bin/*  text eol=lf
 
 # Documents
 *.doc  diff=astextplain
@@ -65,8 +72,9 @@ yarn.lock              merge=binary
 *.dds           binary
 *.env           binary
 *.eot           binary
-*.fbx           binary
+*.exe           binary
 *.FBX           binary
+*.fbx           binary
 *.fla           binary
 *.flv           binary
 *.gif           binary
@@ -76,6 +84,7 @@ yarn.lock              merge=binary
 *.ico           binary
 *.jpeg          binary
 *.jpg           binary
+*.m4a           binary
 *.mov           binary
 *.mp3           binary
 *.mp4           binary
@@ -89,6 +98,13 @@ yarn.lock              merge=binary
 *.tga           binary
 *.ttf           binary
 *.wav           binary
+*.webm          binary
 *.woff          binary
 *.woff2         binary
 *.zip           binary
+
+
+# -----------------------------------------------------------------------------
+# Exclude .gitignore and similar from dist-releases
+.git*           export-ignore
+Jenkinsfile     export-ignore
