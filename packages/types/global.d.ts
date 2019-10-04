@@ -6,6 +6,10 @@ declare interface Window {
   [key: string]: any
 }
 
+declare interface NodeModule {
+  hot?: any
+}
+
 declare module '*.jpg' {
   const image: any
   export default image
@@ -39,10 +43,6 @@ declare module '*.woff' {
 declare module '*.woff2' {
   const fonts: any
   export default fonts
-}
-
-declare interface NodeModule {
-  hot?: any
 }
 
 declare const __DEV__: boolean

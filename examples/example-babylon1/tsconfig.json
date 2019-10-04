@@ -5,7 +5,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "outDir": "./node_modules/.tmp/build.tsc",
-    "rootDir": "./",
-    "baseUrl": "./"
+    "rootDir": ".",
+    "baseUrl": "."
   }
 }

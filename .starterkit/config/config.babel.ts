@@ -20,10 +20,14 @@ if (isNotCI) {
 export default api => {
   const isProd = expr => api.env('production') && expr
 
+  //  https://babeljs.io/docs/en/config-files#apicache
+  //  Cache based on the value of NODE_ENV.
+  //  Any time the using callback returns a value other than the one that was
+  //  expected, the overall config function will be called again and a new entry
+  //  will be added to the cache.
   api.cache.using(() => process.env.NODE_ENV)
 
   const presets = ['@babel/env', '@babel/typescript']
-
   const plugins = [
     [
       '@babel/transform-runtime',
@@ -38,6 +42,13 @@ export default api => {
   ].filter(Boolean)
 
   return {
+    babelrcRoots: [
+      // Keep the root as a root
+      '.',
+      // Also consider monorepo packages "root" and load their .babelrc files.
+      './packages/*',
+      './examples/*'
+    ],
     presets,
     plugins
   }

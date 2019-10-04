@@ -11,7 +11,7 @@
     "compile:js": "npx babel src --root-mode upward --verbose --out-dir node_modules/.tmp/build.babel --extensions \".ts,.tsx\" --source-maps true",
     "compile:ts": "del dist && tsc -b tsconfig.json --pretty",
     "lint": "npx eslint . --ignore-path=../../.eslintignore --ext js --ext ts --fix",
-    "start": "npx parcel index.html",
+    "start": "parcel index.pug",
     "test": "jest -w 4 --detectOpenHandles --notify"
   },
   "dependencies": {
@@ -25,7 +25,8 @@
     "pep": "1.0.13"
   },
   "devDependencies": {
-    "@babel/cli": "7.5.5",
-    "@netent/starterkit": "*"
+    "@babel/cli": "7.6.0",
+    "@netent/starterkit": "*",
+    "pug": "2.0.4"
   }
 }

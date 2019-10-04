@@ -15,15 +15,15 @@
     "**/*.tsx"
   ],
 
-  "files": [
-    "packages/types/global.d.ts"
-  ],
+  // "files": [
+  //   "packages/types/*.ts"
+  // ],
 
   "exclude": [
     // Test files are already covered by Jest
     // "**/*.test.ts",
     // "**/node_modules/**",
-    "**/dist/**",
+    "**/dist/**"
     // "typings/browser.d.ts"
   ],
 
@@ -109,7 +109,8 @@
     ],
     "types": [                                // 🔅 Type declaration files to be included in compilation ( node_modules/@types/... )
       "jest",
-      "node"
+      "node",
+      "common"
     ],
 
 

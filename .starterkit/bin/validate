@@ -6,15 +6,14 @@ const { isEmpty } = require('lodash')
 const { GIT, run } = require('..')
 
 const { log } = console
-
 let result
 
 /**
  * Validate if files are ignored
  */
-run(async function sanityCheck() {
+async function validateGitIgnoredFiles() {
   if (isEmpty((result = GIT.IGNORED_FILES_STILL_IN_INDEX))) {
-    log(`${tick} ️Validating ignored files`)
+    log(`${tick} ️Validating gitignored files`)
   } else {
     throw new Error(
       util.format(
@@ -30,4 +29,15 @@ run(async function sanityCheck() {
       )
     )
   }
-})
+}
+
+async function validateLockFiles() {
+  log(`${tick} ️Validating *.lock' files`)
+}
+
+async function validate() {
+  await validateGitIgnoredFiles()
+  await validateLockFiles()
+}
+
+run(validate)

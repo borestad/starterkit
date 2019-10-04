@@ -14,5 +14,6 @@
     "name": "NetEnt AB (publ)",
     "url": "https://www.netent.com/"
   },
-  "main": ""
+  "main": "",
+  "types": "global"
 }
