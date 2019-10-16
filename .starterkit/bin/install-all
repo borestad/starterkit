@@ -5,7 +5,7 @@ set +x -eEu
 
 echo; hr;
 
-install-git-lfs
+#install-git-lfs
 cd $ROOT
 
 YARN_WANTED_VERSION=`node -p -e require\(\'./.starterkit/package.json\'\).devDependencies.yarn`
