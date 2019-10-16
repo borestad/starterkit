@@ -13,6 +13,7 @@ git ls-files --ignored --exclude-standard -z | xargs -0 git rm --cached 2>/dev/n
 
 cd $ROOT
 
+ls -la ./Images/
 git-validate-repo
 
 trap trap-exit EXIT
